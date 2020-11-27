@@ -12,7 +12,7 @@
     "test": "yarn lint && yarn compile"
   },
   "dependencies": {
-    "@pmmi-media-group/common": "^0.0.0",
+    "@pmmi-media-group/package-common": "^0.0.0",
     "@base-cms/marko-core": "^1.38.0",
     "@base-cms/marko-newsletters": "^1.39.0",
     "@base-cms/marko-newsletters-email-x": "^1.41.0",
