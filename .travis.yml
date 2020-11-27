@@ -1,0 +1,69 @@
+language: node_js
+node_js: "10.15"
+cache: yarn
+
+stages:
+  - name: test
+
+  - name: staging-started
+    if: tag is present
+  - name: staging
+    if: tag is present
+  - name: staging-finished
+    if: tag is present
+
+  - name: production-started
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+  - name: production
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+  - name: production-finished
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+
+jobs:
+  include:
+    - stage: test
+      env: [NODE_ENV=test]
+
+    - stage: production-started
+      name: Deployment Started
+      script: npx @base-cms/newsletter-deployment-tool notify-started
+      install: skip
+      env: [ENVIRONMENT=production]
+
+    - stage: staging-started
+      name: Deployment Started
+      script: npx @base-cms/newsletter-deployment-tool notify-started
+      install: skip
+      env: [ENVIRONMENT=staging]
+
+    #############################
+    # vvv ADD SERVICES HERE vvv #
+    #############################
+
+    - stage: production
+      name: All/Multi-site
+      script: npx @base-cms/newsletter-deployment-tool deploy all newsletters
+      install: skip
+      env: [ENVIRONMENT=production]
+
+    - stage: staging
+      name: All/Multi-site
+      script: npx @base-cms/newsletter-deployment-tool deploy all leonis-newsletters
+      install: skip
+      env: [ENVIRONMENT=staging]
+
+    #############################
+    # ^^^ ADD SERVICES HERE ^^^ #
+    #############################
+
+    - stage: production-finished
+      name: Deployment Finished
+      script: npx @base-cms/newsletter-deployment-tool notify-finished
+      install: skip
+      env: [ENVIRONMENT=production]
+
+    - stage: staging-finished
+      name: Deployment Finished
+      script: npx @base-cms/newsletter-deployment-tool notify-finished
+      install: skip
+      env: [ENVIRONMENT=staging]
