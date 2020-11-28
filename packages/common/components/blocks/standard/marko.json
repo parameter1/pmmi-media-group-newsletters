@@ -1,0 +1,8 @@
+{
+  "<common-standard-header-block>": {
+    "template": "./header.marko"
+  },
+  "<common-standard-renewal-block>": {
+    "template": "./renewal.marko"
+  }
+}
