@@ -1,0 +1,42 @@
+$ const { newsletter, date } = input;
+
+<p>
+  <span style="display:none !important;visibility:hidden;mso-hide:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden">Supplement Shipper is Impossibly Thin.</span>
+  <!-- p hidden=""><font face="arial" size="2"><a href="https://pmmi.omeclk.com/portal/wts/ugmcnh%5Ecr-2baBoFaD0k2o66a">https://stage.pmmimediagroup.com/about </a></font></p -->
+  <!-- p hidden=""><font face="arial" size="2"><a href="https://pmmi.omeclk.com/portal/wts/ucmcnh%5Ecr-2baBoFaD0k6o66a">PMMI Media Group </a></font></p -->
+</p>
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 640px;">
+  <tbody>
+    <tr>
+      <td style="background-color: #edeeee;">
+        <!-- Header block -->
+        <if(input.header)>
+          <${input.header} />
+        </if>
+        <else>
+          <common-standard-header-block newsletter=newsletter date=date />
+        </else>
+
+        <!-- Renewal block -->
+        <if(input.renewal)>
+          <${input.renewal} />
+        </if>
+        <else>
+          <common-standard-renewal-block newsletter=newsletter date=date />
+        </else>
+
+        <if(input.body)>
+          <${input.body} />
+        </if>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Footer block -->
+<if(input.footer)>
+  <${input.footer} />
+</if>
+<else>
+  <common-footer-block newsletter=newsletter date=date />
+</else>
