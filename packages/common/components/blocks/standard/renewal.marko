@@ -1,3 +1,11 @@
+import { get } from "@base-cms/object-path";
+
+$ const { website, config } = out.global
+$ const { newsletter, date } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const brandName = get(newsletterConfig, "brandName");
+
 <!-- Renewal -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tbody>
@@ -31,7 +39,11 @@
                                   <td align="left" class="auddev-headsmall" style="color: #5d5d5d; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; padding: 0 0 6px 0;">Is this goodbye?</td>
                                 </tr>
                                 <tr>
-                                  <td align="left" class="auddev-bodysmall" style="color: #5d5d5d; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; padding: 0 0 8px 0;"><a href="https://pmmi.omeclk.com/portal/wts/ucmcnh%5Ecr-2baBoFaD00yo66a" style="color: #5d5d5d;" target="_blank">Click here to renew your <em>Packaging World</em> subscription</a></td>
+                                  <td align="left" class="auddev-bodysmall" style="color: #5d5d5d; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; padding: 0 0 8px 0;">
+                                    <a href="https://pmmi.omeclk.com/portal/wts/ucmcnh%5Ecr-2baBoFaD00yo66a" style="color: #5d5d5d;" target="_blank">
+                                      Click here to renew your <em>${brandName}</em> subscription
+                                    </a>
+                                    </td>
                                 </tr>
                               </tbody>
                             </table>
