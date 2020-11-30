@@ -40,7 +40,6 @@ $ const queryParams = {
       <!-- <common-list-header-element title=sectionName /> -->
     </if>
     <for|content| of=nodes>
-      <!-- Main Feature -->
       <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tbody>
           <tr>
@@ -48,7 +47,8 @@ $ const queryParams = {
             <table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 600px;">
               <tbody>
                 <tr>
-                  <td align="center" dir="rtl" style="padding: 24px 0 0 0;direction:rtl;" valign="top" width="100%"><!-- Two column -->
+                  <td align="center" dir="rtl" style="padding: 24px 0 0 0;direction: rtl;" valign="top" width="100%">
+                    <!-- Two column -->
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tbody>
                         <tr>
@@ -62,14 +62,10 @@ $ const queryParams = {
                                     <tbody>
                                       <tr>
                                         <td align="center" class="img-mask" style="border: 1px solid #e6e6e7;width: 212px;height: 159px;text-align: center;">
-                                          <!-- <a href="https://pmmi.omeclk.com/portal/wts/ugmcnh%5Ecr-2baBoFaD0t%5Eo66a" target="_blank">
-                                            <img alt="Editorial Image" class="img-max" src="https://pmg-production.s3.amazonaws.com/2020/PW/Images/SM_Graphic___Jorge.5ed12b84350fc.png"
-                                              style="display: block; font-family: Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); font-size: 14px; max-width: 212px; width: 100%; border-width: 0px; border-style: solid;" />
-                                          </a> -->
                                           <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                                             <marko-newsletter-imgix
                                               src=image.src
-                                              alt="Editorial Image"
+                                              alt=image.alt
                                               options={ w: 225, fit: "crop" }
                                               class="img-max"
                                               attrs={ style: imgStyles }
@@ -132,7 +128,6 @@ $ const queryParams = {
           </tr>
         </tbody>
       </table>
-      <!-- End Main Feature -->
     </for>
   </if>
 </marko-web-query>
