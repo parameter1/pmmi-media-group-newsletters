@@ -109,10 +109,7 @@ $ const queryParams = {
                                         </tr>
                                         <tr>
                                           <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
-                                            $ const contentAction = contentTypeActions[content.type] || contentTypeActions.default;
-                                            <a href=content.siteContext.url style="color: #00bab; text-decoration: underline;" target="_blank">
-                                              ${contentAction} &rarr;
-                                            </a>
+                                            <common-content-action-link-element content=content />
                                           </td>
                                         </tr>
                                       </tbody>

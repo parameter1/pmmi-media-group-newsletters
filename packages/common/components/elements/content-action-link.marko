@@ -1,0 +1,14 @@
+
+$ const { content } = input;
+
+$ const contentTypeActions = {
+  'default': 'Read More',
+  'podcast': 'Listen',
+  'video': 'Watch',
+}
+
+$ const contentAction = contentTypeActions[content.type] || contentTypeActions.default;
+
+<a href=content.siteContext.url style="color: #00bab; text-decoration: underline;" target="_blank">
+  ${contentAction} &rarr;
+</a>
