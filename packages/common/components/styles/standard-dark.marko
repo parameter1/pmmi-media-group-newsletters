@@ -1,0 +1,168 @@
+<style type="text/css">
+  /* CLIENT-SPECIFIC STYLES */
+  #outlook a { padding: 0; }
+  .ReadMsgBody { width: 100%; }
+  .ExternalClass { width: 100%; }
+  .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div, .ExternalClass * { line-height: 100%; }
+  body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+  img { -ms-interpolation-mode:bicubic; }
+  /* RESET STYLES */
+  body { height:100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+  img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+  table { border-collapse: collapse !important; }
+  /* Remove margin on email wrapper in Android 4.4 KitKat */
+  /* See more at: https://blog.jmwhite.co.uk/2015/09/19/revealing-why-emails-appear-off-centre-in-android-4-4-kitkat/ */
+  div[style*="margin: 16px 0"] {margin:0 !important; font-size:100% !important;}
+  /* Remove ios blue links */
+  a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+  }
+  a {color: #991a1f;text-decoration: underline;}
+  .button:hover {background-color:#B31D22!important;border-top:13px solid #B31D22!important;border-right:20px solid #B31D22!important;border-bottom:13px solid #B31D22!important;border-left:20px solid #B31D22!important;}
+  /* Outline styles */
+  @media only screen and (max-width: 599px) {
+      .content-table {
+          width: 100%!important;
+      }
+      .mobile-padding {
+          padding-left:16px!important;padding-right: 16px!important;
+      }
+      .mobile-padding-topbtm {
+          padding-bottom: 20px!important;
+      }
+      .mobileheader {
+          font-size: 20px!important; line-height: 26px!important;
+      }
+      img.img-max{
+          max-width: 100%!important;
+          max-height: 100%!important;
+      }
+      img.header-img-max{
+          width: 100%!important;
+          height: auto!important;
+      }
+      td.mobile-padding-rt {
+          padding-right:10px!important;
+          padding-bottom: 16px!important;
+      }
+      table.mobile-button-wrap{
+          margin: 0 auto;
+          width: 100%!important;
+      }
+      a.mobile-button{
+          width: 80%!important;
+          padding: 8px!important;
+          border: 0!important;
+      }
+      .mobile-align-center {
+          text-align: center!important;
+          margin-right: auto;
+          margin-left: auto;
+      }
+      .mobile-tagline {
+          font-size:9px!important;
+          line-height: 11px!important;
+      }
+      .desktophide {
+          display:none!important;
+      }
+  }
+  @media only screen and (max-width: 450px) {
+      .content-table {
+          width: 100%!important;
+      }
+      .content-table-flex {
+          width: 100%!important;
+      }
+      .content-table-flex-main {
+          display: block!important;
+          width: 100%!important;
+          min-width: 100%!important;
+          max-width: 450px!important;
+          direction: ltr!important;
+      }
+      img.header-img-max{
+          width: 100%!important;
+          height: auto!important;
+      }
+      img.img-max {
+          max-width: 100%!important;
+          max-height:100%!important;
+          width: 100%!important;
+          height: 180px!important;
+          object-fit: contain;
+      }
+      td.img-mask {
+          max-width: 100%!important;
+          width: 450px!important;
+          height: 180px!important;
+      }
+      .auddev-headsmall {
+          font-size: 16px!important;
+      }
+      .auddev-bodysmall {
+          font-size: 13px!important;
+          line-height: 20px!important;
+      }
+      .companylogo-flex {
+          width: 100%;
+          text-align: center;
+          height: 30px!important;
+          padding-top: 0px!important;
+          padding-bottom:8px!important;
+      }
+      .companylogo-imgflex {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 10px;
+      }
+  }
+
+  :root {
+      color-scheme: light dark;
+      supported-color-scheme:light dark;
+  }
+
+  @media (prefers-color-scheme:dark) {
+      .header {background-color: #20242b!important;}
+      .mobile-padding {background-color: #282c34!important;}
+      .body-text {color:#a4aab7!important;}
+      .ad-headline {color:#a4aab7!important;}
+      .mobileheader {color:#a4aab7!important;}
+      .email-bg {background-color:#20242b!important;}
+      .img-mask {border: none!important;}
+      .auddev-headsmall {color:#dbe1ec!important;}
+      a {color:#dbe1ec!important;}
+  }
+
+  [data-ogsb] .header {background-color: #20242b !important; }
+  [data-ogsb] .mobile-padding {background-color: #282c34 !important; }
+  [data-ogsc] .body-text {color:#a4aab7!important;}
+  [data-ogsc] .ad-headline {color: #a4aab7 !important; }
+  [data-ogsc] .mobileheader {color: #a4aab7 !important; }
+  [data-ogsb] .email-bg {background-color:#20242b!important;}
+  [data-ogsc] a {color:#dbe1ec!important;}
+  [data-ogsc] .img-mask {border: none!important;}
+</style>
+<!--[if (gte mso 9)|(IE)]>
+  <style type="text/css">
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+  </style>
+<![endif]-->
+<!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+<![endif]-->
