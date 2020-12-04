@@ -97,11 +97,39 @@ $ const queryParams = {
                                               </a>
                                             </td>
                                           </tr>
-                                          <tr>
-                                            <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
-                                              <common-content-action-link-element content=content />
-                                            </td>
-                                          </tr>
+                                          <if(content.type === "promotion")>
+                                            <tr>
+                                              <td>
+                                              <table border="0" cellpadding="0" cellspacing="0" class="buttonWrap" style="border-collapse:separate !important;width:100%;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align="left" valign="top">
+                                                      <!--[if gte mso 9]>
+                                                      <table border="0" cellspacing="0" cellpadding="0" style="width:185px;">
+                                                        <tr>
+                                                          <td align="center" bgcolor="#005bab" style="padding:3px 10px;" valign="top" class="button">
+                                                            <![endif]-->
+                                                            <a class="button" href=content.siteContext.url style="background-color:#005bab;border-collapse:separate !important;border-top:13px solid #005bab;border-right:20px solid #005bab;border-bottom:13px solid #005bab;border-left:20px solid #005bab;color:#ffffff;display:inline-block;border-radius:4px;font-family:Helvetica, Arial, sans-serif;font-size:15px;line-height:10px;text-align:center;text-decoration:none;font-weight:600;" target="_blank">${content.linkText}</a>
+                                                            <!--[if gte mso 9]>
+                                                          </td>
+                                                        </tr>
+                                                      </table>
+                                                      <![endif]-->
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                              </td>
+                                            </tr>
+                                            <!-- /button -->
+                                          </if>
+                                          <else>
+                                            <tr>
+                                              <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
+                                                <common-content-action-link-element content=content />
+                                              </td>
+                                            </tr>
+                                          </else>
                                         </tbody>
                                       </table>
                                     </td>
