@@ -17,6 +17,12 @@ $ const emailX = config.get('emailX');
     <common-body-wrapper-block newsletter=newsletter date=date>
       <@body>
 
+        <common-standard-announcement-block
+          newsletter=newsletter
+          date=date
+          section-name="Announcement"
+        />
+
         <common-standard-featured-content-block
           newsletter=newsletter
           date=date

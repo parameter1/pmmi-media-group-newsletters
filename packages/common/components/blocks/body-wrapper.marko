@@ -17,14 +17,6 @@ $ const { newsletter, date } = input;
           <common-standard-header-block newsletter=newsletter date=date />
         </else>
 
-        <!-- Renewal block -->
-        <if(input.renewal)>
-          <${input.renewal} />
-        </if>
-        <else>
-          <common-standard-renewal-block newsletter=newsletter date=date />
-        </else>
-
         <if(input.body)>
           <${input.body} />
         </if>
