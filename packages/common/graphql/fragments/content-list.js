@@ -27,6 +27,9 @@ fragment NewsletterContentListFragment on Content {
   primarySite {
     shortName
   }
+  primarySection {
+    name
+  }
   ... on ContentPromotion {
     body(input: { mutation: Email })
     linkText
