@@ -11,7 +11,10 @@
   "<common-standard-header-block>": {
     "template": "./header.marko"
   },
-  "<common-standard-renewal-block>": {
-    "template": "./renewal.marko"
+  "<common-standard-sponsor-block>": {
+    "template": "./sponsor.marko"
+  },
+  "<common-standard-announcement-block>": {
+    "template": "./announcement.marko"
   }
 }

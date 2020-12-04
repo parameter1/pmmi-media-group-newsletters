@@ -1,0 +1,105 @@
+import { get, getAsArray } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+
+$ const { newsletter, date } = input;
+
+$ const sectionName = defaultValue(input.sectionName, "Standard");
+$ const withImage = defaultValue(input.withImage, true);
+$ const withHeader = defaultValue(input.withHeader, false);
+
+$ const imgStyles = {
+  "display": "block",
+  "font-family": "Helvetica, Arial, sans-serif",
+  "color": "rgb(51, 51, 51)",
+  "font-size": "14px",
+  "max-height": "132px",
+  "max-width": "176px",
+  "margin": "0px auto",
+  "border-width": "0px",
+  "border-style": "solid",
+}
+
+$ const queryParams = {
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName,
+  limit: input.limit || 1,
+  skip: input.skip || 0,
+  queryFragment,
+};
+
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+  <if(nodes.length)>
+    <for|content| of=nodes>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" bgcolor="#ffffff" style="padding: 10px 0 0 0;">
+              <table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 640px;">
+                <tbody>
+                  <tr>
+                    <td align="center" valign="top">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 600px;">
+                        <tbody>
+                          <tr>
+                            <td class="mobile-padding">
+                              <!-- content left -->
+                              <table align="left" border="0" cellpadding="0" cellspacing="0" width="22%">
+                                <tbody>
+                                  <tr>
+                                    <td align="right" style="padding-right: 10px;padding-top: 8px;" valign="top">
+                                      <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                                        <marko-newsletter-imgix
+                                          src=image.src
+                                          alt=image.alt
+                                          options={ w: 60, fit: "crop" }
+                                          attrs={ height: "auto" }
+                                        />
+                                      </marko-core-obj-value>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- /content left -->
+                              <!-- content right -->
+                              <table align="right" border="0" cellpadding="0" cellspacing="0" width="75%">
+                                <tbody>
+                                  <tr>
+                                    <td style="padding-top: 16px;" valign="top">
+                                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                          <tr>
+                                            <td align="left" class="auddev-headsmall" style="color: #5d5d5d; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; padding: 0 0 6px 0;">
+                                              ${content.name}
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="left" class="auddev-bodysmall" style="color: #5d5d5d; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; padding: 0 0 8px 0;">
+                                              <a href=content.siteContext.url style="color: #5d5d5d;" target="_blank">
+                                                $!{content.teaser}
+                                              </a>
+                                              </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- /content right -->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </for>
+  </if>
+</marko-web-query>
