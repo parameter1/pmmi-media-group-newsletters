@@ -8,8 +8,47 @@ $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterName = get(newsletterConfig, "name");
 $ const newsletterDescription = get(newsletterConfig, "description");
 $ const brandName = get(newsletterConfig, "brandName");
-$ const logoSrc = get(newsletterConfig, "logoSrc");
+
 $ const displayDate = moment(date).format("LL");
+
+$ const imageSrc = input.imageSrc;
+
+$ const imageWrapperStyle = {
+  "padding": "16px 10px 16px 10px",
+  ...input.imageWrapperStyle,
+}
+
+$ const imageOptions = {
+  "w": 186,
+  ...input.imageOptions
+};
+
+$ const imageStyle = {
+  "font-family": "Helvetica, Arial, sans-serif",
+  "color": "#333333",
+  "font-size": "14px",
+  "max-width": "186px",
+  "height": "auto",
+  "width":"100%",
+  ...input.imageStyle,
+};
+
+$ const imageAttrs = {
+  "border": "0",
+  "class": "header-img-max",
+  "height": "27",
+  "width": "186",
+  "style": imageStyle,
+  ...input.imageAttrs,
+};
+
+$ const logoSrc = input.logoSrc;
+
+$ const logoWrapperStyle = {
+  "padding": "16px 10px 16px 10px",
+  "vertical-align": "middle",
+  ...input.logoWrapperStyle
+}
 
 $ const logoStyle = {
   "font-family": "Helvetica Arial, sans-serif",
@@ -18,19 +57,33 @@ $ const logoStyle = {
   "max-width": "115px",
   "height": "auto",
   "width": "100%",
-}
+  ...input.logoStyle,
+};
+
+$ const logoAttrs = {
+  "border": "0",
+  "class": "header-img-max",
+  "width": "115",
+  "style": logoStyle,
+  ...input.logoAttrs
+};
+
+$ const logoOptions = {
+  "w": 115,
+  ...input.logoOptions,
+};
 
 $ const logoLinkStyle = {
   "display": "block",
   "font-size": "0",
   "line-height": "0",
-}
+};
 
 <!-- header -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tbody>
     <tr>
-      <td align="center" bgcolor="#edeeee" style="padding: 10px 0 0 0;">
+      <td align="center" bgcolor="#edeeee" class="email-bg">
       <table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 640px;">
         <tbody>
           <tr>
@@ -39,7 +92,7 @@ $ const logoLinkStyle = {
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tbody>
                   <tr>
-                    <td style="background-color: #000000;">
+                    <td style="background-color: #000000;" class="email-bg">
                       <!-- content left -->
                       <table align="left" border="0" cellpadding="0" cellspacing="0" style="display: table-cell;min-width: 0px;max-width: 36%;">
                         <tbody>
@@ -48,8 +101,13 @@ $ const logoLinkStyle = {
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                               <tbody>
                                 <tr>
-                                  <td align="left" style="padding: 16px 10px 16px 10px;vertical-align: middle;" valign="center">
-                                    <marko-newsletter-imgix src=logoSrc options={ w: 115 } alt=brandName attrs={ border: "0", class: "header-img-max", width: "115", style: logoStyle }>
+                                  <td align="left" style=logoWrapperStyle valign="center">
+                                    <marko-newsletter-imgix
+                                      src=logoSrc
+                                      options=logoOptions
+                                      alt=brandName
+                                      attrs=logoAttrs
+                                    >
                                       <@link href=website.get("origin") attrs={ style: logoLinkStyle } target="_blank" />
                                     </marko-newsletter-imgix>
                                   </td>
@@ -69,8 +127,15 @@ $ const logoLinkStyle = {
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                               <tbody>
                                 <tr>
-                                  <td align="right" style="padding: 16px 10px 16px 10px;">
-                                    <img alt=newsletterName border="0" class="header-img-max" height="27" src="https://pmg-designer.s3.amazonaws.com/EmailHeaders/01-pw/EditorsPicks-091019.png" style="font-family: Helvetica, Arial, sans-serif; color: #333333; font-size: 14px; max-width: 186px; height: auto;width:100%;" width="186" />
+                                  <td align="right" style=imageWrapperStyle>
+                                    <marko-newsletter-imgix
+                                      src=imageSrc
+                                      options=imageOptions
+                                      alt=newsletterName
+                                      attrs=imageAttrs
+                                    >
+                                      <@link href=website.get("origin") attrs={ style: logoLinkStyle } target="_blank" />
+                                    </marko-newsletter-imgix>
                                   </td>
                                 </tr>
                               </tbody>
