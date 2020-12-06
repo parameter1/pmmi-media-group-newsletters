@@ -1,0 +1,22 @@
+$ const { newsletter, date } = data;
+
+<common-standard-layout
+  data=data
+  style-component="standard-light"
+  style-component-input={ "accent-color": "#8eae3d" }
+>
+  <@header>
+    <common-standard-header-block
+      newsletter=newsletter
+      date=date
+      logo-attrs={ "width": 115 }
+      logo-style={ "max-width": "115px" }
+      logo-options={ w: 115 }
+      logo-src="/files/base/pmmi/pfw/pfw_logo.png"
+      image-attrs={ width: 186 }
+      image-style={ "max-width": "186px" }
+      image-options={ w: 186 }
+      image-src="/files/base/pmmi/all/image/newsletters/pfw-joyces-voice-header.png"
+    />
+  </@header>
+</common-standard-layout>

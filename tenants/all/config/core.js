@@ -13,6 +13,11 @@ const config = {
     description: 'What\'s trending in the world of automation technology',
     ...brands.aw,
   },
+  'pfw-joyces-voice': {
+    name: 'Editors\' Picks',
+    description: 'Innovation and Technology for Global Food & Beverage Processing',
+    ...brands.pfw,
+  },
   'pw-editors-picks': {
     name: 'Editors\' Picks',
     description: 'Timely hand-picked favorites from <em>Packaging World</em>',
