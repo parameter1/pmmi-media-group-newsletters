@@ -1,3 +1,7 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const accentColor = defaultValue(input.accentColor, "#005bab");
+
 <style type="text/css">
   /* CLIENT-SPECIFIC STYLES */
   #outlook a { padding: 0; }
@@ -24,7 +28,7 @@
       line-height: inherit !important;
   }
   a {
-      color: #005bab;
+      color: ${accentColor};
       text-decoration: underline;
   }
 
@@ -35,6 +39,11 @@
       border-bottom: 13px solid #187ED9 !important;
       border-left: 20px solid #187ED9 !important;
   }
+
+  .bg-accent {
+    background-color: ${accentColor} !important;
+  }
+
   /* Outline styles */
   @media only screen and (max-width: 599px) {
       [class="content-table"] {
