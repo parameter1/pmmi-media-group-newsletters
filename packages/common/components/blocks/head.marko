@@ -1,13 +1,15 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 
+import StandardStyles from "../styles/standard";
 import StandardLightStyles from "../styles/standard-light";
 import StandardDarkStyles from "../styles/standard-dark";
 
 $ const styleComponents = {
+  "standard": StandardStyles,
   "standard-light": StandardLightStyles,
   "standard-dark": StandardDarkStyles,
 };
-$ const StyleComponent = styleComponents[defaultValue(input.styleComponent, "standard-light")];
+$ const StyleComponent = styleComponents[defaultValue(input.styleComponent, "standard")];
 $ const styleComponentInput = input.styleComponentInput;
 
 <head>
