@@ -13,7 +13,10 @@
   table { border-collapse: collapse !important; }
   /* Remove margin on email wrapper in Android 4.4 KitKat */
   /* See more at: https://blog.jmwhite.co.uk/2015/09/19/revealing-why-emails-appear-off-centre-in-android-4-4-kitkat/ */
-  div[style*="margin: 16px 0"] {margin:0 !important; font-size:100% !important;}
+  div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+    font-size:100% !important;
+  }
   /* Remove ios blue links */
   a[x-apple-data-detectors] {
       color: inherit !important;
@@ -23,8 +26,17 @@
       font-weight: inherit !important;
       line-height: inherit !important;
   }
-  a {color: #991a1f;text-decoration: underline;}
-  .button:hover {background-color:#B31D22!important;border-top:13px solid #B31D22!important;border-right:20px solid #B31D22!important;border-bottom:13px solid #B31D22!important;border-left:20px solid #B31D22!important;}
+  a {
+    color: #991a1f;
+    text-decoration: underline;
+  }
+  .button:hover {
+    background-color: #B31D22 !important;
+    border-top: 13px solid #B31D22 !important;
+    border-right: 20px solid #B31D22 !important;
+    border-bottom: 13px solid #B31D22 !important;
+    border-left: 20px solid #B31D22!important;
+  }
   /* Outline styles */
   @media only screen and (max-width: 599px) {
       .content-table {
