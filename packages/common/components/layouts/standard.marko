@@ -1,9 +1,12 @@
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 
 $ const { website, config } = out.global;
 $ const { newsletter, date } = input.data;
 
 $ const emailX = config.get('emailX');
+$ const nativeX = config.getAsObject("nativeX");
+$ const sections = input.sections || [];
 
 <marko-newsletter-root
   title=newsletter.name
@@ -17,71 +20,106 @@ $ const emailX = config.get('emailX');
     <common-body-wrapper-block newsletter=newsletter date=date header=input.header>
 
       <@body>
-        <common-standard-announcement-block
-          newsletter=newsletter
-          date=date
-          section-name="Announcement"
-        />
+        <if(sections.includes("Announcement"))>
+          <common-standard-announcement-block
+            newsletter=newsletter
+            date=date
+            section-name="Announcement"
+          />
+        </if>
 
-        <common-standard-featured-content-block
-          newsletter=newsletter
-          date=date
-          section-name="Featured"
-        />
+        <if(sections.includes("Featured"))>
+          <common-standard-featured-content-block
+            newsletter=newsletter
+            date=date
+            section-name="Featured"
+          />
+        </if>
 
-        <!-- Sponsor -->
-        <common-standard-sponsor-block
-          newsletter=newsletter
-          date=date
-          section-name="Sponsor"
-        />
+        <html-comment> Advetiser Logo </html-comment>
+        <html-comment> /Advetiser Logo </html-comment>
 
-        <!-- Ad Slot 1 -->
+        <html-comment> Articles </html-comment>
 
-        <!-- Ad Slot 2 -->
+        <html-comment> Ad 1 begin </html-comment>
+        <html-comment> Ad 1 end </html-comment>
 
-        <!-- Standard List Wrapper -->
-        <common-standard-content-list-block
-          newsletter=newsletter
-          date=date
-          section-name="Standard"
-          limit=2
-          skip=0
-        />
+        <html-comment> Ad 2 begin </html-comment>
+        <html-comment> Ad 2 end </html-comment>
 
-        <!-- Ad Slot 3 -->
+        <if(sections.includes("Standard"))>
+          <!-- Standard List Wrapper -->
+          <common-standard-content-list-block
+            newsletter=newsletter
+            date=date
+            section-name="Standard"
+            limit=2
+            skip=0
+          />
+        </if>
 
-        <!-- Ad Slot 4 -->
+        <html-comment> Ad 3 begin </html-comment>
+        <html-comment> Ad 3 end </html-comment>
 
-        <!-- Standard List Wrapper -->
-        <common-standard-content-list-block
-          newsletter=newsletter
-          date=date
-          section-name="Standard"
-          limit=2
-          skip=2
-        />
+        <html-comment> Ad 4 begin </html-comment>
+        <html-comment> Ad 4 end </html-comment>
 
-        <!-- Ad Slot 5 -->
+        <if(sections.includes("Standard"))>
+          <!-- Standard List Wrapper -->
+          <common-standard-content-list-block
+            newsletter=newsletter
+            date=date
+            section-name="Standard"
+            limit=2
+            skip=2
+          />
+        </if>
 
-        <!-- Standard List Wrapper -->
-        <common-standard-content-list-block
-          newsletter=newsletter
-          date=date
-          section-name="Standard"
-          limit=1
-          skip=4
-        />
+        <html-comment> Ad 5 begin </html-comment>
+        <html-comment> Ad 5 end </html-comment>
 
-        <!-- What's Trending -->
-        <common-standard-trending-list-block
-          newsletter=newsletter
-          date=date
-          section-name="What's Trending"
-          limit=2
-        />
+        <if(sections.includes("Standard"))>
+          <!-- Standard List Wrapper -->
+          <common-standard-content-list-block
+            newsletter=newsletter
+            date=date
+            section-name="Standard"
+            limit=1
+            skip=4
+          />
+        </if>
 
-        <!-- PE Announcement -->
+        <if(sections.includes("Products"))>
+          <!-- Products -->
+          <common-standard-trending-list-block
+            newsletter=newsletter
+            date=date
+            section-name="Products"
+            limit=4
+          />
+        </if>
+
+        <if(sections.includes("Editor's Picks"))>
+          <!-- Editor's Picks -->
+          <common-standard-trending-list-block
+            newsletter=newsletter
+            date=date
+            section-name="Editor's Picks"
+            limit=4
+          />
+        </if>
+
+        <if(sections.includes("What's Trending"))>
+          <!-- What's Trending -->
+          <common-standard-trending-list-block
+            newsletter=newsletter
+            date=date
+            section-name="What's Trending"
+            limit=2
+          />
+        </if>
+
+        <html-comment> PE Announcement </html-comment>
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
           <tbody>
             <tr>
@@ -118,7 +156,7 @@ $ const emailX = config.get('emailX');
             </tr>
           </tbody>
         </table>
-        <!-- /PE Announcement -->
+        <html-comment> /PE Announcement </html-comment>
 
       </@body>
     </common-body-wrapper-block>
