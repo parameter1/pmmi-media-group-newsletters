@@ -18,10 +18,10 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "@base-cms/marko-compiler": "^1.37.0",
+    "@parameter1/base-cms-marko-compiler": "^2.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
-    "lerna": "^3.16.4"
+    "lerna": "^3.22.1"
   }
 }

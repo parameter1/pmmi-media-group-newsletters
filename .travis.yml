@@ -26,13 +26,13 @@ jobs:
 
     - stage: production-started
       name: Deployment Started
-      script: npx @base-cms/newsletter-deployment-tool notify-started
+      script: npx @parameter1/base-cms-newsletter-deployment-tool notify-started
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: staging-started
       name: Deployment Started
-      script: npx @base-cms/newsletter-deployment-tool notify-started
+      script: npx @parameter1/base-cms-newsletter-deployment-tool notify-started
       install: skip
       env: [ENVIRONMENT=staging]
 
@@ -42,13 +42,13 @@ jobs:
 
     - stage: production
       name: All/Multi-site
-      script: npx @base-cms/newsletter-deployment-tool deploy all newsletters
+      script: npx @parameter1/base-cms-newsletter-deployment-tool deploy all newsletters
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: staging
       name: All/Multi-site
-      script: npx @base-cms/newsletter-deployment-tool deploy all leonis-newsletters
+      script: npx @parameter1/base-cms-newsletter-deployment-tool deploy all leonis-newsletters
       install: skip
       env: [ENVIRONMENT=staging]
 
@@ -58,12 +58,12 @@ jobs:
 
     - stage: production-finished
       name: Deployment Finished
-      script: npx @base-cms/newsletter-deployment-tool notify-finished
+      script: npx @parameter1/base-cms-newsletter-deployment-tool notify-finished
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: staging-finished
       name: Deployment Finished
-      script: npx @base-cms/newsletter-deployment-tool notify-finished
+      script: npx @parameter1/base-cms-newsletter-deployment-tool notify-finished
       install: skip
       env: [ENVIRONMENT=staging]
