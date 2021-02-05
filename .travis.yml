@@ -5,7 +5,7 @@ cache: yarn
 _production-job: &production-job
   stage: production
   name: SERVICE_NAME
-  script: npx @base-cms/newsletter-deployment-tool deploy TENANT_KEY NAMESPACE
+  script: npx @parameter1/base-cms-newsletter-deployment-tool deploy TENANT_KEY NAMESPACE
   install: skip
   env:
     - "ENVIRONMENT=production"
@@ -28,7 +28,7 @@ jobs:
     - <<: *production-job
       stage: production-started
       name: Deployment Started
-      script: npx @base-cms/newsletter-deployment-tool notify-started
+      script: npx @parameter1/base-cms-newsletter-deployment-tool notify-started
 
     #############################
     # vvv ADD SERVICES HERE vvv #
@@ -36,7 +36,7 @@ jobs:
 
     - <<: *production-job
       name: All/Multi-site
-      script: npx @base-cms/newsletter-deployment-tool deploy all newsletters
+      script: npx @parameter1/base-cms-newsletter-deployment-tool deploy all newsletters
 
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #
@@ -45,4 +45,4 @@ jobs:
     - <<: *production-job
       stage: production-finished
       name: Deployment Finished
-      script: npx @base-cms/newsletter-deployment-tool notify-finished
+      script: npx @parameter1/base-cms-newsletter-deployment-tool notify-finished
