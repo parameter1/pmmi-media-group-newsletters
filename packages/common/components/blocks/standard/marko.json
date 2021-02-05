@@ -2,6 +2,9 @@
   "<common-standard-content-list-block>": {
     "template": "./content-list.marko"
   },
+  "<common-standard-content-list-item-block>": {
+    "template": "./content-list-item.marko"
+  },
   "<common-standard-trending-list-block>": {
     "template": "./trending-list.marko"
   },
