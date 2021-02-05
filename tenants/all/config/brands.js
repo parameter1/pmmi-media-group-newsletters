@@ -4,10 +4,20 @@ module.exports = {
     logoSrc: '/files/base/pmmi/aw/aw_logo.png',
     subscribeLink: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew',
   },
+  hcp: {
+    brandName: 'Healthcare Packaging',
+    logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-logo.png',
+    subscribeLink: 'https://pmmi.dragonforms.com/loading.do?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=HCPnew',
+  },
+  oem: {
+    brandName: 'OEM',
+    logoSrc: '/files/base/pmmi/all/image/newsletters/oem-logo.png',
+    subscribeLink: 'https://pmmi.dragonforms.com/init.do?pk=OEMMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=OEMnew',
+  },
   pfw: {
     brandName: 'Pro Food World',
     logoSrc: '/files/base/pmmi/pfw/pfw_logo.png',
-    subscribeLink: 'https://pmmi.dragonforms.com/loading.do?r=&pk=PFW_BANNER_NL&utm_source=Newsletters&utm_medium=PFW%20Joyces%20Voice%20NL&utm_term=20200818&oly_enc_id=&omedasite=PPFWrenew',
+    subscribeLink: 'https://pmmi.dragonforms.com/loading.do?r=&pk=PFW_BANNER_NL&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPFWrenew',
   },
   pw: {
     brandName: 'Packaging World',
