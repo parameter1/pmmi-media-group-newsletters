@@ -1,0 +1,23 @@
+$ const { newsletter, date } = data;
+
+<common-standard-layout
+  data=data
+  style-component="standard"
+  style-component-input={ "accent-color": "#093b21" }
+  sections=["Announcement", "Featured", "Standard", "What's Trending"]
+>
+  <@header>
+    <common-standard-header-block
+      newsletter=newsletter
+      date=date
+      logo-attrs={ "width": 250 }
+      logo-style={ "max-width": "250px" }
+      logo-options={ w: 250 }
+      logo-src="/files/base/pmmi/all/image/newsletters/pw-contract-packaging-header.png"
+      image-attrs={ width: 169 }
+      image-style={ "max-width": "169px" }
+      image-options={ w: 169 }
+      image-src="/files/base/pmmi/all/image/newsletters/cpa-annemariemohan.png"
+    />
+  </@header>
+</common-standard-layout>
