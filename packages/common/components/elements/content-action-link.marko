@@ -7,7 +7,7 @@ $ const contentTypeActions = {
   'video': 'Watch',
   'document': 'Download',
   'whitepaper': 'Download',
-  'promotion': 'Learn More',
+  'promotion': content.linkText || 'Learn More',
 }
 
 $ const contentAction = contentTypeActions[content.type] || contentTypeActions.default;
