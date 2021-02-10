@@ -20,14 +20,18 @@ $ const sections = input.sections || [];
     <common-body-wrapper-block newsletter=newsletter date=date header=input.header>
 
       <@body>
-        <if(sections.includes("Announcement"))>
-          <common-standard-announcement-block
-            newsletter=newsletter
-            date=date
-            section-name="Announcement"
-          />
-        </if>
+        <html-comment> ........... </html-comment>
+        <html-comment> ............... </html-comment>
+        <html-comment> .................... </html-comment>
+        <html-comment> .......................... </html-comment>
+        <html-comment> INSERT AUDIENCE BANNER HERE </html-comment>
+        <html-comment> .......................... </html-comment>
+        <html-comment> .................... </html-comment>
+        <html-comment> ............... </html-comment>
+        <html-comment> ........... </html-comment>
 
+
+        <html-comment> Main Feature </html-comment>
         <if(sections.includes("Featured"))>
           <common-standard-featured-content-block
             newsletter=newsletter
@@ -35,6 +39,8 @@ $ const sections = input.sections || [];
             section-name="Featured"
           />
         </if>
+        <html-comment> End Main Feature </html-comment>
+
 
         <html-comment> Advetiser Logo </html-comment>
         <html-comment> /Advetiser Logo </html-comment>
