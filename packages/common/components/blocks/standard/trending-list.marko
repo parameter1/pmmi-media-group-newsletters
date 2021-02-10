@@ -116,6 +116,13 @@ $ const queryParams = {
                                 <td valign="top">
                                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tbody>
+                                      <if(content.type === 'promotion' && content.company.name)>
+                                        <tr>
+                                          <td align="left" style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; padding: 0 0 8px 0;">
+                                            ${content.company.name}
+                                          </td>
+                                        </tr>
+                                      </if>
                                       <tr>
                                         <td align="left" style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 28px;">
                                           <a href=content.siteContext.url style="color: #3c3c3c; text-decoration: none;" target="_blank">
