@@ -4,17 +4,23 @@ import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/co
 $ const { website, config } = out.global;
 $ const { newsletter, date } = input.data;
 
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const newsletterName = get(newsletterConfig, "name");
+$ const newsletterDescription = get(newsletterConfig, "description");
+$ const brandName = get(newsletterConfig, "brandName");
+$ const title = `${brandName} | ${newsletterName}`;
+
 $ const emailX = config.get('emailX');
 $ const nativeX = config.getAsObject("nativeX");
 $ const sections = input.sections || [];
 
 <marko-newsletter-root
-  title=newsletter.name
-  description=newsletter.description
+  title=title
+  description=newsletterDescription
   date=date
 >
   <@head>
-    <common-head-block style-component=input.styleComponent style-component-input=input.styleComponentInput />
+    <common-head-block title=title style-component=input.styleComponent style-component-input=input.styleComponentInput />
   </@head>
   <@body class="email-bg" style="margin: 0 !important; padding: 0 !important;background-color: #edeeee;">
     <common-body-wrapper-block newsletter=newsletter date=date header=input.header>
