@@ -92,12 +92,12 @@ const config = {
     ...brands.pw,
   },
   'pw-new-issue-alert': {
-    name: 'Machine Automation Insights',
-    description: 'Hot off the presses',
+    name: 'New Issue Alert',
+    description: 'Hot off the presses&emsp;&emsp;|&emsp;&emsp;<a href="#" style="color: #fff; text-decoration:underline;" target="_blank">View Digital Edition</a>',
     ...brands.pw,
   },
   'pw-new-machinery': {
-    name: 'Machine Automation Insights',
+    name: 'New Machinery',
     description: 'Get a glimpse at next gen equipment',
     ...brands.pw,
   },
