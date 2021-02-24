@@ -77,7 +77,7 @@ const config = {
     ...brands.pw,
   },
   'pw-packaging-insights': {
-    name: 'Contract Packaging',
+    name: 'Packaging Insights',
     description: 'Tips, Ideas + Best Practices',
     ...brands.pw,
   },
