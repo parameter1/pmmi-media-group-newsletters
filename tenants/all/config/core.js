@@ -23,7 +23,7 @@ const config = {
   },
   'aw-factory-automation': {
     name: 'Factory Automation',
-    description: 'News from the discrete manufacturing industriesaw-',
+    description: 'News from the discrete manufacturing industries',
     ...brands.aw,
   },
   'aw-food-bev-pharma': {
