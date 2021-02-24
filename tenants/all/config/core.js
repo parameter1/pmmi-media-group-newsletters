@@ -23,7 +23,7 @@ const config = {
   },
   'aw-factory-automation': {
     name: 'Factory Automation',
-    description: 'News from the discrete manufacturing industriesaw-',
+    description: 'News from the discrete manufacturing industries',
     ...brands.aw,
   },
   'aw-food-bev-pharma': {
@@ -54,7 +54,7 @@ const config = {
   'oem-shop-talk': {
     name: 'Shop Talk',
     description: 'New trends and conversations for packaging and processing machine builders',
-    ...brands.pfw,
+    ...brands.oem,
   },
   'pfw-joyces-voice': {
     name: 'Joyce\'s Voice',
@@ -72,12 +72,12 @@ const config = {
     ...brands.pw,
   },
   'pw-end-of-line-strategies': {
-    name: 'End of Line Strategies',
+    name: 'End-of-Line Strategies',
     description: 'Life at the intersection of packaging and logistics',
     ...brands.pw,
   },
   'pw-packaging-insights': {
-    name: 'Contract Packaging',
+    name: 'Packaging Insights',
     description: 'Tips, Ideas + Best Practices',
     ...brands.pw,
   },
