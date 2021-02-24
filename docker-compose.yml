@@ -59,5 +59,20 @@ services:
       - "22095:80"
       - "32095:32095"
 
+  mundo:
+    <<: *node
+    <<: *newsletter-cmd
+    working_dir: /root/tenants/mundo
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 22096
+      LIVERELOAD_PORT: 32096
+      TENANT_KEY: pmmi_mundo
+    ports:
+      - "22096:80"
+      - "32096:32096"
+
 volumes:
   yarn-cache: {}
