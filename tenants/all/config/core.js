@@ -54,7 +54,7 @@ const config = {
   'oem-shop-talk': {
     name: 'Shop Talk',
     description: 'New trends and conversations for packaging and processing machine builders',
-    ...brands.pfw,
+    ...brands.oem,
   },
   'pfw-joyces-voice': {
     name: 'Joyce\'s Voice',
