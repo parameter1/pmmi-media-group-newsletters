@@ -38,6 +38,10 @@ jobs:
       name: All/Multi-site
       script: npx @parameter1/base-cms-newsletter-deployment-tool deploy all newsletters
 
+    - <<: *production-job
+      name: mundo
+      script: npx @parameter1/base-cms-newsletter-deployment-tool deploy mundo newsletters
+
     #############################
     # ^^^ ADD SERVICES HERE ^^^ #
     #############################
