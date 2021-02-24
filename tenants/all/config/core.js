@@ -72,7 +72,7 @@ const config = {
     ...brands.pw,
   },
   'pw-end-of-line-strategies': {
-    name: 'End of Line Strategies',
+    name: 'End-of-Line Strategies',
     description: 'Life at the intersection of packaging and logistics',
     ...brands.pw,
   },
