@@ -8,8 +8,8 @@
   "<common-standard-trending-list-block>": {
     "template": "./trending-list.marko"
   },
-  "<common-standard-featured-content-block>": {
-    "template": "./featured-content.marko"
+  "<common-standard-feature-content-block>": {
+    "template": "./feature-content.marko"
   },
   "<common-standard-header-block>": {
     "template": "./header.marko"
