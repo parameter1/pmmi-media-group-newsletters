@@ -10,5 +10,8 @@
   },
   "<common-numeric-row-four-block>": {
     "template": "./row-four.marko"
+  },
+  "<common-numeric-header-block>": {
+    "template": "./header.marko"
   }
 }
