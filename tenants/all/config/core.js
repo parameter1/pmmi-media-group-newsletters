@@ -46,9 +46,24 @@ const config = {
     description: 'The latest innovations in automation products',
     ...brands.aw,
   },
+  'hcp-logistics-life-sciences': {
+    name: 'Logistics for the Life Sciences',
+    description: 'Your news source for GDPs, regulatory issues and temperature-controlled transportation',
+    ...brands.hcp,
+  },
   'hcp-newsbrief': {
     name: 'Newsbrief',
     description: 'An editor-curated selection of life sciences packaging news and trends',
+    ...brands.hcp,
+  },
+  'hcp-serialization-countdown': {
+    name: 'Serialization Countdown',
+    description: 'Regulatory compliance for product traceability',
+    ...brands.hcp,
+  },
+  'hcp-quick-hits': {
+    name: 'Quick Hits',
+    description: 'Your Healthcare Industry Week in Review',
     ...brands.hcp,
   },
   'oem-shop-talk': {
