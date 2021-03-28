@@ -1,5 +1,8 @@
 {
   "<common-content-action-link-element>": {
     "template": "./content-action-link.marko"
+  },
+  "<common-number-element>": {
+    "template": "./number.marko"
   }
 }

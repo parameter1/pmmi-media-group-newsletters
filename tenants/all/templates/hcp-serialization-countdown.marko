@@ -1,0 +1,22 @@
+$ const { newsletter, date } = data;
+
+<common-numeric-layout
+  data=data
+  style-component="numeric"
+  style-component-input={ "accent-color": "#5c677d" }
+  image-path="/files/base/pmmi/all/image/newsletters/hcp/serialization-countdown"
+>
+  <@header>
+    <common-numeric-header-block
+      newsletter=newsletter
+      date=date
+      image-attrs={ "width": 800 }
+      image-style={ "max-width": "800px" }
+      image-options={ w: 800 }
+      image-src="/files/base/pmmi/all/image/newsletters/hcp/serialization-countdown/header.png"
+      primary-background-color="#283036"
+      secondary-background-color="#afd3e3"
+      secondary-font-size="14px"
+    />
+  </@header>
+</common-numeric-layout>

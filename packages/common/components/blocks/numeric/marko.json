@@ -1,0 +1,17 @@
+{
+  "<common-numeric-row-one-block>": {
+    "template": "./row-one.marko"
+  },
+  "<common-numeric-row-two-block>": {
+    "template": "./row-two.marko"
+  },
+  "<common-numeric-row-three-block>": {
+    "template": "./row-three.marko"
+  },
+  "<common-numeric-row-four-block>": {
+    "template": "./row-four.marko"
+  },
+  "<common-numeric-header-block>": {
+    "template": "./header.marko"
+  }
+}

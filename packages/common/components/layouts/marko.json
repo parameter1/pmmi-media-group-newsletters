@@ -1,4 +1,7 @@
 {
+  "<common-numeric-layout>": {
+    "template": "./numeric.marko"
+  },
   "<common-standard-layout>": {
     "template": "./standard.marko"
   }
