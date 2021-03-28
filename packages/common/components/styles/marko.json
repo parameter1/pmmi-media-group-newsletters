@@ -1,4 +1,7 @@
 {
+  "<common-numeric-styles>": {
+    "template": "./numeric.marko"
+  },
   "<common-standard-styles>": {
     "template": "./standard.marko"
   },
