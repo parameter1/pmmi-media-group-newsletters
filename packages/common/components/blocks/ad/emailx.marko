@@ -23,6 +23,34 @@ $ const classNames = [`email-x-${alias}-${name}`, input.class];
       width: ad.width,
       height: ad.height,
     };
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td style="padding: 20px 0 0 0;" bgcolor="#ffffff" align="center" class="mobile-padding">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td align="center">
+                <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width:600px;">
+                  <tr>
+                    <td align="center" valign="top" style="border-top: 1px solid #cdcdcd;padding-top: 20px;">
+                      <!-- content -->
+                      <table border="0" cellpadding="0" cellspacing="0" style="width:600px;" class="content-table">
+                        <tr>
+                          <td style="padding: 0 0 20px 0;" align="left">
+                            <marko-core-img ...input.image src=imageSrc attrs=imageAttrs>
+                              <@link target="_blank" ...input.link href=href />
+                            </marko-core-img>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </if>
   <else>
     <${input.whenEmpty} />

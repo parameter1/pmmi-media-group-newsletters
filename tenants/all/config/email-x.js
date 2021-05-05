@@ -5,7 +5,7 @@ const config = new EmailXConfiguration(process.env.EMAILX_SERVE_URI || 'https://
 config
   .setAdUnits('pw-editors-picks', [
     {
-      name: 'slot-1',
+      name: 'bottom-audience-banner',
       id: '600dacd9b1fcca1d311ba4e5',
       width: 600,
       height: 100,
