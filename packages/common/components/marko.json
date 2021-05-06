@@ -6,6 +6,7 @@
     "./styles/marko.json"
   ],
   "<native-x-fetch>": {
+    "template": "./native-x-fetch.marko",
     "@uri": "string",
     "@placement-id": "string",
     "@date": "date",
