@@ -2,6 +2,9 @@
   "<common-ad-emailx-block>": {
     "template": "./emailx.marko"
   },
+  "<common-ad-nativex-block>": {
+    "template": "./nativex.marko"
+  },
   "<common-ad-wrapper-block>": {
     "template": "./wrapper.marko"
   }
