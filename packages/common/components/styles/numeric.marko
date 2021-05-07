@@ -1,98 +1,59 @@
-import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
-
-$ const accentColor = defaultValue(input.accentColor, "#005bab");
-$ const buttonHoverColor = "#187ED9"; /* #b31d22 */
-
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-scheme" content="light dark">
 <style type="text/css">
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  table,
-  td,
-  tr {
-    vertical-align: top;
-    border-collapse: collapse;
-  }
-  * {
-    line-height: inherit;
-  }
-  a[x-apple-data-detectors=true] {
+  /* CLIENT-SPECIFIC STYLES */
+  #outlook a { padding: 0; }
+  body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+  img { -ms-interpolation-mode:bicubic; }
+  /* RESET STYLES */
+  body { height:100% !important; margin: 0 !important; padding: 0 !important; }
+  img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+
+  /* Remove margin on email wrapper in Android 4.4 KitKat */
+  /* See more at: https://blog.jmwhite.co.uk/2015/09/19/revealing-why-emails-appear-off-centre-in-android-4-4-kitkat/ */
+  div[style*="margin: 16px 0"] {margin:0 !important; font-size:100% !important;}
+  /* Remove ios blue links */
+  a[x-apple-data-detectors] {
     color: inherit !important;
     text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
   }
-  .ie-browser table {
-    table-layout: fixed;
+  :root {
+    color-scheme: light dark;
+    supported-color-scheme:light dark;
   }
-  [owa] .img-container div,
-  [owa] .img-container button {
-    display: block !important;
+
+  @media (prefers-color-scheme:dark) {
+    .header {background-color: #20242b!important;}
+    .body-bg {background-color: #282c34!important;}
+    .body-text {color:#a4aab7!important;}
+    .email-bg {background-color:#20242b!important;}
+    .img-mask {border: none!important;}
+    a {color:#a4aab7!important;}
   }
-  [owa] .fullwidth button {
-    width: 100% !important;
-  }
-  [owa] .block-grid .col {
-    display: table-cell;
-    float: none !important;
-    vertical-align: top;
-  }
-  .ie-browser .block-grid,
-  .ie-browser .num12,
-  [owa] .num12,
-  [owa] .block-grid {
-    width: 800px !important;
-  }
-  .ie-browser .mixed-two-up .num4,
-  [owa] .mixed-two-up .num4 {
-    width: 264px !important;
-  }
-  .ie-browser .mixed-two-up .num8,
-  [owa] .mixed-two-up .num8 {
-    width: 528px !important;
-  }
-  .ie-browser .block-grid.two-up .col,
-  [owa] .block-grid.two-up .col {
-    width: 396px !important;
-  }
-  .ie-browser .block-grid.three-up .col,
-  [owa] .block-grid.three-up .col {
-    width: 396px !important;
-  }
-  .ie-browser .block-grid.four-up .col [owa] .block-grid.four-up .col {
-    width: 198px !important;
-  }
-  .ie-browser .block-grid.five-up .col [owa] .block-grid.five-up .col {
-    width: 160px !important;
-  }
-  .ie-browser .block-grid.six-up .col,
-  [owa] .block-grid.six-up .col {
-    width: 133px !important;
-  }
-  .ie-browser .block-grid.seven-up .col,
-  [owa] .block-grid.seven-up .col {
-    width: 114px !important;
-  }
-  .ie-browser .block-grid.eight-up .col,
-  [owa] .block-grid.eight-up .col {
-    width: 100px !important;
-  }
-  .ie-browser .block-grid.nine-up .col,
-  [owa] .block-grid.nine-up .col {
-    width: 88px !important;
-  }
-  .ie-browser .block-grid.ten-up .col,
-  [owa] .block-grid.ten-up .col {
-    width: 60px !important;
-  }
-  .ie-browser .block-grid.eleven-up .col,
-  [owa] .block-grid.eleven-up .col {
-    width: 54px !important;
-  }
-  .ie-browser .block-grid.twelve-up .col,
-  [owa] .block-grid.twelve-up .col {
-    width: 50px !important;
-  }
-  .header-description {
-    background-color: #afd3e3;
-  }
+
+  [data-ogsc] .header {background-color: #20242b !important; }
+  [data-ogsc] .body-bg {background-color: #282c34 !important; }
+  [data-ogsc] .body-text {background-color: #a4aab7 !important; }
+  [data-ogsc] .email-bg {background-color:#20242b!important;}
+  [data-ogsc] .img-mask {border: none!important;}
+  [data-ogsc] a {color:#a4aab7!important;}
 </style>
+<html-comment>
+<!--[if (gte mso 9)|(IE)]>
+  <style type="text/css">
+      table {
+          border-collapse: collapse;
+          border-spacing: 0; }
+  </style>
+  <![endif]-->
+  <!--[if gte mso 9]><xml>
+  <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+</xml><![endif]-->
+</html-comment>
