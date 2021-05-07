@@ -1,4 +1,7 @@
 {
+  "<common-numeric-footer-block>": {
+    "template": "./footer.marko"
+  },
   "<common-numeric-row-one-block>": {
     "template": "./row-one.marko"
   },
