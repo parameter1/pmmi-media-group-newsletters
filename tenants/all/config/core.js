@@ -64,6 +64,7 @@ const config = {
   'hcp-quick-hits': {
     name: 'Quick Hits',
     description: 'Your Healthcare Industry Week in Review',
+    seeAllLink: 'https://www.healthcarepackaging.com/quick-hits',
     ...brands.hcp,
   },
   'oem-shop-talk': {
