@@ -17,12 +17,11 @@ $ const contentTypeActions = {
 $ const imgStyles = {
   "display": "block",
   "font-family": "Helvetica, Arial, sans-serif",
-  "color": "rgb(51, 51, 51)",
+  "color": "#333333",
   "font-size": "14px",
   "max-width": "212px",
   "width": "100%",
-  "border-width": "0px",
-  "border-style": "solid",
+  "max-height": "159px",
 }
 
 $ const queryParams = {
@@ -40,93 +39,80 @@ $ const queryParams = {
       <!-- <common-list-header-element title=sectionName /> -->
     </if>
     <for|content| of=nodes>
+      <!-- Main Feature -->
       <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tbody>
-          <tr>
-            <td align="center" bgcolor="#ffffff" class="mobile-padding">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 600px;">
-              <tbody>
-                <tr>
-                  <td align="center" dir="rtl" style="padding: 24px 0 0 0;direction: rtl;" valign="top" width="100%">
-                    <!-- Two column -->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tbody>
-                        <tr>
-                          <!-- content right -->
-                          <td class="content-table-flex-main" valign="top" width="35%">
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                              <tbody>
+        <tr>
+          <td bgcolor="#ffffff" style="background-color: #ffffff;" align="center" class="mobile-padding">
+            <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
+              <tr>
+                <td dir="rtl" width="100%" style="padding: 24px 0 0 0;direction:rtl;" align="center" valign="top">
+                  <!-- Two column -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:left;">
+                    <tr>
+                      <!-- content right -->
+                      <td class="content-table-flex-main" style="width:35%;display:inline-block;" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
+                          <tr>
+                            <td style="direction:ltr;padding-bottom:16px;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tr>
-                                  <td dir="ltr" style="direction: ltr;padding-bottom: 16px;" valign="top">
-                                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <tbody>
-                                      <tr>
-                                        <td align="center" class="img-mask" style="border: 1px solid #e6e6e7;width: 212px;height: 159px;text-align: center;">
-                                          <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
-                                            <marko-newsletter-imgix
-                                              src=image.src
-                                              alt=image.alt
-                                              options={ w: 225, h: 150, fit: "crop" }
-                                              class="img-max"
-                                              attrs={ style: imgStyles }
-                                            >
-                                              <@link href=content.siteContext.url target="_blank" />
-                                            </marko-newsletter-imgix>
-                                          </marko-core-obj-value>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+                                  <td style="border: 1px solid #e6e6e7;width: 212px;height: 159px;text-align:center;" align="center" class="img-mask">
+                                    <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                                      <marko-newsletter-imgix
+                                        src=image.src
+                                        alt=image.alt
+                                        options={ w: 212, h: 159, fit: "crop" }
+                                        class="img-max"
+                                        attrs={ style: imgStyles, border: 0 }
+                                      >
+                                        <@link href=content.siteContext.url target="_blank" />
+                                      </marko-newsletter-imgix>
+                                    </marko-core-obj-value>
                                   </td>
                                 </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                          <!-- /content right -->
-                          <!-- content left -->
-                          <td class="content-table-flex-main" valign="top" width="62%">
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                              <tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- /content right -->
+                      <!-- content left -->
+                      <td class="content-table-flex-main" style="width:62%;display:inline-block;" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td style="direction:ltr;padding-right:10px;" class="mobilepadding-rt" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tr>
-                                  <td class="mobilepadding-rt" dir="ltr" style="direction:ltr;" valign="top">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                      <tbody>
-                                        <tr>
-                                          <td align="left" class="mobileheader" style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 22px; font-weight: bold; line-height: 30px;">
-                                            <a href=content.siteContext.url style="color: #3c3c3c; text-decoration: none;" target="_blank">
-                                              ${content.name}
-                                            </a>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td align="left" class="body-text" style="color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; padding: 0 0 12px 0;">
-                                            ${content.teaser}
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
-                                            <common-content-action-link-element content=content />
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
+                                  <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 22px; font-weight: bold; line-height: 30px;" align="left" class="mobileheader">
+                                      <a href=content.siteContext.url target="_blank" style="color: #3c3c3c; text-decoration: none;">
+                                      ${content.name}
+                                      </a>
                                   </td>
                                 </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                          <!-- /content left -->
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- /Two column -->
-                  </td>
-                </tr>
-              </tbody>
+                                <tr>
+                                  <td style="color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; padding: 0 0 12px 0;" align="left" class="body-text">
+                                    ${content.teaser}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;" align="left">
+                                    <common-content-action-link-element content=content />
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- /content left -->
+                    </tr>
+                  </table>
+                  <!-- /Two column -->
+                </td>
+              </tr>
             </table>
-            </td>
-          </tr>
-        </tbody>
+          </td>
+        </tr>
       </table>
     </for>
   </if>
