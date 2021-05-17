@@ -4,11 +4,5 @@
   },
   "<common-standard-styles>": {
     "template": "./standard.marko"
-  },
-  "<common-standard-dark-styles>": {
-    "template": "./standard-dark.marko"
-  },
-  "<common-standard-light-styles>": {
-    "template": "./standard-light.marko"
   }
 }

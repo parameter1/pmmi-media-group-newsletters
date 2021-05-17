@@ -13,8 +13,9 @@ $ const imgStyles = {
   "display": "block",
   "padding": "0px 0px 16px",
   "font-family": "Helvetica, Arial, sans-serif",
-  "color": "rgb(51, 51, 51)",
+  "color": "#333333",
   "font-size": "14px",
+  "height": "112px",
   "width": "112px",
   "border-width": "0px",
   "border-style": "solid",
@@ -34,132 +35,130 @@ $ const queryParams = {
     <if(withHeader)>
       <!-- <common-list-header-element title=sectionName /> -->
     </if>
+    <!-- Announcement -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tbody>
-        <tr>
-          <td align="center" bgcolor="#ffffff" class="mobile-padding" style="padding: 32px 0 0 0;">
-          <table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 600px;">
-            <tbody>
+      <tr>
+        <td style="padding: 32px 0 0 0;background-color: #ffffff;" bgcolor="#ffffff" align="center" class="mobile-padding">
+          <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
+            <tr>
+              <td>
+                <!-- content left -->
+                <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="28%" align="left">
+                  <tr>
+                    <td>
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                          <td style="color: #10327e; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px; padding: 0 8px 0 0;text-align: left" align="left" class="body-text">
+                            ${sectionName}
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <!-- /content left -->
+                <!-- content right -->
+                <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="72%" align="right">
+                  <tr>
+                    <td>
+                      <!-- content -->
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                          <td align="center" style="height: 1px; line-height: 1px;">
+                            <hr height="2" style="height: 1px; border: none; color: #cdcdcd; background-color: #cdcdcd;">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <!-- /content right -->
+              </td>
+            </tr>
+            <tr>
+              <td style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 11px; font-weight: bold; padding: 4px 0 16px 0;" align="left" class="body-text">
+                ${sectionDescription}
+              </td>
+            </tr>
+            <for|content| of=nodes>
+              <!-- First Announcement -->
               <tr>
-                <td>
-                  <!-- content left -->
-                  <table align="left" border="0" cellpadding="0" cellspacing="0" class="content-table" width="28%">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tbody>
-                              <tr>
-                                <td align="left" class="body-text" style="color: #10327e; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px; padding: 0 8px 0 0;text-align: left">${sectionName}</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <!-- /content left -->
-                  <!-- content right -->
-                  <table align="right" border="0" cellpadding="0" cellspacing="0" class="content-table" width="72%">
-                    <tbody>
-                      <tr>
-                        <td><!-- content -->
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tbody>
-                            <tr>
-                              <td align="center" style="height: 1px; line-height: 1px;">
-                              <hr height="2" style="height: 1px; border: none; color: #cdcdcd; background-color: #cdcdcd;" /></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <!-- /content right -->
-                </td>
-              </tr>
-              <tr>
-                <td align="left" style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 11px; font-weight: bold; padding: 4px 0 16px 0;">${sectionDescription}</td>
-              </tr>
-              <for|content| of=nodes>
-                <tr>
-                  <td align="center" valign="top"><!-- Two column -->
+                <td align="center" valign="top">
+                  <!-- Two column -->
                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <!-- content left -->
-                          <table align="left" border="0" cellpadding="0" cellspacing="0" class="content-table" width="22%">
-                            <tbody>
-                              <tr>
-                                <td align="left" valign="top">
-                                  <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
-                                    <marko-newsletter-imgix
-                                      src=image.src
-                                      alt=image.alt
-                                      options={ w: 115 }
-                                      attrs={ style: imgStyles }
-                                    >
-                                      <@link href=content.siteContext.url target="_blank" />
-                                    </marko-newsletter-imgix>
-                                  </marko-core-obj-value>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <!-- /content left -->
-                          <!-- content right -->
-                          <table align="right" border="0" cellpadding="0" cellspacing="0" class="content-table" width="76%">
-                            <tbody>
-                              <tr>
-                                <td valign="top">
-                                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <tbody>
-                                      $ const companyName = get(content, "company.name");
-                                      <if(content.type === 'promotion' && companyName)>
-                                        <tr>
-                                          <td align="left" style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; padding: 0 0 8px 0;">
-                                            Presented by ${companyName}
-                                          </td>
-                                        </tr>
-                                      </if>
-                                      <tr>
-                                        <td align="left" style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 28px;">
-                                          <a href=content.siteContext.url style="color: #3c3c3c; text-decoration: none;" target="_blank">
-                                            ${content.name}
-                                          </a>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td align="left" class="body-text" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
-                                          $!{content.body}
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
-                                          <common-content-action-link-element content=content />
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <!-- /content right -->
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tr>
+                      <td>
+                        <!-- content left -->
+                        <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="22%" align="left">
+                          <tr>
+                            <td align="left" valign="top">
+                              <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                                <marko-newsletter-imgix
+                                  src=image.src
+                                  alt=image.alt
+                                  options={ w: 115 }
+                                  attrs={ style: imgStyles }
+                                >
+                                  <@link href=content.siteContext.url target="_blank" />
+                                </marko-newsletter-imgix>
+                              </marko-core-obj-value>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- /content left -->
+                        <!-- content right -->
+                        <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="76%" align="right">
+                          <tr>
+                            <td valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <!-- ........ -->
+                                <!-- .......... -->
+                                <!-- ............ -->
+                                <!-- Presented by -->
+                                $ const companyName = get(content, "company.name");
+                                <if(content.type === 'promotion' && companyName)>
+                                  <tr>
+                                    <td style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; padding: 0 0 8px 0;" align="left">
+                                    Presented by ${companyName}
+                                    </td>
+                                  </tr>
+                                </if>
+                                <!-- /Presented by -->
+                                <!-- ............ -->
+                                <!-- .......... -->
+                                <!-- ........ -->
+                                <tr>
+                                  <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 28px;" align="left">
+                                    <a href=content.siteContext.url target="_blank" style="color: #3c3c3c; text-decoration: none;">
+                                      ${content.name}
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;" align="left" class="body-text">
+                                    $!{content.body}
+                                  </td>
+                                </tr>
+                                <tr>
+                                <td style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;" align="left">
+                                    <common-content-action-link-element content=content />
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- /content right -->
+                      </td>
+                    </tr>
                   </table>
-                  <!-- /Two column --></td>
-                </tr>
-              </for>
-            </tbody>
+                  <!-- /Two column -->
+                </td>
+              </tr>                            <!-- /First Announcement -->
+            </for>
           </table>
-          </td>
-        </tr>
-      </tbody>
+        </td>
+      </tr>
     </table>
   </if>
 </marko-web-query>
