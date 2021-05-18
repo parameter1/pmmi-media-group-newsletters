@@ -68,11 +68,20 @@ $ const imgStyles = {
                       </a>
                     </td>
                   </tr>
-                  <tr>
-                    <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
-                      <common-content-action-link-element content=content />
-                    </td>
-                  </tr>
+                  <if(button)>
+                    <tr>
+                      <td>
+                        <common-content-button-element content=content />
+                      </td>
+                    </tr>
+                  </if>
+                  <else>
+                    <tr>
+                      <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
+                        <common-content-action-link-element content=content />
+                      </td>
+                    </tr>
+                  </else>
                 </table>
               </td>
             </tr>
