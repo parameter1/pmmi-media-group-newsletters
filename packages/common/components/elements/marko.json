@@ -2,6 +2,9 @@
   "<common-content-action-link-element>": {
     "template": "./content-action-link.marko"
   },
+  "<common-content-button-element>": {
+    "template": "./content-button.marko"
+  },
   "<common-number-element>": {
     "template": "./number.marko"
   }

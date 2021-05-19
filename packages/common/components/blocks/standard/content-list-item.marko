@@ -6,131 +6,90 @@ $ const { content } = input;
 $ const withImage = defaultValue(input.withImage, true);
 $ const button = defaultValue(input.button, false);
 
+$ const slug = (content.type === 'promotion') ? `Presented by ${content.company.name}` : content.primarySection.name;
+
 $ const imgStyles = {
   "display": "block",
   "font-family": "Helvetica, Arial, sans-serif",
-  "color": "rgb(51, 51, 51)",
+  "color": "#333333",
   "font-size": "14px",
   "max-height": "132px",
   "max-width": "176px",
   "margin": "0px auto",
   "border-width": "0px",
-  "border-style": "solid",
 }
 
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-  <tbody>
-    <tr>
-      <td align="center" bgcolor="#ffffff" class="mobile-padding">
-        <table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 600px;">
-          <tbody>
+<tr>
+  <td style="padding: 20px 0 0 0;" align="center" valign="top" class="mobile-padding-topbtm">
+    <!-- Two column -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td>
+          <!-- content left -->
+          <table class="content-table-flex" border="0" cellpadding="0" cellspacing="0" width="32%" align="left">
             <tr>
-              <td align="center" class="mobile-padding-topbtm" style="padding: 20px 0 0 0;" valign="top">
-                <!-- Two column -->
-                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <!-- content left -->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="content-table-flex" width="32%">
-                          <tbody>
-                            <tr>
-                              <td align="left" class="mobilepadding-rt" style="padding-bottom:16px;" valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <td align="center" class="img-mask" style="border: 1px solid #e6e6e7;width: 176px;height: 132px; text-align:center;">
-                                        <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
-                                          <marko-newsletter-imgix
-                                            src=image.src
-                                            alt=image.alt
-                                            options={ w: 165, fit: "crop" }
-                                            class="img-max"
-                                            attrs={ style: imgStyles }
-                                          >
-                                            <@link href=content.siteContext.url target="_blank" />
-                                          </marko-newsletter-imgix>
-                                        </marko-core-obj-value>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <!-- /content left -->
-                        <!-- content right -->
-                        <table align="right" border="0" cellpadding="0" cellspacing="0" class="content-table-flex" width="66%">
-                          <tbody>
-                            <tr>
-                              <td valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                  <tbody>
-                                    <tr>
-                                      $ const slug = (content.type === 'promotion') ? `Presented by ${content.company.name}` : content.primarySection.name;
-                                      <td align="left" style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; padding: 0 0 8px 0;">
-                                        ${slug}
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td style="padding: 0 0 12px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 26px;">
-                                        <a href=content.siteContext.url style="color: #3c3c3c; text-decoration: none;" target="_blank">
-                                          ${content.name}
-                                        </a>
-                                      </td>
-                                    </tr>
-                                    <if(button)>
-                                      <tr>
-                                        <td>
-                                        <table border="0" cellpadding="0" cellspacing="0" class="buttonWrap" style="border-collapse:separate !important;width:100%;">
-                                          <tbody>
-                                            <tr>
-                                              <td align="left" valign="top">
-                                                <!--[if gte mso 9]>
-                                                <table border="0" cellspacing="0" cellpadding="0" style="width:185px;">
-                                                  <tr>
-                                                    <td align="center" bgcolor="#005bab" style="padding:3px 10px;" valign="top" class="button">
-                                                      <![endif]-->
-                                                      <a class="button" href=content.siteContext.url style="background-color:#005bab;border-collapse:separate !important;border-top:13px solid #005bab;border-right:20px solid #005bab;border-bottom:13px solid #005bab;border-left:20px solid #005bab;color:#ffffff;display:inline-block;border-radius:4px;font-family:Helvetica, Arial, sans-serif;font-size:15px;line-height:10px;text-align:center;text-decoration:none;font-weight:600;" target="_blank">${content.linkText}</a>
-                                                      <!--[if gte mso 9]>
-                                                    </td>
-                                                  </tr>
-                                                </table>
-                                                <![endif]-->
-                                              </td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                        </td>
-                                      </tr>
-                                      <!-- /button -->
-                                    </if>
-                                    <else>
-                                      <tr>
-                                        <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
-                                          <common-content-action-link-element content=content />
-                                        </td>
-                                      </tr>
-                                    </else>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <!-- /content right -->
-                      </td>
-                    </tr>
-                  </tbody>
+              <td align="left" valign="top" class="mobilepadding-rt" style="padding-bottom:16px;">
+                <table border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="border: 1px solid #e6e6e7;width: 176px;height: 132px; text-align:center;" align="center" class="img-mask">
+
+                      <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                        <marko-newsletter-imgix
+                          src=image.src
+                          alt=image.alt
+                          options={ w: 165, fit: "crop" }
+                          class="img-max"
+                          attrs={ style: imgStyles }
+                        >
+                          <@link href=content.siteContext.url target="_blank" />
+                        </marko-newsletter-imgix>
+                      </marko-core-obj-value>
+                    </td>
+                  </tr>
                 </table>
-                <!-- /Two column -->
               </td>
             </tr>
-            <!-- EDIT 1 end -->
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          </table>
+          <!-- /content left -->
+          <!-- content right -->
+          <table class="content-table-flex" border="0" cellpadding="0" cellspacing="0" width="66%" align="right">
+            <tr>
+              <td valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td align="left" style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; padding: 0 0 8px 0;">
+                      ${slug}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0 0 12px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 26px;">
+                      <a href=content.siteContext.url style="color: #3c3c3c; text-decoration: none;" target="_blank">
+                        ${content.name}
+                      </a>
+                    </td>
+                  </tr>
+                  <if(button)>
+                    <tr>
+                      <td>
+                        <common-content-button-element content=content />
+                      </td>
+                    </tr>
+                  </if>
+                  <else>
+                    <tr>
+                      <td align="left" style="padding: 0 0 16px 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;">
+                        <common-content-action-link-element content=content />
+                      </td>
+                    </tr>
+                  </else>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- /content right -->
+        </td>
+      </tr>
+    </table>
+    <!-- /Two column -->
+  </td>
+</tr>

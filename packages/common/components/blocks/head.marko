@@ -2,14 +2,10 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 import NumericStyles from "../styles/numeric";
 import StandardStyles from "../styles/standard";
-import StandardLightStyles from "../styles/standard-light";
-import StandardDarkStyles from "../styles/standard-dark";
 
 $ const styleComponents = {
   "numeric": NumericStyles,
   "standard": StandardStyles,
-  "standard-light": StandardLightStyles,
-  "standard-dark": StandardDarkStyles,
 };
 $ const StyleComponent = styleComponents[defaultValue(input.styleComponent, "standard")];
 $ const styleComponentInput = input.styleComponentInput;
@@ -17,4 +13,6 @@ $ const styleComponentInput = input.styleComponentInput;
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-scheme" content="light dark">
 <${StyleComponent} ...styleComponentInput />

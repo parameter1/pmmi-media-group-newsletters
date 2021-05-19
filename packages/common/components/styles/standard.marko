@@ -73,10 +73,6 @@ $ const buttonHoverColor = "#187ED9"; /* #b31d22 */
       border-left: 20px solid ${buttonHoverColor} !important;
   }
 
-  .bg-accent {
-    background-color: ${accentColor} !important;
-  }
-
   /* Outline styles */
   @media only screen and (max-width: 599px) {
     [class="content-table"] {
@@ -122,6 +118,9 @@ $ const buttonHoverColor = "#187ED9"; /* #b31d22 */
     [class="mobile-tagline"] {
         font-size:9px!important;
         line-height: 11px!important;
+    }
+    [class="desktophide"] {
+        display:none!important;
     }
   }
   @media only screen and (max-width: 450px) {
@@ -200,9 +199,6 @@ $ const buttonHoverColor = "#187ED9"; /* #b31d22 */
     }
     .img-mask {
       border: none !important;
-    }
-    .auddev-headsmall {
-      color:#dbe1ec !important;
     }
     a {
       color: #dbe1ec !important;
