@@ -27,7 +27,7 @@ config
       height: 100,
     },
   ])
-  .setAdUnits('aw-food-bev-parma', [
+  .setAdUnits('aw-food-bev-pharma', [
     {
       name: 'bottom-audience-banner',
       id: '6092947db1fcca78741ba675',
