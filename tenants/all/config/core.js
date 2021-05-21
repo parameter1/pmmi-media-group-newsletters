@@ -46,6 +46,11 @@ const config = {
     description: 'The latest innovations in automation products',
     ...brands.aw,
   },
+  'aw-system-integrators': {
+    name: 'System Integrators',
+    description: '',
+    ...brands.aw,
+  },
   'hcp-logistics-life-sciences': {
     name: 'Logistics for the Life Sciences',
     description: 'Your news source for GDPs, regulatory issues and temperature-controlled transportation',
