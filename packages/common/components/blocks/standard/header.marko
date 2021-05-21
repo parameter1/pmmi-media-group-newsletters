@@ -11,44 +11,7 @@ $ const brandName = get(newsletterConfig, "brandName");
 
 $ const displayDate = moment(date).format("LL");
 
-$ const imageSrc = input.imageSrc;
-
-$ const imageWrapperStyle = {
-  "padding": "16px 10px 16px 10px",
-  ...input.imageWrapperStyle,
-}
-
-$ const imageOptions = {
-  "w": 186,
-  ...input.imageOptions
-};
-
-$ const imageStyle = {
-  "font-family": "Helvetica, Arial, sans-serif",
-  "color": "#333333",
-  "font-size": "14px",
-  "max-width": "186px",
-  "height": "auto",
-  "width":"100%",
-  ...input.imageStyle,
-};
-
-$ const imageAttrs = {
-  "border": "0",
-  "class": "header-img-max",
-  "height": "27",
-  "width": "186",
-  "style": imageStyle,
-  ...input.imageAttrs,
-};
-
 $ const logoSrc = input.logoSrc;
-
-$ const logoWrapperStyle = {
-  "padding": "16px 10px 16px 10px",
-  "vertical-align": "middle",
-  ...input.logoWrapperStyle
-}
 
 $ const logoStyle = {
   "font-family": "Helvetica Arial, sans-serif",
@@ -62,7 +25,6 @@ $ const logoStyle = {
 
 $ const logoAttrs = {
   "border": "0",
-  "class": "header-img-max",
   "width": "115",
   "style": logoStyle,
   ...input.logoAttrs
@@ -96,12 +58,18 @@ $ const logoLinkStyle = {
                       <td>
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
+                            $ const logoWrapperStyle = {
+                              "padding": "16px 10px 16px 10px",
+                              "vertical-align": "middle",
+                              ...input.logoWrapperStyle
+                            }
                             <td align="left" style=logoWrapperStyle valign="center">
                               <marko-newsletter-imgix
                                 src=logoSrc
                                 options=logoOptions
                                 alt=brandName
                                 attrs=logoAttrs
+                                class="header-img-max"
                               />
                             </td>
                           </tr>
@@ -116,12 +84,38 @@ $ const logoLinkStyle = {
                       <td>
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
+                            $ const imageSrc = input.imageSrc;
+                            $ const imageWrapperStyle = {
+                              "padding": "16px 10px 16px 10px",
+                              ...input.imageWrapperStyle,
+                            }
+                            $ const imageOptions = {
+                              "w": 186,
+                              ...input.imageOptions
+                            };
+                            $ const imageStyle = {
+                              "font-family": "Helvetica, Arial, sans-serif",
+                              "color": "#333333",
+                              "font-size": "14px",
+                              "max-width": "186px",
+                              "height": "auto",
+                              "width":"100%",
+                              ...input.imageStyle,
+                            };
+                            $ const imageAttrs = {
+                              "border": "0",
+                              "height": "27",
+                              "width": "186",
+                              "style": imageStyle,
+                              ...input.imageAttrs,
+                            };
                             <td align="right" style=imageWrapperStyle>
                               <marko-newsletter-imgix
                                 src=imageSrc
                                 options=imageOptions
                                 alt=newsletterName
                                 attrs=imageAttrs
+                                class="header-img-max"
                               />
                             </td>
                           </tr>
