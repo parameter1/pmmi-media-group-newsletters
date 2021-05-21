@@ -1,4 +1,10 @@
+import { get } from "@parameter1/base-cms-object-path";
+
 $ const { newsletter, date } = data;
+$ const { config } = out.global;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const logoConfig = get(newsletterConfig, "logoConfig");
 
 <common-standard-layout
   data=data
@@ -10,11 +16,7 @@ $ const { newsletter, date } = data;
     <common-standard-header-block
       newsletter=newsletter
       date=date
-      logo-wrapper-style={ "padding": "16px 10px 6px 10px" }
-      logo-attrs={ "width": 190 }
-      logo-style={ "max-width": "190px" }
-      logo-options={ w: 190 }
-      logo-src="/files/base/pmmi/aw/aw_logo.png"
+      ...logoConfig
       image-wrapper-style={ "padding": "8px 10px 6px 10px" }
       image-attrs={ width: 350 }
       image-style={ "max-width": "350px" }
