@@ -59,6 +59,14 @@ config
       height: 100,
     },
   ])
+  .setAdUnits('aw-system-integrators', [
+    {
+      name: 'bottom-audience-banner',
+      id: '60a7c175b1fcca41a11bad12',
+      width: 600,
+      height: 100,
+    },
+  ])
   .setAdUnits('hcp-logistics-life-sciences', [
     {
       name: 'bottom-audience-banner',
