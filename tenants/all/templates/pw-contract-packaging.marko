@@ -16,7 +16,11 @@ $ const logoConfig = get(newsletterConfig, "logoConfig");
     <common-standard-header-block
       newsletter=newsletter
       date=date
-      ...logoConfig
+      logo-attrs={ width: 250, height: 36 }
+      logo-style={ "max-width": "250px" }
+      logo-wrapper-style={ padding: "16px 10px 6px 10px" }
+      logo-options={ w: 250 }
+      logo-src="/files/base/pmmi/all/image/newsletters/pw-contract-packaging-logo.png"
       image-wrapper-style={ "padding": "8px 10px 6px 10px" }
       image-attrs={ width: 169, height: 53 }
       image-style={ "max-width": "169px" }
