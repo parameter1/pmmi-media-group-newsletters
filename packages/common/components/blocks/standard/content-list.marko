@@ -4,6 +4,7 @@ import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/co
 $ const { newsletter, date } = input;
 
 $ const sectionName = defaultValue(input.sectionName, "Standard");
+$ const sectionDescription = defaultValue(input.sectionDescription, "Articles, events and sponsored content to consider");
 $ const withImage = defaultValue(input.withImage, true);
 $ const withHeader = defaultValue(input.withHeader, false);
 
@@ -20,6 +21,54 @@ $ const queryParams = {
   <if(nodes.length)>
     <if(withHeader)>
       <!-- <common-list-header-element title=sectionName /> -->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td style="padding: 32px 0 0 0;background-color: #ffffff;" bgcolor="#ffffff" align="center" class="mobile-padding">
+            <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
+              <tr>
+                <td>
+                  <!-- content left -->
+                  <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="28%" align="left">
+                    <tr>
+                      <td>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td style="color: #10327e; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px; padding: 0 8px 0 0;text-align: left" align="left" class="body-text">
+                              ${sectionName}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- /content left -->
+                  <!-- content right -->
+                  <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="72%" align="right">
+                    <tr>
+                      <td>
+                        <!-- content -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td align="center" style="height: 1px; line-height: 1px;">
+                              <hr height="2" style="height: 1px; border: none; color: #cdcdcd; background-color: #cdcdcd;">
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- /content right -->
+                </td>
+              </tr>
+              <tr>
+                <td style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 11px; font-weight: bold; padding: 4px 0 16px 0;" align="left" class="body-text">
+                  ${sectionDescription}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </if>
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr>

@@ -17,7 +17,7 @@ module.exports = {
     subscribeLink: 'https://pmmi.dragonforms.com/loading.do?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=HCPnew',
     logoConfig: {
       logoAttrs: { width: 139, height: 35 },
-      logoStyle: { 'max-width': '139px' },
+      logoStyle: { 'max-width': '139px', width: '139px', height: '35px' },
       logoWrapperStyle: { padding: '8px 10px 10px 10px' },
       logoOptions: { w: 139 },
       logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-logo.png',
