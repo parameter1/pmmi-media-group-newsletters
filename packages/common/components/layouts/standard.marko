@@ -109,11 +109,13 @@ $ const sections = input.sections || [];
 
         <if(sections.includes("Editor's Picks"))>
           <!-- Editor's Picks -->
-          <common-standard-trending-list-block
+          <common-standard-content-list-block
             newsletter=newsletter
             date=date
             section-name="Editor's Picks"
+            section-description="News and new products for your healthcare packaging needs"
             limit=4
+            with-header=true
           />
         </if>
 
