@@ -72,9 +72,9 @@ const config = {
     seeAllLink: 'https://www.healthcarepackaging.com/quick-hits',
     ...brands.hcp,
   },
-  'oem-shop-talk': {
-    name: 'Shop Talk',
-    description: 'New trends and conversations for packaging and processing machine builders',
+  'oem-insights': {
+    name: 'Insights',
+    description: 'News and trends for packaging and processing machine builders',
     ...brands.oem,
   },
   'pfw-joyces-voice': {
