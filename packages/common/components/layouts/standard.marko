@@ -48,54 +48,101 @@ $ const sections = input.sections || [];
         <html-comment> /Advetiser Logo </html-comment>
 
         <html-comment> Articles </html-comment>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#ffffff" style="background-color: #ffffff" align="center" class="mobile-padding">
+              <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
+              <html-comment> ⊙▃⊙ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> AD 1 begin </html-comment>
+              <html-comment> AD 1 end </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ๏_๏ </html-comment>
 
-        <html-comment> Ad 1 begin </html-comment>
-        <html-comment> Ad 1 end </html-comment>
+              <html-comment> ⊙▃⊙ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> AD 2 begin </html-comment>
+              <html-comment> AD 2 end </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ๏_๏ </html-comment>
 
-        <html-comment> Ad 2 begin </html-comment>
-        <html-comment> Ad 2 end </html-comment>
+              <if(sections.includes("Standard"))>
+                <common-standard-content-list-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Standard"
+                  limit=2
+                  skip=0
+                />
+              </if>
 
-        <if(sections.includes("Standard"))>
-          <!-- Standard List Wrapper -->
-          <common-standard-content-list-block
-            newsletter=newsletter
-            date=date
-            section-name="Standard"
-            limit=2
-            skip=0
-          />
-        </if>
+              <html-comment> ⊙▃⊙ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> AD 3 begin </html-comment>
+              <html-comment> AD 3 end </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ๏_๏ </html-comment>
 
-        <html-comment> Ad 3 begin </html-comment>
-        <html-comment> Ad 3 end </html-comment>
+              <html-comment> ⊙▃⊙ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> AD 4 begin </html-comment>
+              <html-comment> AD 4 end </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ๏_๏ </html-comment>
 
-        <html-comment> Ad 4 begin </html-comment>
-        <html-comment> Ad 4 end </html-comment>
+              <if(sections.includes("Standard"))>
+                <common-standard-content-list-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Standard"
+                  limit=2
+                  skip=2
+                />
+              </if>
 
-        <if(sections.includes("Standard"))>
-          <!-- Standard List Wrapper -->
-          <common-standard-content-list-block
-            newsletter=newsletter
-            date=date
-            section-name="Standard"
-            limit=2
-            skip=2
-          />
-        </if>
+              <html-comment> ⊙▃⊙ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> AD 5 begin </html-comment>
+              <html-comment> AD 5 end </html-comment>
+              <html-comment> ................................ </html-comment>
+              <html-comment> ................ </html-comment>
+              <html-comment> ........ </html-comment>
+              <html-comment> ๏_๏ </html-comment>
 
-        <html-comment> Ad 5 begin </html-comment>
-        <html-comment> Ad 5 end </html-comment>
+              <if(sections.includes("Standard"))>
+                <common-standard-content-list-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Standard"
+                  limit=1
+                  skip=4
+                />
+              </if>
 
-        <if(sections.includes("Standard"))>
-          <!-- Standard List Wrapper -->
-          <common-standard-content-list-block
-            newsletter=newsletter
-            date=date
-            section-name="Standard"
-            limit=1
-            skip=4
-          />
-        </if>
+
+              </table>
+            </td>
+          </tr>
+        </table>
+        <html-comment> /Article </html-comment>
 
         <if(sections.includes("Products"))>
           <!-- Products -->
