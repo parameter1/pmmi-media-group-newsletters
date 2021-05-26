@@ -48,36 +48,10 @@ $ const sections = input.sections || [];
         <html-comment> /Advetiser Logo </html-comment>
 
         <html-comment> Articles </html-comment>
-        <if(sections.includes("Standard"))>
-          <!-- Standard List Wrapper -->
-          <common-standard-content-list-block
-            newsletter=newsletter
-            date=date
-            section-name="Standard"
-            limit=2
-            skip=0
-          />
-        </if>
-        <if(sections.includes("Standard"))>
-          <!-- Standard List Wrapper -->
-          <common-standard-content-list-block
-            newsletter=newsletter
-            date=date
-            section-name="Standard"
-            limit=2
-            skip=2
-          />
-        </if>
-        <if(sections.includes("Standard"))>
-          <!-- Standard List Wrapper -->
-          <common-standard-content-list-block
-            newsletter=newsletter
-            date=date
-            section-name="Standard"
-            limit=1
-            skip=4
-          />
-        </if>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#ffffff" style="background-color: #ffffff" align="center" class="mobile-padding">
+              <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
               <html-comment> ⊙▃⊙ </html-comment>
               <html-comment> ........ </html-comment>
               <html-comment> ................ </html-comment>
@@ -100,6 +74,15 @@ $ const sections = input.sections || [];
               <html-comment> ........ </html-comment>
               <html-comment> ๏_๏ </html-comment>
 
+              <if(sections.includes("Standard"))>
+                <common-standard-content-list-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Standard"
+                  limit=2
+                  skip=0
+                />
+              </if>
 
               <html-comment> ⊙▃⊙ </html-comment>
               <html-comment> ........ </html-comment>
@@ -123,6 +106,15 @@ $ const sections = input.sections || [];
               <html-comment> ........ </html-comment>
               <html-comment> ๏_๏ </html-comment>
 
+              <if(sections.includes("Standard"))>
+                <common-standard-content-list-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Standard"
+                  limit=2
+                  skip=2
+                />
+              </if>
 
               <html-comment> ⊙▃⊙ </html-comment>
               <html-comment> ........ </html-comment>
@@ -135,6 +127,22 @@ $ const sections = input.sections || [];
               <html-comment> ........ </html-comment>
               <html-comment> ๏_๏ </html-comment>
 
+              <if(sections.includes("Standard"))>
+                <common-standard-content-list-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Standard"
+                  limit=1
+                  skip=4
+                />
+              </if>
+
+
+              </table>
+            </td>
+          </tr>
+        </table>
+        <html-comment> /Article </html-comment>
 
         <if(sections.includes("Products"))>
           <!-- Products -->
