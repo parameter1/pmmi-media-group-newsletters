@@ -14,68 +14,56 @@ $ const imgStyles = {
 }
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-  <tbody>
-    <tr>
-      <td align="center" bgcolor="#ffffff" class="mobile-padding" style="padding: 20px 0 0 0;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tbody>
-            <tr>
-              <td align="center">
-                <table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 600px;">
-                  <tbody>
+  <tr>
+    <td align="center" bgcolor="#ffffff" class="mobile-padding" style="padding: 20px 0 0 0;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td align="center">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="content-table" style="width: 600px;">
+              <tr>
+                <td align="center" style="padding: 12px 0;border-top: 1px solid #E6E6E7; border-bottom: 1px solid #E6E6E7;" valign="top">
+                  <table align="center" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td align="center" style="padding: 12px 0;border-top: 1px solid #E6E6E7; border-bottom: 1px solid #E6E6E7;" valign="top">
-                        <table align="center" border="0" cellpadding="0" cellspacing="0">
-                          <tbody>
-                            <tr>
-                              <!-- content left -->
-                              <td align="left" class="companylogo-flex" style="vertical-align:middle;font-size: 0px;height:65px;mso-line-height-alt: 30px; line-height:30px;" valign="middle" width="50%">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                  <tbody>
-                                    <tr>
-                                      <td align="right" style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 11px; line-height: 14px;font-weight: normal; padding: 20px 16px 20px 0;display:block;">
-                                        This newsletter is brought to you by
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <!-- /content left -->
-                              <!-- content right -->
-                              <td align="right" class="companylogo-imgflex" style="vertical-align:middle;height:65px;" valign="middle" width="48%">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                  <tbody>
-                                    <tr>
-                                      <td align="left" style="height:65px;">
-                                        <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
-                                          <marko-newsletter-imgix
-                                            src=image.src
-                                            alt=image.alt
-                                            options={ w: 165, fit: "crop" }
-                                            class="img-max"
-                                            attrs={ style: imgStyles, border: 0 }
-                                          >
-                                            <@link href=content.siteContext.url target="_blank" />
-                                          </marko-newsletter-imgix>
-                                        </marko-core-obj-value>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <!-- /content right -->
-                            </tr>
-                          </tbody>
+                      <!-- content left -->
+                      <td align="left" class="companylogo-flex" style="vertical-align:middle;font-size: 0px;height:65px;mso-line-height-alt: 30px; line-height:30px;" valign="middle" width="50%">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td align="right" style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 11px; line-height: 14px;font-weight: normal; padding: 20px 16px 20px 0;display:block;">
+                              This newsletter is brought to you by
+                            </td>
+                          </tr>
                         </table>
                       </td>
+                      <!-- /content left -->
+                      <!-- content right -->
+                      <td align="right" class="companylogo-imgflex" style="vertical-align:middle;height:65px;" valign="middle" width="48%">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td align="left" style="height:65px;">
+                              <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                                <marko-newsletter-imgix
+                                  src=image.src
+                                  alt=image.alt
+                                  options={ w: 165, fit: "crop" }
+                                  class="img-max"
+                                  attrs={ style: imgStyles, border: 0 }
+                                >
+                                  <@link href=content.siteContext.url target="_blank" />
+                                </marko-newsletter-imgix>
+                              </marko-core-obj-value>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- /content right -->
                     </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </tbody>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
