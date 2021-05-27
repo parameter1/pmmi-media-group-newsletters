@@ -99,6 +99,14 @@ config
       height: 100,
     },
   ])
+  .setAdUnits('oem-insights', [
+    {
+      name: 'bottom-audience-banner',
+      id: '60af9b0b72cf091c5e281ff6',
+      width: 600,
+      height: 100,
+    },
+  ])
   .setAdUnits('oem-shop-talk', [
     {
       name: 'bottom-audience-banner',

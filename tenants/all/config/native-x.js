@@ -73,6 +73,14 @@ module.exports = {
       'slot-4': '6010d861717cf6000135b25e',
       'slot-5': '6010d865a80e1f000185c560',
     },
+    'oem-insights': {
+      'top-audience-banner': '60af9a2067bc2800016f2abd',
+      'slot-1': '60af9a342c48d90001146d39',
+      'slot-2': '60af9a5667bc2800016f2e1e',
+      'slot-3': '60af9a622c48d9000114702f',
+      'slot-4': '60af9a6e67bc2800016f2fa8',
+      'slot-5': '60af9a7c67bc2800016f30cb',
+    },
     'oem-shop-talk': {
       'top-audience-banner': '6010d7f9717cf6000135ad31',
       'slot-1': '6010d7fd717cf6000135ad73',
