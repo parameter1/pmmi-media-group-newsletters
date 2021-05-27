@@ -73,7 +73,7 @@ module.exports = {
       'slot-4': '6010d861717cf6000135b25e',
       'slot-5': '6010d865a80e1f000185c560',
     },
-    'oem-insights': {
+    'oem-shop-talk': {
       'top-audience-banner': '6010d7f9717cf6000135ad31',
       'slot-1': '6010d7fd717cf6000135ad73',
       'slot-2': '6010d800a80e1f000185bfee',
