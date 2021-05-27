@@ -71,8 +71,8 @@ config
     {
       name: 'bottom-audience-banner',
       id: '6092965a932e210119802ef3',
-      width: 560,
-      height: 127,
+      width: 768,
+      height: 100,
     },
   ])
   .setAdUnits('hcp-newsbrief', [
@@ -87,16 +87,16 @@ config
     {
       name: 'bottom-audience-banner',
       id: '60929739b1fccac95c1ba807',
-      width: 560,
-      height: 127,
+      width: 768,
+      height: 100,
     },
   ])
   .setAdUnits('hcp-quick-hits', [
     {
       name: 'bottom-audience-banner',
       id: '60929790932e212620803005',
-      width: 560,
-      height: 127,
+      width: 768,
+      height: 100,
     },
   ])
   .setAdUnits('oem-insights', [
