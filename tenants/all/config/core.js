@@ -77,6 +77,11 @@ const config = {
     description: 'News and trends for packaging and processing machine builders',
     ...brands.oem,
   },
+  'oem-shop-talk': {
+    name: 'Shop Talk',
+    description: 'New trends and conversations for packaging and processing machine builders',
+    ...brands.oem,
+  },
   'pfw-joyces-voice': {
     name: 'Joyce\'s Voice',
     description: 'Innovation and Technology for Global Food & Beverage Processing',
