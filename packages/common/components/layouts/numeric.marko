@@ -83,36 +83,11 @@ $ const queryParams = {
                   <!--/NUMBER 5-->
 
                   <!--Show Promo -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                          <td style="padding: 16px 0 16px 0;" bgcolor="#ffffff" align="center">
-                              <table cellpadding="0" cellspacing="0" align="center" width="100%" style="text-align: left;">
-                                  <tr>
-                                      <td align="right" width="60%" style="padding-left: 10px; padding-right:10px;padding-top:15px; padding-bottom: 10px;">
-                                          <img src="https://pmg-production.s3.amazonaws.com/2020/PMMI%20show%20promos/PEC2020/PEC2020_232x162_Register_Now_FINAL_ani.gif" alt="show logo" width="232" height="161 ">
-                                      </td>
-                                      <td style="vertical-align: middle;text-align: left;padding-left: 15px;" valign="middle">
-                                          <!-- Button -->
-                                          <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                                              <tr>
-                                                  <td align="left">
-                                                      <table class="mobile-button-wrap" border="0" cellspacing="0" cellpadding="0">
-                                                          <tr>
-                                                              <td align="center">
-                                                                  <a class="mobile-button" style="background-color: #005bab; border-top: 12px solid #005bab; border-right: 24px solid #005bab; border-bottom: 12px solid #005bab; border-left: 24px solid #005bab; display: inline-block; color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 15px; font-weight: bold; line-height: 24px; text-decoration: none;border-radius: 5px;" href="https://www.packexpoconnects.com/?pk=PEC_MED14&utm_medium=enews&utm_source=pmg-enewsletters&utm_campaign=pec20&utm_term=register-now&utm_content=enews-link" target="_blank">REGISTER</a>
-                                                              </td>
-                                                          </tr>
-                                                      </table>
-                                                  </td>
-                                              </tr>
-                                          </table>
-                                          <!-- /Button -->
-                                      </td>
-                                  </tr>
-                              </table>
-                          </td>
-                      </tr>
-                  </table>
+                  <common-ad-emailx-block
+                    newsletter=newsletter
+                    ad-unit=emailX.getAdUnit({ name: "bottom-audience-banner", alias: newsletter.alias })
+                    date=date
+                  />
                   <!-- /Show Promo -->
 
                   <!-- Week Content Link -->
