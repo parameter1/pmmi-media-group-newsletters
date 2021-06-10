@@ -2,12 +2,12 @@ module.exports = {
   uri: 'https://pmmi.native-x.parameter1.com',
   placements: {
     'mundo-perspectivas': {
-      // sponsor: '6010908ba80e1f000181e7cc',
-      // 'slot-1': '60109092a80e1f000181e834',
-      // 'slot-2': '60109095717cf6000131dbfb',
-      // 'slot-3': '60109098a80e1f000181e8a5',
-      // 'slot-4': '6010909ca80e1f000181e8cb',
-      // 'slot-5': '601090a0717cf6000131dcad',
+      'top-audience-banner': '60c2041f6b523e0001192730',
+      'slot-1': '60c2044f5f957c00015a03e8',
+      'slot-2': '60c204646b523e0001192a1a',
+      'slot-3': '60c2047a6b523e0001192ae7',
+      'slot-4': '60c2048e6b523e0001192ba8',
+      'slot-5': '60c204a35f957c00015a0771',
     },
   },
 };
