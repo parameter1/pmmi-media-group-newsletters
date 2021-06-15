@@ -36,7 +36,7 @@ module.exports = {
     },
   },
   pfw: {
-    brandName: 'Pro Food World',
+    brandName: 'ProFood World',
     logoSrc: '/files/base/pmmi/all/image/newsletters/pfw-logo.png',
     subscribeLink: 'https://pmmi.dragonforms.com/loading.do?r=&pk=PFW_BANNER_NL&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPFWrenew',
     logoConfig: {
