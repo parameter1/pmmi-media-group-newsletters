@@ -6,7 +6,7 @@ $ const { newsletter, date } = input.data;
 
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterName = get(newsletterConfig, "name");
-$ const newsletterDescription = get(newsletterConfig, "description");
+$ const newsletterDescription = get(newsletterConfig, "metaDescription") || get(newsletterConfig, "description");
 $ const brandName = get(newsletterConfig, "brandName");
 $ let title = `${brandName} | ${newsletterName}`;
 $ if (`${newsletterName}` === 'Insights') {

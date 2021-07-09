@@ -94,6 +94,7 @@ const config = {
   },
   'pw-editors-picks': {
     name: 'Editors\' Picks',
+    metaDescription: 'Timely hand-picked favorites from Packaging World',
     description: 'Timely hand-picked favorites from <em>Packaging World</em>',
     ...brands.pw,
   },
