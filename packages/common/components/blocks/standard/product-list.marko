@@ -86,14 +86,15 @@ $ const queryParams = {
                                             "color": "#333333",
                                             "font-size": "14px",
                                             "width": "176px",
+                                            "height": "132px",
                                           };
                                           <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                                             <marko-newsletter-imgix
                                               src=image.src
                                               alt=image.alt
-                                              options={ w: 176 }
+                                              options={ w: 176, h: 132, fit: "crop" }
                                               class="img-max"
-                                              attrs={ style: imgStyles, border: 0, width: 176 }
+                                              attrs={ style: imgStyles, border: 0, width: 176, height: 132 }
                                             >
                                               <@link href=content.siteContext.url target="_blank" />
                                             </marko-newsletter-imgix>
