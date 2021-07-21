@@ -4,6 +4,11 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 $ const adUnit = getAsObject(input, "adUnit");
 $ const dpm = getAsObject(input, "dpm");
 
+$ const topBorderStyle = {
+  "border-top": "1px solid #cdcdcd",
+  "padding-top": "20px",
+  ...input.topBorderStyle,
+}
 $ const useEmailxHref = defaultValue(input.useEmailxHref, false);
 
 $ const { name, alias } = adUnit;
@@ -32,7 +37,7 @@ $ const classNames = [`email-x-${alias}-${name}`, input.class];
               <td align="center">
                 <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width:600px;">
                   <tr>
-                    <td align="center" valign="top">
+                    <td align="center" valign="top" style=topBorderStyle>
                       <!-- content -->
                       <table border="0" cellpadding="0" cellspacing="0" style="width:600px;" class="content-table">
                         <tr>
