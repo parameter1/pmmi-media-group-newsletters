@@ -5,7 +5,11 @@ $ const adUnit = getAsObject(input, "adUnit");
 $ const dpm = getAsObject(input, "dpm");
 
 $ const numericNewsletters = ['hcp-serialization-countdown','hcp-quick-hits', 'hcp-serialization-countdown'];
-$ const topBorderStyle = numericNewsletters.includes(input.newsletter.alias) ? "" : "border-top: 1px solid #cdcdcd;padding-top: 20px;"
+$ const topBorderStyle = {
+  "border-top": "1px solid #cdcdcd",
+  "padding-top": "20px",
+  ...input.topBorderStyle,
+}
 $ const useEmailxHref = defaultValue(input.useEmailxHref, false);
 
 $ const { name, alias } = adUnit;
