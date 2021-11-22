@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="35d89689-f94f-48de-8c20-f01dc854e78a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tenants/all/templates/hcp-quick-hits.marko" beforeDir="false" afterPath="$PROJECT_DIR$/tenants/all/templates/hcp-quick-hits.marko" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tenants/all/templates/oem-insights.marko" beforeDir="false" afterPath="$PROJECT_DIR$/tenants/all/templates/oem-insights.marko" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tenants/all/templates/pfw-joyces-voice.marko" beforeDir="false" afterPath="$PROJECT_DIR$/tenants/all/templates/pfw-joyces-voice.marko" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/common/components/blocks/footer.marko" beforeDir="false" afterPath="$PROJECT_DIR$/packages/common/components/blocks/footer.marko" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,7 +89,6 @@
       <workItem from="1635522049745" duration="56000" />
       <workItem from="1635522116566" duration="596000" />
       <workItem from="1635523930697" duration="292000" />
-      <workItem from="1637599031285" duration="2163000" />
     </task>
     <servers />
   </component>
@@ -141,9 +138,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updating footer address to suite 1700" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating footer address to suite 1700" />
   </component>
 </project>
