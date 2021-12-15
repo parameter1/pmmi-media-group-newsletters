@@ -6,7 +6,8 @@ $ const { content } = input;
 $ const withImage = defaultValue(input.withImage, true);
 $ const button = defaultValue(input.button, false);
 
-$ const slug = (content.type === 'promotion') ? `Presented by ${content.company.name}` : content.primarySection.name;
+$ const companyPromo = (content.type === 'promotion' && content.company);
+$ const slug = companyPromo ? `Presented by ${content.company.name}` : content.primarySection.name;
 
 $ const imgStyles = {
   "display": "block",
