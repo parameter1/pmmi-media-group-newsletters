@@ -33,6 +33,14 @@ module.exports = {
       'slot-4': '6010972b717cf600013245fe',
       'slot-5': '6010972fa80e1f0001825273',
     },
+    'aw-process-automation': {
+      'top-audience-banner': '6010971ca80e1f0001825118',
+      'slot-1': '60109720a80e1f000182515c',
+      'slot-2': '60109723717cf6000132456f',
+      'slot-3': '60109728a80e1f0001825202',
+      'slot-4': '6010972b717cf600013245fe',
+      'slot-5': '6010972fa80e1f0001825273',
+    },
     'aw-factory-automation': {
       'top-audience-banner': '6010d929a80e1f000185d274',
       'slot-1': '6010d92f717cf6000135bf66',
