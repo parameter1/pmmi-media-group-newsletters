@@ -19,6 +19,14 @@ config
       height: 127,
     },
   ])
+  .setAdUnits('aw-process-automation', [
+    {
+      name: 'bottom-audience-banner',
+      id: '609292b0b1fcca6e1d1ba5c6',
+      width: 560,
+      height: 127,
+    },
+  ])
   .setAdUnits('aw-factory-automation', [
     {
       name: 'bottom-audience-banner',

@@ -21,6 +21,11 @@ const config = {
     description: 'News for industries where production flows without interruption',
     ...brands.aw,
   },
+  'aw-process-automation': {
+    name: 'Process Automation',
+    description: 'News for industries where production flows without interruption',
+    ...brands.aw,
+  },
   'aw-factory-automation': {
     name: 'Factory Automation',
     description: 'News from the discrete manufacturing industries',

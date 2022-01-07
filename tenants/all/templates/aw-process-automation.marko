@@ -1,0 +1,28 @@
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { newsletter, date } = data;
+$ const { config } = out.global;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const logoConfig = get(newsletterConfig, "logoConfig");
+
+<common-standard-layout
+  data=data
+  style-component="standard"
+  style-component-input={ "accent-color": "#d9d63b" }
+  sections=["Feature", "Standard", "What's Trending"]
+>
+  <@header>
+    <common-standard-header-block
+      newsletter=newsletter
+      date=date
+      ...logoConfig
+      image-wrapper-style={ "padding": "8px 10px 6px 10px" }
+      image-attrs={ width: 264, height: 44 }
+      image-style={ "max-width": "264px" }
+      image-options={ w: 264 }
+      image-src="/files/base/pmmi/all/image/newsletters/aw-process-automation-header.png"
+      secondary-background-color="#d9d63b"
+    />
+  </@header>
+</common-standard-layout>
