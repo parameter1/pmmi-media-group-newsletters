@@ -1,15 +1,16 @@
 import { get } from "@parameter1/base-cms-object-path";
 import moment from "moment";
 
-$ const { website, config } = out.global;
+$ const { website, config, i18n } = out.global;
 $ const { newsletter, date } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterName = get(newsletterConfig, "name");
 $ const newsletterDescription = get(newsletterConfig, "description");
 $ const brandName = get(newsletterConfig, "brandName");
-
-$ const displayDate = moment(date).format("LL");
+$ const secondaryBackgroundColor = get(newsletterConfig, "secondaryBackgroundColor");
+$ const lang = get(newsletterConfig, "lang");
+$ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
 
 $ const logoSrc = input.logoSrc;
 
@@ -129,7 +130,7 @@ $ const logoLinkStyle = {
               <!--[if gte mso 12]><br style="line-height:0px; font-size:0px; mso-line-height-rule:exactly;" /> <![endif]-->
               <tr>
                 $ const secondaryHeaderWrapperStyle = {
-                  "background-color": input.secondaryBackgroundColor || "#005bab",
+                  "background-color": secondaryBackgroundColor || "#005bab",
                   "padding": "6px 12px",
                 }
                 <td style=secondaryHeaderWrapperStyle>
@@ -151,7 +152,7 @@ $ const logoLinkStyle = {
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
                             <td align="right" class="mobile-tagline" style="color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 12.5px; font-weight: normal; line-height: 12.5px; padding: 4px 0 4px 8px;text-align: right;" valign="middle">
-                              ${displayDate}
+                              ${i18n(displayDate)}
                             </td>
                           </tr>
                         </table>

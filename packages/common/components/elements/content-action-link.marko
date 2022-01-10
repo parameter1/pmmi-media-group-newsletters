@@ -1,4 +1,4 @@
-
+$ const { i18n } = out.global;
 $ const { content } = input;
 
 $ const contentTypeActions = {
@@ -13,5 +13,5 @@ $ const contentTypeActions = {
 $ const contentAction = contentTypeActions[content.type] || contentTypeActions.default;
 
 <a href=content.siteContext.url style="color: #00bab; text-decoration: underline;" target="_blank">
-  ${contentAction} &rarr;
+  ${i18n(contentAction)} &rarr;
 </a>
