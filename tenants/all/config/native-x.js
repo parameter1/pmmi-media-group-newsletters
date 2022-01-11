@@ -73,7 +73,7 @@ module.exports = {
       'slot-4': '6010d8bc717cf6000135b8c6',
       'slot-5': '6010d8c0a80e1f000185cc3c',
     },
-    'hcp-news-brief': {
+    'hcp-newsbrief': {
       'top-audience-banner': '6010d853a80e1f000185c3da',
       'slot-1': '6010d857717cf6000135b179',
       'slot-2': '6010d85aa80e1f000185c47a',
