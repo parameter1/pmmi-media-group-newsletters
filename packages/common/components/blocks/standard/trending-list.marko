@@ -2,6 +2,7 @@ import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 
+$ const { i18n } = out.global;
 $ const { newsletter, date } = input;
 
 $ const sectionName = defaultValue(input.sectionName, "Standard");
@@ -31,13 +32,13 @@ $ const queryParams = {
             <tr>
               <td>
                 <!-- content left -->
-                <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="28%" align="left">
+                <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="35%" align="left">
                   <tr>
                     <td>
                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                           <td style="color: #10327e; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px; padding: 0 8px 0 0;text-align: left" align="left" class="body-text">
-                            ${sectionName}
+                            ${i18n(sectionName)}
                           </td>
                         </tr>
                       </table>
@@ -46,7 +47,7 @@ $ const queryParams = {
                 </table>
                 <!-- /content left -->
                 <!-- content right -->
-                <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="72%" align="right">
+                <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="65%" align="right">
                   <tr>
                     <td>
                       <!-- content -->
@@ -65,7 +66,7 @@ $ const queryParams = {
             </tr>
             <tr>
               <td style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 11px; font-weight: bold; padding: 4px 0 16px 0;" align="left" class="body-text">
-                ${sectionDescription}
+                ${i18n(sectionDescription)}
               </td>
             </tr>
             <for|content| of=nodes>
@@ -114,7 +115,7 @@ $ const queryParams = {
                                 <if(content.type === 'promotion' && companyName)>
                                   <tr>
                                     <td style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; padding: 0 0 8px 0;" align="left">
-                                    Presented by ${companyName}
+                                      ${i18n("Presented by")} ${companyName}
                                     </td>
                                   </tr>
                                 </if>

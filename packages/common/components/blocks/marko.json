@@ -12,5 +12,8 @@
   },
   "<common-head-block>": {
     "template": "./head.marko"
+  },
+  "<common-footer-mundo-block>": {
+    "template": "./footer-mundo.marko"
   }
 }
