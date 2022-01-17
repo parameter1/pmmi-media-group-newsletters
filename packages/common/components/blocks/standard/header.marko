@@ -8,7 +8,6 @@ $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterName = get(newsletterConfig, "name");
 $ const newsletterDescription = get(newsletterConfig, "description");
 $ const brandName = get(newsletterConfig, "brandName");
-$ const secondaryBackgroundColor = get(newsletterConfig, "secondaryBackgroundColor") || input.secondaryBackgroundColor;
 $ const lang = get(newsletterConfig, "lang");
 $ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
 
@@ -130,7 +129,7 @@ $ const logoLinkStyle = {
               <!--[if gte mso 12]><br style="line-height:0px; font-size:0px; mso-line-height-rule:exactly;" /> <![endif]-->
               <tr>
                 $ const secondaryHeaderWrapperStyle = {
-                  "background-color": secondaryBackgroundColor || "#005bab",
+                  "background-color": input.secondaryBackgroundColor || "#005bab",
                   "padding": "6px 12px",
                 }
                 $ const taglineTextColor = input.taglineTextColor || '#ffffff';
