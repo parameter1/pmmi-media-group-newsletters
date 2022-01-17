@@ -8,7 +8,6 @@ $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterName = get(newsletterConfig, "name");
 $ const newsletterDescription = get(newsletterConfig, "description");
 $ const brandName = get(newsletterConfig, "brandName");
-$ const secondaryBackgroundColor = get(newsletterConfig, "secondaryBackgroundColor");
 $ const lang = get(newsletterConfig, "lang");
 $ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
 
@@ -130,9 +129,10 @@ $ const logoLinkStyle = {
               <!--[if gte mso 12]><br style="line-height:0px; font-size:0px; mso-line-height-rule:exactly;" /> <![endif]-->
               <tr>
                 $ const secondaryHeaderWrapperStyle = {
-                  "background-color": secondaryBackgroundColor || "#005bab",
+                  "background-color": input.secondaryBackgroundColor || "#005bab",
                   "padding": "6px 12px",
                 }
+                $ const taglineTextColor = input.taglineTextColor || '#ffffff';
                 <td style=secondaryHeaderWrapperStyle>
                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
@@ -140,7 +140,7 @@ $ const logoLinkStyle = {
                       <td width="70%" align="left" valign="top">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
-                            <td align="left" class="mobile-tagline" style="color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 12.5px; font-weight: normal; line-height: 12.5px; padding: 4px 8px 4px 0;text-align: left">
+                            <td align="left" class="mobile-tagline" style=`color: ${taglineTextColor}; font-family: Helvetica, Arial, sans-serif; font-size: 12.5px; font-weight: normal; line-height: 12.5px; padding: 4px 8px 4px 0;text-align: left`>
                               $!{newsletterDescription}
                             </td>
                           </tr>
@@ -151,7 +151,7 @@ $ const logoLinkStyle = {
                       <td width="25%" align="right" valign="top">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
-                            <td align="right" class="mobile-tagline" style="color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 12.5px; font-weight: normal; line-height: 12.5px; padding: 4px 0 4px 8px;text-align: right;" valign="middle">
+                            <td align="right" class="mobile-tagline" style=`color: ${taglineTextColor}; font-family: Helvetica, Arial, sans-serif; font-size: 12.5px; font-weight: normal; line-height: 12.5px; padding: 4px 0 4px 8px;text-align: right;` valign="middle">
                               ${i18n(displayDate)}
                             </td>
                           </tr>
