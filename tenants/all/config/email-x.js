@@ -194,6 +194,14 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('hcp-newsbrief-updated', [
+    {
+      name: 'bottom-audience-banner',
+      id: '61f2a4e36e4c9e15a13e6110',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;
