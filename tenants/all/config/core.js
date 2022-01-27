@@ -132,6 +132,11 @@ const config = {
     description: 'Get a glimpse at next gen equipment',
     ...brands.pw,
   },
+  'hcp-newsbrief-updated': {
+    name: 'Newsbrief',
+    description: 'An editor-curated selection of life sciences packaging news and trends',
+    ...brands.hcp,
+  },
 };
 
 module.exports = config;
