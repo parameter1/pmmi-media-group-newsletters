@@ -193,13 +193,13 @@ module.exports = {
       'slot-4': '61c23d94c69ddc00017e2251',
       'slot-5': '61c23da1c69ddc00017e2300',
     },
-  },
-  'hcp-newsbrief-updated': {
-    'top-audience-banner': '61f2a545077ca8000172776d',
-    'slot-1': '61f2a552077ca800017277fc',
-    'slot-2': '61f2a561077ca80001727877',
-    'slot-3': '61f2a570077ca800017278da',
-    'slot-4': '61f2a57b077ca80001727934',
-    'slot-5': '61f2a5884a5d8e0001a70a08',
+    'hcp-newsbrief-updated': {
+      'top-audience-banner': '61f2a545077ca8000172776d',
+      'slot-1': '61f2a552077ca800017277fc',
+      'slot-2': '61f2a561077ca80001727877',
+      'slot-3': '61f2a570077ca800017278da',
+      'slot-4': '61f2a57b077ca80001727934',
+      'slot-5': '61f2a5884a5d8e0001a70a08',
+    },
   },
 };
