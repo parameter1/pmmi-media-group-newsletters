@@ -202,6 +202,22 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('pfw-new-issue-alert', [
+    {
+      name: 'bottom-audience-banner',
+      id: '622f3e3d394283ab9ef780e4',
+      width: 560,
+      height: 127,
+    },
+  ])
+  .setAdUnits('pfw-hand-picked', [
+    {
+      name: 'bottom-audience-banner',
+      id: '622f3e1d394283b2e8f780d1',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;

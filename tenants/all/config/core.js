@@ -92,9 +92,19 @@ const config = {
     description: 'Innovation and Technology for Global Food & Beverage Processing',
     ...brands.pfw,
   },
+  'pfw-new-issue-alert': {
+    name: 'New Issue Alert',
+    description: 'Hot off the presses&emsp;&emsp;|&emsp;&emsp;<a href="#" style="color: #fff; text-decoration:underline;" target="_blank">View Digital Edition</a>',
+    ...brands.pfw,
+  },
+  'pfw-hand-picked': {
+    name: 'Hand Picked',
+    description: 'The Latest News and Developments in Food and Beverage Processing',
+    ...brands.pfw,
+  },
   'pw-contract-packaging': {
-    name: 'Contract Packaging',
-    description: 'News, trends and strategies in contract packaging',
+    name: 'Contract Manufacturing + Packaging',
+    description: 'The latest news, trends, and strategies about contract manufacturing and packaging',
     ...brands.pw,
   },
   'pw-editors-picks': {
