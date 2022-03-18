@@ -105,6 +105,22 @@ module.exports = {
       'slot-4': '6010947d717cf60001321645',
       'slot-5': '60109480a80e1f0001822396',
     },
+    'pfw-hand-picked': {
+      'top-audience-banner': '623485b234a89300018f5f51',
+      'slot-1': '623485ca34a89300018f62ff',
+      'slot-2': '623485d734a89300018f646f',
+      'slot-3': '623485f034a89300018f66bf',
+      'slot-4': '62348604336e9a0001011fc8',
+      'slot-5': '6234861534a89300018f6ae6',
+    },
+    'pfw-new-issue-alert': {
+      'top-audience-banner': '623485b234a89300018f5f51',
+      'slot-1': '623484c134a89300018f3dc0',
+      'slot-2': '623484e434a89300018f4737',
+      'slot-3': '623484fb336e9a00010101cf',
+      'slot-4': '6234850a336e9a0001010338',
+      'slot-5': '6234851734a89300018f4e26',
+    },
     'pw-contract-packaging': {
       'top-audience-banner': '6010d73ca80e1f000185b6ac',
       'slot-1': '6010d73f717cf6000135a481',
