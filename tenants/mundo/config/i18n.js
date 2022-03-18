@@ -2,6 +2,7 @@ module.exports = {
   'read more': 'Lea más',
   podcast: 'Escucha',
   video: 'Ver video',
+  watch: 'Ver video',
   document: 'Descargar',
   whitepaper: 'Descargar',
   promotion: 'Aprende más',
