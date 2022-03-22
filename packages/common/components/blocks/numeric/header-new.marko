@@ -1,0 +1,173 @@
+import { get } from "@parameter1/base-cms-object-path";
+import moment from "moment";
+
+$ const { website, config, i18n } = out.global;
+$ const { newsletter, date } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const newsletterName = get(newsletterConfig, "name");
+$ const newsletterDescription = get(newsletterConfig, "description");
+$ const brandName = get(newsletterConfig, "brandName");
+$ const lang = get(newsletterConfig, "lang");
+$ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
+
+$ const logoSrc = input.logoSrc;
+
+$ const logoStyle = {
+  "font-family": "Helvetica Arial, sans-serif",
+  "color": "#333333",
+  "font-size": "14px",
+  "max-width": "115px",
+  "height": "auto",
+  "width": "100%",
+  ...input.logoStyle,
+};
+
+$ const logoAttrs = {
+  "border": "0",
+  "width": "115",
+  "style": logoStyle,
+  ...input.logoAttrs
+};
+
+$ const logoOptions = {
+  "w": 115,
+  ...input.logoOptions,
+};
+
+$ const logoLinkStyle = {
+  "display": "block",
+  "font-size": "0",
+  "line-height": "0",
+};
+
+<!-- header -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td style="padding: 10px 0 0 0;" bgcolor="#edeeee" align="center" class="email-bg">
+      <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 640px;">
+        <tr>
+          <td align="center" valign="top">
+            <!-- Two column -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td style="background-color: #000000;" class="header">
+                  <!-- content left -->
+                  <table border="0" cellpadding="0" cellspacing="0" align="left" style="display: table-cell;min-width:0px;max-width:36%;">
+                    <tr>
+                      <td>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            $ const logoWrapperStyle = {
+                              "padding": "16px 10px 16px 10px",
+                              "vertical-align": "middle",
+                              ...input.logoWrapperStyle
+                            }
+                            <td align="left" style=logoWrapperStyle valign="center">
+                              <marko-newsletter-imgix
+                                src=logoSrc
+                                options=logoOptions
+                                alt=brandName
+                                attrs=logoAttrs
+                                class="header-img-max"
+                              />
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- /content left -->
+                  <!-- content right -->
+                  <table border="0" cellpadding="0" cellspacing="0" align="right" style="display: table-cell;min-width:0px;max-width:60%;">
+                    <tr>
+                      <td>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            $ const imageSrc = input.imageSrc;
+                            $ const imageWrapperStyle = {
+                              "padding": "16px 10px 16px 10px",
+                              ...input.imageWrapperStyle,
+                            }
+                            $ const imageOptions = {
+                              "w": 186,
+                              ...input.imageOptions
+                            };
+                            $ const imageStyle = {
+                              "font-family": "Helvetica, Arial, sans-serif",
+                              "color": "#333333",
+                              "font-size": "14px",
+                              "max-width": "186px",
+                              "height": "auto",
+                              "width":"100%",
+                              ...input.imageStyle,
+                            };
+                            $ const imageAttrs = {
+                              "border": "0",
+                              "height": "27",
+                              "width": "186",
+                              "style": imageStyle,
+                              ...input.imageAttrs,
+                            };
+                            <td align="right" style=imageWrapperStyle>
+                              <marko-newsletter-imgix
+                                src=imageSrc
+                                options=imageOptions
+                                alt=newsletterName
+                                attrs=imageAttrs
+                                class="header-img-max"
+                              />
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- /content right -->
+                </td>
+              </tr>
+              <!--[if gte mso 12]><br style="line-height:0px; font-size:0px; mso-line-height-rule:exactly;" /> <![endif]-->
+              <tr>
+                $ const secondaryHeaderWrapperStyle = {
+                  "background-color": input.secondaryBackgroundColor || "#005bab",
+                  "padding": "6px 12px",
+                }
+                $ const taglineTextColor = input.taglineTextColor || '#ffffff';
+                <td style=secondaryHeaderWrapperStyle>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <!-- content left -->
+                      <td width="70%" align="left" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td align="left" class="mobile-tagline" style=`color: ${taglineTextColor}; font-family: Helvetica, Arial, sans-serif; font-size: 12.5px; font-weight: normal; line-height: 12.5px; padding: 4px 8px 4px 0;text-align: left`>
+                              $!{newsletterDescription}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- /content left -->
+                      <!-- content right -->
+                      <td width="25%" align="right" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td align="right" class="mobile-tagline" style=`color: ${taglineTextColor}; font-family: Helvetica, Arial, sans-serif; font-size: 12.5px; font-weight: normal; line-height: 12.5px; padding: 4px 0 4px 8px;text-align: right;` valign="middle">
+                              ${i18n(displayDate)}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- /content right -->
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!-- /Two column -->
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- /header -->

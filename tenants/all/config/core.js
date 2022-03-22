@@ -77,6 +77,11 @@ const config = {
     seeAllLink: 'https://www.healthcarepackaging.com/quick-hits',
     ...brands.hcp,
   },
+  'hcp-quick-hits-new': {
+    name: 'Quick Hits',
+    description: 'Your Healthcare Industry Week in Review',
+    ...brands.hcp,
+  },
   'oem-insights': {
     name: 'Insights',
     description: 'News and trends for packaging and processing machine builders',

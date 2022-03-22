@@ -1,0 +1,35 @@
+$ const imageStyle = {
+    "outline": "none",
+    "text-decoration": "none",
+    "-ms-interpolation-mode": "bicubic",
+    "clear": "both",
+    "display": "block !important",
+    "border": "0",
+    "height": "auto",
+    "float": "none",
+    "width": "100%",
+    "max-width": "60px",
+    "color": "#ffffff",
+    "font-family": "sans-serif",
+    "text-align": "center",
+    ...input.style,
+  };
+$ const alt = input.alt || "";
+$ const imageAttrs = {
+    align: "left",
+    border: "0",
+    class: "left autowidth",
+    style: imageStyle,
+    title: alt,
+    width: input.width || "60",
+  };
+$ const imageOptions = {
+    w: input.width || 60,
+  }
+<marko-newsletter-imgix
+    src=input.imageSrc
+    options=imageOptions
+    alt=alt
+    attrs=imageAttrs
+  />
+  
