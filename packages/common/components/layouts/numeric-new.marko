@@ -9,6 +9,7 @@ $ const { newsletter, date } = input.data;
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterName = get(newsletterConfig, "name");
 $ const newsletterDescription = stripHtml(get(newsletterConfig, "description"));
+$ const { secondaryColor, headlineColor } = newsletterConfig;
 $ const brandName = get(newsletterConfig, "brandName");
 $ const title = `${brandName} | ${newsletterName}`;
 
@@ -71,21 +72,21 @@ $ const queryParams = {
                                 <html-comment> ........... </html-comment>
 
                                 <html-comment> NUMBER 1 </html-comment>
-                                <common-numeric-row-one-new-block newsletter=newsletter date=date image-path=input.imagePath/>
+                                <common-numeric-row-one-new-block newsletter=newsletter date=date image-path=input.imagePath colors= { secondaryColor, headlineColor } />
                                 <html-comment> /NUMBER 1 </html-comment>
 
                                 <html-comment> NUMBER 2 </html-comment>
-                                <common-numeric-row-two-new-block newsletter=newsletter date=date image-path=input.imagePath/>
+                                <common-numeric-row-two-new-block newsletter=newsletter date=date image-path=input.imagePath colors= { secondaryColor, headlineColor } />
                                 <html-comment> /NUMBER 2 </html-comment>
 
                                 <html-comment> Native Ad </html-comment>
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                   <tr>
                                       <td style="padding-top: 24px;">
-                                          <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="width: 592px">
+                                          <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" class="content-table">
                                               <tr>
                                                   <td bgcolor="#ffffff" align="center" class="mobile-padding" style="background-color: #ffffff;border-top: 4px solid #27BCE2;">
-                                                      <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 552px;">
+                                                      <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 592px;" class="content-table">
                                                           <!-- AD 1 begin -->
                                                           <tr>
                                                               <td style="padding: 20px 0 0 0;" align="center" valign="top" class="mobile-padding-topbtm">
@@ -170,15 +171,15 @@ $ const queryParams = {
                                 <html-comment> /Native Ad </html-comment>
 
                                 <html-comment> NUMBER 3 </html-comment>
-                                <common-numeric-row-three-new-block newsletter=newsletter date=date image-path=input.imagePath/>
+                                <common-numeric-row-three-new-block newsletter=newsletter date=date image-path=input.imagePath  colors= { secondaryColor, headlineColor } />
                                 <html-comment> /NUMBER 3 </html-comment>
 
                                 <html-comment> NUMBER 4 </html-comment>
-                                <common-numeric-row-four-new-block newsletter=newsletter date=date image-path=input.imagePath/>
+                                <common-numeric-row-four-new-block newsletter=newsletter date=date image-path=input.imagePath  colors= { secondaryColor, headlineColor } />
                                 <html-comment> /NUMBER 4 </html-comment>
 
                                 <html-comment> NUMBER 5 </html-comment>
-                                <common-numeric-row-five-new-block newsletter=newsletter date=date image-path=input.imagePath/>
+                                <common-numeric-row-five-new-block newsletter=newsletter date=date image-path=input.imagePath  colors= { secondaryColor, headlineColor }/>
                                 <html-comment> /NUMBER 5 </html-comment>
 
                                 <html-comment> Show Promo </html-comment>
