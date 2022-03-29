@@ -30,6 +30,11 @@ $ const imgDimensions = {
   "pmmi.dragonforms.com": { w: 60, h: 60 },
 }
 
+$ const imgAlignment = {
+  "youtube.com": { "padding-right": "10px" },
+  "pmmi.dragonforms.com": { "padding-right":  "10px", "padding-top": "8px" }
+}
+
 $ const imgOptions =  {
   w: 60,
   h: 60,
@@ -49,7 +54,7 @@ $ const imgOptions =  {
                   <!-- content left -->
                   <table align="left" border="0" cellpadding="0" cellspacing="0" width="22%">
                     <tr>
-                      <td align="right" style="padding-right: 10px;padding-top: 8px;" valign="top">
+                      <td align="right" style=imgAlignment valign="top">
                         <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                           <marko-newsletter-imgix
                             src=image.src
