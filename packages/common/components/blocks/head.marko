@@ -1,10 +1,12 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 import NumericStyles from "../styles/numeric";
+import NumericNewStyles from "../styles/numeric-new";
 import StandardStyles from "../styles/standard";
 
 $ const styleComponents = {
   "numeric": NumericStyles,
+  "numeric-new": NumericNewStyles,
   "standard": StandardStyles,
 };
 $ const StyleComponent = styleComponents[defaultValue(input.styleComponent, "standard")];

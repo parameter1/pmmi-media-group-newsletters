@@ -16,5 +16,26 @@
   },
   "<common-numeric-header-block>": {
     "template": "./header.marko"
+  },
+  "<common-numeric-footer-new-block>": {
+    "template": "./footer-new.marko"
+  },
+  "<common-numeric-row-one-new-block>": {
+    "template": "./row-one-new.marko"
+  },
+  "<common-numeric-row-two-new-block>": {
+    "template": "./row-two-new.marko"
+  },
+  "<common-numeric-row-three-new-block>": {
+    "template": "./row-three-new.marko"
+  },
+  "<common-numeric-row-four-new-block>": {
+    "template": "./row-four-new.marko"
+  },
+  "<common-numeric-row-five-new-block>": {
+    "template": "./row-five-new.marko"
+  },
+  "<common-numeric-header-new-block>": {
+    "template": "./header-new.marko"
   }
 }

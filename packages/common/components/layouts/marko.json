@@ -2,6 +2,9 @@
   "<common-numeric-layout>": {
     "template": "./numeric.marko"
   },
+  "<common-numeric-new-layout>": {
+    "template": "./numeric-new.marko"
+  },
   "<common-standard-layout>": {
     "template": "./standard.marko"
   }

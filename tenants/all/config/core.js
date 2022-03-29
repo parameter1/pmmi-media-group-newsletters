@@ -76,6 +76,15 @@ const config = {
     description: 'Your Healthcare Industry Week in Review',
     seeAllLink: 'https://www.healthcarepackaging.com/quick-hits',
     ...brands.hcp,
+    secondaryColor: '#01384B',
+    headlineColor: '#3c3c3c',
+  },
+  'hcp-quick-hits-new': {
+    name: 'Quick Hits',
+    description: 'Your Healthcare Industry Week in Review',
+    ...brands.hcp,
+    secondaryColor: '#01384B',
+    headlineColor: '#3c3c3c',
   },
   'oem-insights': {
     name: 'Insights',

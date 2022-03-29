@@ -4,5 +4,8 @@
   },
   "<common-standard-styles>": {
     "template": "./standard.marko"
+  },
+  "<common-numeric-new-styles>": {
+    "template": "./numeric-new.marko"
   }
 }
