@@ -1,6 +1,6 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 
-$ const { newsletter, date, imagePath } = input;
+$ const { newsletter, date, imagePath, colors } = input;
 
 $ const queryParams = {
   date: date.valueOf(),
@@ -22,20 +22,34 @@ $ const imgStyles = {
     "border-width": "0px",
   }
 
+$ const imgBackgroundStyle = {
+    "background-color": colors.secondaryColor
+}
+
+$ const borderTopStyle = {
+    "background-color": "#ffffff",
+    "border-top": `4px solid ${colors.secondaryColor}`
+}
+
+$ const headlineStyle = {
+    "color": colors.headlineColor,
+     "text-decoration": "none"
+}
+
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
         <td style="padding-top: 24px;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="width: 592px">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" class="content-table">
                 <tr>
-                    <td bgcolor="#ffffff" style="background-color: #ffffff;border-top: 4px solid #01384B;" align="center" class="mobile-padding">
+                    <td bgcolor="#ffffff" style=borderTopStyle align="center" class="mobile-padding">
                         <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 552px;">
                             <tr>
                                 <td style="vertical-align:top;text-align: left;" valign="top">
                                     <table border="0" cellpadding="0" cellspacing="0" width="60">
                                         <tr>
-                                            <td style="background-color:#01384B;">
+                                            <td style=imgBackgroundStyle>
                                                 $ const imageSrc = `${input.imagePath}/three-2022.png`;
-                                                <common-number-new-element image-src=imageSrc alt="Three" width="60" style={ width: "60px", height: "64px" } />    
+                                                <common-number-new-element image-src=imageSrc alt="Three" width="60" style={ width: "60px", height: "64px" } />
                                             </td>
                                         </tr>
                                     </table>
@@ -84,7 +98,7 @@ $ const imgStyles = {
                                                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                 <tr>
                                                                     <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 30px;" align="left" class="mobileheader">
-                                                                        <a href=content.siteContext.url target="_blank" style="color: #3c3c3c; text-decoration: none;">${content.name}</a>
+                                                                        <a href=content.siteContext.url target="_blank" style=headlineStyle>${content.name}</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -109,7 +123,7 @@ $ const imgStyles = {
                                 </td>
                             </tr>
                         </if>
-                    </marko-web-query>                                    
+                    </marko-web-query>
                         </table>
                     </td>
                 </tr>
