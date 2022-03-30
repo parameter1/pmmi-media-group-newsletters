@@ -7,7 +7,7 @@ $ const queryParams = {
   newsletterId: newsletter.id,
   sectionName: input.sectionName || "Standard",
   limit: 1,
-  skip: 4,
+  skip: 3,
   queryFragment,
 };
 
@@ -36,98 +36,99 @@ $ const headlineStyle = {
      "text-decoration": "none"
 }
 
-<table border="0" cellpadding="0" cellspacing="0" width="592 px;">
-    <tr>
-        <td style="padding-top: 24px;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" class="content-table">
-                <tr>
-                    <td bgcolor="#ffffff" style=borderTopStyle align="center" class="mobile-padding">
-                        <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 552px;">
-                            <tr>
-                                <td style="vertical-align:top;text-align: left;" valign="top">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="60">
-                                        <tr>
-                                            <td style=imgBackgroundStyle>
-                                                $ const imageSrc = `${input.imagePath}/four-2022.png`;
-                                                <common-number-new-element image-src=imageSrc alt="Four" width="60" style={ width: "60px", height: "64px" } />
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
-                                <if(nodes.length)>
-                                  $ const content = nodes[0];
-                            <tr>
-                                <td dir="rtl" width="100%" style="padding: 24px 0 0 0;direction:rtl;" align="center" valign="top">
-                                    <!-- Two column -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:left;">
-                                        <tr>
-                                            <!-- content right -->
-                                            <td class="content-table-flex-main" style="width:29%;display:inline-block;" valign="top">
-                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
-                                                    <tr>
-                                                        <td style="direction:ltr;padding-bottom:16px;" valign="top">
-                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                <tr>
-                                                                    <td style="border: 1px solid #e6e6e7;width: 170px;height: 227px;text-align:center;" align="center" class="img-mask">
-                                                                            <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
-                                                                                <marko-newsletter-imgix
-                                                                                src=image.src
-                                                                                alt=image.alt
-                                                                                options={ w: 170, h: 227, fit: "crop" }
-                                                                                class="img-max"
-                                                                                attrs={ style: imgStyles }
-                                                                                >
-                                                                                <@link href=content.siteContext.url target="_blank" />
-                                                                                </marko-newsletter-imgix>
-                                                                            </marko-core-obj-value>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <!-- /content right -->
-                                            <!-- content left -->
-                                            <td class="content-table-flex-main" style="width:70%;display:inline-block;" valign="top">
-                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                    <tr>
-                                                        <td style="direction:ltr;padding-right:10px;" class="mobilepadding-rt" valign="top">
-                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                <tr>
-                                                                    <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 30px;" align="left" class="mobileheader">
-                                                                        <a href=content.siteContext.url target="_blank" style=headlineStyle>${content.name}</a>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style="color: #555555; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; padding: 0 0 12px 0;" align="left" class="body-text">
-                                                                        ${content.teaser}
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style="color: #555555; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; padding: 0 0 12px 0;" align="left" class="body-text">
-                                                                        <a href=content.siteContext.url target="_blank" style="color: #27BCE2; text-decoration: underline;">Read More →</a>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <!-- /content left -->
-                                        </tr>
-                                    </table>
-                                    <!-- /Two column -->
-                                </td>
-                            </tr>
-                        </if>
-                    </marko-web-query>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=true params=queryParams>
+    <if(nodes.length)>
+        <table border="0" cellpadding="0" cellspacing="0" width="592 px;">
+            <tr>
+                <td style="padding-top: 24px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" class="content-table">
+                        <tr>
+                            <td bgcolor="#ffffff" style=borderTopStyle align="center" class="mobile-padding">
+                                <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 552px;">
+                                    <tr>
+                                        <td style="vertical-align:top;text-align: left;" valign="top">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="60">
+                                                <tr>
+                                                    <td style=imgBackgroundStyle>
+                                                        $ const imageSrc = `${input.imagePath}/four-2022.png`;
+                                                        <common-number-new-element image-src=imageSrc alt="Four" width="60" style={ width: "60px", height: "64px" } />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    $ const content = nodes[0];
+                                    <tr>
+                                        <td dir="rtl" width="100%" style="padding: 24px 0 0 0;direction:rtl;" align="center" valign="top">
+                                            <!-- Two column -->
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:left;">
+                                                <tr>
+                                                    <!-- content right -->
+                                                    <td class="content-table-flex-main" style="width:29%;display:inline-block;" valign="top">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
+                                                            <tr>
+                                                                <td style="direction:ltr;padding-bottom:16px;" valign="top">
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td style="border: 1px solid #e6e6e7;width: 170px;height: 227px;text-align:center;" align="center" class="img-mask">
+                                                                                    <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                                                                                        <marko-newsletter-imgix
+                                                                                        src=image.src
+                                                                                        alt=image.alt
+                                                                                        options={ w: 170, h: 227, fit: "crop" }
+                                                                                        class="img-max"
+                                                                                        attrs={ style: imgStyles }
+                                                                                        >
+                                                                                        <@link href=content.siteContext.url target="_blank" />
+                                                                                        </marko-newsletter-imgix>
+                                                                                    </marko-core-obj-value>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <!-- /content right -->
+                                                    <!-- content left -->
+                                                    <td class="content-table-flex-main" style="width:70%;display:inline-block;" valign="top">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tr>
+                                                                <td style="direction:ltr;padding-right:10px;" class="mobilepadding-rt" valign="top">
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 30px;" align="left" class="mobileheader">
+                                                                                <a href=content.siteContext.url target="_blank" style=headlineStyle>${content.name}</a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="color: #555555; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; padding: 0 0 12px 0;" align="left" class="body-text">
+                                                                                ${content.teaser}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="color: #555555; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; padding: 0 0 12px 0;" align="left" class="body-text">
+                                                                                <a href=content.siteContext.url target="_blank" style="color: #27BCE2; text-decoration: underline;">Read More →</a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <!-- /content left -->
+                                                </tr>
+                                            </table>
+                                            <!-- /Two column -->
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </if>
+</marko-web-query>

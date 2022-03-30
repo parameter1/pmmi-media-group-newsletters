@@ -107,6 +107,14 @@ config
       height: 100,
     },
   ])
+  .setAdUnits('hcp-quick-hits-new', [
+    {
+      name: 'bottom-audience-banner',
+      id: '60929790932e212620803005',
+      width: 768,
+      height: 100,
+    },
+  ])
   .setAdUnits('oem-insights', [
     {
       name: 'bottom-audience-banner',
