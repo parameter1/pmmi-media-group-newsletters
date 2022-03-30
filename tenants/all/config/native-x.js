@@ -193,6 +193,14 @@ module.exports = {
       'slot-4': '61c23cf5e30fac00015e4dfe',
       'slot-5': '61c23cfee30fac00015e4e4f',
     },
+    'hcp-quick-hits-new': {
+      'top-audience-banner': '61c23cc5e30fac00015e4bfe',
+      'slot-1': '61c23cd3c69ddc00017e1875',
+      'slot-2': '61c23cdec69ddc00017e18c9',
+      'slot-3': '61c23ceac69ddc00017e1948',
+      'slot-4': '61c23cf5e30fac00015e4dfe',
+      'slot-5': '61c23cfee30fac00015e4e4f',
+    },
     'hcp-serialization-countdown': {
       'top-audience-banner': '61c23d15e30fac00015e4f37',
       'slot-1': '61c23d20e30fac00015e4fc1',
