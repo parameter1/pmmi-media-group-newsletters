@@ -110,9 +110,9 @@ config
   .setAdUnits('hcp-quick-hits-new', [
     {
       name: 'bottom-audience-banner',
-      id: '60929790932e212620803005',
-      width: 768,
-      height: 100,
+      id: '6245fa366e4c9e5aff3e7525',
+      width: 560,
+      height: 127,
     },
   ])
   .setAdUnits('oem-insights', [
