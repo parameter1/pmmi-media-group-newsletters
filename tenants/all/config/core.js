@@ -61,6 +61,13 @@ const config = {
     description: 'Your news source for GDPs, regulatory issues and temperature-controlled transportation',
     ...brands.hcp,
   },
+  'hcp-logistics-for-the-life-sciences-new': {
+    name: 'Logistics for the Life Sciences',
+    description: 'Your news source for GDPs, regulatory issues and temperature-controlled transportation',
+    ...brands.hcp,
+    secondaryColor: '#84bcc9',
+    headlineColor: '#3c3c3c',
+  },
   'hcp-newsbrief': {
     name: 'Newsbrief',
     description: 'An editor-curated selection of life sciences packaging news and trends',
@@ -70,6 +77,13 @@ const config = {
     name: 'Serialization Countdown',
     description: 'Regulatory compliance for product traceability',
     ...brands.hcp,
+  },
+  'hcp-serialization-countdown-new': {
+    name: 'Serialization Countdown',
+    description: 'Regulatory compliance for product traceability',
+    ...brands.hcp,
+    secondaryColor: '#abd8c8',
+    headlineColor: '#3c3c3c',
   },
   'hcp-quick-hits': {
     name: 'Quick Hits',
