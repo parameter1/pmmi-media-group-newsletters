@@ -1,0 +1,28 @@
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { newsletter, date } = data;
+$ const { config } = out.global;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const logoConfig = get(newsletterConfig, "logoConfig");
+
+<common-numeric-new-layout
+  data=data
+  style-component="numeric-new"
+  style-component-input={ "accent-color": "#5b677f" }
+  image-path="/files/base/pmmi/all/image/newsletters/hcp/quick-hits"
+>
+  <@header>
+    <common-numeric-header-new-block
+      newsletter=newsletter
+      date=date
+      ...logoConfig
+      image-wrapper-style={ "padding": "8px 8px 8px 8px" }
+      image-attrs={ width: 216, height: 54 }
+      image-style={ "max-width": "216px", "width": "216px", "height": "54px" }
+      image-options={ w: 216, h: 54 }
+      image-src="/files/base/pmmi/all/image/newsletters/hcp-lls-logo.png"
+      secondary-background-color="#5b677f"
+    />
+  </@header>
+</common-numeric-new-layout>
