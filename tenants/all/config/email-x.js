@@ -83,6 +83,14 @@ config
       height: 100,
     },
   ])
+  .setAdUnits('hcp-logistics-for-the-life-sciences-new', [
+    {
+      name: 'bottom-audience-banner',
+      id: '625ed3b26e4c9e4e2f3e78b8',
+      width: 560,
+      height: 127,
+    },
+  ])
   .setAdUnits('hcp-newsbrief', [
     {
       name: 'bottom-audience-banner',
@@ -97,6 +105,14 @@ config
       id: '60929739b1fccac95c1ba807',
       width: 768,
       height: 100,
+    },
+  ])
+  .setAdUnits('hcp-serialization-countdown-new', [
+    {
+      name: 'bottom-audience-banner',
+      id: '625ed4056e4c9e529c3e7914',
+      width: 560,
+      height: 127,
     },
   ])
   .setAdUnits('hcp-quick-hits', [
