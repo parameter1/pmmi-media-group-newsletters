@@ -209,7 +209,23 @@ module.exports = {
       'slot-4': '61c23d3ec69ddc00017e1d00',
       'slot-5': '61c23d49e30fac00015e51e4',
     },
+    'hcp-serialization-countdown-new': {
+      'top-audience-banner': '61c23d15e30fac00015e4f37',
+      'slot-1': '61c23d20e30fac00015e4fc1',
+      'slot-2': '61c23d29e30fac00015e5061',
+      'slot-3': '61c23d34e30fac00015e510a',
+      'slot-4': '61c23d3ec69ddc00017e1d00',
+      'slot-5': '61c23d49e30fac00015e51e4',
+    },
     'hcp-logistics-life-sciences': {
+      'top-audience-banner': '61c23d5ee30fac00015e52dd',
+      'slot-1': '61c23d72c69ddc00017e2092',
+      'slot-2': '61c23d80c69ddc00017e2129',
+      'slot-3': '61c23d8be30fac00015e55d5',
+      'slot-4': '61c23d94c69ddc00017e2251',
+      'slot-5': '61c23da1c69ddc00017e2300',
+    },
+    'hcp-logistics-for-the-life-sciences-new': {
       'top-audience-banner': '61c23d5ee30fac00015e52dd',
       'slot-1': '61c23d72c69ddc00017e2092',
       'slot-2': '61c23d80c69ddc00017e2129',
