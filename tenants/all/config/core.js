@@ -58,12 +58,12 @@ const config = {
   },
   'hcp-logistics-life-sciences': {
     name: 'Logistics for the Life Sciences',
-    description: 'Your news source for GDPs, regulatory issues and temperature-controlled transportation',
+    description: 'Covering regulatory issues, GDPs, and temperature-controlled transport',
     ...brands.hcp,
   },
   'hcp-logistics-for-the-life-sciences-new': {
     name: 'Logistics for the Life Sciences',
-    description: 'Your news source for GDPs, regulatory issues and temperature-controlled transportation',
+    description: 'Covering regulatory issues, GDPs, and temperature-controlled transport',
     ...brands.hcp,
     secondaryColor: '#84bcc9',
     headlineColor: '#3c3c3c',
