@@ -16,14 +16,14 @@ $ const { newsletter, date } = input;
       <if(input.body)>
         <${input.body} />
       </if>
+
+      <!-- Footer block -->
+      <if(input.footer)>
+        <${input.footer} />
+      </if>
+      <else>
+        <common-footer-block newsletter=newsletter date=date />
+      </else>
     </td>
   </tr>
 </table>
-
-<!-- Footer block -->
-<if(input.footer)>
-  <${input.footer} />
-</if>
-<else>
-  <common-footer-block newsletter=newsletter date=date />
-</else>
