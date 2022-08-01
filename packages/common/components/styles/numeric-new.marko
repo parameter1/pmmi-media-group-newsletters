@@ -26,10 +26,17 @@ $ const buttonHoverColor = "#27BCE2"; /* #b31d22 */
         font-weight: inherit !important;
         line-height: inherit !important;
     }
-    a {
+    a, .text-link {
         color: ${accentColor} ;
-        text-decoration: underline;}
-    
+        text-decoration: underline;
+    }
+    .button {
+        background-color:${accentColor} !important;
+        border-top:13px solid ${accentColor} !important;
+        border-right:20px solid ${accentColor} !important;
+        border-bottom:13px solid ${accentColor} !important;
+        border-left:20px solid ${accentColor} !important;
+    }
     .button:hover {
         background-color:${buttonHoverColor} !important;
         border-top:13px solid ${buttonHoverColor} !important;
