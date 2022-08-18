@@ -12,6 +12,6 @@ $ const contentTypeActions = {
 
 $ const contentAction = contentTypeActions[content.type] || contentTypeActions.default;
 
-<a href=content.siteContext.url style="color: inherit; text-decoration: underline;" target="_blank">
+<a href=content.siteContext.url style="color: inherit; text-decoration: underline;" class="text-link" target="_blank">
   ${i18n(contentAction)} &rarr;
 </a>
