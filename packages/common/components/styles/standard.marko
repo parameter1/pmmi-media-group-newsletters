@@ -4,6 +4,24 @@ $ const accentColor = defaultValue(input.accentColor, "#005bab");
 $ const buttonHoverColor = "#187ED9"; /* #b31d22 */
 
 <style type="text/css">
+ a, a.text-link {
+      color: ${accentColor};
+      text-decoration: underline;
+  }
+  .button {
+      background-color: ${accentColor} !important;
+      border-top: 13px solid ${accentColor} !important;
+      border-right: 20px solid ${accentColor} !important;
+      border-bottom: 13px solid ${accentColor} !important;
+      border-left: 20px solid ${accentColor} !important;
+  }
+  .button:hover {
+      background-color: ${buttonHoverColor} !important;
+      border-top: 13px solid ${buttonHoverColor} !important;
+      border-right: 20px solid ${buttonHoverColor} !important;
+      border-bottom: 13px solid ${buttonHoverColor} !important;
+      border-left: 20px solid ${buttonHoverColor} !important;
+  }
   /* CLIENT-SPECIFIC STYLES */
   #outlook a {
     padding: 0;
@@ -53,37 +71,25 @@ $ const buttonHoverColor = "#187ED9"; /* #b31d22 */
   }
   /* Remove ios blue links */
   a[x-apple-data-detectors] {
-      color: inherit !important;
+      color: ${accentColor} !important;
       text-decoration: none !important;
       font-size: inherit !important;
       font-family: inherit !important;
       font-weight: inherit !important;
       line-height: inherit !important;
   }
-  a, .text-link {
-      color: ${accentColor};
-      text-decoration: underline;
-  }
-
+  /*Remove blue samsung links*/
+#MessageViewBody a {
+            color: ${accentColor} !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+}
   p {
     margin: 0;
   }
-
-  .button {
-      background-color: ${accentColor} !important;
-      border-top: 13px solid ${accentColor} !important;
-      border-right: 20px solid ${accentColor} !important;
-      border-bottom: 13px solid ${accentColor} !important;
-      border-left: 20px solid ${accentColor} !important;
-  }
-  .button:hover {
-      background-color: ${buttonHoverColor} !important;
-      border-top: 13px solid ${buttonHoverColor} !important;
-      border-right: 20px solid ${buttonHoverColor} !important;
-      border-bottom: 13px solid ${buttonHoverColor} !important;
-      border-left: 20px solid ${buttonHoverColor} !important;
-  }
-
   /* Outline styles */
   @media only screen and (max-width: 599px) {
     .content-table {
@@ -225,6 +231,9 @@ $ const buttonHoverColor = "#187ED9"; /* #b31d22 */
     a {
       color: #dbe1ec !important;
     }
+    a.text-link {
+      color: #dbe1ec !important;
+    }
   }
 
   [data-ogsb] .header {
@@ -252,6 +261,9 @@ $ const buttonHoverColor = "#187ED9"; /* #b31d22 */
     background-color:#20242b!important;
   }
   [data-ogsc] a {
+    color:#dbe1ec!important;
+  }
+  [data-ogsc] a.text-link {
     color:#dbe1ec!important;
   }
   [data-ogsc] .img-mask {
