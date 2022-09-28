@@ -25,9 +25,9 @@ $ const imgStyles = {
     <html-comment> Two column </html-comment>
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr>
-        <td>
-          <html-comment> content left </html-comment>
-          <table class="content-table-flex" border="0" cellpadding="0" cellspacing="0" width="32%" align="left">
+        <html-comment> content left </html-comment>
+        <td class="content-table-flex" width="32%" align="left" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0">
             <tr>
               <td align="left" valign="top" class="mobilepadding-rt" style="padding-bottom:16px;">
                 <table border="0" cellpadding="0" cellspacing="0">
@@ -50,9 +50,11 @@ $ const imgStyles = {
               </td>
             </tr>
           </table>
+          </td>
           <html-comment> /content left </html-comment>
           <html-comment> content right </html-comment>
-          <table class="content-table-flex" border="0" cellpadding="0" cellspacing="0" width="66%" align="right">
+          <td class="content-table-flex" width="66%" align="right" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
               <td valign="top">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -86,8 +88,8 @@ $ const imgStyles = {
               </td>
             </tr>
           </table>
-          <html-comment> /content right </html-comment>
         </td>
+        <html-comment> /content right </html-comment>
       </tr>
     </table>
     <html-comment> /Two column </html-comment>

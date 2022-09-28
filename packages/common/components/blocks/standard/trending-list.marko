@@ -30,9 +30,9 @@ $ const queryParams = {
         <td style="padding: 32px 0 0 0;background-color: #ffffff;" bgcolor="#ffffff" align="center" class="mobile-padding">
           <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
             <tr>
-              <td>
                 <!-- content left -->
-                <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="35%" align="left">
+              <td class="content-table" width="35%" align="left">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
                     <td>
                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -45,9 +45,11 @@ $ const queryParams = {
                     </td>
                   </tr>
                 </table>
-                <!-- /content left -->
-                <!-- content right -->
-                <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="65%" align="right">
+                </td>
+              <!-- /content left -->
+              <!-- content right -->
+              <td class="content-table" width="65%" align="right">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
                     <td>
                       <!-- content -->
@@ -61,8 +63,8 @@ $ const queryParams = {
                     </td>
                   </tr>
                 </table>
-                <!-- /content right -->
               </td>
+              <!-- /content right -->
             </tr>
             <tr>
               <td style="color: #888888; font-family: Helvetica, Arial, sans-serif; font-size: 11px; font-weight: bold; padding: 4px 0 16px 0;" align="left" class="body-text">
@@ -71,13 +73,13 @@ $ const queryParams = {
             </tr>
             <for|content| of=nodes>
               <tr>
-                <td align="center" valign="top">
+                <td align="center" valign="top" width="100%">
                   <!-- Two column -->
                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
-                      <td>
-                        <!-- content left -->
-                        <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="22%" align="left">
+                      <!-- content left -->
+                      <td class="content-table" width="22%" align="left" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
                             <td align="left" valign="top">
                               $ const imgStyles = {
@@ -101,9 +103,11 @@ $ const queryParams = {
                             </td>
                           </tr>
                         </table>
-                        <!-- /content left -->
-                        <!-- content right -->
-                        <table class="content-table" border="0" cellpadding="0" cellspacing="0" width="76%" align="right">
+                      </td>
+                      <!-- /content left -->
+                      <!-- content right -->
+                      <td class="content-table" width="76%" align="right" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
                             <td valign="top">
                               <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -144,8 +148,8 @@ $ const queryParams = {
                             </td>
                           </tr>
                         </table>
-                        <!-- /content right -->
                       </td>
+                      <!-- /content right -->
                     </tr>
                   </table>
                   <!-- /Two column -->
