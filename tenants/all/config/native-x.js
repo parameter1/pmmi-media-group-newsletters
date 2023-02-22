@@ -114,7 +114,7 @@ module.exports = {
       'slot-5': '6234861534a89300018f6ae6',
     },
     'pfw-new-issue-alert': {
-      'top-audience-banner': '623485b234a89300018f5f51',
+      'top-audience-banner': '62348498336e9a000100ef2e',
       'slot-1': '623484c134a89300018f3dc0',
       'slot-2': '623484e434a89300018f4737',
       'slot-3': '623484fb336e9a00010101cf',
