@@ -13,6 +13,7 @@ x-node-defaults: &node
     - yarn-cache:/.yarn-cache
 
 x-newsletter-command: &newsletter-cmd
+  <<: *node
   entrypoint: ["node_modules/.bin/basecms-newsletters"]
   command: ["dev", "index.js"]
 
@@ -24,9 +25,11 @@ x-env-defaults: &env
   EMAILX_SERVE_URI: ${EMAILX_SERVE_URI-https://pmmi.serve.email-x.parameter1.com}
 
 x-env-leonis: &env-leonis
+  <<: *env
   GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
 
 x-env-tauron: &env-tauron
+  <<: *env
   GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
 
 services:
@@ -45,11 +48,9 @@ services:
       <<: *env
 
   all:
-    <<: *node
     <<: *newsletter-cmd
     working_dir: /root/tenants/all
     environment:
-      <<: *env
       <<: *env-tauron
       PORT: 80
       EXPOSED_PORT: 22095
@@ -60,11 +61,9 @@ services:
       - "32095:32095"
 
   mundo:
-    <<: *node
     <<: *newsletter-cmd
     working_dir: /root/tenants/mundo
     environment:
-      <<: *env
       <<: *env-tauron
       PORT: 80
       EXPOSED_PORT: 22096
