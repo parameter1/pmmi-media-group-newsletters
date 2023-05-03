@@ -52,78 +52,86 @@ $ const logoLinkStyle = {
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td style="background-color: #000000;" class="header">
-                  <!-- content left -->
-                  <table border="0" cellpadding="0" cellspacing="0" align="left" style="display: table-cell;min-width:0px;max-width:36%;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
-                      <td>
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tr>
-                            $ const logoWrapperStyle = {
-                              "padding": "16px 10px 16px 10px",
-                              "vertical-align": "middle",
-                              ...input.logoWrapperStyle
-                            }
-                            <td align="left" style=logoWrapperStyle valign="center">
-                              <marko-newsletter-imgix
-                                src=logoSrc
-                                options=logoOptions
-                                alt=brandName
-                                attrs=logoAttrs
-                                class="header-img-max"
-                              />
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
+                      <!-- content left -->
+                        <td style="text-align: left;max-width:36%;">
+                          <table border="0" cellpadding="0" cellspacing="0" align="left" style="display:inline-block;">
+                            <tr>
+                              <td>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    $ const logoWrapperStyle = {
+                                      "padding": "16px 10px 16px 10px",
+                                      "vertical-align": "middle",
+                                      ...input.logoWrapperStyle
+                                    }
+                                    <td align="left" style=logoWrapperStyle valign="center">
+                                      <marko-newsletter-imgix
+                                        src=logoSrc
+                                        options=logoOptions
+                                        alt=brandName
+                                        attrs=logoAttrs
+                                        class="header-img-max"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                          <!-- /content left -->
+                          <!-- content right -->
+                        <td style="text-align: right;min-width:0px;max-width:60%;">
+                          <table border="0" cellpadding="0" cellspacing="0" style="display:inline-block;" align="right">
+                            <tr>
+                              <td>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    $ const imageSrc = input.imageSrc;
+                                    $ const imageWrapperStyle = {
+                                      "padding": "16px 10px 16px 10px",
+                                      ...input.imageWrapperStyle,
+                                    }
+                                    $ const imageOptions = {
+                                      "w": 186,
+                                      ...input.imageOptions
+                                    };
+                                    $ const imageStyle = {
+                                      "font-family": "Helvetica, Arial, sans-serif",
+                                      "color": "#333333",
+                                      "font-size": "14px",
+                                      "max-width": "186px",
+                                      "height": "auto",
+                                      "width":"100%",
+                                      ...input.imageStyle,
+                                    };
+                                    $ const imageAttrs = {
+                                      "border": "0",
+                                      "height": "27",
+                                      "width": "186",
+                                      "style": imageStyle,
+                                      ...input.imageAttrs,
+                                    };
+                                    <td align="right" style=imageWrapperStyle>
+                                      <marko-newsletter-imgix
+                                        src=imageSrc
+                                        options=imageOptions
+                                        alt=newsletterName
+                                        attrs=imageAttrs
+                                        class="header-img-max"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      <!-- /content right -->
                     </tr>
-                  </table>
-                  <!-- /content left -->
-                  <!-- content right -->
-                  <table border="0" cellpadding="0" cellspacing="0" align="right" style="display: table-cell;min-width:0px;max-width:60%;">
-                    <tr>
-                      <td>
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tr>
-                            $ const imageSrc = input.imageSrc;
-                            $ const imageWrapperStyle = {
-                              "padding": "16px 10px 16px 10px",
-                              ...input.imageWrapperStyle,
-                            }
-                            $ const imageOptions = {
-                              "w": 186,
-                              ...input.imageOptions
-                            };
-                            $ const imageStyle = {
-                              "font-family": "Helvetica, Arial, sans-serif",
-                              "color": "#333333",
-                              "font-size": "14px",
-                              "max-width": "186px",
-                              "height": "auto",
-                              "width":"100%",
-                              ...input.imageStyle,
-                            };
-                            $ const imageAttrs = {
-                              "border": "0",
-                              "height": "27",
-                              "width": "186",
-                              "style": imageStyle,
-                              ...input.imageAttrs,
-                            };
-                            <td align="right" style=imageWrapperStyle>
-                              <marko-newsletter-imgix
-                                src=imageSrc
-                                options=imageOptions
-                                alt=newsletterName
-                                attrs=imageAttrs
-                                class="header-img-max"
-                              />
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                  </table>
-                  <!-- /content right -->
+                  </table>  
                 </td>
               </tr>
               <!--[if gte mso 12]><br style="line-height:0px; font-size:0px; mso-line-height-rule:exactly;" /> <![endif]-->
