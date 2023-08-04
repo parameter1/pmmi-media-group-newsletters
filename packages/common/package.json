@@ -6,8 +6,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js --max-warnings 5 ./",
-    "test": "yarn lint"
+    "build": "yarn compile",
+    "compile": "basecms-marko-compile compile",
+    "lint": "eslint --ext .js --max-warnings 5 --config ../../.eslintrc.js --ignore-path ../../.eslintignore ./",
+    "lint:fix": "yarn lint --fix",
+    "test": "yarn lint && yarn compile --no-clean"
   },
   "dependencies": {
     "@parameter1/base-cms-html": "^4.5.12",
@@ -21,5 +24,13 @@
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "engines": {
+    "node": ">=14.15"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ]
 }
