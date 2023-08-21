@@ -1,5 +1,5 @@
 module.exports = {
-  uri: 'https://pmmi.native-x.parameter1.com',
+  uri: 'https://pmmi.native-x.parameter1.com/email-placement',
   placements: {
     'mundo-perspectivas': {
       'top-audience-banner': '60c2041f6b523e0001192730',

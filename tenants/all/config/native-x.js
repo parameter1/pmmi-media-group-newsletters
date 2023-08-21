@@ -1,5 +1,5 @@
 module.exports = {
-  uri: 'https://pmmi.native-x.parameter1.com',
+  uri: 'https://pmmi.native-x.parameter1.com/email-placement',
   placements: {
     'aw-news-insights': {
       'top-audience-banner': '6010908ba80e1f000181e7cc',
