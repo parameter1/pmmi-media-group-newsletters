@@ -1,6 +1,6 @@
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../../graphql/fragments/content-list";
-import { convertAdToContent } from "../../../native-x";
+import { convertAdToContent } from "@parameter1/base-cms-marko-newsletters-native-x/utils";
 
 $ const { config } = out.global;
 
@@ -9,10 +9,10 @@ $ const newsletter = getAsObject(input, "newsletter");
 $ const nativeX = config.getAsObject("nativeX");
 $ const placementId = get(nativeX, `placements.${newsletter.alias}.${placement}`);
 <if(nativeX.uri && placementId)>
-  <native-x-fetch|{ data: nxData }| uri=nativeX.uri date=date placement-id=placementId>
+  <core-native-x-fetch|{ data: nxData }| uri=nativeX.uri date=date placement-id=placementId>
     <if(nxData)>
       $ const content = convertAdToContent(nxData);
       <common-standard-announcement-block content=content />
     </if>
-  </native-x-fetch>
+  </core-native-x-fetch>
 </if>
