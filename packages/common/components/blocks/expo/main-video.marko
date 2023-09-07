@@ -1,0 +1,102 @@
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+
+$ const { newsletter, date, content } = input;
+
+$ const sectionName = defaultValue(input.sectionName, "Main Video");
+$ const withImage = defaultValue(input.withImage, false);
+$ const withHeader = defaultValue(input.withHeader, false);
+
+$ const queryParams = {
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName,
+  limit: input.limit || 1,
+  skip: input.skip || 0,
+  queryFragment,
+};
+
+$ const imgStyles = {
+  "display": "block",
+  "font-family": "Helvetica, Arial, sans-serif",
+  "color": "#333333",
+  "font-size": "14px",
+  "max-width": "212px",
+  "width": "100%",
+  "max-height": "159px",
+}
+
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+  <if(nodes.length)>
+    <for|content| of=nodes>
+      <tr>
+        <td bgcolor="#ffffff" style="background-color: #ffffff;padding:16px 0 0 0;" align="center" class="mobile-padding">
+          <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;background-color:#f5f5f5;border-radius:4px;">
+            <tr>
+              <td width="100%" style="padding: 16px;" align="center" valign="top" class="header">
+                <!-- Two column -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:left;">
+                    <tr>
+                      <!-- content left -->
+                        <td class="content-table-flex-main" style="width:35%;display:inline-block;" valign="top">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
+                            <tr>
+                              <td style="padding-right:16px;" class="mobilepadding-rt" valign="top">
+                                <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                                  <marko-newsletter-imgix
+                                    src=image.src
+                                    alt=image.alt
+                                    options={ w: 212, h: 159, fit: "crop" }
+                                    class="img-max"
+                                    attrs={ style: imgStyles, border: 0 }
+                                  >
+                                    <@link href=content.siteContext.url target="_blank" />
+                                  </marko-newsletter-imgix>
+                                </marko-core-obj-value>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      <!-- /content left -->
+                      <!-- content right -->
+                        <td class="content-table-flex-main" style="width:62%;display:inline-block;" valign="top">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td style="padding: 0 0 4px 0; color: #384198; font-family: Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: .5px;font-weight: bold; line-height: 16px;text-transform:uppercase;" align="left" class="eyebrowPurp">
+                                      Placeholder Eyebrow - select one from doc
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; line-height: 30px;letter-spacing:.13px;" align="left" class="mobileheader">
+                                      <a href=content.siteContext.url target="_blank" style="color: #3c3c3c; text-decoration: none;">
+                                        ${content.name}
+                                      </a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; " align="left" class="body-text">
+                                      ${content.teaser}&nbsp
+                                      <common-content-action-link-element content=content />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      <!-- /content right -->
+                    </tr>
+                  </table>
+                <!-- /Two column -->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </for>
+  </if>
+</marko-web-query>

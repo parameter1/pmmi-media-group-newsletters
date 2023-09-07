@@ -1,0 +1,87 @@
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+
+$ const { newsletter, date, content, sectionName } = input;
+
+$ const withImage = defaultValue(input.withImage, false);
+
+$ const imgStyles = {
+  "display": "block",
+  "font-family": "Helvetica, Arial, sans-serif",
+  "color": "#333333",
+  "font-size": "14px",
+  "max-width": "190px",
+  "width": "100%",
+  "max-height": "143px",
+  "margin": "0 auto",
+  "background-color": "#b8b8b8",
+  "border-radius": "4px 0 0 4px",
+}
+
+<tr>
+  <td style="padding-bottom:16px;" align="center" valign="top" class="mobile-padding-topbtm">
+    <!-- Two column -->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td style="background-color:#fff;border-radius:4px;" class="header">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <!-- content left -->
+                  <td class="content-table-flex" width="32%" align="left">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="left" valign="top">
+                          <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                            <marko-newsletter-imgix
+                              src=image.src
+                              alt=image.alt
+                              options={ w: 190, h: 143, fit: "crop" }
+                              class="img-max"
+                              attrs={ style: imgStyles, border: 0 }
+                            >
+                              <@link href=content.siteContext.url target="_blank" />
+                            </marko-newsletter-imgix>
+                          </marko-core-obj-value>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                <!-- /content left -->
+                <!-- content right -->
+                  <td class="content-table-flex" width="66%" align="right">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top" style="padding:16px">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td style="color: #b8b8b8; font-family: Helvetica, Arial, sans-serif; font-size: 12px;text-transform:uppercase;letter-spacing: .5px;font-weight: bold; padding: 0 0 8px 0;" align="left">
+                                ${get(content, "primarySection.name")}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 12px 0; color: #3a3636; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px;">
+                                <a href=content.siteContext.url target="_blank" style="color: #3a3636; text-decoration: none;">
+                                  ${content.name}
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px;" align="left">
+                                <common-content-action-link-element content=content />
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                <!-- /content right -->
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    <!-- /Two column -->
+  </td>
+</tr>
