@@ -1,0 +1,79 @@
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+
+$ const { newsletter, date, content } = input;
+
+$ const withImage = defaultValue(input.withImage, false);
+
+$ const imgStyles = {
+  "display": "block",
+  "font-family": "Helvetica, Arial, sans-serif",
+  "color": "#333333",
+  "font-size": "14px",
+  "max-width": "90px",
+  "width": "100%",
+  "max-heigth": "69px",
+}
+
+<tr>
+  <td bgcolor="#ffffff" style="background-color: #ffffff;padding:16px 0 0 0;" align="center" class="mobile-padding">
+    <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;background-color:#f5f5f5;border-radius:4px;">
+      <tr>
+        <td width="100%" style="padding: 16px;" align="center" valign="top" class="header">
+          <!-- Two column -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:left;">
+              <tr>
+                <!-- content left -->
+                  <td class="content-table-flex-main" style="width:19%;display:inline-block;" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
+                      <tr>
+                        <td style="padding-right:16px;" class="mobilepadding-rt" valign="top">
+                          <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                            <marko-newsletter-imgix
+                              src=image.src
+                              alt=image.alt
+                              options={ w: 90, h: 69, fit: "crop" }
+                              class="img-max"
+                              attrs={ style: imgStyles, border: 0 }
+                            >
+                              <@link href=content.siteContext.url target="_blank" />
+                            </marko-newsletter-imgix>
+                          </marko-core-obj-value>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                <!-- /content left -->
+                <!-- content right -->
+                  <td class="content-table-flex-main" style="width:80%;display:inline-block;" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td style="padding: 0 0 4px 0; color: #384198; font-family: Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: .5px;font-weight: bold; line-height: 16px;text-transform:uppercase;" align="left" class="eyebrowPurp">
+                                Placeholder Eyebrow - select one from doc
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 22px; " align="left" class="body-text">
+                                ${content.teaser}&nbsp
+                                <common-content-action-link-element content=content />
+                                <!-- The quick brown fox interviews the dog in the aisle of the main hall talking about ecommerce. <a href="#" style="color:#00b8ab;text-decoration:underline;">Watch now &rarr;</a> -->
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                <!-- /content right -->
+              </tr>
+            </table>
+          <!-- /Two column -->
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>

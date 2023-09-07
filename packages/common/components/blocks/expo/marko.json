@@ -1,0 +1,38 @@
+{
+  "<common-expo-header-block>": {
+    "template": "./header.marko"
+  },
+  "<common-expo-content-list-block>": {
+    "template": "./content-list.marko"
+  },
+  "<common-expo-content-list-item-block>": {
+    "template": "./content-list-item.marko"
+  },
+  "<common-expo-main-video-block>": {
+    "template": "./main-video.marko"
+  },
+  "<common-expo-show-daily-block>": {
+    "template": "./show-daily.marko"
+  },
+  "<common-expo-exhibitor-search-block>": {
+    "template": "./exhibitor-search.marko"
+  },
+  "<common-expo-video-list-block>": {
+    "template": "./video-list.marko"
+  },
+  "<common-expo-video-list-item-block>": {
+    "template": "./video-list-item.marko"
+  },
+  "<common-expo-curated-block>": {
+    "template": "./curated.marko"
+  },
+  "<common-expo-footer-block>": {
+    "template": "./footer.marko"
+  },
+  "<common-expo-schedule-block>": {
+    "template": "./schedule.marko"
+  },
+  "<common-expo-body-wrapper-block>": {
+    "template": "./body-wrapper.marko"
+  }
+}

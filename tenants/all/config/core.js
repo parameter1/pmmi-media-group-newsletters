@@ -170,6 +170,11 @@ const config = {
     description: 'An editor-curated selection of life sciences packaging news and trends',
     ...brands.hcp,
   },
+  'pw-expo': {
+    name: 'Expo',
+    description: 'TBD',
+    ...brands.pw,
+  },
 };
 
 module.exports = config;
