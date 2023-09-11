@@ -1,0 +1,72 @@
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+
+$ const { newsletter, date, content, sectionName } = input;
+
+<tr>
+  <td style="padding-bottom:16px;" align="center" valign="top" class="mobile-padding-topbtm">
+    <!-- Two column -->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td style="background-color:#dbdeff;border-radius:4px;padding:16px;" class="header">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <!-- content left -->
+                  <td class="content-table-flex-main" style="max-width:68%;display:inline-block;padding-right: 16px;" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
+                      <tr>
+                        <td style="color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 12px;text-transform:uppercase;letter-spacing: .5px;font-weight: bold; padding: 0 0 8px 0;" align="left" class="body-text">
+                          ${content.teaser}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0 0 12px 0; color: #dbe1ec!important; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px;text-decoration: none!important;">
+                          ${content.name}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="color: #384198; font-family: Helvetica, Arial, sans-serif; font-size: 12px;letter-spacing:.5px; font-weight: bold; line-height: 22px;text-transform:uppercase;" class="eyebrowPurp">
+                          $!{content.body}
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                <!-- /content left -->
+                <!-- content right -->
+                  <td class="content-table-flex-main" style="width:150px;display:inline-block;text-align:right;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="right">
+                      <!-- button -->
+                        <tr>
+                          <td align="center" style="text-align:center;padding-top:40px;" class="mobilepadding-btn">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate !important;width:100%;">
+                              <tr>
+                                <td align="center" valign="middle">
+                                  <!--[if gte mso 9]>
+                                    <table border="0" cellspacing="0" cellpadding="0" style="width:150px;">
+                                        <tr>
+                                            <td align="center" bgcolor="#384198" style="padding:3px 2px;" valign="top" class="button">
+                                    <![endif]-->
+                                    <common-content-action-link-element style="background-color:#384198;border-collapse:separate !important;border-top:4px solid #384198;border-right:2px solid #384198;border-bottom:4px solid #384198;border-left:2px solid #384198;color:#ffffff;display:inline-block;border-radius:4px;font-family:Helvetica, Arial, sans-serif;font-size:13px;letter-spacing: .8px;line-height:18px;text-align:center;text-decoration:none;font-weight:600;width: 150px; box-sizing: border-box;text-transform:uppercase;" content=content />
+                                    <!--[if gte mso 9]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                  <![endif]-->
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      <!-- /button -->
+                    </table>
+                  </td>
+                <!-- /content right -->
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    <!-- /Two column -->
+  </td>
+</tr>
