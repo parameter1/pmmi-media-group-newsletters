@@ -12,13 +12,6 @@ $ const contentTypeActions = {
 
 $ const contentAction = contentTypeActions[content.type] || contentTypeActions.default;
 
-<if(content.type==='promotion')>
-  <a href=content.siteContext.url style=input.style target="_blank">
-    ${i18n(contentAction)}
-  </a>
-</if>
-<else>
-  <a href=content.siteContext.url style="text-decoration: underline;" class="text-link" target="_blank">
-    ${i18n(contentAction)} &rarr;
-  </a>
-</else>
+<a href=content.siteContext.url style="text-decoration: underline;" class="text-link" target="_blank">
+  ${i18n(contentAction)} &rarr;
+</a>
