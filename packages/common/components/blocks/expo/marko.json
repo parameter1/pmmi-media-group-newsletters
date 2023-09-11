@@ -29,10 +29,13 @@
   "<common-expo-footer-block>": {
     "template": "./footer.marko"
   },
-  "<common-expo-schedule-block>": {
-    "template": "./schedule.marko"
+  "<common-expo-schedule-list-block>": {
+    "template": "./schedule-list.marko"
   },
   "<common-expo-body-wrapper-block>": {
     "template": "./body-wrapper.marko"
+  },
+  "<common-expo-schedule-list-item-block>": {
+    "template": "./schedule-list-item.marko"
   }
 }
