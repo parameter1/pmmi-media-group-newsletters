@@ -173,6 +173,7 @@ const config = {
   'pw-expo': {
     name: 'Expo',
     description: 'TBD',
+    title: 'Live from PACK EXPO',
     ...brands.pw,
   },
 };

@@ -31,6 +31,8 @@ fragment NewsletterContentListFragment on Content {
     name
   }
   ... on ContentPromotion {
+    name(input: { mutation: Email })
+    teaser(input: { mutation: Email, useFallback: false, maxLength: null })
     body(input: { mutation: Email })
     linkText
   }
