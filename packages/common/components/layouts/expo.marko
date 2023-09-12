@@ -22,19 +22,19 @@ $ const nativeX = config.getAsObject("nativeX");
   <@body style="margin: 0 !important; padding: 0 !important;background-color: #edeeee;" class="email-bg">
     <common-expo-body-wrapper-block newsletter=newsletter date=date>
       <@body>
-        <!-- ************************* Email body ************************* -->
-          <!-- Video Section -->
+        <html-comment> ************************* Email body ************************* </html-comment>
+          <html-comment> Video Section </html-comment>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-              <!-- Main Video -->
+              <html-comment> Main Video </html-comment>
               <common-expo-main-video-block
                 newsletter=newsletter
                 date=date
                 section-name="Main Video"
                 limit=1
               />
-              <!-- /Main Video -->
+              <html-comment> /Main Video </html-comment>
 
-              <!-- Second/Third Video -->
+              <html-comment> Second/Third Video </html-comment>
               <common-expo-video-list-block
                 newsletter=newsletter
                 date=date
@@ -42,18 +42,19 @@ $ const nativeX = config.getAsObject("nativeX");
                 limit=2
                 skip=0
               />
+              <html-comment> /Second/Third Video </html-comment>
             </table>
-          <!-- End Video Section -->
+          <html-comment> End Video Section </html-comment>
 
-          <!-- Show Daily Download -->
+          <html-comment> Show Daily Download </html-comment>
             <common-expo-show-daily-block />
-          <!-- /Show Daily Download -->
+          <html-comment> /Show Daily Download </html-comment>
 
-          <!-- Exhibitor Search -->
+          <html-comment> Exhibitor Search </html-comment>
             <common-expo-exhibitor-search-block />
-          <!-- /Exhibitor Search -->
+          <html-comment> /Exhibitor Search </html-comment>
 
-          <!-- Show News Section -->
+          <html-comment> Show News Section </html-comment>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td bgcolor="#f5f5f5" style="background-color: #f5f5f5;padding:48px 0;" align="center" class="mobile-padding">
@@ -66,21 +67,21 @@ $ const nativeX = config.getAsObject("nativeX");
                               <img src="https://pmg-designer.s3.amazonaws.com/EmailCollateral/12-packexpo/textNews.png" width="326" height="34" alt="News from the Show Floor" style="font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;" class="img-text-header">
                             </td>
                           </tr>
-                          <!-- EDIT 1 begin -->
+                          <html-comment> EDIT 1 begin </html-comment>
                           <common-expo-content-list-block
                             newsletter=newsletter
                             date=date
                             section-name="News"
                             limit=5
                           />
-                          <!-- EDIT 3 end -->
-                          <!-- Editorial View All -->
+                          <html-comment> EDIT 3 end </html-comment>
+                          <html-comment> Editorial View All </html-comment>
                           <tr>
                             <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: regular; line-height: 16px;text-align:center;" class="body-text">
                               View all the latest news & innovations from the show on <a href="https://www.packworld.com/PACKEXPO" target="_blank" style="color:#00b8ab;text-decoration:underline;"><em>Packaging World</em></a>.
                             </td>
                           </tr>
-                          <!-- /Editorial View All -->
+                          <html-comment> /Editorial View All </html-comment>
                         </table>
                       </td>
                     </tr>
@@ -88,9 +89,9 @@ $ const nativeX = config.getAsObject("nativeX");
                 </td>
               </tr>
             </table>
-          <!-- /Show News Section -->
+          <html-comment> /Show News Section </html-comment>
 
-          <!-- Tomorrow's Schedule -->
+          <html-comment> Tomorrow's Schedule </html-comment>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td bgcolor="#ffffff" style="background-color: #ffffff;padding:48px 0;" align="center" class="mobile-padding">
@@ -105,24 +106,24 @@ $ const nativeX = config.getAsObject("nativeX");
                         Tuesday, September 12
                       </td>
                     </tr>
-                    <!-- Scheduled Item 1 begin -->
+                    <html-comment> Scheduled Item 1 begin </html-comment>
                     <common-expo-schedule-list-block
                       newsletter=newsletter
                       date=date
                       section-name="Schedule"
                       limit=10
                     />
-                    <!-- Scheduled item 4 end -->
+                    <html-comment> Scheduled item 4 end </html-comment>
                   </table>
                 </td>
               </tr>
             </table>
-          <!-- /Tomorrow's Schedule -->
+          <html-comment> /Tomorrow's Schedule </html-comment>
 
-          <!-- Curated -->
+          <html-comment> Curated </html-comment>
             <common-expo-curated-block />
-          <!-- /Curated -->
-        <!-- ************************* /Email body ************************* -->
+          <html-comment> /Curated </html-comment>
+        <html-comment> ************************* /Email body ************************* </html-comment>
       </@body>
     </common-expo-body-wrapper-block>
   </@body>

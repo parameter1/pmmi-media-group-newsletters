@@ -13,20 +13,20 @@ $ const imageAttrs = input.imageAttrs;
 $ const lang = get(newsletterConfig, "lang");
 $ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
 
-<!-- Header -->
+<html-comment> Header </html-comment>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td style="padding: 10px 0 0 0;" bgcolor="#edeeee" align="center" class="email-bg">
       <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 640px;">
         <tr>
           <td align="center" valign="top">
-            <!-- Black BG Header -->
+            <html-comment> Black BG Header </html-comment>
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="background-color: #ffffff;" class="header">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <!-- content left -->
+                        <html-comment> content left </html-comment>
                           <td  align="center" style="display: table-cell;min-width:0px;max-width:100%;">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                               <tr>
@@ -48,9 +48,9 @@ $ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(d
                               </tr>
                             </table>
                           </td>
-                        <!-- /content left -->
-                        <!-- content right -->
-                        <!-- /content right -->
+                        <html-comment> /content left </html-comment>
+                        <html-comment> content right </html-comment>
+                        <html-comment> /content right </html-comment>
                       </tr>
                     </table>
                   </td>
@@ -67,11 +67,11 @@ $ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(d
                   </td>
                 </tr>
               </table>
-            <!-- /Two column -->
+            <html-comment> /Two column </html-comment>
           </td>
         </tr>
       </table>
     </td>
   </tr>
 </table>
-<!-- /header -->
+<html-comment> /header </html-comment>
