@@ -11,7 +11,7 @@ $ const newsletterName = get(newsletterConfig, "name");
 $ const newsletterDescription = stripHtml(get(newsletterConfig, "description"));
 $ const title = get(newsletterConfig, "title");
 
-$ const displayDate = moment().add(1, "days").format("dddd, MMMM DD");
+$ const displayDate = moment(date).add(1, "days").format("dddd, MMMM DD");
 
 <marko-newsletter-root
   title=title
