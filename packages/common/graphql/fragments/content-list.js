@@ -7,6 +7,8 @@ fragment NewsletterContentListFragment on Content {
   type
   name(input: { mutation: Email })
   teaser(input: { mutation: Email, useFallback: false, maxLength: null })
+  shortName
+  body(input: { mutation: Email })
   primaryImage {
     id
     src
@@ -35,6 +37,7 @@ fragment NewsletterContentListFragment on Content {
     teaser(input: { mutation: Email, useFallback: false, maxLength: null })
     body(input: { mutation: Email })
     linkText
+    linkUrl
   }
   ...on ContentNews {
     byline
