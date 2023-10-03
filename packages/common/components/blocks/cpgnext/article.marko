@@ -1,0 +1,77 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
+
+$ const { newsletter, date, sectionName, withImage, id } = input;
+
+$ const queryParams = {
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName,
+  withImage,
+  limit: input.limit || 1,
+  skip: input.skip || 0,
+  queryFragment,
+};
+
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+  <if(nodes.length)>
+    <for|content| of=nodes>
+      <tr>
+        <td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:40px;padding-right:40px">
+          <a id=`content-id-${content.id}` />
+          <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="center" valign="top" style="padding:0;Margin:0;width:520px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#fd5208;font-size:14px">
+                      ${get(content, "primarySection.name")}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" class="es-m-p10t" style="padding:0;Margin:0;padding-bottom:10px;Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-style:normal;font-weight:bold;color:#757575">
+                      ${content.name}
+                    </td>
+                  </tr>
+                  <if(withImage === true)>
+                    <tr>
+                      <td align="center" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0px">
+                        <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                          <marko-newsletter-imgix
+                            src=image.src
+                            alt=image.alt
+                            options={ w: 520 }
+                            attrs={ width: 520, style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                            class="adapt-img"
+                          >
+                            <@link href=content.siteContext.url target="_blank" />
+                          </marko-newsletter-imgix>
+                        </marko-core-obj-value>
+                      </td>
+                    </tr>
+                  </if>
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                      $!{content.body}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                      Read the rest of this story on
+                      <span>
+                        <a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#fd5208;font-size:14px;line-height:21px" href=content.siteContext.url>
+                          CPGNext.com
+                        </a>
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </for>
+  </if>
+</marko-web-query>
