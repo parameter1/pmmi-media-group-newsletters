@@ -3,7 +3,8 @@
     "./ad/marko.json",
     "./numeric/marko.json",
     "./standard/marko.json",
-    "./expo/marko.json"
+    "./expo/marko.json",
+    "./cpgnext/marko.json"
   ],
   "<common-body-wrapper-block>": {
     "template": "./body-wrapper.marko"
@@ -16,5 +17,8 @@
   },
   "<common-footer-mundo-block>": {
     "template": "./footer-mundo.marko"
+  },
+  "<common-cpgnext-head-block>": {
+    "template": "./cpgnext-head.marko"
   }
 }
