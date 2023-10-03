@@ -1,0 +1,80 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+
+$ const { newsletter, date, sectionName } = input;
+
+$ const queryParams = {
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName: "Editorial Article 1",
+  limit: 1,
+  skip: input.skip || 0,
+  queryFragment,
+};
+
+$ const queryParams2 = {
+  ...queryParams,
+  sectionName: "Editorial Article 2",
+};
+
+$ const queryParams3 = {
+  ...queryParams,
+  sectionName: "Ask Andy"
+};
+
+<html-comment> What You'll Learn START </html-comment>
+<tr>
+  <td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:40px;padding-right:40px">
+    <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+      <tr>
+        <td align="center" valign="top" style="padding:0;Margin:0;width:520px">
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="left" style="padding:0;Margin:0">
+                <h1 style="Margin:0;line-height:30px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#757575">
+                  <strong>What you’ll learn from this edition of <em>CPG Next:</em></strong>
+                </h1>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" style="padding:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;Margin-bottom:15px;margin-left:0;color:#333333;font-size:14px">
+                <ul>
+                  <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+                    <if(nodes.length)>
+                      <for|content| of=nodes>
+                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;Margin-bottom:15px;margin-left:0;color:#333333;font-size:14px">
+                          <a href=`#content-id-${content.id}` style="text-decoration: none!important; font-weight: bold;">${content.shortName}</a>
+                        </li>
+                      </for>
+                    </if>
+                  </marko-web-query>
+
+                  <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams2>
+                    <if(nodes.length)>
+                      <for|content| of=nodes>
+                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;Margin-bottom:15px;margin-left:0;color:#333333;font-size:14px">
+                          <a href=`#content-id-${content.id}` style="text-decoration: none!important; font-weight: bold;">${content.shortName}</a>
+                        </li>
+                      </for>
+                    </if>
+                  </marko-web-query>
+
+                  <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams3>
+                    <if(nodes.length)>
+                      <for|content| of=nodes>
+                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;Margin-bottom:15px;margin-left:0;color:#333333;font-size:14px">
+                          <a href=`#content-id-${content.id}` style="text-decoration: none!important; font-weight: bold;">${content.shortName}</a>
+                        </li>
+                      </for>
+                    </if>
+                  </marko-web-query>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<html-comment> What You'll Learn END </html-comment>

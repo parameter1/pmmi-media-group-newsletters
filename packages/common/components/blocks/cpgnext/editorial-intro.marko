@@ -1,0 +1,129 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+
+$ const { newsletter, date, sectionName } = input;
+
+$ const queryParams = {
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName,
+  limit: input.limit || 1,
+  skip: input.skip || 0,
+  queryFragment,
+};
+
+<html-comment> Line Divider START </html-comment>
+<tr>
+  <td class="es-m-p0r es-m-p0l" align="left" style="padding:0;Margin:0;padding-left:20px;padding-right:20px">
+    <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+      <tr>
+        <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="center" style="padding-top:20px;padding-right:20px;padding-left:20px;padding-bottom:6px;Margin:0;font-size:0px">
+                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td style="padding:0;Margin:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#fd5208;background:unset;height:1px;width:100%;margin:0px"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<html-comment> Line Divider END </html-comment>
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+  <if(nodes.length)>
+    <for|content| of=nodes>
+      <html-comment> Editorial Intro START </html-comment>
+      <tr>
+        <td align="left" style="padding:0;Margin:0">
+          <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td align="left" class="es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-left:40px;padding-right:40px;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                      $!{content.body}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="es-m-p20r es-m-p20l" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:40px;padding-right:40px">
+          <!--[if mso]><table style="width:520px" cellpadding="0" cellspacing="0"><tr><td style="width:90px" valign="top"><![endif]-->
+          <table cellpadding="0" cellspacing="0" class="es-left" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+            <tr>
+              <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:90px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td align="center" class="es-m-txt-c es-m-p0r" style="padding:0;Margin:0;padding-right:20px;font-size:0px">
+                      <marko-newsletter-imgix
+                        src="/files/base/pmmi/all/image/newsletters/sneilcpgnextheadshot_copy.png"
+                        options={ w: 60 }
+                        attrs={ width: 60, height: "auto", style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                      />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--[if mso]></td><td style="width:0px"></td><td style="width:430px" valign="top"><![endif]-->
+          <table cellpadding="0" cellspacing="0" class="es-right" align="right" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+            <tr>
+              <td align="left" style="padding:0;Margin:0;width:430px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td align="left" class="es-m-txt-c" style="padding:0;Margin:0">
+                      <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                        <strong>Stephanie Neil</strong>| Chief Editor, <em>CPG Next</em>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;padding-top:10px;font-size:0">
+                      <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                        <tr>
+                          <td align="center" valign="top" style="padding:0;Margin:0;padding-right:10px">
+                            <marko-newsletter-imgix
+                              src="/files/base/pmmi/all/image/newsletters/mail-circle-black.png"
+                              alt="Email"
+                              options={ w: 32 }
+                              attrs={ width: 32, height: "auto", style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                            >
+                              <@link href="mailto:sneil@pmmimediagroup.com" target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#FD5208;font-size:14px" />
+                            </marko-newsletter-imgix>
+                          </td>
+                          <td align="center" valign="top" style="padding:0;Margin:0">
+                            <marko-newsletter-imgix
+                              src="/files/base/pmmi/all/image/newsletters/linkedin-circle-black.png"
+                              alt="In"
+                              options={ w: 32 }
+                              attrs={ width: 32, height: "auto", style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                            >
+                              <@link href="https://www.linkedin.com/in/stephaniesneil" target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#FD5208;font-size:14px" />
+                            </marko-newsletter-imgix>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--[if mso]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+      <html-comment> Editorial Intro END </html-comment>
+    </for>
+  </if>
+</marko-web-query>

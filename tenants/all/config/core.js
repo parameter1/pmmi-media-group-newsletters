@@ -176,6 +176,10 @@ const config = {
     title: 'Live from PACK EXPO',
     ...brands.pw,
   },
+  cpgnext: {
+    name: 'CPGNext',
+    description: 'Digital Transformation In Packaged Goods Manufacturing',
+  },
 };
 
 module.exports = config;
