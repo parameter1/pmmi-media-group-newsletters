@@ -11,9 +11,6 @@
   "<common-cpgnext-advertisement-block>": {
     "template": "./advertisement.marko"
   },
-  "<common-cpgnext-placeholder-ad-block>": {
-    "template": "./placeholder-ad.marko"
-  },
   "<common-cpgnext-article-block>": {
     "template": "./article.marko"
   },
@@ -26,9 +23,6 @@
   "<common-cpgnext-ask-andy-block>": {
     "template": "./ask-andy.marko"
   },
-  "<common-cpgnext-quiz-block>": {
-    "template": "./quiz.marko"
-  },
   "<common-cpgnext-social-block>": {
     "template": "./social.marko"
   },
@@ -37,42 +31,8 @@
   },
   "<common-cpgnext-edition-block>": {
     "template": "./edition.marko"
+  },
+  "<common-cpgnext-emailx-block>": {
+    "template": "./emailx.marko"
   }
-  // },
-  // "<common-cpgnext-content-list-block>": {
-  //   "template": "./content-list.marko"
-  // },
-  // "<common-cpgnext-content-list-item-block>": {
-  //   "template": "./content-list-item.marko"
-  // },
-  // "<common-cpgnext-main-video-block>": {
-  //   "template": "./main-video.marko"
-  // },
-  // "<common-cpgnext-show-daily-block>": {
-  //   "template": "./show-daily.marko"
-  // },
-  // "<common-cpgnext-exhibitor-search-block>": {
-  //   "template": "./exhibitor-search.marko"
-  // },
-  // "<common-cpgnext-video-list-block>": {
-  //   "template": "./video-list.marko"
-  // },
-  // "<common-cpgnext-video-list-item-block>": {
-  //   "template": "./video-list-item.marko"
-  // },
-  // "<common-cpgnext-curated-block>": {
-  //   "template": "./curated.marko"
-  // },
-  // "<common-cpgnext-footer-block>": {
-  //   "template": "./footer.marko"
-  // },
-  // "<common-cpgnext-schedule-list-block>": {
-  //   "template": "./schedule-list.marko"
-  // },
-  // "<common-cpgnext-schedule-list-item-block>": {
-  //   "template": "./schedule-list-item.marko"
-  // },
-  // "<common-cpgnext-action-link-block>": {
-  //   "template": "./action-link.marko"
-  // }
 }
