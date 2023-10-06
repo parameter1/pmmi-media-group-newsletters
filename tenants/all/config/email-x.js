@@ -242,6 +242,14 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('cpgnext', [
+    {
+      name: 'bottom-audience-banner',
+      id: '652044d0fb8ee312171d1854',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;
