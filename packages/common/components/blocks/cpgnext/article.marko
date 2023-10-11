@@ -2,13 +2,14 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 import { get, getAsArray } from "@parameter1/base-cms-object-path";
 
-$ const { newsletter, date, sectionName, withImage, id } = input;
+$ const { newsletter, date, sectionName, withImage, id, withTeaser } = input;
 
 $ const queryParams = {
   date: date.valueOf(),
   newsletterId: newsletter.id,
   sectionName,
   withImage,
+  withTeaser,
   limit: input.limit || 1,
   skip: input.skip || 0,
   queryFragment,
@@ -34,11 +35,13 @@ $ const queryParams = {
                       ${content.name}
                     </td>
                   </tr>
-                   <tr>
-                    <td align="left" class="es-m-p0l" style="padding:0;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                      ${content.teaser}
-                    </td>
-                  </tr>
+                  <if(withTeaser === true)>
+                    <tr>
+                      <td align="left" class="es-m-p0l" style="padding:0;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                        ${content.teaser}
+                      </td>
+                    </tr>
+                  </if>
                   <if(withImage === true)>
                     <tr>
                       <td align="center" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0px">
