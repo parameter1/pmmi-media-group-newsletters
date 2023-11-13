@@ -250,6 +250,14 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('pw-weekly', [
+    {
+      name: 'bottom-audience-banner',
+      id: '65522348fb8ee383e51d19c1',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;
