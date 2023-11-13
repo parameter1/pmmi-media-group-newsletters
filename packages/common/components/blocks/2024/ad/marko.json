@@ -1,0 +1,8 @@
+{
+  "<common-2024-ad-emailx-block>": {
+    "template": "./emailx.marko"
+  },
+  "<common-2024-ad-nativex-block>": {
+    "template": "./nativex.marko"
+  }
+}
