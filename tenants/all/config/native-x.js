@@ -243,7 +243,7 @@ module.exports = {
     },
     'pw-weekly': {
       download: '6539583845fe7b000179674e',
-      'pw-weekly': '654d31cfe9037c000173cfec',
+      subscription: '654d31cfe9037c000173cfec',
       promotion: '654d359bf2eda200016987f1',
     },
   },
