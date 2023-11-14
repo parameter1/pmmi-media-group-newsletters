@@ -1,8 +1,6 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/website-content";
-import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
-import { get } from "@parameter1/base-cms-object-path";
 
-$ const { newsletter, date, id } = input;
+$ const { newsletter, date } = input;
 $ const now = Date.now();
 
 $ const upcomingQueryParams = {
@@ -34,13 +32,13 @@ $ const archiveQueryParams = {
           <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
             <tr>
               <td align="left" style="padding:0;Margin:0;padding-bottom:20px;font-size:0px">
-              <marko-newsletter-imgix
-                src='/files/base/pmmi/all/image/newsletters/webinar.png'
-                options={ h: 20 }
-                attrs={ height: 20, style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
-              />
-            </td>
-          </tr>
+                <marko-newsletter-imgix
+                  src='/files/base/pmmi/all/image/newsletters/webinar.png'
+                  options={ h: 20 }
+                  attrs={ height: 20, style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                />
+              </td>
+            </tr>
             <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=upcomingQueryParams>
               <if(nodes.length)>
                 <for|content| of=nodes>
