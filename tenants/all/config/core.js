@@ -180,6 +180,12 @@ const config = {
     name: 'CPGNext',
     description: 'Digital Transformation In Packaged Goods Manufacturing',
   },
+  'pw-weekly': {
+    name: 'Weekly',
+    title: 'PW Weekly Wrap Up',
+    description: 'Weekly Wrap Up',
+    headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+  },
 };
 
 module.exports = config;

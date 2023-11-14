@@ -13,5 +13,8 @@
   },
   "<common-cpgnext-layout>": {
     "template": "./cpgnext.marko"
+  },
+  "<common-2024-weekly-layout>": {
+    "template": "./2024-weekly.marko"
   }
 }

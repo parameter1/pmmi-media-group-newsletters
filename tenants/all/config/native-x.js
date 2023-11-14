@@ -241,5 +241,10 @@ module.exports = {
       'slot-4': '61f2a57b077ca80001727934',
       'slot-5': '61f2a5884a5d8e0001a70a08',
     },
+    'pw-weekly': {
+      download: '6539583845fe7b000179674e',
+      subscription: '654d31cfe9037c000173cfec',
+      promotion: '654d359bf2eda200016987f1',
+    },
   },
 };

@@ -1,0 +1,41 @@
+{
+  "taglib-imports": [
+    "./ad/marko.json"
+  ],
+  "<common-2024-body-wrapper-block>": {
+    "template": "./body-wrapper.marko"
+  },
+  "<common-2024-header-block>": {
+    "template": "./header.marko"
+  },
+  "<common-2024-divider-block>": {
+    "template": "./divider.marko"
+  },
+  "<common-2024-date-banner-block>": {
+    "template": "./date-banner.marko"
+  },
+  "<common-2024-editors-note-block>": {
+    "template": "./editors-note.marko"
+  },
+  "<common-2024-article-block>": {
+    "template": "./article.marko"
+  },
+  "<common-2024-what-we-are-reading-block>": {
+    "template": "./what-we-are-reading.marko"
+  },
+  "<common-2024-promo-block>": {
+    "template": "./promo.marko"
+  },
+  "<common-2024-events-block>": {
+    "template": "./events.marko"
+  },
+  "<common-2024-social-block>": {
+    "template": "./social.marko"
+  },
+  "<common-2024-footer-block>": {
+    "template": "./footer.marko"
+  },
+  "<common-2024-webinar-block>": {
+    "template": "./webinar.marko"
+  }
+}

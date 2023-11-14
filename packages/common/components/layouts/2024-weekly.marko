@@ -1,0 +1,151 @@
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { config } = out.global;
+$ const { newsletter, date } = input.data;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const title = get(newsletterConfig, "title");
+$ const emailX = config.get('emailX');
+
+<marko-newsletter-root
+  title=title
+  date=date
+>
+  <@head>
+    <common-2024-head-block title=title newsletter=newsletter />
+  </@head>
+  <@body style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+    <common-2024-body-wrapper-block newsletter=newsletter date=date>
+      <@body>
+        <html-comment> Main Body Wrapper START </html-comment>
+          <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+            <tr>
+              <td align="center" style="padding:0;Margin:0">
+                <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:640px">
+
+                  <common-2024-date-banner-block newsletter=newsletter date=date />
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Advertisement 1 START </html-comment>
+
+
+                  <html-comment> Advertisement 1 END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Editor Note START </html-comment>
+                  <common-2024-editors-note-block
+                    newsletter=newsletter
+                    date=date
+                    section-name="Editor's Note"
+                    limit=1
+                  />
+                  <html-comment> Editor Note END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Subscription Enticement START </html-comment>
+                  <common-2024-ad-nativex-block
+                    newsletter=newsletter
+                    date=date
+                    placement="subscription"
+                    with-image=true
+                  />
+                  <html-comment> Subscription Enticement END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Articles START </html-comment>
+                  <common-2024-article-block
+                    newsletter=newsletter
+                    date=date
+                    section-name="Article"
+                    limit=4
+                  />
+                  <html-comment> Articles END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Advertisement 2 START </html-comment>
+
+
+                  <html-comment> Advertisement 2 END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> What We're Reading START </html-comment>
+                  <common-2024-what-we-are-reading-block
+                    newsletter=newsletter
+                    date=date
+                    section-name="What We're Reading"
+                    limit=3
+                  />
+                  <html-comment> What We're Reading END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Free Download START </html-comment>
+                  <common-2024-ad-nativex-block
+                    newsletter=newsletter
+                    date=date
+                    placement="download"
+                    with-image=true
+                  />
+                  <html-comment> Free Download END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> House Ad START </html-comment>
+                  <common-2024-ad-nativex-block
+                    newsletter=newsletter
+                    date=date
+                    placement="promotion"
+                    with-image=false
+                  />
+                  <html-comment> House Ad END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Upcoming Events START </html-comment>
+                  <common-2024-events-block
+                    limit=3
+                  />
+                  <html-comment> Upcoming Events END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Webinar Calendar START </html-comment>
+                  <common-2024-webinar-block />
+                  <html-comment> Webinar Calendar END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Advertisement 3 START </html-comment>
+
+
+                  <html-comment> Advertisement 3 END </html-comment>
+
+                  <common-2024-divider-block />
+
+                  <html-comment> Trade Show Banner START </html-comment>
+                  <common-2024-ad-emailx-block
+                    newsletter=newsletter
+                    date=date
+                    ad-unit=emailX.getAdUnit({ name: "bottom-audience-banner", alias: newsletter.alias })
+                  />
+                  <html-comment> Trade Show Banner END </html-comment>
+
+                  <html-comment> Social Media START </html-comment>
+                  <common-2024-social-block />
+                  <html-comment> Social Media END </html-comment>
+
+                </table>
+              </td>
+            </tr>
+          </table>
+        <html-comment> Main Body Wrapper END </html-comment>
+      </@body>
+    </common-2024-body-wrapper-block>
+  </@body>
+</marko-newsletter-root>

@@ -4,7 +4,8 @@
     "./numeric/marko.json",
     "./standard/marko.json",
     "./expo/marko.json",
-    "./cpgnext/marko.json"
+    "./cpgnext/marko.json",
+    "./2024/marko.json"
   ],
   "<common-body-wrapper-block>": {
     "template": "./body-wrapper.marko"
@@ -20,5 +21,8 @@
   },
   "<common-cpgnext-head-block>": {
     "template": "./cpgnext-head.marko"
+  },
+  "<common-2024-head-block>": {
+    "template": "./2024-head.marko"
   }
 }
