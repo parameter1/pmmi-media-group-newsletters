@@ -2,14 +2,10 @@ import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 
-$ const { newsletter, date, content } = input;
-
-$ const sectionName = defaultValue(input.sectionName, "Standard");
-$ const withImage = defaultValue(input.withImage, true);
+$ const { newsletter, date, content, withImage, sectionName } = input;
 
 $ const siteContext = getAsObject(content, 'siteContext');
 $ const { url } = siteContext;
-
 
 <if(withImage === true)>
   <tr>

@@ -7,7 +7,6 @@ $ const dpm = getAsObject(input, "dpm");
 $ const useEmailxHref = defaultValue(input.useEmailxHref, false);
 
 $ const { name, alias } = adUnit;
-$ const classNames = [`email-x-${alias}-${name}`, input.class];
 
 <marko-newsletters-email-x-data|{ response }| decoded-params=["email", "send"]>
   <@ad-unit ...adUnit />
