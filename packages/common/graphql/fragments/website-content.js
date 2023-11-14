@@ -41,6 +41,12 @@ fragment WebsiteContentListFragment on Content {
     state
     website
   }
+  ... on ContentWebinar {
+    name(input: { mutation: Email })
+    linkUrl
+    starts(input:{ format: "MMMM D, YYYY | h:mma z" })
+    startDate
+  }
 }
 
 `;
