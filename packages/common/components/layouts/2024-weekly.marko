@@ -1,13 +1,9 @@
-import { get, getAsArray } from "@parameter1/base-cms-object-path";
-import { stripHtml } from "@parameter1/base-cms-html";
-import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
-import moment from "moment";
+import { get } from "@parameter1/base-cms-object-path";
 
-$ const { website, config } = out.global;
+$ const { config } = out.global;
 $ const { newsletter, date, sectionName } = input.data;
 
 $ const newsletterConfig = config.get(newsletter.alias);
-$ const newsletterName = get(newsletterConfig, "name");
 $ const title = get(newsletterConfig, "title");
 $ const emailX = config.get('emailX');
 
