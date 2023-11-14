@@ -1,11 +1,9 @@
-import { getAsObject, get } from "@parameter1/base-cms-object-path";
+import { getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const adUnit = getAsObject(input, "adUnit");
 
 $ const useEmailxHref = defaultValue(input.useEmailxHref, false);
-
-$ const { name, alias } = adUnit;
 
 <marko-newsletters-email-x-data|{ response }| decoded-params=["email", "send"]>
   <@ad-unit ...adUnit />
