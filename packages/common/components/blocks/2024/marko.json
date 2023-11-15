@@ -37,5 +37,8 @@
   },
   "<common-2024-webinar-block>": {
     "template": "./webinar.marko"
+  },
+  "<common-2024-stat-block>": {
+    "template": "./stat.marko"
   }
 }
