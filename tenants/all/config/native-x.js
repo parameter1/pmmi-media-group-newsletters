@@ -246,5 +246,9 @@ module.exports = {
       subscription: '654d31cfe9037c000173cfec',
       promotion: '654d359bf2eda200016987f1',
     },
+    'pw-daily': {
+      subscription: '65523d0df2eda200016e6cc8',
+      promotion: '6554c7a8e9037c00017b94ec',
+    },
   },
 };

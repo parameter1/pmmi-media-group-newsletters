@@ -16,5 +16,8 @@
   },
   "<common-2024-weekly-layout>": {
     "template": "./2024-weekly.marko"
+  },
+  "<common-2024-daily-layout>": {
+    "template": "./2024-daily.marko"
   }
 }

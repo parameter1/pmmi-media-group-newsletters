@@ -186,6 +186,12 @@ const config = {
     description: 'Weekly Wrap Up',
     headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
   },
+  'pw-daily': {
+    name: 'Daily',
+    title: 'PW Daily',
+    description: 'Daily Edition',
+    headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+  },
 };
 
 module.exports = config;
