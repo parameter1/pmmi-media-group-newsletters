@@ -19,5 +19,8 @@
   },
   "<common-2024-daily-layout>": {
     "template": "./2024-daily.marko"
+  },
+  "<common-2024-mundo-layout>": {
+    "template": "./2024-mundo.marko"
   }
 }
