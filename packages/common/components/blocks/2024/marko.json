@@ -40,5 +40,11 @@
   },
   "<common-2024-stat-block>": {
     "template": "./stat.marko"
+  },
+  "<common-2024-footer-mundo-block>": {
+    "template": "./footer-mundo.marko"
+  },
+  "<common-2024-social-mundo-block>": {
+    "template": "./social-mundo.marko"
   }
 }
