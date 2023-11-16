@@ -20,7 +20,12 @@ $ const { newsletter } = input;
           <${input.body} />
         </if>
 
-        <common-2024-footer-block />
+        <if(input.footer)>
+          <${input.footer} />
+        </if>
+        <else>
+          <common-2024-footer-block newsletter=newsletter />
+        </else>
       </td>
     </tr>
   </table>
