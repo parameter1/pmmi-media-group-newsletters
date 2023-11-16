@@ -9,5 +9,9 @@ module.exports = {
       'slot-4': '60c2048e6b523e0001192ba8',
       'slot-5': '60c204a35f957c00015a0771',
     },
+    'mundo-expo-pack': {
+      subscription: '6556548fe9037c00017d6112',
+      promotion: '65565499e9037c00017d612c',
+    },
   },
 };
