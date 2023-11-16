@@ -10,6 +10,14 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('mundo-expo-pack', [
+    {
+      name: 'bottom-audience-banner',
+      id: '65565447fb8ee363cb1d1c3b',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;
