@@ -1,7 +1,22 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 import { get } from "@parameter1/base-cms-object-path";
 
+$ const { config } = out.global;
 $ const { newsletter, date, sectionName } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const primaryColor = get(newsletterConfig, "primaryColor");
+
+$ const sectionNameStyle = {
+  "-webkit-text-size-adjust": "none",
+  "-ms-text-size-adjust": "none",
+  "mso-line-height-rule": "exactly",
+  "font-family": "arial, 'helvetica neue', helvetica, sans-serif",
+  "line-height": "21px",
+  "color": primaryColor,
+  "font-size": "14px",
+  "font-weight": "bold",
+};
 
 $ const queryParams = {
   date: date.valueOf(),
@@ -23,7 +38,7 @@ $ const queryParams = {
                 <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                   <tr>
                     <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
-                      <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#005bab;font-size:14px;font-weight:bold">
+                      <p style=sectionNameStyle>
                         ${get(content, "primarySection.name")}
                       </p>
                     </td>

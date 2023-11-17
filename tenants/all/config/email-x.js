@@ -266,6 +266,30 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('pfw-daily', [
+    {
+      name: 'bottom-audience-banner',
+      id: '6555171dfb8ee31c201d1b1e',
+      width: 560,
+      height: 127,
+    },
+  ])
+  .setAdUnits('oem-daily', [
+    {
+      name: 'bottom-audience-banner',
+      id: '65563dfe32f5063de47a8aea',
+      width: 560,
+      height: 127,
+    },
+  ])
+  .setAdUnits('hcp-daily', [
+    {
+      name: 'bottom-audience-banner',
+      id: '65563efefb8ee325eb1d1c03',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;

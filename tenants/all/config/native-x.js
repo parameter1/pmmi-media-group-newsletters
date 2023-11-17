@@ -250,5 +250,17 @@ module.exports = {
       subscription: '65523d0df2eda200016e6cc8',
       promotion: '6554c7a8e9037c00017b94ec',
     },
+    'pfw-daily': {
+      subscription: '65551789f2eda2000171e135',
+      promotion: '65551797e9037c00017c31ad',
+    },
+    'oem-daily': {
+      subscription: '65563bb8e9037c00017d42a2',
+      promotion: '65563bbef2eda2000172ed59',
+    },
+    'hcp-daily': {
+      subscription: '65563f28e9037c00017d4662',
+      promotion: '65563f32f2eda2000172f18e',
+    },
   },
 };

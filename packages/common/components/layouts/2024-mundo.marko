@@ -15,7 +15,7 @@ $ const emailX = config.get('emailX');
     <common-2024-head-block title=title newsletter=newsletter />
   </@head>
   <@body style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
-    <common-2024-body-wrapper-block newsletter=newsletter date=date>
+    <common-2024-body-wrapper-block newsletter=newsletter date=date footer=input.footer>
       <@body>
         <html-comment> Main Body Wrapper START </html-comment>
           <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
@@ -156,7 +156,7 @@ $ const emailX = config.get('emailX');
                   <html-comment> Trade Show Banner END </html-comment>
 
                   <html-comment> Social Media START </html-comment>
-                  <common-2024-social-block newsletter=newsletter />
+                  <common-2024-social-mundo-block newsletter=newsletter />
                   <html-comment> Social Media END </html-comment>
 
                 </table>

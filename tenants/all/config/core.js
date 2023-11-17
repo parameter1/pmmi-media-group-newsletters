@@ -181,16 +181,75 @@ const config = {
     description: 'Digital Transformation In Packaged Goods Manufacturing',
   },
   'pw-weekly': {
-    name: 'Weekly',
+    brand: 'Packaging World',
     title: 'PW Weekly Wrap Up',
     description: 'Weekly Wrap Up',
+    primaryColor: '#005BAB',
     headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
+      ],
+    },
   },
   'pw-daily': {
-    name: 'Daily',
+    brand: 'Packaging World',
     title: 'PW Daily',
-    description: 'Daily Edition',
     headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+    primaryColor: '#005BAB',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
+      ],
+    },
+  },
+  'pfw-daily': {
+    brand: 'ProFood World',
+    title: 'PFW Daily',
+    headerSrc: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
+    primaryColor: '#004C92',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/profoodworld', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/ProFoodWorld', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/ProFoodWorld', target: '_blank' },
+      ],
+    },
+  },
+  'oem-daily': {
+    brand: 'OEM Magazine',
+    title: 'OEM Daily',
+    headerSrc: '/files/base/pmmi/all/image/newsletters/oem_white.png',
+    primaryColor: '#185B76',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters/',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/oem-magazine', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/oemmagazine', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/OEMMagazine', target: '_blank' },
+      ],
+    },
+  },
+  'hcp-daily': {
+    brand: 'Healthcare Packaging',
+    title: 'HCP Daily',
+    headerSrc: '/files/base/pmmi/all/image/newsletters/hcp_logo_white.png',
+    primaryColor: '#00B0DE',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters/',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/healthcare-packaging-/', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/healthcarepkg', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/HealthcarePackaging', target: '_blank' },
+      ],
+    },
   },
 };
 
