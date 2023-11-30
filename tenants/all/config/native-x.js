@@ -262,5 +262,8 @@ module.exports = {
       subscription: '65563f28e9037c00017d4662',
       promotion: '65563f32f2eda2000172f18e',
     },
+    cpgnext: {
+      'top-banner': '65157090f4a4a50001c2027c',
+    },
   },
 };

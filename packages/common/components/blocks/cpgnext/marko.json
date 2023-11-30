@@ -34,5 +34,11 @@
   },
   "<common-cpgnext-emailx-block>": {
     "template": "./emailx.marko"
+  },
+  "<common-cpgnext-nativex-block>": {
+    "template": "./nativex.marko"
+  },
+  "<common-cpgnext-announcement-block>": {
+    "template": "./announcement.marko"
   }
 }

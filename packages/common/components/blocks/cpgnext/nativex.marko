@@ -1,0 +1,17 @@
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
+import { convertAdToContent } from "@parameter1/base-cms-marko-newsletters-native-x/utils";
+
+$ const { config } = out.global;
+
+$ const { date, placement, withImage } = input;
+$ const newsletter = getAsObject(input, "newsletter");
+$ const nativeX = config.getAsObject("nativeX");
+$ const placementId = get(nativeX, `placements.${newsletter.alias}.${placement}`);
+<if(nativeX.uri && placementId)>
+  <core-native-x-fetch|{ data: nxData }| uri=nativeX.uri date=date placement-id=placementId>
+    <if(nxData)>
+      $ const content = convertAdToContent(nxData);
+      <common-cpgnext-announcement-block content=content with-image=withImage />
+    </if>
+  </core-native-x-fetch>
+</if>
