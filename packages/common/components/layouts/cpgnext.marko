@@ -30,13 +30,6 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM DD");
             <tr>
               <td align="center" style="padding:0;Margin:0">
                 <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
-                  <common-cpgnext-editorial-intro-block
-                    newsletter=newsletter
-                    date=date
-                    section-name="Editorial Intro"
-                    limit=1
-                  />
-
                   <html-comment> Top Banner START </html-comment>
                   <common-cpgnext-nativex-block
                     newsletter=newsletter
@@ -45,6 +38,13 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM DD");
                     with-image=true
                   />
                   <html-comment> Top Banner END </html-comment>
+
+                  <common-cpgnext-editorial-intro-block
+                    newsletter=newsletter
+                    date=date
+                    section-name="Editorial Intro"
+                    limit=1
+                  />
 
                   <common-cpgnext-edition-block
                     newsletter=newsletter
