@@ -1,99 +1,120 @@
-<html-comment> Line Divider START </html-comment>
-<tr>
-  <td class="es-m-p0" align="left" style="padding:20px;Margin:0">
-    <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/website-content";
+
+$ const now = Date.now();
+
+$ const upcomingQueryParams = {
+  includeContentTypes: ["Event"],
+  queryFragment,
+  beginningAfter: now,
+  limit: 3,
+  sort: {
+    field: "startDate",
+    order: "asc",
+  },
+};
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=upcomingQueryParams>
+  <if(nodes.length)>
+    <for|content| of=nodes>
+      <html-comment> Line Divider START </html-comment>
       <tr>
-        <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
-          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+        <td class="es-m-p0" align="left" style="padding:20px;Margin:0">
+          <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
             <tr>
-              <td align="center" style="padding:20px;Margin:0;font-size:0">
-                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+              <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                   <tr>
-                    <td style="padding:0;Margin:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#fd5208;background:unset;height:1px;width:100%;margin:0px"></td>
+                    <td align="center" style="padding:20px;Margin:0;font-size:0">
+                      <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                        <tr>
+                          <td style="padding:0;Margin:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#fd5208;background:unset;height:1px;width:100%;margin:0px"></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0">
+                      <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px;display:none">
+                        &nbsp;
+                      </p>
+                    </td>
                   </tr>
                 </table>
               </td>
             </tr>
-            <tr>
-              <td align="left" style="padding:0;Margin:0">
-                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px;display:none">
-                  &nbsp;
-                </p>
-              </td>
-            </tr>
           </table>
         </td>
       </tr>
-    </table>
-  </td>
-</tr>
-<html-comment> Line Divider END </html-comment>
-<html-comment> Event START </html-comment>
-<tr>
-  <td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-left:40px;padding-right:40px">
-    <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+      <html-comment> Line Divider END </html-comment>
+      <html-comment> Event START </html-comment>
       <tr>
-        <td align="center" valign="top" style="padding:0;Margin:0;width:520px">
-          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+        <td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-left:40px;padding-right:40px">
+          <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
             <tr>
-              <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:5px">
-                <h2 style="Margin:0;line-height:30px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#757575">
-                  <strong>Join Us</strong>
-                </h2>
-              </td>
-            </tr>
-            <tr>
-              <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:5px">
-                <h2 style="Margin:0;line-height:27px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:normal;color:#fd5208">
-                  <strong>
-                    <a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#FD5208;font-size:18px;line-height:27px" href="https://placeholder">
-                      Event Name
-                    </a>
-                  </strong>
-                </h2>
-              </td>
-            </tr>
-            <tr>
-              <td align="center" class="es-m-txt-c" style="padding:0;Margin:0">
-                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                  Month&nbsp;Days, Year&nbsp;| Location
-                </p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<html-comment> Event END </html-comment>
-<html-comment> Line Divider START </html-comment>
-<tr>
-  <td class="es-m-p0" align="left" style="padding:20px;Margin:0">
-    <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-      <tr>
-        <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
-          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-            <tr>
-              <td align="center" style="padding:20px;Margin:0;font-size:0">
-                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+              <td align="center" valign="top" style="padding:0;Margin:0;width:520px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                   <tr>
-                    <td style="padding:0;Margin:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#fd5208;background:unset;height:1px;width:100%;margin:0px"></td>
+                    <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:5px">
+                      <h2 style="Margin:0;line-height:30px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#757575">
+                        <strong>Join Us</strong>
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:5px">
+                      <h2 style="Margin:0;line-height:27px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:normal;color:#fd5208">
+                        <strong>
+                          <a href=`${content.linkUrl}` target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#FD5208;font-size:18px;line-height:27px">
+                            ${content.name}
+                          </a>
+                        </strong>
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" class="es-m-txt-c" style="padding:0;Margin:0">
+                      <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                        ${content.starts} | ${content.city}, ${content.state}
+                      </p>
+                    </td>
                   </tr>
                 </table>
               </td>
             </tr>
+          </table>
+        </td>
+      </tr>
+      <html-comment> Event END </html-comment>
+      <html-comment> Line Divider START </html-comment>
+      <tr>
+        <td class="es-m-p0" align="left" style="padding:20px;Margin:0">
+          <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
             <tr>
-              <td align="left" style="padding:0;Margin:0">
-                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px;display:none">
-                  &nbsp;
-                </p>
+              <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td align="center" style="padding:20px;Margin:0;font-size:0">
+                      <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                        <tr>
+                          <td style="padding:0;Margin:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#fd5208;background:unset;height:1px;width:100%;margin:0px"></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0">
+                      <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px;display:none">
+                        &nbsp;
+                      </p>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
           </table>
         </td>
       </tr>
-    </table>
-  </td>
-</tr>
-<html-comment> Line Divider END </html-comment>
+      <html-comment> Line Divider END </html-comment>
+    </for>
+  </if>
+</marko-web-query>
