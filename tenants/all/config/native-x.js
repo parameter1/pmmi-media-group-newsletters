@@ -265,5 +265,9 @@ module.exports = {
     cpgnext: {
       'top-banner': '65157090f4a4a50001c2027c',
     },
+    'cmp-daily': {
+      subscription: '65776e85f2eda200019152ec',
+      promotion: '65776e90e9037c00019bb649',
+    },
   },
 };
