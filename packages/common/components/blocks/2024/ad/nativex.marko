@@ -11,7 +11,7 @@ $ const placementId = get(nativeX, `placements.${newsletter.alias}.${placement}`
   <core-native-x-fetch|{ data: nxData }| uri=nativeX.uri date=date placement-id=placementId>
     <if(nxData)>
       $ const content = convertAdToContent(nxData);
-      <common-2024-promo-block content=content with-image=withImage />
+      <common-2024-promo-block content=content with-image=withImage newsletter=newsletter />
     </if>
   </core-native-x-fetch>
 </if>

@@ -290,6 +290,14 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('cmp-daily', [
+    {
+      name: 'bottom-audience-banner',
+      id: '65776e28fb8ee314971d203b',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;

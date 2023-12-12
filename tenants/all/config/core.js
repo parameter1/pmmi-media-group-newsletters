@@ -197,7 +197,8 @@ const config = {
   },
   'pw-daily': {
     brand: 'Packaging World',
-    title: 'PW Daily',
+    description: 'Daily Edition',
+    title: 'PW Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
     primaryColor: '#005BAB',
     socialMedia: {
@@ -211,7 +212,7 @@ const config = {
   },
   'pfw-daily': {
     brand: 'ProFood World',
-    title: 'PFW Daily',
+    title: 'PFW Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
     primaryColor: '#004C92',
     socialMedia: {
@@ -224,8 +225,8 @@ const config = {
     },
   },
   'oem-daily': {
-    brand: 'OEM Magazine',
-    title: 'OEM Daily',
+    brand: 'OEM Newsletter',
+    title: 'OEM Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/oem_white.png',
     primaryColor: '#185B76',
     socialMedia: {
@@ -239,7 +240,7 @@ const config = {
   },
   'hcp-daily': {
     brand: 'Healthcare Packaging',
-    title: 'HCP Daily',
+    title: 'HCP Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/hcp_logo_white.png',
     primaryColor: '#00B0DE',
     socialMedia: {
@@ -248,6 +249,20 @@ const config = {
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/healthcare-packaging-/', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/healthcarepkg', target: '_blank' },
         { provider: 'facebook', href: 'https://www.facebook.com/HealthcarePackaging', target: '_blank' },
+      ],
+    },
+  },
+  'cmp-daily': {
+    brand: 'CM+P Newsletter',
+    title: 'CM+P Newsletter',
+    headerSrc: '/files/base/pmmi/all/image/newsletters/cmp2022_logo_white.png',
+    primaryColor: '#00B15D',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters/',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld/', target: '_blank' },
       ],
     },
   },

@@ -1,5 +1,6 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/website-content";
 
+$ const { header } = input;
 $ const now = Date.now();
 
 $ const queryParams = {
@@ -22,11 +23,20 @@ $ const queryParams = {
           <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
             <tr>
               <td align="left" style="padding:0;Margin:0;padding-bottom:20px;font-size:0px">
-                <marko-newsletter-imgix
-                  src='/files/base/pmmi/all/image/newsletters/upcoming-events.png'
-                  options={ h: 20 }
-                  attrs={ height: 20, style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
-                />
+                <if(header==="Mundo")>
+                  <marko-newsletter-imgix
+                    src='/files/base/pmmi/all/image/newsletters/events-mundo.png'
+                    options={ h: 20 }
+                    attrs={ height: 20, height: "auto", style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                  />
+                </if>
+                <else>
+                  <marko-newsletter-imgix
+                    src='/files/base/pmmi/all/image/newsletters/upcoming-events.png'
+                    options={ h: 20 }
+                    attrs={ height: 20, style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                  />
+                </else>
               </td>
             </tr>
             <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=queryParams>
@@ -45,7 +55,7 @@ $ const queryParams = {
                       <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
                         <strong>
                           <a href=`${content.website}` target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
-                            ${content.website}
+                            ${content.name}
                           </a>
                         </strong>
                       </p>
