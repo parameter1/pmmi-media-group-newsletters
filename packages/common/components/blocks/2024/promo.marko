@@ -7,39 +7,51 @@ $ const siteContext = getAsObject(content, 'siteContext');
 $ const { url } = siteContext;
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const primaryColor = get(newsletterConfig, "primaryColor");
-
-$ const contentNameStyle = {
+$ const sectionNameStyle = {
   "-webkit-text-size-adjust": "none",
   "-ms-text-size-adjust": "none",
   "mso-line-height-rule": "exactly",
   "font-family": "arial, 'helvetica neue', helvetica, sans-serif",
   "line-height": "21px",
   "color": primaryColor,
-  "font-size": "14px",
+  "font-size": "12px",
   "font-weight": "bold",
-};
-
-$ const sectionNameStyle = {
-  ...contentNameStyle,
   "text-transform": "uppercase",
 };
 
+$ const campaignTypeMatch = url.match(/(youtube\.com|pmmi\.dragonforms\.com)|app.credspark.com/);
+
+$ const imgDimensions = {
+  "youtube.com": { w: 100, h: 100 },
+  "pmmi.dragonforms.com": { w: 60, h: 60 },
+}
+
+$ const imgAlignment = campaignTypeMatch[1] && campaignTypeMatch[1] === "youtube.com" ? {
+  "padding-right":  "10px"
+} : { "padding-right":  "10px", "padding-top": "8px" }
+
+$ const imgOptions =  {
+  w: 60,
+  h: 60,
+  ...imgDimensions[campaignTypeMatch[1]],
+  fit: "fill"
+}
+
 <if(withImage === true)>
   <tr>
-    <td class="es-m-p10b" align="left" style="Margin:0;padding-bottom:20px;padding-left:40px;padding-right:40px">
+    <td class="es-m-p10b" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:40px;padding-right:40px">
       <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:160px" valign="top"><![endif]-->
       <table class="es-left" cellspacing="0" cellpadding="0" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
         <tr>
           <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:160px">
             <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-left:1px solid #ffffff;border-right:1px solid #ffffff;border-top:1px solid #ffffff;border-bottom:1px solid #ffffff" role="presentation">
               <tr>
-                <td align="center" style="padding-top:20px;Margin:0;font-size:0px">
+                <td align="center" style=imgAlignment>
                   <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                     <marko-newsletter-imgix
                       src=image.src
                       alt=image.alt
-                      options={ w: 80 }
-                      attrs={ width: 80, style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                      options=imgOptions
                     >
                       <@link href=url target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px" />
                     </marko-newsletter-imgix>
@@ -48,29 +60,25 @@ $ const sectionNameStyle = {
               </tr>
             </table>
           </td>
-        </tr>
-      </table>
-      <!--[if mso]></td><td style="width:20px"></td><td style="width:380px" valign="top"><![endif]-->
-      <table class="es-right" cellspacing="0" cellpadding="0" align="right" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
-        <tr>
-          <td align="left" style="padding:0;Margin:0;width:380px">
+          <!--[if mso]></td><td style="width:20px"></td><td style="width:380px" valign="top"><![endif]-->
+          <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;width:380px">
             <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
               <tr>
-                <td align="left">
-                  <p style=contentNameStyle>
-                    <b>${content.name}</b>
-                  </p>
+                <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px">
+                  <h2 style="Margin:0;line-height:27px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:bold;color:#333333">
+                    <strong>${content.name}</strong>
+                  </h2>
                 </td>
               </tr>
               <tr>
-                <td align="left" style="padding-bottom:10px;Margin:0">
-                  <h2 style="Margin:0;line-height:27px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:bold;color:#333333">
-                    <strong>
-                      <a  href=url target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px">
+                <td align="left" class="es-m-txt-c" style="padding:0;Margin:0">
+                  <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:27px;color:#333333;font-size:14px">
+                    <u>
+                      <a href=url target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px">
                         $!{content.teaser}
                       </a>
-                    </strong>
-                  </h2>
+                    </u>
+                  </p>
                 </td>
               </tr>
             </table>
