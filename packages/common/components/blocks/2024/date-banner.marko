@@ -1,7 +1,7 @@
 import { get } from "@parameter1/base-cms-object-path";
 import moment from "moment";
 
-$ const { config, i18n } = out.global;
+$ const { config } = out.global;
 $ const { newsletter, date } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
@@ -42,7 +42,7 @@ $ const displayDate = (lang) ? moment(date).locale(lang).format("D, YYYY") : mom
               <tr>
                 <td align="center" style="padding:0;Margin:0">
                   <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                    ${i18n(displayDateMonth)}&nbsp;${i18n(displayDate)}
+                    ${displayDateMonth}&nbsp;${displayDate}
                   </p>
                 </td>
               </tr>
