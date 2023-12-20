@@ -2,10 +2,8 @@ import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import { convertAdToContent } from "@parameter1/base-cms-marko-newsletters-native-x/utils";
 
 $ const { config } = out.global;
-$ const { date, placement, content } = input;
+$ const { date, placement } = input;
 
-$ const siteContext = getAsObject(content, 'siteContext');
-$ const { url } = siteContext;
 $ const newsletter = getAsObject(input, "newsletter");
 $ const nativeX = config.getAsObject("nativeX");
 $ const placementId = get(nativeX, `placements.${newsletter.alias}.${placement}`);
@@ -13,6 +11,8 @@ $ const placementId = get(nativeX, `placements.${newsletter.alias}.${placement}`
   <core-native-x-fetch|{ data: nxData }| uri=nativeX.uri date=date placement-id=placementId>
     <if(nxData)>
       $ const content = convertAdToContent(nxData);
+      $ const siteContext = getAsObject(content, 'siteContext');
+      $ const { url } = siteContext;
       <tr>
         <td class="es-m-p10b" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:40px;padding-right:40px">
           <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:160px" valign="top"><![endif]-->
