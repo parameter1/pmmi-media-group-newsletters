@@ -1,0 +1,31 @@
+import { get } from "@parameter1/base-cms-object-path";
+import moment from "moment";
+
+$ const { config, i18n } = out.global;
+$ const { newsletter, date } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const lang = get(newsletterConfig, "lang");
+$ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
+
+<html-comment> Date Banner START </html-comment>
+<tr>
+  <td align="left" style="padding:0;Margin:0;padding-bottom:20px;padding-top:20px;padding-left:40px;padding-right:40px">
+    <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+      <tr>
+        <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="center" style="padding:0;Margin:0">
+                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                  ${i18n(displayDate)}
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<html-comment> Date Banner END </html-comment>
