@@ -49,5 +49,17 @@
   },
   "<common-2024-header-mundo-block>": {
     "template": "./header-mundo.marko"
+<<<<<<< Updated upstream
+=======
+  },
+  "<common-2024-events-mundo-block>": {
+    "template": "./events-mundo.marko"
+  },
+  "<common-2024-date-banner-mundo-block>": {
+    "template": "./date-banner-mundo.marko"
+  },
+  "<common-2024-download-block>": {
+    "template": "./download.marko"
+>>>>>>> Stashed changes
   }
 }
