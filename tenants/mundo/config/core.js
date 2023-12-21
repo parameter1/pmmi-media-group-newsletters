@@ -25,9 +25,8 @@ const config = {
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters/',
       links: [
-        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/mundo-pmmi', target: '_blank' },
-        { provider: 'twitter', href: 'https://twitter.com/MundoPmmi', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/MundoPMMI', target: '_blank' },
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/mundo-expopack/', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/MundoEXPOPACK', target: '_blank' },
       ],
     },
   },
