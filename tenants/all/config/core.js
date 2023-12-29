@@ -10,87 +10,11 @@ const config = {
       enabled: true,
     },
   },
-
-  'aw-automation-skills': {
-    name: 'Automation Skills',
-    description: 'Automation applications and trends',
-    ...brands.aw,
-  },
-  'aw-continuous-processing': {
-    name: 'Continuous Processing',
-    description: 'News for industries where production flows without interruption',
-    ...brands.aw,
-  },
-  'aw-process-automation': {
-    name: 'Process Automation',
-    description: 'News for industries where production flows without interruption',
-    ...brands.aw,
-  },
-  'aw-factory-automation': {
-    name: 'Factory Automation',
-    description: 'News from the discrete manufacturing industries',
-    ...brands.aw,
-  },
-  'aw-food-bev-pharma': {
-    name: 'Food, Bev & Pharma',
-    description: 'News from the consumer packaged goods industries',
-    ...brands.aw,
-  },
-  'aw-key-insights': {
-    name: 'Key Insights',
-    description: 'Insights for management, engineering, IT and operations',
-    ...brands.aw,
-  },
-  'aw-news-insights': {
-    name: 'Automation News Insights',
-    description: 'What\'s trending in the world of automation technology',
-    ...brands.aw,
-  },
-  'aw-product-insights': {
-    name: 'Automation Product Insights',
-    description: 'The latest innovations in automation products',
-    ...brands.aw,
-  },
-  'aw-system-integrators': {
-    name: 'System Integrators',
-    description: '',
-    ...brands.aw,
-  },
-  'hcp-logistics-life-sciences': {
-    name: 'Logistics for the Life Sciences',
-    description: 'Covering regulatory issues, GDPs, and temperature-controlled transport',
-    ...brands.hcp,
-  },
-  'hcp-logistics-for-the-life-sciences-new': {
-    name: 'Logistics for the Life Sciences',
-    description: 'Covering regulatory issues, GDPs, and temperature-controlled transport',
-    ...brands.hcp,
-    secondaryColor: '#84bcc9',
-    headlineColor: '#3c3c3c',
-  },
-  'hcp-newsbrief': {
-    name: 'Newsbrief',
-    description: 'An editor-curated selection of life sciences packaging news and trends',
-    ...brands.hcp,
-  },
-  'hcp-serialization-countdown': {
-    name: 'Serialization Countdown',
-    description: 'Regulatory compliance for product traceability',
-    ...brands.hcp,
-  },
   'hcp-serialization-countdown-new': {
     name: 'Serialization Countdown',
     description: 'Regulatory compliance for product traceability',
     ...brands.hcp,
     secondaryColor: '#abd8c8',
-    headlineColor: '#3c3c3c',
-  },
-  'hcp-quick-hits': {
-    name: 'Quick Hits',
-    description: 'Your Healthcare Industry Week in Review',
-    seeAllLink: 'https://www.healthcarepackaging.com/quick-hits',
-    ...brands.hcp,
-    secondaryColor: '#01384B',
     headlineColor: '#3c3c3c',
   },
   'hcp-quick-hits-new': {
@@ -104,16 +28,6 @@ const config = {
     name: 'Insights',
     description: 'News and trends for packaging and processing machine builders',
     ...brands.oem,
-  },
-  'oem-shop-talk': {
-    name: 'Shop Talk',
-    description: 'New trends and conversations for packaging and processing machine builders',
-    ...brands.oem,
-  },
-  'pfw-joyces-voice': {
-    name: 'Joyce\'s Voice',
-    description: 'Innovation and Technology for Global Food & Beverage Processing',
-    ...brands.pfw,
   },
   'pfw-new-issue-alert': {
     name: 'New Issue Alert',
@@ -164,11 +78,6 @@ const config = {
     name: 'New Machinery',
     description: 'Get a glimpse at next gen equipment',
     ...brands.pw,
-  },
-  'hcp-newsbrief-updated': {
-    name: 'Newsbrief',
-    description: 'An editor-curated selection of life sciences packaging news and trends',
-    ...brands.hcp,
   },
   'pw-expo': {
     name: 'Expo',
