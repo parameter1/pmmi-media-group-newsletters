@@ -10,74 +10,17 @@ const config = {
       enabled: true,
     },
   },
-  'hcp-serialization-countdown-new': {
-    name: 'Serialization Countdown',
-    description: 'Regulatory compliance for product traceability',
-    ...brands.hcp,
-    secondaryColor: '#abd8c8',
-    headlineColor: '#3c3c3c',
-  },
-  'hcp-quick-hits-new': {
+  'hcp-quick-hits': {
     name: 'Quick Hits',
     description: 'Your Healthcare Industry Week in Review',
     ...brands.hcp,
     secondaryColor: '#01384B',
     headlineColor: '#3c3c3c',
   },
-  'oem-insights': {
-    name: 'Insights',
-    description: 'News and trends for packaging and processing machine builders',
-    ...brands.oem,
-  },
   'pfw-new-issue-alert': {
     name: 'New Issue Alert',
     description: 'Hot off the presses&emsp;&emsp;|&emsp;&emsp;<a href="#" style="color: #fff; text-decoration:underline;" target="_blank">View Digital Edition</a>',
     ...brands.pfw,
-  },
-  'pfw-hand-picked': {
-    name: 'Hand Picked',
-    description: 'The Latest News and Developments in Food and Beverage Processing',
-    ...brands.pfw,
-  },
-  'pw-contract-packaging': {
-    name: 'Contract Manufacturing + Packaging',
-    description: 'The latest news, trends, and strategies about contract manufacturing and packaging',
-    ...brands.pw,
-  },
-  'pw-editors-picks': {
-    name: 'Editors\' Picks',
-    description: 'Timely hand-picked favorites from <em>Packaging World</em>',
-    ...brands.pw,
-  },
-  'pw-end-of-line-strategies': {
-    name: 'End-of-Line Strategies',
-    description: 'Life at the intersection of packaging and logistics',
-    ...brands.pw,
-  },
-  'pw-packaging-insights': {
-    name: 'Packaging Insights',
-    description: 'Tips, Ideas + Best Practices',
-    ...brands.pw,
-  },
-  'pw-shelf-impact': {
-    name: 'Shelf Impact',
-    description: 'The brand manager\'s source for standing out in a crowd',
-    ...brands.pw,
-  },
-  'pw-machine-automation-insights': {
-    name: 'Machine Automation Insights',
-    description: 'Automation trends affecting packaging machinery',
-    ...brands.pw,
-  },
-  'pw-new-issue-alert': {
-    name: 'New Issue Alert',
-    description: 'Hot off the presses&emsp;&emsp;|&emsp;&emsp;<a href="#" style="color: #fff; text-decoration:underline;" target="_blank">View Digital Edition</a>',
-    ...brands.pw,
-  },
-  'pw-new-machinery': {
-    name: 'New Machinery',
-    description: 'Get a glimpse at next gen equipment',
-    ...brands.pw,
   },
   'pw-expo': {
     name: 'Expo',
