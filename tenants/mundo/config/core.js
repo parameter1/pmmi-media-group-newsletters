@@ -23,9 +23,10 @@ const config = {
     headerSrc: '/files/base/pmmi/all/image/newsletters/mundo_expo_pack_revwhite.png',
     primaryColor: '#007557',
     socialMedia: {
-      imagePath: '/files/base/pmmi/all/image/static/newsletters/',
+      imagePath: '/files/base/pmmi/all/image/static/newsletters',
       links: [
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/mundo-expopack/', target: '_blank' },
+        { provider: 'youtube', href: 'https://www.youtube.com/channel/UCM5Ldhqi4SFRIyoGxuJZV3w', target: '_blank' },
         { provider: 'facebook', href: 'https://www.facebook.com/MundoEXPOPACK', target: '_blank' },
       ],
     },
