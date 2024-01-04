@@ -139,7 +139,11 @@ $ const emailX = config.get('emailX');
                   <common-2024-divider-block />
 
                   <html-comment> Upcoming Events START </html-comment>
-                  <common-2024-events-mundo-block newsletter=newsletter date=date limit=3 />
+                  <common-2024-events-mundo-block
+                    newsletter=newsletter
+                    date=date
+                    limit=3
+                  />
                   <html-comment> Upcoming Events END </html-comment>
 
                   <common-2024-divider-block />
@@ -156,7 +160,10 @@ $ const emailX = config.get('emailX');
                   <common-2024-divider-block />
 
                   <html-comment> Webinar Calendar START </html-comment>
-                  <common-2024-webinar-block header="Mundo" />
+                  <common-2024-webinar-block
+                    newsletter=newsletter
+                    header="Mundo"
+                  />
                   <html-comment> Webinar Calendar END </html-comment>
 
                   <common-2024-divider-block />
