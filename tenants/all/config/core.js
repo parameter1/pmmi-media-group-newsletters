@@ -34,6 +34,7 @@ const config = {
   },
   'pw-weekly': {
     brand: 'Packaging World',
+    brandShort: 'pw',
     title: 'PW Weekly Wrap Up',
     description: 'Weekly Wrap Up',
     primaryColor: '#005BAB',
@@ -49,6 +50,7 @@ const config = {
   },
   'pw-daily': {
     brand: 'Packaging World',
+    brandShort: 'pw',
     description: 'Daily Edition',
     title: 'PW Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
@@ -64,6 +66,7 @@ const config = {
   },
   'pfw-daily': {
     brand: 'ProFood World',
+    brandShort: 'pfw',
     title: 'PFW Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
     primaryColor: '#004C92',
@@ -78,6 +81,7 @@ const config = {
   },
   'oem-daily': {
     brand: 'OEM Newsletter',
+    brandShort: 'oem',
     title: 'OEM Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/oem_white.png',
     primaryColor: '#185B76',
@@ -92,6 +96,7 @@ const config = {
   },
   'hcp-daily': {
     brand: 'Healthcare Packaging',
+    brandShort: 'hcp',
     title: 'HCP Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/hcp_logo_white.png',
     primaryColor: '#00B0DE',
@@ -106,6 +111,7 @@ const config = {
   },
   'cmp-daily': {
     brand: 'CM+P Newsletter',
+    brandShort: 'cmp',
     title: 'CM+P Newsletter',
     headerSrc: '/files/base/pmmi/all/image/newsletters/cmp2022_logo_white.png',
     primaryColor: '#00B15D',

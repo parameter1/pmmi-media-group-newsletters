@@ -1,16 +1,4 @@
 module.exports = {
-  aw: {
-    brandName: 'Automation World',
-    logoSrc: '/files/base/pmmi/all/image/newsletters/aw-logo.png',
-    subscribeLink: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew',
-    logoConfig: {
-      logoAttrs: { width: 190, height: 35 },
-      logoStyle: { 'max-width': '190px' },
-      logoWrapperStyle: { padding: '16px 10px 6px 10px' },
-      logoOptions: { w: 190 },
-      logoSrc: '/files/base/pmmi/all/image/newsletters/aw-logo.png',
-    },
-  },
   hcp: {
     brandName: 'Healthcare Packaging',
     logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-logo.png',
