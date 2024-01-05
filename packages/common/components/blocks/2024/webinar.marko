@@ -2,12 +2,30 @@ import { get } from "@parameter1/base-cms-object-path";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/website-content";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
-$ const { config } = out.global;
+$ const { config, req } = out.global;
 $ const { header, newsletter } = input;
 $ const now = Date.now();
 $ const dateFormat = defaultValue(input.dateFormat, "MMMM DD, YYYY");
 $ const newsletterConfig = config.get(newsletter.alias);
-$ const brand = get(newsletterConfig, "brand");
+$ const brandShort = get(newsletterConfig, "brandShort");
+
+$ const webParam = get(req, `ref=${brandShort}-web`);
+$ const newsletterParam = `ref=${brandShort}-news`;
+$ const urlParams = (webParam) ? (newsletterParam) : newsletterParam;
+
+
+
+
+
+const testURl = new URL('https://events.packworld.com/automate-your-end-of-line-in-days-with-ventions-next-generation-robot-palletizer');
+const { searchParams } = testURl
+console.log(searchParams.get('ref'));
+if (!searchParams.get('ref')) searchParams.set('ref', `${brandShort}-news`);
+console.log(testURl.toString());
+
+
+
+
 
 $ const upcomingQueryParams = {
   includeContentTypes: ["Webinar"],
@@ -68,7 +86,7 @@ $ const archiveQueryParams = {
                     <td align="left" style="padding:0;Margin:0;padding-bottom:20px">
                       <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
                         <strong>
-                          <a href=`${content.linkUrl}?ref=${brand}=news` target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                          <a href=`${content.linkUrl}?${urlParams}` target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
                             ${content.name}
                           </a>
                         </strong>
@@ -99,7 +117,7 @@ $ const archiveQueryParams = {
                     <td align="left" style="padding:0;Margin:0;padding-bottom:20px">
                       <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
                         <strong>
-                          <a href=`${content.linkUrl}?ref=${brand}=news` target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                          <a href=`${content.website}?${urlParams}` target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
                             ${content.name}
                           </a>
                         </strong>
