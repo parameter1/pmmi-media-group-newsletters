@@ -18,6 +18,7 @@ const config = {
   },
   'mundo-expo-pack': {
     brand: 'Mundo EXPO PACK',
+    brandShort: 'mundo',
     title: 'Mundo EXPO PACK',
     lang: 'es',
     headerSrc: '/files/base/pmmi/all/image/newsletters/mundo_expo_pack_revwhite.png',
