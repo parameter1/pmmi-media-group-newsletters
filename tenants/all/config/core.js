@@ -30,6 +30,7 @@ const config = {
   },
   cpgnext: {
     name: 'CPGNext',
+    brandShort: 'cpgnext',
     description: 'Digital Transformation In Packaged Goods Manufacturing',
   },
   'pw-weekly': {
