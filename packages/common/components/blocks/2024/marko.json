@@ -58,5 +58,8 @@
   },
   "<common-2024-download-block>": {
     "template": "./download.marko"
+  },
+  "<common-2024-webinar-mundo-block>": {
+    "template": "./webinar-mundo.marko"
   }
 }
