@@ -3,7 +3,7 @@ import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/we
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { config } = out.global;
-$ const { header, newsletter } = input;
+$ const { newsletter } = input;
 $ const now = Date.now();
 $ const dateFormat = defaultValue(input.dateFormat, "MMMM DD, YYYY");
 $ const newsletterConfig = config.get(newsletter.alias);
