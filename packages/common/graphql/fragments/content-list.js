@@ -32,6 +32,9 @@ fragment NewsletterContentListFragment on Content {
   primarySection {
     name
   }
+  prosourcePrimarySection: primarySection(input: { siteId: "624490387ae702f0058b45b8" }) {
+    name
+  }
   ... on ContentPromotion {
     name(input: { mutation: Email })
     teaser(input: { mutation: Email, useFallback: false, maxLength: null })
