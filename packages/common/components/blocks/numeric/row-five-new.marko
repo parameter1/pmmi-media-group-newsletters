@@ -1,4 +1,5 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import { get } from "@parameter1/base-cms-object-path";
 
 $ const { newsletter, date, imagePath, colors } = input;
 
@@ -58,6 +59,8 @@ $ const headlineStyle = {
                                         </td>
                                     </tr>
                                     $ const content = nodes[0];
+                                    $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
+                                    $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
                                     <tr>
                                         <td dir="rtl" width="100%" style="padding: 24px 0 0 0;direction:rtl;" align="center" valign="top">
                                             <!-- Two column -->
@@ -79,7 +82,7 @@ $ const headlineStyle = {
                                                                                             class="img-max"
                                                                                             attrs={ style: imgStyles }
                                                                                             >
-                                                                                            <@link href=content.siteContext.url target="_blank" />
+                                                                                            <@link href=contentLink target="_blank" />
                                                                                             </marko-newsletter-imgix>
                                                                                         </marko-core-obj-value>
                                                                                 </td>
@@ -98,7 +101,7 @@ $ const headlineStyle = {
                                                                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                             <tr>
                                                                                 <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 30px;" align="left" class="mobileheader">
-                                                                                    <a href=content.siteContext.url target="_blank" style=headlineStyle>${content.name}</a>
+                                                                                    <a href=contentLink target="_blank" style=headlineStyle>${content.name}</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -108,7 +111,7 @@ $ const headlineStyle = {
                                                                             </tr>
                                                                             <tr>
                                                                                 <td style="color: #555555; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; padding: 0 0 12px 0;" align="left" class="body-text">
-                                                                                    <a href=content.siteContext.url target="_blank" style="color: #27BCE2; text-decoration: underline;">Read More →</a>
+                                                                                    <a href=contentLink target="_blank" style="color: #27BCE2; text-decoration: underline;">Read More →</a>
                                                                                 </td>
                                                                             </tr>
                                                                         </table>

@@ -7,7 +7,10 @@ $ const withImage = defaultValue(input.withImage, true);
 $ const button = defaultValue(input.button, false);
 
 $ const companyPromo = (content.type === 'promotion' && content.company);
-$ const slug = companyPromo ? `Presented by ${content.company.name}` : content.primarySection.name;
+$ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
+$ const contentPrimarySectionName = primarySiteIsProSource ? get(content, "prosourcePrimarySection.name") : get(content, "primarySection.name")
+$ const slug = companyPromo ? `Presented by ${content.company.name}` : contentPrimarySectionName;
+$ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
 
 $ const imgStyles = {
   "display": "block",
@@ -41,7 +44,7 @@ $ const imgStyles = {
                           class="img-max"
                           attrs={ style: imgStyles }
                         >
-                          <@link href=content.siteContext.url target="_blank" />
+                          <@link href=contentLink target="_blank" />
                         </marko-newsletter-imgix>
                       </marko-core-obj-value>
                     </td>
@@ -65,7 +68,7 @@ $ const imgStyles = {
                   </tr>
                   <tr>
                     <td style="padding: 0 0 12px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 26px;">
-                      <a href=content.siteContext.url style="color: #3c3c3c; text-decoration: none;" target="_blank">
+                      <a href=contentLink style="color: #3c3c3c; text-decoration: none;" target="_blank">
                         ${content.name}
                       </a>
                     </td>
