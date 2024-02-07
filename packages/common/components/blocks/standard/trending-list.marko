@@ -40,6 +40,8 @@ $ const queryParams = {
               </td>
             </tr>
             <for|content| of=nodes>
+              $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
+              $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
               <tr>
                 <td align="center" valign="top" width="100%" style="padding-bottom:24px;">
                   <!-- Two column -->
@@ -65,7 +67,7 @@ $ const queryParams = {
                                   options={ w: 112 }
                                   attrs={ style: imgStyles }
                                 >
-                                  <@link href=content.siteContext.url target="_blank" />
+                                  <@link href=contentLink target="_blank" />
                                 </marko-newsletter-imgix>
                               </marko-core-obj-value>
                             </td>
@@ -97,7 +99,7 @@ $ const queryParams = {
                                 <!-- ........ -->
                                 <tr>
                                   <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 28px;" align="left">
-                                    <a href=content.siteContext.url target="_blank" style="color: #3c3c3c; text-decoration: none;">
+                                    <a href=contentLink target="_blank" style="color: #3c3c3c; text-decoration: none;">
                                       ${content.name}
                                     </a>
                                   </td>

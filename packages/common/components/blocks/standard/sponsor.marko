@@ -38,6 +38,8 @@ $ const imgStyles = {
                       <!-- content right -->
                       <td align="right" class="companylogo-imgflex" style="vertical-align:middle;height:65px;" valign="middle" width="48%">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
+                          $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
                           <tr>
                             <td align="left" style="height:65px;">
                               <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
@@ -48,7 +50,7 @@ $ const imgStyles = {
                                   class="img-max"
                                   attrs={ style: imgStyles, border: 0 }
                                 >
-                                  <@link href=content.siteContext.url target="_blank" />
+                                  <@link href=contentLinktarget="_blank" />
                                 </marko-newsletter-imgix>
                               </marko-core-obj-value>
                             </td>
