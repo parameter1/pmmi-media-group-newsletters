@@ -20,7 +20,6 @@ const config = {
   'pfw-new-issue-alert': {
     brand: 'ProFood World',
     brandShort: 'pfw',
-    title: 'PFW Newsletter',
     title: 'PFW New Issue Alert',
     description: 'New Issue Alert',
     headerSrc: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
