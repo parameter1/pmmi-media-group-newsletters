@@ -1,6 +1,11 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import { get } from "@parameter1/base-cms-object-path";
 
+$ const { config } = out.global;
 $ const { newsletter, date, sectionName, header } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const primaryColor = get(newsletterConfig, "primaryColor");
 
 $ const queryParams = {
   sectionName,
@@ -9,6 +14,19 @@ $ const queryParams = {
   limit: input.limit || 1,
   skip: input.skip || 0,
   queryFragment,
+};
+$ const sectionNameStyle = {
+  "margin": "0",
+  "-webkit-text-size-adjust": "none",
+  "-ms-text-size-adjust": "none",
+  "mso-line-height-rule": "exactly",
+  "font-family": "arial, 'helvetica neue', helvetica, sans-serif",
+  "line-height": "21px",
+  "color": primaryColor,
+  "font-size": "12px",
+  "font-weight": "bold",
+  "text-transform": "uppercase",
+  "padding-bottom": "10px",
 };
 
 <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
@@ -21,17 +39,8 @@ $ const queryParams = {
               <td align="left" valign="top" style="padding:0;Margin:0;width:560px">
                 <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                   <tr>
-                    <td align="left" style="padding:0;Margin:0;font-size:0px">
-                      <if(header==="Mundo")>
-                        <marko-newsletter-imgix
-                          src='/files/base/pmmi/all/image/newsletters/stat-of-the-day-mundo.png'
-                        />
-                      </if>
-                      <else>
-                        <marko-newsletter-imgix
-                          src='/files/base/pmmi/all/image/newsletters/stat.png'
-                        />
-                      </else>
+                    <td align="left" style=sectionNameStyle>
+                      ${sectionName}
                     </td>
                   </tr>
                 </table>
