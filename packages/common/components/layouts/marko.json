@@ -22,5 +22,8 @@
   },
   "<common-2024-mundo-layout>": {
     "template": "./2024-mundo.marko"
+  },
+  "<common-2024-new-issue-layout>": {
+    "template": "./2024-new-issue.marko"
   }
 }
