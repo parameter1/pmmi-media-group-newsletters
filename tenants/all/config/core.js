@@ -18,9 +18,20 @@ const config = {
     headlineColor: '#3c3c3c',
   },
   'pfw-new-issue-alert': {
-    name: 'New Issue Alert',
-    description: 'Hot off the presses&emsp;&emsp;|&emsp;&emsp;<a href="#" style="color: #fff; text-decoration:underline;" target="_blank">View Digital Edition</a>',
-    ...brands.pfw,
+    brand: 'ProFood World',
+    brandShort: 'pfw',
+    title: 'PFW New Issue Alert',
+    description: 'New Issue Alert',
+    headerSrc: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
+    primaryColor: '#8eae3e',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/profoodworld', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/ProFoodWorld', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/ProFoodWorld', target: '_blank' },
+      ],
+    },
   },
   'pw-expo': {
     name: 'Expo',
@@ -122,6 +133,22 @@ const config = {
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
         { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld/', target: '_blank' },
+      ],
+    },
+  },
+  'pw-new-issue': {
+    brand: 'Packaging World',
+    brandShort: 'pw',
+    title: 'PW New Issue Alert',
+    description: 'New Issue Alert',
+    headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+    primaryColor: '#005BAB',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
       ],
     },
   },

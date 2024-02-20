@@ -75,6 +75,14 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('pw-new-issue', [
+    {
+      name: 'bottom-audience-banner',
+      id: '60929b92b1fcca34a91baadf',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;
