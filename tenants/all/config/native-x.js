@@ -50,6 +50,6 @@ module.exports = {
     'pw-new-issue': {
       subscription: '65d4dca2e9037c0001ffd0e3',
       promotion: '65d4dcb7f2eda20001f563fb',
-    }
+    },
   },
 };
