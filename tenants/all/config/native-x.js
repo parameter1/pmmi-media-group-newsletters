@@ -8,6 +8,8 @@ module.exports = {
       'slot-3': '623484fb336e9a00010101cf',
       'slot-4': '6234850a336e9a0001010338',
       'slot-5': '6234851734a89300018f4e26',
+      subscription: '65d4dd52e9037c0001ffd23d',
+      promotion: '65d4dd5fe9037c0001ffd254',
     },
     'hcp-quick-hits': {
       'top-audience-banner': '61c23cc5e30fac00015e4bfe',
@@ -45,5 +47,9 @@ module.exports = {
       subscription: '65776e85f2eda200019152ec',
       promotion: '65776e90e9037c00019bb649',
     },
+    'pw-new-issue': {
+      subscription: '65d4dca2e9037c0001ffd0e3',
+      promotion: '65d4dcb7f2eda20001f563fb',
+    }
   },
 };
