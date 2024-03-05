@@ -63,9 +63,12 @@ const config = {
   'pw-daily': {
     brand: 'Packaging World',
     brandShort: 'pw',
-    description: 'Daily Edition',
     title: 'PW Newsletter',
+    description: 'Packaging News & Developments',
     headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+    headerHeight: '50',
+    editorSrc: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
+    editorHeight: '180',
     primaryColor: '#005BAB',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
@@ -80,8 +83,12 @@ const config = {
     brand: 'ProFood World',
     brandShort: 'pfw',
     title: 'PFW Newsletter',
+    description: 'Food & Beverage Processing<br/>News & Developments',
     headerSrc: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
-    primaryColor: '#004C92',
+    headerHeight: '60',
+    editorSrc: '/files/base/pmmi/all/image/newsletters/aaronhand.png',
+    editorHeight: '180',
+    primaryColor: '#8eae3e',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
       links: [
@@ -92,10 +99,14 @@ const config = {
     },
   },
   'oem-daily': {
-    brand: 'OEM Newsletter',
+    brand: 'OEM Magazine',
     brandShort: 'oem',
     title: 'OEM Newsletter',
+    description: 'Weekly News for the Packaging<br/>& Processing OEM',
     headerSrc: '/files/base/pmmi/all/image/newsletters/oem_white.png',
+    headerHeight: '60',
+    editorSrc: '/files/base/pmmi/all/image/newsletters/seanriley.png',
+    editorHeight: '180',
     primaryColor: '#185B76',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters/',
@@ -110,7 +121,11 @@ const config = {
     brand: 'Healthcare Packaging',
     brandShort: 'hcp',
     title: 'HCP Newsletter',
+    description: 'Weekly Healthcare Packaging<br/>News & Developments',
     headerSrc: '/files/base/pmmi/all/image/newsletters/hcp_logo_white.png',
+    headerHeight: '60',
+    editorSrc: '/files/base/pmmi/all/image/newsletters/kerensookne.png',
+    editorHeight: '180',
     primaryColor: '#00B0DE',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters/',
@@ -122,10 +137,14 @@ const config = {
     },
   },
   'cmp-daily': {
-    brand: 'CM+P Newsletter',
+    brand: 'CM+P Magazine',
     brandShort: 'cmp',
     title: 'CM+P Newsletter',
+    description: 'Contract Packaging and Manufacturing News & Developments',
     headerSrc: '/files/base/pmmi/all/image/newsletters/cmp2022_logo_white.png',
+    headerHeight: '60',
+    editorSrc: '/files/base/pmmi/all/image/newsletters/melissagriffen.png',
+    editorHeight: '180',
     primaryColor: '#00B15D',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters/',
