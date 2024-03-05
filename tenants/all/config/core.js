@@ -51,6 +51,9 @@ const config = {
     description: 'Weekly Wrap Up',
     primaryColor: '#005BAB',
     headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+    headerHeight: '50',
+    editorSrc: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
+    editorHeight: '210',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
       links: [
