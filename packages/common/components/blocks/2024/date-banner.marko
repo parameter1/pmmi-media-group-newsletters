@@ -6,51 +6,83 @@ $ const { newsletter, date } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterDescription = get(newsletterConfig, "description");
+$ const editorSrc = get(newsletterConfig, "editorSrc");
+$ const editorHeight = get(newsletterConfig, "editorHeight");
 $ const lang = get(newsletterConfig, "lang");
 $ const displayDateMonth = (lang) ? moment(date).locale(lang).format("MMMM") : moment(date).format("MMMM");
 $ const displayDate = (lang) ? moment(date).locale(lang).format("D, YYYY") : moment(date).format("D, YYYY");
 
-<html-comment> Date Banner START </html-comment>
-<if(newsletterDescription)>
-  <tr>
-    <td align="left" style="padding:0;Margin:0;padding-bottom:20px;padding-top:20px;padding-left:40px;padding-right:40px">
-      <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-        <tr>
-          <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
-            <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-              <tr>
-                <td align="center" style="padding:0;Margin:0">
-                  <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                    <strong>${newsletterDescription}</strong>&nbsp; | &nbsp;${displayDateMonth}&nbsp;${displayDate}
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</if>
-<else>
-  <tr>
-    <td align="left" style="padding:0;Margin:0;padding-bottom:20px;padding-top:20px;padding-left:40px;padding-right:40px">
-      <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-        <tr>
-          <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
-            <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-              <tr>
-                <td align="center" style="padding:0;Margin:0">
-                  <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                    ${displayDateMonth}&nbsp;${displayDate}
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</else>
-<html-comment> Date Banner END </html-comment>
+<tr>
+  <td align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:40px;padding-right:40px">
+    <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
+    <html-comment> Date Banner START </html-comment>
+    <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+      <tr>
+        <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:270px">
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="center" style="padding:0;Margin:0;">
+                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                  <strong>$!{newsletterDescription}</strong>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="Margin:0;padding-top:15px">
+                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;color:#333333;font-size:14px">
+                  <strong>${displayDateMonth}&nbsp;${displayDate}</strong>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!--[if mso]></td><td style="width:20px"></td><td style="width:270px" valign="top"><![endif]-->
+    <html-comment> Date Banner END </html-comment>
+    <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+      <html-comment> Editor Image START </html-comment>
+      <tr>
+        <td align="left" style="padding:0;Margin:0;width:270px">
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="center" class="es-m-p0t" style="Margin:0;padding-top:10px;padding-right:20px;padding-left:20px;font-size:0px">
+                <marko-newsletter-imgix
+                  src=editorSrc
+                  class="adapt-img"
+                  options={ w: `${editorHeight}` }
+                  attrs={ width: `${editorHeight}`, style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <html-comment> Editor Image END </html-comment>
+    </table>
+    <!--[if mso]></td></tr></table><![endif]-->
+  </td>
+</tr>
+<html-comment> Line Divider START </html-comment>
+<tr>
+  <td class="es-m-p20r es-m-p20l" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:40px;padding-right:40px">
+    <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+      <tr>
+        <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="center" style="padding:0;Margin:0;font-size:0">
+                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:1px;width:100%;margin:0px"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<html-comment> Line Divider END </html-comment>
