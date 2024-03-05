@@ -7,8 +7,8 @@ $ const newsletterConfig = config.get(newsletter.alias);
 $ const brand = get(newsletterConfig, "brand");
 
 <tr>
-  <td align="left" style="Margin:0;padding-top:10px;padding-bottom:20px;padding-left:20px;padding-right:20px">
-    <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+  <td class="es-m-p10b" align="left" style="padding:0;Margin:0;padding-top:10px;padding-left:20px;padding-right:20px">
+    <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
       <tr>
         <td align="center" valign="top" style="padding:0;Margin:0;width:600px">
           <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
@@ -34,7 +34,7 @@ $ const brand = get(newsletterConfig, "brand");
                   <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                     <tr>
                       <for|link| of=socialMediaLinks>
-                        <td align="center" valign="top" style="padding-right:20px;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
+                        <td align="center" valign="top" style="padding:0;Margin:0;padding-right:20px">
                           <marko-newsletter-imgix
                             src=`${socialMedia.imagePath}/${link.provider}.png`
                             alt=link.provider

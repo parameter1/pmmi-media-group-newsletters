@@ -54,26 +54,26 @@ $ const title = get(newsletterConfig, "title");
       p, ul li, ol li, a { line-height:150%!important }
       h1, h2, h3, h1 a, h2 a, h3 a { line-height:150%!important }
       h1 { font-size:24px!important; text-align:left }
-      h2 { font-size:18px!important; text-align:left }
-      h3 { font-size:12px!important; text-align:left }
+      h2 { font-size:22px!important; text-align:left }
+      h3 { font-size:16px!important; text-align:left }
       .es-header-body h1 a, .es-content-body h1 a, .es-footer-body h1 a {
         font-size:24px!important; text-align:left
       }
       .es-header-body h2 a, .es-content-body h2 a, .es-footer-body h2 a {
-        font-size:18px!important; text-align:left
+        font-size:22px!important; text-align:left
       }
       .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a {
-        font-size:12px!important; text-align:left
+        font-size:16px!important; text-align:left
       }
       .es-menu td a { font-size:18px!important }
       .es-header-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body a {
-        font-size:24px!important
+        font-size:18px!important
       }
       .es-content-body p, .es-content-body ul li, .es-content-body ol li, .es-content-body a {
-        font-size:16px!important
+        font-size:18px!important
       }
       .es-footer-body p, .es-footer-body ul li, .es-footer-body ol li, .es-footer-body a {
-        font-size:18px!important
+        font-size:14px!important
       }
       .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .es-infoblock a {
         font-size:18px!important
@@ -157,8 +157,9 @@ $ const title = get(newsletterConfig, "title");
       .es-m-p40b { padding-bottom:40px!important }
       .es-m-p40r { padding-right:40px!important }
       .es-m-p40l { padding-left:40px!important }
-      .hide-mobile { padding: 0px!important }
-      .mobile-padding { padding-top: 20px !important; padding-bottom: 20px !important}
+    }
+    @media screen and (max-width:384px) {
+      .mail-message-content { width:414px!important }
     }
   </style>
  </head>

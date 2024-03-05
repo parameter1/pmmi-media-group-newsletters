@@ -8,45 +8,40 @@ $ const { url } = siteContext;
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const primaryColor = get(newsletterConfig, "primaryColor");
 $ const sectionNameStyle = {
-  "-webkit-text-size-adjust": "none",
-  "-ms-text-size-adjust": "none",
+  "margin": "0",
+  "line-height": "21px",
   "mso-line-height-rule": "exactly",
   "font-family": "arial, 'helvetica neue', helvetica, sans-serif",
-  "line-height": "21px",
+  "font-size": "14px",
   "color": primaryColor,
-  "font-size": "12px",
+  "font-style": "normal",
   "font-weight": "bold",
   "text-transform": "uppercase",
 };
-
 $ const campaignTypeMatch = url.match(/(youtube\.com|pmmi\.dragonforms\.com)|app.credspark.com/);
 
 $ const imgDimensions = {
   "youtube.com": { w: 100, h: 100 },
-  "pmmi.dragonforms.com": { w: 60, h: 60 },
+  "pmmi.dragonforms.com": { w: 70, h: 70 },
 }
 
-$ const imgAlignment = campaignTypeMatch && campaignTypeMatch[1] && campaignTypeMatch[1] === "youtube.com" ? {
-  "padding-right":  "10px"
-} : { "padding-right":  "10px", "padding-top": "8px" }
-
 $ const imgOptions =  {
-  w: 60,
-  h: 60,
+  w: 70,
+  h: 70,
   ...(campaignTypeMatch && imgDimensions[campaignTypeMatch[1]]),
   fit: "fill"
 }
 
-<if(withImage === true)>
+<if(withImage)>
   <tr>
-    <td class="es-m-p0t es-m-p0b mobile-padding" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:40px;padding-right:40px">
+    <td align="left" style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:40px;padding-right:40px">
       <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:96px" valign="top"><![endif]-->
-      <table class="es-left" cellspacing="0" cellpadding="0" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+      <table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
         <tr>
           <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:96px">
             <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
               <tr>
-                <td align="center" style=imgAlignment>
+                <td align="center" style="padding:0;Margin:0;font-size:0px">
                   <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                     <marko-newsletter-imgix
                       src=image.src
@@ -62,12 +57,12 @@ $ const imgOptions =  {
         </tr>
       </table>
       <!--[if mso]></td><td style="width:20px"></td><td style="width:444px" valign="top"><![endif]-->
-      <table class="es-right" cellspacing="0" cellpadding="0" align="right" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+      <table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
         <tr>
           <td align="left" style="padding:0;Margin:0;width:444px">
             <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
               <tr>
-                <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px">
+                <td align="left" class="es-m-txt-c es-m-p0t" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
                   <h2 style="Margin:0;line-height:27px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:bold;color:#333333">
                     <strong>${content.name}</strong>
                   </h2>
@@ -75,12 +70,10 @@ $ const imgOptions =  {
               </tr>
               <tr>
                 <td align="left" class="es-m-txt-c" style="padding:0;Margin:0">
-                  <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                    <u>
-                      <a href=url target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px">
-                        $!{content.teaser}
-                      </a>
-                    </u>
+                  <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:27px;color:#333333;font-size:14px">
+                    <a href=url target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px">
+                      <u>$!{content.teaser}</u>
+                    </a>
                   </p>
                 </td>
               </tr>
@@ -94,16 +87,16 @@ $ const imgOptions =  {
 </if>
 <else>
   <tr>
-    <td align="left" style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:40px;padding-right:40px">
-      <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+    <td class="es-m-p20r es-m-p20l" align="left" style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:40px;padding-right:40px">
+      <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
         <tr>
           <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
             <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
               <tr>
-                <td align="left" style="padding:0;Margin:0;">
-                  <p style=sectionNameStyle>
+                <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
+                  <h3 style=sectionNameStyle>
                     <strong>${content.linkText}</strong>
-                  </p>
+                  </h3>
                 </td>
               </tr>
               <tr>
