@@ -61,5 +61,8 @@
   },
   "<common-2024-webinar-mundo-block>": {
     "template": "./webinar-mundo.marko"
+  },
+  "<common-2024-date-banner-weekly-block>": {
+    "template": "./date-banner-weekly.marko"
   }
 }
