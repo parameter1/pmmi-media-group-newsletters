@@ -20,7 +20,6 @@ module.exports = {
       'slot-5': '61c23cfee30fac00015e4e4f',
     },
     'pw-weekly': {
-      download: '6539583845fe7b000179674e',
       subscription: '654d31cfe9037c000173cfec',
       promotion: '654d359bf2eda200016987f1',
     },
