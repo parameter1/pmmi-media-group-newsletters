@@ -44,9 +44,6 @@
   "<common-2024-social-mundo-block>": {
     "template": "./social-mundo.marko"
   },
-  "<common-2024-header-mundo-block>": {
-    "template": "./header-mundo.marko"
-  },
   "<common-2024-events-mundo-block>": {
     "template": "./events-mundo.marko"
   },
