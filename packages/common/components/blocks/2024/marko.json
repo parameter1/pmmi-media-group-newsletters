@@ -38,17 +38,11 @@
   "<common-2024-webinar-block>": {
     "template": "./webinar.marko"
   },
-  "<common-2024-stat-block>": {
-    "template": "./stat.marko"
-  },
   "<common-2024-footer-mundo-block>": {
     "template": "./footer-mundo.marko"
   },
   "<common-2024-social-mundo-block>": {
     "template": "./social-mundo.marko"
-  },
-  "<common-2024-header-mundo-block>": {
-    "template": "./header-mundo.marko"
   },
   "<common-2024-events-mundo-block>": {
     "template": "./events-mundo.marko"
@@ -56,10 +50,10 @@
   "<common-2024-date-banner-mundo-block>": {
     "template": "./date-banner-mundo.marko"
   },
-  "<common-2024-download-block>": {
-    "template": "./download.marko"
-  },
   "<common-2024-webinar-mundo-block>": {
     "template": "./webinar-mundo.marko"
+  },
+  "<common-2024-date-banner-weekly-block>": {
+    "template": "./date-banner-weekly.marko"
   }
 }
