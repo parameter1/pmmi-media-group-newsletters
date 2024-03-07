@@ -6,29 +6,53 @@ $ const { newsletter, date } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterDescription = get(newsletterConfig, "description");
+$ const digitalEdition = get(newsletterConfig, "digitalEdition");
 $ const lang = get(newsletterConfig, "lang");
 $ const displayDateMonth = (lang) ? moment(date).locale(lang).format("MMMM") : moment(date).format("MMMM");
 $ const displayDate = (lang) ? moment(date).locale(lang).format("D, YYYY") : moment(date).format("D, YYYY");
 
-<tr>
-  <td align="left" style="padding:0;margin:0;padding-top:20px;padding-left:40px;padding-right:40px">
-    <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-      <tr>
-        <td align="center" valign="top" style="padding:0;margin:0;width:560px">
-          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-            <tr>
-              <td align="center" style="padding:0;margin:0">
-                <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;color:#333333;font-size:14px">
-                  <strong>$!{newsletterDescription}&nbsp;&nbsp;|&nbsp;&nbsp;${displayDateMonth}&nbsp;${displayDate}</strong>
-                </p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
+<if(digitalEdition === true)>
+  <tr>
+    <td align="left" style="padding:0;margin:0;padding-top:20px;padding-left:40px;padding-right:40px">
+      <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+        <tr>
+          <td align="center" valign="top" style="padding:0;margin:0;width:560px">
+            <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+              <tr>
+                <td align="center" style="padding:0;margin:0">
+                  <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;color:#333333;font-size:14px">
+                    <strong>$!{newsletterDescription}&nbsp;&nbsp;|&nbsp;&nbsp;<strong><a href="#" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#333333;font-size:14px">View Digital Edition</a></strong>&nbsp;&nbsp;|&nbsp;&nbsp;${displayDateMonth}&nbsp;${displayDate}</strong>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</if>
+<else>
+  <tr>
+    <td align="left" style="padding:0;margin:0;padding-top:20px;padding-left:40px;padding-right:40px">
+      <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+        <tr>
+          <td align="center" valign="top" style="padding:0;margin:0;width:560px">
+            <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+              <tr>
+                <td align="center" style="padding:0;margin:0">
+                  <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;color:#333333;font-size:14px">
+                    <strong>$!{newsletterDescription}&nbsp;&nbsp;|&nbsp;&nbsp;${displayDateMonth}&nbsp;${displayDate}</strong>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</else>
 <html-comment> Line Divider START </html-comment>
 <tr>
   <td class="es-m-p20r es-m-p20l" align="left" style="margin:0;padding-top:20px;padding-bottom:20px;padding-left:40px;padding-right:40px">
