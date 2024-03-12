@@ -41,15 +41,13 @@ $ const queryParams = {
                 <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                   <tr>
                     <td align="left" style="padding:0;margin:0;padding-bottom:10px">
-                      <h3 style="margin:0;line-height:21px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;font-style:normal;font-weight:bold;color:#00b15d">
-                        <p style=sectionNameStyle>
-                          <if(primarySiteIsProSource)>
-                            ${get(content, "prosourcePrimarySection.name")}
-                          </if>
-                          <else>
-                            ${get(content, "primarySection.name")}
-                          </else>
-                        </p>
+                      <h3 style=sectionNameStyle>
+                        <if(primarySiteIsProSource)>
+                          ${get(content, "prosourcePrimarySection.name")}
+                        </if>
+                        <else>
+                          ${get(content, "primarySection.name")}
+                        </else>
                       </h3>
                     </td>
                   </tr>
