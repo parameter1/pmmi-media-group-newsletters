@@ -7,7 +7,7 @@ $ const newsletterConfig = config.get(newsletter.alias);
 $ const title = get(newsletterConfig, "title");
 $ const emailX = config.get('emailX');
 
-<marko-newsletter-root>
+<marko-newsletter-root date=date>
   <@head>
     <common-2024-head-block title=title newsletter=newsletter />
   </@head>
