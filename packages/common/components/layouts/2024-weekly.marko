@@ -136,12 +136,16 @@ $ const emailX = config.get('emailX');
                 <html-comment> Upcoming Events START </html-comment>
                 <common-2024-events-block
                   newsletter=newsletter
+                  date=date
                   limit=3
                 />
                 <html-comment> Upcoming Events END </html-comment>
 
                 <html-comment> Webinar Calendar START </html-comment>
-                <common-2024-webinar-block newsletter=newsletter />
+                <common-2024-webinar-block
+                  newsletter=newsletter
+                  date=date
+                />
                 <html-comment> Webinar Calendar END </html-comment>
 
                 <html-comment> Trade Show Banner START </html-comment>
