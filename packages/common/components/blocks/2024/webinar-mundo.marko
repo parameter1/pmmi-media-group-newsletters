@@ -3,8 +3,8 @@ import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/we
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { config } = out.global;
-$ const { newsletter } = input;
-$ const now = Date.now();
+$ const { newsletter, date } = input;
+$ const mailDate = new Date(date);
 $ const dateFormat = defaultValue(input.dateFormat, "MMMM DD, YYYY");
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const brandShort = get(newsletterConfig, "brandShort");
@@ -13,7 +13,7 @@ $ const primaryColor = get(newsletterConfig, "primaryColor");
 $ const upcomingQueryParams = {
   includeContentTypes: ["Webinar"],
   queryFragment,
-  beginningAfter: now,
+  beginningAfter: mailDate,
   limit: 2,
   sort: {
     field: "startDate",
@@ -23,7 +23,7 @@ $ const upcomingQueryParams = {
 $ const archiveQueryParams = {
   includeContentTypes: ["Webinar"],
   queryFragment,
-  beginningBefore: now,
+  beginningBefore: mailDate,
   sort: {
     field: "startDate",
     order: "desc",

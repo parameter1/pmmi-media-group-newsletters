@@ -2,8 +2,8 @@ import { get } from "@parameter1/base-cms-object-path";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/website-content";
 
 $ const { config } = out.global;
-$ const { header, newsletter } = input;
-$ const now = Date.now();
+$ const { header, newsletter, date } = input;
+$ const mailDate = new Date(date);
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const brandShort = get(newsletterConfig, "brandShort");
 $ const primaryColor = get(newsletterConfig, "primaryColor");
@@ -13,7 +13,7 @@ $ const queryParams = {
   skip: input.skip || 0,
   queryFragment,
   includeContentTypes: ["Event"],
-  endingAfter: now,
+  endingAfter: mailDate,
   sort: {
     field: "startDate",
     order: "asc",
