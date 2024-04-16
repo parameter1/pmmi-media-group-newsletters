@@ -34,10 +34,14 @@ const config = {
     title: 'PW Weekly Wrap Up',
     description: 'Weekly Wrap Up',
     primaryColor: '#005BAB',
-    headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
-    headerHeight: '50',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
-    editorHeight: '210',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+      height: '50',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
+      width: '210',
+    },
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
       links: [
@@ -52,10 +56,14 @@ const config = {
     brandShort: 'pw',
     title: 'PW Newsletter',
     description: 'Packaging News & Developments',
-    headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
-    headerHeight: '50',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
-    editorHeight: '180',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+      height: '50',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
+      width: '180',
+    },
     primaryColor: '#005BAB',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
@@ -71,10 +79,14 @@ const config = {
     brandShort: 'pfw',
     title: 'PFW Newsletter',
     description: 'Food & Beverage Processing<br/>News & Developments',
-    headerSrc: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
-    headerHeight: '60',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/aaronhand.png',
-    editorHeight: '180',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
+      height: '60',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/aaronhand.png',
+      width: '180',
+    },
     primaryColor: '#8eae3e',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
@@ -90,10 +102,14 @@ const config = {
     brandShort: 'oem',
     title: 'OEM Newsletter',
     description: 'Weekly News for the Packaging<br/>& Processing OEM',
-    headerSrc: '/files/base/pmmi/all/image/newsletters/oem_white.png',
-    headerHeight: '60',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/seanriley.png',
-    editorHeight: '180',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/oem_white.png',
+      height: '60',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/seanriley.png',
+      width: '180',
+    },
     primaryColor: '#185B76',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters/',
@@ -109,10 +125,14 @@ const config = {
     brandShort: 'hcp',
     title: 'HCP Newsletter',
     description: 'Weekly Healthcare Packaging<br/>News & Developments',
-    headerSrc: '/files/base/pmmi/all/image/newsletters/hcp_logo_white.png',
-    headerHeight: '60',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/kerensookne.png',
-    editorHeight: '180',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/hcp_logo_white.png',
+      height: '60',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/kerensookne.png',
+      width: '180',
+    },
     primaryColor: '#00B0DE',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters/',
@@ -128,10 +148,14 @@ const config = {
     brandShort: 'cmp',
     title: 'CM+P Newsletter',
     description: 'Contract Packaging and Manufacturing News & Developments',
-    headerSrc: '/files/base/pmmi/all/image/newsletters/cmp2022_logo_white.png',
-    headerHeight: '60',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/melissagriffen.png',
-    editorHeight: '180',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/cmp2022_logo_white.png',
+      height: '60',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/melissagriffen.png',
+      width: '180',
+    },
     primaryColor: '#00B15D',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters/',
@@ -148,10 +172,14 @@ const config = {
     title: 'PW New Issue Alert',
     description: 'New Issue Alert',
     digitalEdition: true,
-    headerSrc: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
-    headerHeight: '50',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
-    editorHeight: '210',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
+      height: '50',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
+      width: '210',
+    },
     primaryColor: '#005BAB',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
@@ -168,10 +196,14 @@ const config = {
     title: 'PFW New Issue Alert',
     description: 'New Issue Alert',
     digitalEdition: true,
-    headerSrc: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
-    headerHeight: '70',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/aaronhand.png',
-    editorHeight: '210',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
+      height: '70',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/aaronhand.png',
+      width: '210',
+    },
     primaryColor: '#8eae3e',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
