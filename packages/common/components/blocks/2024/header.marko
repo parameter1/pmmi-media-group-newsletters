@@ -4,9 +4,8 @@ $ const { config } = out.global;
 $ const { newsletter } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
-$ const headerSrc = get(newsletterConfig, "headerSrc");
+$ const header = get(newsletterConfig, "header");
 $ const primaryColor = get(newsletterConfig, "primaryColor");
-$ const headerHeight = get(newsletterConfig, "headerHeight");
 
 <html-comment> Header START </html-comment>
 <table class="es-header" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
@@ -35,12 +34,22 @@ $ const headerHeight = get(newsletterConfig, "headerHeight");
                         <!-- Stealth Links END -->
                       </td>
                     </tr>
+                    $ const imgStyling = {
+                      "border": "0",
+                      "height": header.height,
+                      "style": {
+                        "height": `${header.height}px`,
+                        "display": "block",
+                        "border": "0",
+                        "outline": "none",
+                      },
+                    };
                     <tr>
                       <td align="center" style="padding:0;margin:0;font-size:0px">
                         <marko-newsletter-imgix
-                          src=headerSrc
-                          options={ h: `${headerHeight}` }
-                          attrs={ height: `${headerHeight}`, style: "display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" }
+                          src=header.src
+                          options={ h: (header.height * 2) }
+                          attrs=imgStyling
                         />
                       </td>
                     </tr>
