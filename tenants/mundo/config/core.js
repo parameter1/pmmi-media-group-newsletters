@@ -22,10 +22,14 @@ const config = {
     title: 'Mundo EXPO PACK',
     description: 'Inteligencia de mercados,<br/>tecnologías y tendencias',
     lang: 'es-MX',
-    headerSrc: '/files/base/pmmi/all/image/newsletters/mundo_expo_pack_revwhite.png',
-    headerHeight: '80',
-    editorSrc: '/files/base/pmmi/all/image/newsletters/lilianrobayopaez.png',
-    editorHeight: '200',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/mundo_expo_pack_revwhite.png',
+      height: '80',
+    },
+    editor: {
+      src: '/files/base/pmmi/all/image/newsletters/editorbyline_hp4.png',
+      width: '200',
+    },
     primaryColor: '#007557',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
