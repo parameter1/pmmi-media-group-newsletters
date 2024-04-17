@@ -6,7 +6,7 @@ on:
 
 env:
   ECR_REGISTRY: 598984531759.dkr.ecr.us-east-2.amazonaws.com
-  IMG_PREFIX: ascend-media
+  IMG_PREFIX: pmmi-media-group
 
 jobs:
   version:
