@@ -50,6 +50,11 @@ jobs:
   build-newsletters:
     needs: [version]
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tenant:
+          - all
+          - mundo
     steps:
       - uses: actions/checkout@v3
       - name: Log in to ECR
