@@ -1,35 +1,73 @@
-name: Deploy instances (production)
+name: Deploy newsletters (production)
 
 on:
   push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+    tags: [ 'v[0-9]+.[0-9]+.[0-9]+' ]
+
+env:
+  ECR_REGISTRY: 598984531759.dkr.ecr.us-east-2.amazonaws.com
+  IMG_PREFIX: ascend-media
 
 jobs:
-  vars:
+  version:
     runs-on: ubuntu-latest
     steps:
     - id: tag_version
-      run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+      run: |
+        REF=$(echo $GITHUB_REF | cut -d / -f 3)
+        [[ "$GITHUB_REF" =~ ^refs/tags.*$ ]] && VERSION="$REF" || VERSION="${REF}-${GITHUB_SHA::7}"
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
     outputs:
-      version: ${{ steps.tag_version.outputs.VERSION }}
-      environment: production
+      version: ${{ steps.tag_version.outputs.version }}
 
-  pre-deploy:
-    needs: [vars]
+  notify-start:
+    needs: [version]
+    uses: parameter1/actions/.github/workflows/notify-start.yml@main
+    secrets: inherit
+    with:
+      version: ${{ needs.version.outputs.version }}
+
+  post-deploy-failure:
+    if: failure()
+    needs: [notify-start, build-newsletters, deploy-newsletters]
+    uses: parameter1/actions/.github/workflows/notify-fail.yml@main
+    secrets: inherit
+    with:
+      slack-thread: ${{ needs.notify-start.outputs.slack-thread }}
+
+  post-deploy-complete:
+    if: success()
+    needs: [notify-start, build-newsletters, deploy-newsletters]
+    uses: parameter1/actions/.github/workflows/notify-complete.yml@main
+    secrets: inherit
+    with:
+      slack-thread: ${{ needs.notify-start.outputs.slack-thread }}
+
+  ######################
+  # Add tenants here!  #
+  ######################
+
+  build-newsletters:
+    needs: [version]
     runs-on: ubuntu-latest
     steps:
-      - name: Notify start
-        run: npx @parameter1/base-cms-newsletter-deployment-tool notify-started
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          ENVIRONMENT: ${{ needs.vars.outputs.environment }}
-          RANCHER_CLUSTERID: ${{ secrets.RANCHER_CLUSTERID_BASECMS }}
-          TRAVIS_REPO_SLUG: ${{ github.repository }}
-          TRAVIS_TAG: ${{ needs.vars.outputs.version }}
+      - uses: actions/checkout@v3
+      - name: Log in to ECR
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.ECR_REGISTRY }}
+          username: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Build docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          build-args: |
+            TENANT=${{ matrix.tenant }}
+          tags: ${{ env.ECR_REGISTRY }}/base-cms-newsletters:${{ env.IMG_PREFIX }}-${{ matrix.tenant }}-${{ needs.version.outputs.version }}
 
-  deploy:
-    needs: [vars, pre-deploy]
+  deploy-newsletters:
+    needs: [version, build-newsletters]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -39,46 +77,13 @@ jobs:
           - all
           - mundo
     steps:
-      - uses: actions/checkout@v2
       - name: Deploy to Kubernetes
-        run: npx @parameter1/base-cms-newsletter-deployment-tool deploy ${{ matrix.tenant }} ${{ matrix.namespace }}
+        run: |
+          npx @parameter1/rancher2cli dl \
+            --wait --namespace ${{ matrix.namespace }} \
+            basecms-newsletter ${{ env.IMG_PREFIX }}-${{ matrix.tenant }} \
+            ${{ env.ECR_REGISTRY }}/base-cms-newsletters:${{ env.IMG_PREFIX }}-${{ matrix.tenant }}-${{ needs.version.outputs.version }}
         env:
-          DOCKER_ORG: ${{ secrets.DOCKER_ORG }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          ENVIRONMENT: ${{ needs.vars.outputs.environment }}
           RANCHER_CLUSTERID: ${{ secrets.RANCHER_CLUSTERID_BASECMS }}
           RANCHER_TOKEN: ${{ secrets.RANCHER_TOKEN }}
           RANCHER_URL: ${{ secrets.RANCHER_URL }}
-          TRAVIS_TAG: ${{ needs.vars.outputs.version }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          TRAVIS_REPO_SLUG: ${{ github.repository }}
-          FORCE_DEPLOYMENT: 0
-
-  post-deploy-failure:
-    if: failure()
-    needs: [vars, deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Notify failure
-        run: npx @parameter1/base-cms-newsletter-deployment-tool notify-failed
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          ENVIRONMENT: ${{ needs.vars.outputs.environment }}
-          RANCHER_CLUSTERID: ${{ secrets.RANCHER_CLUSTERID_BASECMS }}
-          TRAVIS_REPO_SLUG: ${{ github.repository }}
-          TRAVIS_TAG: ${{ needs.vars.outputs.version }}
-
-  post-deploy-success:
-    if: success()
-    needs: [vars, deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Notify success
-        run: npx @parameter1/base-cms-newsletter-deployment-tool notify-finished
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          ENVIRONMENT: ${{ needs.vars.outputs.environment }}
-          RANCHER_CLUSTERID: ${{ secrets.RANCHER_CLUSTERID_BASECMS }}
-          TRAVIS_REPO_SLUG: ${{ github.repository }}
-          TRAVIS_TAG: ${{ needs.vars.outputs.version }}
