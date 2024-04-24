@@ -23,12 +23,15 @@ const config = {
     description: 'Inteligencia de mercados,<br/>tecnologías y tendencias',
     lang: 'es-MX',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/mundo_expo_pack_revwhite.png',
-      height: '80',
+      src: '/files/base/pmmi/all/image/newsletters/mundonlheader.png',
+      width: '640',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/editorbyline_hp4.png',
-      width: '200',
+      src: '/files/base/pmmi/all/image/newsletters/mundo-editor.png',
+      width: '50',
+      name: 'Lilián Robayo Páez',
+      title: 'Directora de Medios',
+      titleAddition: 'para A Latina de PMMI',
     },
     primaryColor: '#007557',
     socialMedia: {

@@ -57,12 +57,13 @@ const config = {
     title: 'PW Newsletter',
     description: 'Packaging News & Developments',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
-      height: '50',
+      src: '/files/base/pmmi/all/image/newsletters/pwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
-      width: '180',
+      src: '/files/base/pmmi/all/image/newsletters/pw-editor.png',
+      width: '50',
+      name: 'Matt Reynolds',
+      title: 'Chief Editor',
     },
     primaryColor: '#005BAB',
     socialMedia: {
@@ -80,12 +81,13 @@ const config = {
     title: 'PFW Newsletter',
     description: 'Food & Beverage Processing<br/>News & Developments',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
-      height: '60',
+      src: '/files/base/pmmi/all/image/newsletters/pfwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/aaronhand.png',
-      width: '180',
+      src: '/files/base/pmmi/all/image/newsletters/pfw-editor.png',
+      width: '50',
+      name: 'Aaron Hand',
+      title: 'Editor-in-Chief',
     },
     primaryColor: '#8eae3e',
     socialMedia: {
@@ -103,12 +105,13 @@ const config = {
     title: 'OEM Newsletter',
     description: 'Weekly News for the Packaging<br/>& Processing OEM',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/oem_white.png',
-      height: '60',
+      src: '/files/base/pmmi/all/image/newsletters/oemnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/seanriley.png',
-      width: '180',
+      src: '/files/base/pmmi/all/image/newsletters/oem-editor.png',
+      width: '50',
+      name: 'Sean Riley',
+      title: 'Senior News Director',
     },
     primaryColor: '#185B76',
     socialMedia: {
@@ -126,12 +129,13 @@ const config = {
     title: 'HCP Newsletter',
     description: 'Weekly Healthcare Packaging<br/>News & Developments',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/hcp_logo_white.png',
-      height: '60',
+      src: '/files/base/pmmi/all/image/newsletters/hcpquickhits_header.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/kerensookne.png',
-      width: '180',
+      src: '/files/base/pmmi/all/image/newsletters/hcp-editor.png',
+      width: '50',
+      name: 'Keren Sookne',
+      title: 'Editor-in-Chief',
     },
     primaryColor: '#00B0DE',
     socialMedia: {
@@ -149,12 +153,13 @@ const config = {
     title: 'CM+P Newsletter',
     description: 'Contract Packaging and Manufacturing News & Developments',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/cmp2022_logo_white.png',
-      height: '60',
+      src: '/files/base/pmmi/all/image/newsletters/cmpnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/melissagriffen.png',
-      width: '180',
+      src: '/files/base/pmmi/all/image/newsletters/cmp-editor.png',
+      width: '50',
+      name: 'Melissa Griffen',
+      title: 'Editor',
     },
     primaryColor: '#00B15D',
     socialMedia: {
