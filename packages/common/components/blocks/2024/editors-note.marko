@@ -1,5 +1,5 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
-import { get } from "@parameter1/base-cms-object-path";
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
 
 $ const { config } = out.global;
 $ const { newsletter, date, sectionName } = input;
@@ -29,6 +29,7 @@ $ const sectionNameStyle = {
   "color": primaryColor,
 };
 
+<html-comment> Editor Intro START </html-comment>
 <tr>
   <td class="es-m-p20r es-m-p20l" align="left" style="margin:0;padding-top:10px;padding-bottom:10px;padding-left:40px;padding-right:40px">
     <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
@@ -57,6 +58,27 @@ $ const sectionNameStyle = {
                       $!{content.body}
                     </td>
                   </tr>
+                </for>
+              </if>
+            </marko-web-query>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<html-comment> Editor Intro END </html-comment>
+
+<html-comment> Editor Signature and Social Media START </html-comment>
+<tr>
+  <td class="esdev-adapt-off es-m-p20r" align="left" style="padding:0;margin:0;padding-top:10px;padding-left:20px;padding-right:40px">
+    <table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:580px">
+      <tr>
+        <td class="esdev-mso-td" valign="top" style="padding:0;margin:0">
+          <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+            <tr>
+              <td class="es-m-p0r" align="center" style="padding:0;margin:0;width:72px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                   $ const imgStyling = {
                     "border": "0",
                     "width": editor.width,
@@ -68,7 +90,7 @@ $ const sectionNameStyle = {
                     },
                   };
                   <tr>
-                    <td align="left" style="padding:0;margin:0;padding-top:20px;padding-right:40px;font-size:0px">
+                    <td align="right" style="padding:0;margin:0;font-size:0px">
                       <marko-newsletter-imgix
                         src=editor.src
                         class="adapt-img"
@@ -77,12 +99,69 @@ $ const sectionNameStyle = {
                       />
                     </td>
                   </tr>
-                </for>
-              </if>
-            </marko-web-query>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td style="padding:0;margin:0;width:10px"></td>
+        <td class="esdev-mso-td" valign="top" style="padding:0;margin:0">
+          <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+            <tr>
+              <td align="center" style="padding:0;margin:0;width:192px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td align="left" style="padding:0;margin:0;padding-top:5px">
+                      <h4 style="margin:0;line-height:18px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:12px;color:#333333">
+                        <strong>${editor.name}</strong>
+                      </h4>
+                      <h4 style="margin:0;line-height:18px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:12px;color:#333333">
+                        <em>${editor.title}</em>
+                      </h4>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td style="padding:0;margin:0;width:10px"></td>
+        <td class="esdev-mso-td" valign="top" style="padding:0;margin:0">
+          <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+            <tr>
+              <td align="center" style="padding:0;margin:0;width:296px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  $ const editorContact = get(newsletterConfig, "editor.contact");
+                  $ const editorContactLinks = getAsArray(editorContact, "links");
+                  <!-- <if(editorSocialMediaLinks.length)> -->
+                    <tr>
+                      <td align="right" style="padding:0;margin:0;padding-top:5px;font-size:0">
+                        <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social" dir="ltr" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                          <tr>
+                            <for|link| of=editorContactLinks>
+                              <td align="center" valign="top" style="padding:0;margin:0;padding-right:20px">
+                                <marko-newsletter-imgix
+                                  src=`${editor.contact.imagePath}/${link.provider}.png`
+                                  alt=link.provider
+                                  options={ w: 32, h: 32, fit: "crop" }
+                                  attrs={ border: 0, width: 32, align: "center" }
+                                >
+                                  <@link href=link.href target="_blank" />
+                                </marko-newsletter-imgix>
+                              </td>
+                            </for>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  <!-- </if> -->
+                </table>
+              </td>
+            </tr>
           </table>
         </td>
       </tr>
     </table>
   </td>
 </tr>
+<html-comment> Editor Signature and Social Media END </html-comment>
