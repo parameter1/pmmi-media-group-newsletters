@@ -35,12 +35,20 @@ const config = {
     description: 'Weekly Wrap Up',
     primaryColor: '#005BAB',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
-      height: '50',
+      src: '/files/base/pmmi/all/image/newsletters/pwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
-      width: '210',
+      src: '/files/base/pmmi/all/image/newsletters/pw-inline-editor.png',
+      width: '50',
+      name: 'Matt Reynolds',
+      title: 'Chief Editor',
+      contact: {
+        imagePath: '/files/base/pmmi/all/image/static/newsletters',
+        links: [
+          { provider: 'email', href: 'mailto:mreynolds@pmmimediagroup.com', target: '_blank' },
+          { provider: 'linkedin', href: 'https://www.linkedin.com/in/mreynoldspw', target: '_blank' },
+        ],
+      },
     },
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
@@ -178,12 +186,20 @@ const config = {
     description: 'New Issue Alert',
     digitalEdition: true,
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/pw2015_logo_white.png',
-      height: '50',
+      src: '/files/base/pmmi/all/image/newsletters/pwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/mattreynolds.png',
-      width: '210',
+      src: '/files/base/pmmi/all/image/newsletters/pw-inline-editor.png',
+      width: '50',
+      name: 'Matt Reynolds',
+      title: 'Chief Editor',
+      contact: {
+        imagePath: '/files/base/pmmi/all/image/static/newsletters',
+        links: [
+          { provider: 'email', href: 'mailto:mreynolds@pmmimediagroup.com', target: '_blank' },
+          { provider: 'linkedin', href: 'https://www.linkedin.com/in/mreynoldspw', target: '_blank' },
+        ],
+      },
     },
     primaryColor: '#005BAB',
     socialMedia: {
@@ -202,12 +218,20 @@ const config = {
     description: 'New Issue Alert',
     digitalEdition: true,
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/profoodworld_logo_all_white_text.png',
-      height: '70',
+      src: '/files/base/pmmi/all/image/newsletters/pfwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/aaronhand.png',
-      width: '210',
+      src: '/files/base/pmmi/all/image/newsletters/pfw-editor.png',
+      width: '50',
+      name: 'Aaron Hand',
+      title: 'Editor-in-Chief',
+      contact: {
+        imagePath: '/files/base/pmmi/all/image/static/newsletters',
+        links: [
+          { provider: 'email', href: 'mailto:ahand@pmmimediagroup.com', target: '_blank' },
+          { provider: 'linkedin', href: 'https://www.linkedin.com/in/aaronhand/', target: '_blank' },
+        ],
+      },
     },
     primaryColor: '#8eae3e',
     socialMedia: {

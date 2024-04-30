@@ -1,0 +1,74 @@
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
+
+$ const { config } = out.global;
+$ const { newsletter, content, withImage } = input;
+
+$ const siteContext = getAsObject(content, 'siteContext');
+$ const { url } = siteContext;
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const primaryColor = get(newsletterConfig, "primaryColor");
+$ const sectionNameStyle = {
+  "margin": "0",
+  "line-height": "21px",
+  "mso-line-height-rule": "exactly",
+  "font-family": "arial, 'helvetica neue', helvetica, sans-serif",
+  "font-size": "14px",
+  "color": primaryColor,
+  "font-style": "normal",
+  "font-weight": "bold",
+  "text-transform": "uppercase",
+};
+
+<tr>
+  <td class="es-m-p20r es-m-p20l" align="left" style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:40px;padding-right:40px">
+    <!--[if mso]><table dir="ltr" cellpadding="0" cellspacing="0"><tr><td><table dir="rtl" style="width:560px" cellpadding="0" cellspacing="0"><tr><td dir="ltr" style="width:400px" valign="top"><![endif]-->
+    <table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+      <tr>
+        <td align="left" style="padding:0;Margin:0;width:400px">
+          <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
+                <h3 style=sectionNameStyle>
+                  <strong>${content.linkText}</strong>
+                </h3>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
+                <h2 style="Margin:0;line-height:27px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:bold;color:#333333">
+                  <a href=url target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px;line-height:27px">
+                    $!{content.name}
+                  </a>
+                </h2>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!--[if mso]></td><td dir="ltr" style="width:20px"></td><td dir="ltr" style="width:140px" valign="top"><![endif]-->
+    <table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+      <tr>
+        <td align="left" style="padding:0;Margin:0;width:140px">
+          <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-left:1px solid #ffffff;border-right:1px solid #ffffff;border-top:1px solid #ffffff;border-bottom:1px solid #ffffff" role="presentation">
+            <tr>
+              <td align="center" style="padding:0;Margin:0;font-size:0px">
+                <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                  <marko-newsletter-imgix
+                    src=image.src
+                    alt=image.alt
+                    class="adapt-img"
+                    options={ w: 138 }
+                  >
+                    <@link href=url target="_blank" />
+                  </marko-newsletter-imgix>
+                </marko-core-obj-value>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!--[if mso]></td></tr></table></td></tr></table><![endif]-->
+  </td>
+</tr>

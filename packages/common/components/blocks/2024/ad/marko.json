@@ -4,5 +4,8 @@
   },
   "<common-2024-ad-nativex-block>": {
     "template": "./nativex.marko"
+  },
+  "<common-2024-ad-native-download-block>": {
+    "template": "./native-download.marko"
   }
 }
