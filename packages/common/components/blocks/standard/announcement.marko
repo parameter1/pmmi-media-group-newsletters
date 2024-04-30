@@ -3,25 +3,14 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 
 $ const { newsletter, date, content } = input;
-
+$ const creativeId = get(input, "mindfulCreativeId");
+$ const tenant = get(input, "mindfulTenant");
 $ const sectionName = defaultValue(input.sectionName, "Standard");
 $ const withImage = defaultValue(input.withImage, true);
 $ const withHeader = defaultValue(input.withHeader, false);
 
 $ const siteContext = getAsObject(content, 'siteContext');
 $ const { url } = siteContext;
-
-$ const imgStyles = {
-  "display": "block",
-  "font-family": "Helvetica, Arial, sans-serif",
-  "color": "rgb(51, 51, 51)",
-  "font-size": "14px",
-  "max-height": "132px",
-  "max-width": "176px",
-  "margin": "0px auto",
-  "border-width": "0px",
-  "border-style": "solid",
-}
 
 $ const campaignTypeMatch = url.match(/(youtube\.com|pmmi\.dragonforms\.com)|app.credspark.com/);
 
@@ -40,6 +29,12 @@ $ const imgOptions =  {
   ...imgDimensions[campaignTypeMatch[1]],
   fit: "fill"
 }
+
+$ const linkAttrs = {
+  ...(getAsObject(input, "link.attrs")),
+  ...(creativeId && { 'data-mindful-creative-id': creativeId }),
+  ...(tenant && { 'data-mindful-tenant': tenant }),
+};
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="content-table">
   <tr>
@@ -80,7 +75,7 @@ $ const imgOptions =  {
                           </tr>
                           <tr>
                             <td align="left" class="auddev-bodysmall" style="color: #5d5d5d; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; padding: 0 0 8px 0;">
-                              <a href=url style="color: #5d5d5d;" target="_blank">
+                              <a href=url style="color: #5d5d5d;" target="_blank" ...linkAttrs>
                                 $!{content.teaser}
                               </a>
                               </td>
