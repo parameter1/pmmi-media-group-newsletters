@@ -1,5 +1,5 @@
 module.exports = {
-  uri: 'https://pmmi.native-x.parameter1.com/email-placement',
+  uri: 'https://delivery.mindfulcms.com/pmmi/default/compat/native-email/email-placement',
   placements: {
     'pfw-new-issue-alert': {
       'top-audience-banner': '62348498336e9a000100ef2e',
