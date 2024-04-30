@@ -133,28 +133,26 @@ $ const sectionNameStyle = {
                 <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                   $ const editorContact = get(newsletterConfig, "editor.contact");
                   $ const editorContactLinks = getAsArray(editorContact, "links");
-                  <!-- <if(editorSocialMediaLinks.length)> -->
-                    <tr>
-                      <td align="right" style="padding:0;margin:0;padding-top:5px;font-size:0">
-                        <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social" dir="ltr" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                          <tr>
-                            <for|link| of=editorContactLinks>
-                              <td align="center" valign="top" style="padding:0;margin:0;padding-right:20px">
-                                <marko-newsletter-imgix
-                                  src=`${editor.contact.imagePath}/${link.provider}.png`
-                                  alt=link.provider
-                                  options={ w: 32, h: 32, fit: "crop" }
-                                  attrs={ border: 0, width: 32, align: "center" }
-                                >
-                                  <@link href=link.href target="_blank" />
-                                </marko-newsletter-imgix>
-                              </td>
-                            </for>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                  <!-- </if> -->
+                  <tr>
+                    <td align="right" style="padding:0;margin:0;padding-top:5px;font-size:0">
+                      <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social" dir="ltr" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                        <tr>
+                          <for|link| of=editorContactLinks>
+                            <td align="center" valign="top" style="padding:0;margin:0;padding-right:20px">
+                              <marko-newsletter-imgix
+                                src=`${editor.contact.imagePath}/${link.provider}.png`
+                                alt=link.provider
+                                options={ w: 32, h: 32, fit: "crop" }
+                                attrs={ border: 0, width: 32, align: "center" }
+                              >
+                                <@link href=link.href target="_blank" />
+                              </marko-newsletter-imgix>
+                            </td>
+                          </for>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
                 </table>
               </td>
             </tr>
