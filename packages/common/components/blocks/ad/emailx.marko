@@ -1,33 +1,17 @@
-import { getAsObject, get } from "@parameter1/base-cms-object-path";
-import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const adUnit = getAsObject(input, "adUnit");
-$ const dpm = getAsObject(input, "dpm");
 
 $ const topBorderStyle = {
   "border-top": "1px solid #cdcdcd",
   "padding-top": "20px",
   ...input.topBorderStyle,
-}
-$ const useEmailxHref = defaultValue(input.useEmailxHref, false);
-
-$ const { name, alias } = adUnit;
-$ const classNames = [`email-x-${alias}-${name}`, input.class];
+};
 
 <marko-newsletters-email-x-data|{ response }| decoded-params=["email", "send"]>
   <@ad-unit ...adUnit />
   <@params date=input.date email="@{email name}@" send="@{track_id}@" include-advertiser=true />
   <if(response)>
-    $ const { data, clickHref, imageSrc } = response;
-    $ const { ad } = data;
-
-    <!-- determine whether to use emailx click url or the native ad url -->
-    $ const href = useEmailxHref ? clickHref : ad.url;
-    $ const imageAttrs = {
-      ...getAsObject(input.image, "attrs"),
-      width: ad.width,
-      height: ad.height,
-    };
     <!-- PE Announcement -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%" class="content-table">
       <tr>
@@ -42,9 +26,9 @@ $ const classNames = [`email-x-${alias}-${name}`, input.class];
                       <table border="0" cellpadding="0" cellspacing="0" style="width:600px;" class="content-table">
                         <tr>
                           <td style="padding: 0 0 20px 0;" align="center">
-                            <marko-core-img ...input.image src=imageSrc attrs=imageAttrs class="header-img-max">
-                              <@link target="_blank" ...input.link href=href />
-                            </marko-core-img>
+                            <marko-newsletters-email-x-render response=response>
+                              <@image class="header-img-max" />
+                            </marko-newsletters-email-x-render>
                           </td>
                         </tr>
                       </table>
@@ -56,7 +40,8 @@ $ const classNames = [`email-x-${alias}-${name}`, input.class];
           </table>
         </td>
       </tr>
-    </table>            <!-- /PE Announcement -->
+    </table>
+    <!-- /PE Announcement -->
   </if>
   <else>
     <${input.whenEmpty} />
