@@ -55,5 +55,8 @@
   },
   "<common-2024-date-banner-weekly-block>": {
     "template": "./date-banner-weekly.marko"
+  },
+  "<common-2024-download-block>": {
+    "template": "./download.marko"
   }
 }
