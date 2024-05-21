@@ -1,0 +1,96 @@
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
+import { convertAdToContent } from "@parameter1/base-cms-marko-newsletters-native-x/utils";
+
+$ const { config } = out.global;
+
+$ const { date, placement, withImage } = input;
+$ const newsletter = getAsObject(input, "newsletter");
+$ const nativeX = config.getAsObject("nativeX");
+$ const placementId = get(nativeX, `placements.${newsletter.alias}.${placement}`);
+$ const creativeId = get(input, "mindfulCreativeId");
+$ const tenant = get(input, "mindfulTenant");
+
+$ const campaignTypeMatch = url.match(/(youtube\.com|pmmi\.dragonforms\.com)|app.credspark.com/);
+
+$ const imgDimensions = {
+  "youtube.com": { w: 100, h: 100 },
+  "pmmi.dragonforms.com": { w: 70, h: 70 },
+};
+
+$ const imgOptions =  {
+  w: 70,
+  h: 70,
+  ...(campaignTypeMatch && imgDimensions[campaignTypeMatch[1]]),
+  fit: "fill"
+};
+
+$ const linkAttrs = {
+  ...(getAsObject(input, "link.attrs")),
+  ...(creativeId && { 'data-mindful-creative-id': creativeId }),
+  ...(tenant && { 'data-mindful-tenant': tenant }),
+};
+
+<if(nativeX.uri && placementId)>
+  <core-native-x-fetch|{ data: nxData, tenant }| uri=nativeX.uri date=date placement-id=placementId>
+    <if(nxData)>
+      $ const content = convertAdToContent(nxData);
+      <tr>
+        <td class="esdev-adapt-off" align="left" bgcolor="#ffffff" style="padding:20px;margin:0;background-color:#ffffff">
+          <table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:600px">
+            <tr>
+              <td class="esdev-mso-td" valign="top" style="padding:0;margin:0">
+                <table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                  <tr>
+                    <td align="left" style="padding:0;margin:0;width:120px">
+                      <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                        <tr>
+                          <td align="center" style="padding:0;margin:0;font-size:0px">
+                            <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                              <marko-newsletter-imgix
+                                src=image.src
+                                alt=image.alt
+                                options=imgOptions
+                              >
+                              </marko-newsletter-imgix>
+                            </marko-core-obj-value>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td style="padding:0;margin:0;width:20px"></td>
+              <td class="esdev-mso-td" valign="top" style="padding:0;margin:0">
+                <table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                  <tr>
+                    <td align="left" style="padding:0;margin:0;width:460px">
+                      <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                        <tr>
+                          <td align="left" class="es-m-txt-l" style="padding:0;margin:0;padding-bottom:10px">
+                            <h2 style="margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-style:normal;font-weight:normal;color:#333333">
+                              <strong>${content.name}</strong>
+                            </h2>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left" class="es-m-txt-l" style="padding:0;margin:0">
+                            <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:27px;color:#333333;font-size:14px">
+                              <a href=url target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px">
+                                <u>$!{content.teaser}</u>
+                              </a>
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </if>
+  </core-native-x-fetch>
+</if>
