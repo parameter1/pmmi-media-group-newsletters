@@ -247,7 +247,7 @@ const config = {
     ...brands.hcp,
     title: 'HCP Quick Hits',
     description: 'Your Healthcare Industry Week in Review',
-    logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-quick-hits.png',
+    logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-quick-hits-header.png',
   },
 };
 
