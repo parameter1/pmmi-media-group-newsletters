@@ -1,0 +1,92 @@
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { newsletter, date, imagePath } = input;
+
+$ const queryParams = {
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName: input.sectionName || "Standard",
+  limit: 1,
+  skip: 0,
+  queryFragment,
+};
+
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+  <if(nodes.length)>
+    $ const content = nodes[0];
+    $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
+    $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
+    <tr>
+      <td align="left" bgcolor="#ffffff" style="padding:30px;margin:0;background-color:#ffffff">
+        <!--[if mso]>
+          <table dir="ltr" cellpadding="0" cellspacing="0"><tr><td>
+          <table dir="rtl" style="width:580px" cellpadding="0" cellspacing="0"><tr><td dir="ltr" style="width:240px" valign="top">
+        <![endif]-->
+        <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+          <tr>
+            <td align="left" class="es-m-p20b" style="padding:0;margin:0;width:240px">
+              <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#ffffff" role="presentation">
+                <tr>
+                  <td align="center" style="padding:0;margin:0;font-size:0px">
+                    <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                      <marko-newsletter-imgix
+                        src=image.src
+                        alt=image.alt
+                        options={ w: 240 }
+                        class="adapt-img"
+                      >
+                        <@link href=contentLink target="_blank" />
+                      </marko-newsletter-imgix>
+                    </marko-core-obj-value>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]></td><td dir="ltr" style="width:20px"></td><td dir="ltr" style="width:320px" valign="top"><![endif]-->
+        <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+          <tr>
+            <td align="left" style="padding:0;margin:0;width:320px">
+              <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                <tr>
+                  <td align="left" style="padding:0;margin:0;padding-bottom:10px">
+                    <h1 style="margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333">
+                      <strong>
+                        <a href=contentLink target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px">
+                          ${content.name}
+                        </a>
+                      </strong>
+                    </h1>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" style="padding:0;margin:0">
+                    <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                      ${content.teaser}
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" style="padding:0;margin:0;padding-top:10px">
+                    <h2 style="margin:0;line-height:22px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:normal;color:#333333">
+                      <strong>
+                        <u>
+                          <a href=contentLink target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#00b0de;font-size:18px">
+                            Read More &gt;&gt;
+                          </a>
+                        </u>
+                      </strong>
+                    </h2>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]></td></tr></table></td></tr></table><![endif]-->
+      </td>
+    </tr>
+  </if>
+</marko-web-query>
