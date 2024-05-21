@@ -83,6 +83,14 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('hcp-quick-hits-2024', [
+    {
+      name: 'bottom-audience-banner',
+      id: '664cf9243b1e349533f8b900',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;

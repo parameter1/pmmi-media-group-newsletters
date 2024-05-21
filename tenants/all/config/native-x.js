@@ -56,5 +56,8 @@ module.exports = {
       subscription: '65d4dca2e9037c0001ffd0e3',
       promotion: '65d4dcb7f2eda20001f563fb',
     },
+    'hcp-quick-hits-2024': {
+      'top-audience-banner': '664cf82bfe692700016a8479',
+    },
   },
 };
