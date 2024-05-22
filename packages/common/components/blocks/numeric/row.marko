@@ -1,7 +1,11 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 import { get } from "@parameter1/base-cms-object-path";
 
+$ const { config } = out.global;
 $ const { newsletter, date, imagePath } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const primaryColor = get(newsletterConfig, "primaryColor") || "#00b0de";
 
 $ const queryParams = {
   date: date.valueOf(),
@@ -74,7 +78,7 @@ $ const queryParams = {
                     <h2 style="margin:0;line-height:22px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:normal;color:#333333">
                       <strong>
                         <u>
-                          <a href=contentLink target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#00b0de;font-size:18px">
+                          <a href=contentLink target="_blank" style=`-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:${primaryColor};font-size:18px`>
                             Read More &gt;&gt;
                           </a>
                         </u>
