@@ -243,6 +243,12 @@ const config = {
       ],
     },
   },
+  'hcp-quick-hits-2024': {
+    ...brands.hcp,
+    title: 'HCP Quick Hits',
+    description: 'Your Healthcare Industry Week in Review',
+    logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-quick-hits-header.png',
+  },
 };
 
 module.exports = config;

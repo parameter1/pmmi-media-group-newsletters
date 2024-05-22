@@ -9,120 +9,85 @@ $ const newsletterName = get(newsletterConfig, "name");
 $ const newsletterDescription = get(newsletterConfig, "description");
 $ const brandName = get(newsletterConfig, "brandName");
 
-$ const displayDate = moment(date).format("LL");
+$ const lang = get(newsletterConfig, "lang");
+$ const displayDateMonth = (lang) ? moment(date).locale(lang).format("MMMM") : moment(date).format("MMMM");
+$ const displayDate = (lang) ? moment(date).locale(lang).format("D, YYYY") : moment(date).format("D, YYYY");
 
-$ const imageSrc = input.imageSrc;
+$ const logoSrc = get(newsletterConfig, "logoSrc");
 
-$ const imageOptions = {
-  "w": 800,
-  ...input.imageOptions
-};
-
-$ const imageStyle = {
-  "height": "auto",
-  "width": "800px",
-  ...input.imageStyle,
-};
-
-$ const imageAttrs = {
-  "width": "800",
-  "style": imageStyle,
-  "title": newsletterName,
-  "alt": newsletterName,
-  ...input.imageAttrs,
-};
-
-$ const primaryBackgroundColor = input.primaryBackgroundColor || "#edeeee";
-$ const secondaryBackgroundColor = input.secondaryBackgroundColor || "#5c677d";
-$ const secondaryFontSize = input.secondaryFontSize || "12.5px";
-$ const secondaryFontColor = input.secondaryFontColor || "#555555";
-
-<!-- header -->
-<table border="0" cellpadding="0" cellspacing="0" style="width: 800px;">
+<table class="es-header" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
+  <html-comment> Header START </html-comment>
   <tr>
-    <td style="padding: 10px 0 0 0;" bgcolor="#edeeee" align="center" class="email-bg">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 800px;">
+    <td align="center" style="padding:0;margin:0">
+      <table class="es-header-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:640px">
         <tr>
-          <td align="center" valign="top">
-            <!-- Two column -->
-            <table border="0" cellpadding="0" cellspacing="0" style="width: 800px;">
+          <td class="es-m-p0r es-m-p0l" align="left" style="padding:0;margin:0;padding-top:20px;padding-left:20px;padding-right:20px">
+            <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
               <tr>
-                $ const imageTdStyle = {
-                  "width": "800px",
-                  "vertical-align": "top",
-                  "background": primaryBackgroundColor,
-                }
-                <td valign="top" style=imageTdStyle>
-                  <marko-newsletter-imgix
-                    src=imageSrc
-                    options=imageOptions
-                    alt=newsletterName
-                    attrs=imageAttrs
-                  />
-                </td>
-              </tr>
-              <!--[if gte mso 12]><br style="line-height:0px; font-size:0px; mso-line-height-rule:exactly;" /> <![endif]-->
-              <tr>
-                $ const secondaryTdStyle = {
-                  "color": secondaryFontColor,
-                  "font-family": "Helvetica, Arial, sans-serif",
-                  "font-size": secondaryFontSize,
-                  "font-weight": "normal",
-                  "line-height": secondaryFontSize,
-                };
-                $ const secondaryRowStyle = {
-                  "background-color": secondaryBackgroundColor,
-                  "padding": "6px 12px",
-                }
-                <td style=secondaryRowStyle>
-                  <!-- content left -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="80%" align="left">
+                <td align="center" valign="top" style="padding:0;margin:0;width:600px">
+                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                     <tr>
-                      <td>
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tr>
-                            $ const secondaryTdStyleLeft = {
-                              ...secondaryTdStyle,
-                              "padding": "4px 8px 4px 0",
-                              "text-align": "left",
-                            };
-                            <td style=secondaryTdStyleLeft align="left">
-                              ${newsletterDescription}
-                            </td>
-                          </tr>
-                        </table>
+                      <td style="padding:0;margin:0">
+                        <!-- Stealth Links START -->
+                          <!-- p hidden=""><font face="arial" size="2"><a href="https://stage.pmmimediagroup.com/about">https://stage.pmmimediagroup.com/about </a></font></p --><!-- p hidden=""><span style="font-family:arial, font-size: 2px; color: #f5f5f5;"><a href="https://click.pmmimediagroup.com/redirect/22521/72704/omeda:@{encrypted_customer_id}@">PMMI Media Group </a></span></p -->
+                        <!-- Stealth Links END -->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="padding:0;margin:0;font-size:0px">
+                        <marko-newsletter-imgix
+                          src=logoSrc
+                          options={ w: 600 }
+                          alt=brandName
+                          class="adapt-img"
+                        />
                       </td>
                     </tr>
                   </table>
-                  <!-- /content left -->
-                  <!-- content right -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="18%" align="right">
-                    <tr>
-                      <td>
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tr>
-                            $ const secondaryTdStyleRight = {
-                              ...secondaryTdStyle,
-                              "padding": "4px 0 4px 8px",
-                              "text-align": "right",
-                            };
-                            <td style=secondaryTdStyleRight align="right">
-                              ${displayDate}
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                  </table>
-                  <!-- /content right -->
                 </td>
               </tr>
             </table>
-            <!-- /Two column -->
+          </td>
+        </tr>
+        <tr>
+          <td align="left" style="margin:0;padding-top:15px;padding-bottom:15px;padding-left:20px;padding-right:20px">
+            <!--[if mso]><table style="width:600px" cellpadding="0" cellspacing="0"><tr><td style="width:360px" valign="top"><![endif]-->
+            <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+              <tr>
+                <td class="es-m-p20b" align="left" style="padding:0;margin:0;width:360px">
+                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                    <tr>
+                      <td align="center" bgcolor="#ffffff" style="padding:0;margin:0">
+                        <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:14px;color:#666666;font-size:14px">
+                          <strong>${newsletterDescription}</strong>
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!--[if mso]></td><td style="width:20px"></td><td style="width:220px" valign="top"><![endif]-->
+            <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+              <tr>
+                <td align="left" style="padding:0;margin:0;width:220px">
+                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                    <tr>
+                      <td align="center" bgcolor="#ffffff" style="padding:0;margin:0">
+                        <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:14px;color:#666666;font-size:14px">
+                          <strong>${displayDateMonth}&nbsp;${displayDate}</strong>
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!--[if mso]></td></tr></table><![endif]-->
           </td>
         </tr>
       </table>
     </td>
   </tr>
+  <html-comment> Header END </html-comment>
 </table>
-<!-- /header -->
