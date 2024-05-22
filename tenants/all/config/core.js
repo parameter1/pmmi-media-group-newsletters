@@ -249,6 +249,11 @@ const config = {
     description: 'Your Healthcare Industry Week in Review',
     logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-quick-hits-header.png',
   },
+  'pmg-sustainable-packaging': {
+    title: 'Sustainability Newsletter',
+    logoSrc: '/files/base/pmmi/all/image/newsletters/susquickhits_header.jpg',
+    primaryColor: '#04a77e',
+  },
 };
 
 module.exports = config;

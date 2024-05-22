@@ -91,6 +91,14 @@ config
       width: 560,
       height: 127,
     },
+  ])
+  .setAdUnits('pmg-sustainable-packaging', [
+    {
+      name: 'bottom-audience-banner',
+      id: '664e260d25edd934c87eaf96',
+      width: 560,
+      height: 127,
+    },
   ]);
 
 module.exports = config;

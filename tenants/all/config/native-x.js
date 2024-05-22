@@ -59,5 +59,8 @@ module.exports = {
     'hcp-quick-hits-2024': {
       'top-audience-banner': '664cf82bfe692700016a8479',
     },
+    'pmg-sustainable-packaging': {
+      'top-audience-banner': '664e264c1a5b610001a4f662',
+    },
   },
 };
