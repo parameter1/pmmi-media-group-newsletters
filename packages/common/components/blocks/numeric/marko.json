@@ -41,13 +41,16 @@
   "<common-numeric-divider-block>": {
     "template": "./divider.marko"
   },
-  "<common-numeric-ad-subscription-block>": {
-    "template": "./ad-subscription.marko"
+  "<common-numeric-subscription-block>": {
+    "template": "./subscription.marko"
   },
   "<common-numeric-ad-announcement-block>": {
     "template": "./ad-announcement.marko"
   },
   "<common-numeric-body-wrapper-block>": {
     "template": "./body-wrapper.marko"
+  },
+  "<common-numeric-ad-native-block>": {
+    "template": "./ad-native.marko"
   }
 }
