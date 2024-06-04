@@ -13,9 +13,7 @@ $ const { newsletter, date } = input;
           <${input.header} />
         </if>
         <else>
-          <table class="es-header" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
-            <common-numeric-header-block newsletter=newsletter date=date />
-          </table>
+          <common-numeric-header-block newsletter=newsletter date=date />
         </else>
 
         <if(input.body)>
@@ -26,11 +24,7 @@ $ const { newsletter, date } = input;
           <${input.footer} />
         </if>
         <else>
-          <table cellpadding="0" cellspacing="0" class="es-footer" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
-            <html-comment> Footer START </html-comment>
-            <common-numeric-footer-block newsletter=newsletter />
-            <html-comment> Footer END </html-comment>
-          </table>
+          <common-numeric-footer-block newsletter=newsletter />
         </else>
       </td>
     </tr>
