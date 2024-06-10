@@ -16,6 +16,13 @@ $ const queryParams = {
   queryFragment,
 };
 
+$ const imgStyles = {
+  "display": "block",
+  "max-width": "240px",
+  "max-height": "240px",
+  "border-width": "0px",
+};
+
 <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
   <if(nodes.length)>
     $ const content = nodes[0];
@@ -37,8 +44,8 @@ $ const queryParams = {
                       <marko-newsletter-imgix
                         src=image.src
                         alt=image.alt
-                        options={ w: 240 }
-                        attrs={ width: 240 }
+                        options={ w: 240, h: 240, fit: "crop" }
+                        attrs={ style: imgStyles }
                         class="adapt-img"
                       >
                         <@link href=contentLink target="_blank" />
