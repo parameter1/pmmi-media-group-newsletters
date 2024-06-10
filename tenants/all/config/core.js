@@ -108,7 +108,7 @@ const config = {
     },
   },
   'oem-daily': {
-    brand: 'OEM Magazine',
+    brand: 'OEM Newsletter',
     brandShort: 'oem',
     title: 'OEM Newsletter',
     description: 'Weekly News for the Packaging<br/>& Processing OEM',
@@ -156,7 +156,7 @@ const config = {
     },
   },
   'cmp-daily': {
-    brand: 'CM+P Magazine',
+    brand: 'CM+P Newsletter',
     brandShort: 'cmp',
     title: 'CM+P Newsletter',
     description: 'Contract Packaging and Manufacturing News & Developments',
@@ -166,7 +166,7 @@ const config = {
     editor: {
       src: '/files/base/pmmi/all/image/newsletters/cmp-editor.png',
       width: '50',
-      name: 'Melissa Griffen',
+      name: 'Joseph Derr',
       title: 'Editor',
     },
     primaryColor: '#00B15D',
@@ -250,7 +250,7 @@ const config = {
     logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-quick-hits-header.png',
   },
   'pmg-sustainable-packaging': {
-    title: 'Sustainability Newsletter',
+    title: 'Sustainable Packaging',
     logoSrc: '/files/base/pmmi/all/image/newsletters/susquickhits_header.jpg',
     primaryColor: '#04a77e',
   },
