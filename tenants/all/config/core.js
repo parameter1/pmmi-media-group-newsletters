@@ -164,7 +164,7 @@ const config = {
       src: '/files/base/pmmi/all/image/newsletters/cmpnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/cmp-editor.png',
+      src: '/files/base/pmmi/all/image/newsletters/cmp-editor-joseph.png',
       width: '50',
       name: 'Joseph Derr',
       title: 'Editor',
