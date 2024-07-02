@@ -10,23 +10,11 @@ const config = {
       enabled: true,
     },
   },
-  'hcp-quick-hits': {
-    name: 'Quick Hits',
-    description: 'Your Healthcare Industry Week in Review',
-    ...brands.hcp,
-    secondaryColor: '#01384B',
-    headlineColor: '#3c3c3c',
-  },
   'pw-expo': {
     name: 'Expo',
     description: 'TBD',
     title: 'Live from PACK EXPO',
     ...brands.pw,
-  },
-  cpgnext: {
-    name: 'CPGNext',
-    brandShort: 'cpgnext',
-    description: 'Digital Transformation In Packaged Goods Manufacturing',
   },
   'pw-weekly': {
     brand: 'Packaging World',
