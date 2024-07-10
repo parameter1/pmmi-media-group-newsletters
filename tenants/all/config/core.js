@@ -82,7 +82,7 @@ const config = {
     editor: {
       src: '/files/base/pmmi/all/image/newsletters/pfw-editor.png',
       width: '50',
-      name: 'Aaron Hand',
+      name: 'Michael Costa',
       title: 'Editor-in-Chief',
     },
     primaryColor: '#8eae3e',
@@ -211,13 +211,13 @@ const config = {
     editor: {
       src: '/files/base/pmmi/all/image/newsletters/pfw-editor.png',
       width: '50',
-      name: 'Aaron Hand',
+      name: 'Michael Costa',
       title: 'Editor-in-Chief',
       contact: {
         imagePath: '/files/base/pmmi/all/image/static/newsletters',
         links: [
-          { provider: 'email', href: 'mailto:ahand@pmmimediagroup.com', target: '_blank' },
-          { provider: 'linkedin', href: 'https://www.linkedin.com/in/aaronhand/', target: '_blank' },
+          { provider: 'email', href: 'mcosta@pmmimediagroup.com', target: '_blank' },
+          { provider: 'linkedin', href: 'https://www.linkedin.com/in/michael-costa-0283225/', target: '_blank' },
         ],
       },
     },
