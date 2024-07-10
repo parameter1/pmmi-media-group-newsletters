@@ -80,7 +80,7 @@ const config = {
       src: '/files/base/pmmi/all/image/newsletters/pfwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/pfw-editor.png',
+      src: '/files/base/pmmi/all/image/newsletters/costa.png,
       width: '50',
       name: 'Michael Costa',
       title: 'Editor-in-Chief',
