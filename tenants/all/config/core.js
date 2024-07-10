@@ -209,14 +209,14 @@ const config = {
       src: '/files/base/pmmi/all/image/newsletters/pfwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/pfw-editor.png',
+      src: '/files/base/pmmi/all/image/newsletters/costa.png',
       width: '50',
       name: 'Michael Costa',
       title: 'Editor-in-Chief',
       contact: {
         imagePath: '/files/base/pmmi/all/image/static/newsletters',
         links: [
-          { provider: 'email', href: 'mcosta@pmmimediagroup.com', target: '_blank' },
+          { provider: 'email', href: 'mailto:mcosta@pmmimediagroup.com', target: '_blank' },
           { provider: 'linkedin', href: 'https://www.linkedin.com/in/michael-costa-0283225/', target: '_blank' },
         ],
       },
