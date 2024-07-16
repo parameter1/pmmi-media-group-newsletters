@@ -130,7 +130,7 @@ const config = {
     editor: {
       src: '/files/base/pmmi/all/image/newsletters/hcp-editor.png',
       width: '50',
-      name: 'Keren Sookne',
+      name: 'Elisabeth Cuneo',
       title: 'Editor-in-Chief',
     },
     primaryColor: '#00B0DE',
