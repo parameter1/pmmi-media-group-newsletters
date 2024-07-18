@@ -128,7 +128,7 @@ const config = {
       src: '/files/base/pmmi/all/image/newsletters/hcpquickhits_header.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/hcp-editor.png',
+      src: '/files/base/pmmi/all/image/newsletters/CuneoHCP.png',
       width: '50',
       name: 'Elisabeth Cuneo',
       title: 'Editor-in-Chief',
