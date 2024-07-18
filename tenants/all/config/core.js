@@ -128,9 +128,9 @@ const config = {
       src: '/files/base/pmmi/all/image/newsletters/hcpquickhits_header.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/hcp-editor.png',
+      src: '/files/base/pmmi/all/image/newsletters/CuneoHCP.png',
       width: '50',
-      name: 'Keren Sookne',
+      name: 'Elisabeth Cuneo',
       title: 'Editor-in-Chief',
     },
     primaryColor: '#00B0DE',
