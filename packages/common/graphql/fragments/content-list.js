@@ -11,7 +11,7 @@ fragment NewsletterContentListFragment on Content {
   body(input: { mutation: Email })
   primaryImage {
     id
-    src
+    src(input: { options: { auto: "format,compress", q: 100 } })
     alt
   }
   labels
