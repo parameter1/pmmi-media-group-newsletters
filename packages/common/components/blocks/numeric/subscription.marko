@@ -30,7 +30,8 @@ $ const imgOptions =  {
   w: 70,
   h: 70,
   ...(campaignTypeMatch && imgDimensions[campaignTypeMatch[1]]),
-  fit: "fill"
+  fit: "fill",
+  auto: "format,compress", q: 100,
 }
 
 $ const linkAttrs = {
