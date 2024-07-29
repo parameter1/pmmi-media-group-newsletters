@@ -33,7 +33,7 @@ $ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(d
                       };
                       <marko-newsletter-imgix
                         src=editor.src
-                        options={ w: (editor.width * 2) }
+                        options={ w: (editor.width * 2), auto: "format,compress", q: 100 }
                         attrs=imgStyling
                       />
                     </td>
