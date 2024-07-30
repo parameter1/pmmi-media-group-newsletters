@@ -31,7 +31,7 @@ const config = {
       width: '50',
       name: 'Lilián Robayo Páez',
       title: 'Directora de Medios',
-      titleAddition: 'para A Latina de PMMI',
+      titleAddition: 'para Latinoamérica de PMMI',
     },
     primaryColor: '#007557',
     socialMedia: {
