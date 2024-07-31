@@ -27,7 +27,7 @@ $ const primaryColor = get(newsletterConfig, "primaryColor");
                       <td align="center" style="padding:0;margin:0;font-size:0px">
                         <marko-newsletter-imgix
                           src=header.src
-                          options={ w: 640 }
+                          options={ w: 640, auto: "format,compress", q: 100 }
                           class="adapt-img"
                         />
                       </td>
