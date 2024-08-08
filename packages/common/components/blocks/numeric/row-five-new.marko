@@ -60,7 +60,7 @@ $ const headlineStyle = {
                                     </tr>
                                     $ const content = nodes[0];
                                     $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-                                    $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
+                                    $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
                                     <tr>
                                         <td dir="rtl" width="100%" style="padding: 24px 0 0 0;direction:rtl;" align="center" valign="top">
                                             <!-- Two column -->

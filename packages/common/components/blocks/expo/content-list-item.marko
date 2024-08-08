@@ -6,7 +6,7 @@ $ const { newsletter, date, content, sectionName } = input;
 $ const withImage = defaultValue(input.withImage, false);
 $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
 $ const contentPrimarySectionName = primarySiteIsProSource ? get(content, "prosourcePrimarySection.name") : get(content, "primarySection.name")
-$ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
+$ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
 
 $ const imgStyles = {
   "display": "block",

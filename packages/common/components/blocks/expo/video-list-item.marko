@@ -30,7 +30,7 @@ $ const imgStyles = {
                       <tr>
                         <td style="padding-right:16px;" class="mobilepadding-rt" valign="top">
                           $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-                          $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
+                          $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
                           <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                             <marko-newsletter-imgix
                               src=image.src

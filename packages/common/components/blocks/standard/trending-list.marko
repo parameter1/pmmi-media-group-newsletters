@@ -41,7 +41,7 @@ $ const queryParams = {
             </tr>
             <for|content| of=nodes>
               $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-              $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
+              $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
               <tr>
                 <td align="center" valign="top" width="100%" style="padding-bottom:24px;">
                   <!-- Two column -->
