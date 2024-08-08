@@ -10,7 +10,7 @@ $ const companyPromo = (content.type === 'promotion' && content.company);
 $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
 $ const contentPrimarySectionName = primarySiteIsProSource ? get(content, "prosourcePrimarySection.name") : get(content, "primarySection.name")
 $ const slug = companyPromo ? `Presented by ${content.company.name}` : contentPrimarySectionName;
-$ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
+$ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
 
 $ const imgStyles = {
   "display": "block",

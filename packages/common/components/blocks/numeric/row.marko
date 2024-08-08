@@ -27,7 +27,7 @@ $ const imgStyles = {
   <if(nodes.length)>
     $ const content = nodes[0];
     $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-    $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/${content.id}`: content.siteContext.url;
+    $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
     <tr>
       <td align="left" bgcolor="#ffffff" style="padding:30px;margin:0;background-color:#ffffff">
         <!--[if mso]>
