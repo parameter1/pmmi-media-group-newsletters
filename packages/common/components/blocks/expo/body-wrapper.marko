@@ -2,16 +2,16 @@ $ const { newsletter, date } = input;
 
 <html-comment> p hidden=""><font face="arial" size="2"><a href="https://stage.pmmimediagroup.com/about">https://stage.pmmimediagroup.com/about </a></font></p </html-comment>
 <html-comment> p hidden=""><font face="arial" size="2"><a href="https://click.pmmimediagroup.com/redirect/22521/72704/omeda:@{encrypted_customer_id}@">PMMI Media Group </a></font></p </html-comment>
-<table border="0" cellpadding="0" cellspacing="0" style="width: 640px;" align="center" class="content-table">
-  <tr>
-    <td style="background-color: #edeeee;" class="email-bg">
-      <common-expo-header-block newsletter=newsletter date=date />
-
-      <if(input.body)>
-        <${input.body} />
-      </if>
-
-    </td>
-  </tr>
-</table>
-<common-expo-footer-block newsletter=newsletter date=date />
+<div style="margin: 0 !important; padding: 0 !important;background-color: #edeeee;" class="email-bg">
+  <table border="0" cellpadding="0" cellspacing="0" style="width: 640px;" align="center" class="content-table">
+    <tr>
+	    <td style="background-color: #edeeee;" class="email-bg">
+        <common-expo-header-block newsletter=newsletter date=date />
+        <if(input.body)>
+          <${input.body} />
+        </if>
+      </td>
+    </tr>
+  </table>
+  <common-expo-footer-block newsletter=newsletter date=date />
+</div>
