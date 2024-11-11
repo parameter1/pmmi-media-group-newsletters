@@ -6,6 +6,7 @@ $ const { newsletter, date } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterDescription = get(newsletterConfig, "description");
+$ const digitalEdition = get(newsletterConfig, "digitalEdition");
 $ const editor = get(newsletterConfig, "editor");
 $ const lang = get(newsletterConfig, "lang");
 $ const displayDateMonth = (lang) ? moment(date).locale(lang).format("MMMM") : moment(date).format("MMMM");
@@ -66,23 +67,58 @@ $ const displayDate = (lang) ? moment(date).locale(lang).format("D, YYYY") : mom
           </table>
         </td>
         <td style="padding:0;Margin:0;width:10px"></td>
-        <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
-          <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
-            <tr>
-              <td align="center" style="padding:0;Margin:0;width:300px">
-                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                  <tr>
-                    <td align="right" class="es-m-p0r" style="padding:0;Margin:0;padding-top:15px;padding-right:20px">
-                      <h4 style="Margin:0;line-height:18px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:12px;color:#333333">
-                        <strong>${displayDateMonth}&nbsp;${displayDate}</strong>
-                      </h4>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
+        <if(digitalEdition === true)>
+          <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+            <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+              <tr>
+                <td align="center" style="padding:0;Margin:0;width:300px">
+                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                    <tr>
+                      <td align="right" class="es-m-p0r" style="padding:0;Margin:0;padding-right:20px">
+                        <h4 style="Margin:0;line-height:21px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;color:#333333">
+                          <strong>$!{newsletterDescription}</strong>
+                        </h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right" class="es-m-p0r" style="padding:0;Margin:0;padding-right:20px">
+                        <h4 style="Margin:0;line-height:21px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;color:#333333">
+                          <strong>${displayDateMonth}&nbsp;${displayDate}</strong>
+                        </h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right" class="es-m-p0r" style="padding:0;Margin:0;padding-right:20px">
+                        <h4 style="Margin:0;line-height:21px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:12px;color:#333333">
+                          <strong><a target="_blank" href="https://placeholder.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#333333;font-size:14px">View Digital Edition</a></strong>
+                        </h4>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </if>
+        <else>
+          <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+            <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+              <tr>
+                <td align="center" style="padding:0;Margin:0;width:300px">
+                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                    <tr>
+                      <td align="right" class="es-m-p0r" style="padding:0;Margin:0;padding-top:15px;padding-right:20px">
+                        <h4 style="Margin:0;line-height:18px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:12px;color:#333333">
+                          <strong>${displayDateMonth}&nbsp;${displayDate}</strong>
+                        </h4>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </else>
       </tr>
     </table>
   </td>
