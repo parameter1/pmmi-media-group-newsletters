@@ -16,6 +16,7 @@ $ const placementId = get(nativeX, `placements.${newsletter.alias}.${placement}`
         content=content
         mindful-creative-id=get(nxData, "creative.mindfulCreativeId")
         mindful-tenant=tenant
+        link={ attrs: nxData.elements.a }
       />
     </if>
   </core-native-x-fetch>

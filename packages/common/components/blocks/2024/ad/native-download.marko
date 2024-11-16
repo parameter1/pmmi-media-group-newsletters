@@ -8,10 +8,18 @@ $ const newsletter = getAsObject(input, "newsletter");
 $ const nativeX = config.getAsObject("nativeX");
 $ const placementId = get(nativeX, `placements.${newsletter.alias}.${placement}`);
 <if(nativeX.uri && placementId)>
-  <core-native-x-fetch|{ data: nxData }| uri=nativeX.uri date=date placement-id=placementId>
+  <core-native-x-fetch|{ data: nxData, tenant }| uri=nativeX.uri date=date placement-id=placementId>
     <if(nxData)>
       $ const content = convertAdToContent(nxData);
-      <common-2024-download-block content=content with-image=withImage newsletter=newsletter />
+      $ const creativeId = get(nxData, "creative.mindfulCreativeId");
+      <common-2024-download-block
+        content=content
+        with-image=withImage
+        newsletter=newsletter
+        mindful-creative-id=creativeId
+        mindful-tenant=tenant
+        link={ attrs: nxData.elements.a }
+      />
     </if>
   </core-native-x-fetch>
 </if>
