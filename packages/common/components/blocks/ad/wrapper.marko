@@ -29,6 +29,7 @@ $ const PromotionComponent = promotionComponents[defaultValue(input.promotionCom
         content=content
         mindful-creative-id=get(data, "creative.mindfulCreativeId")
         mindful-tenant=tenant
+        link={ attrs: data.elements.a }
       />
     </if>
     <else-if(adUnit)>

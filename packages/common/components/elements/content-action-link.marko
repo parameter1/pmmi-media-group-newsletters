@@ -1,3 +1,5 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+
 $ const { i18n } = out.global;
 $ const { content } = input;
 
@@ -12,6 +14,10 @@ $ const contentTypeActions = {
 
 $ const contentAction = contentTypeActions[content.type] || contentTypeActions.default;
 
-<a href=content.siteContext.url style="text-decoration: underline;" class="text-link" target="_blank">
+$ const linkAttrs = {
+  ...(getAsObject(input, "link.attrs")),
+};
+
+<a href=content.siteContext.url style="text-decoration: underline;" class="text-link" target="_blank" ...linkAttrs>
   ${i18n(contentAction)} &rarr;
 </a>
