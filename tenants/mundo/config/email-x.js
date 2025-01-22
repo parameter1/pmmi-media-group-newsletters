@@ -14,7 +14,7 @@ config
   .setAdUnits('mundo-expo-pack', [
     {
       name: 'bottom-audience-banner',
-      id: '65565447fb8ee363cb1d1c3b',
+      id: '677d8c5b10af05b6c6f4ac95',
       width: 560,
       height: 127,
     },
