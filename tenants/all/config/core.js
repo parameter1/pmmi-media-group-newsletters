@@ -82,7 +82,7 @@ const config = {
     editor: {
       src: '/files/base/pmmi/all/image/newsletters/MichaelCosta.png',
       width: '50',
-      name: 'Michael Costa',
+      name: 'Derrick Teal',
       title: 'Editor-in-Chief',
     },
     primaryColor: '#8eae3e',
@@ -211,7 +211,7 @@ const config = {
     editor: {
       src: '/files/base/pmmi/all/image/newsletters/MichaelCosta.png',
       width: '50',
-      name: 'Michael Costa',
+      name: 'Derrick Teal',
       title: 'Editor-in-Chief',
       contact: {
         imagePath: '/files/base/pmmi/all/image/static/newsletters',
