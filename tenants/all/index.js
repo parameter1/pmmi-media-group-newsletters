@@ -1,6 +1,6 @@
 const newrelic = require('newrelic');
-const { startServer } = require('@parameter1/base-cms-marko-newsletters');
-const { set } = require('@parameter1/base-cms-object-path');
+const { startServer } = require('@mindful-web/marko-newsletters');
+const { set } = require('@mindful-web/object-path');
 const coreConfig = require('./config/core');
 const customConfig = require('./config/custom');
 
