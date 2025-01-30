@@ -1,4 +1,4 @@
-const EmailXConfiguration = require('@parameter1/base-cms-marko-newsletters-email-x/config');
+const EmailXConfiguration = require('@mindful-web/marko-newsletters-email-x/config');
 
 const config = new EmailXConfiguration('https://delivery.mindfulcms.com/pmmi/default/compat/email-banner');
 
