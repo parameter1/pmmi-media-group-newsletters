@@ -25,5 +25,8 @@
   },
   "<common-2024-new-issue-layout>": {
     "template": "./2024-new-issue.marko"
+  },
+  "<common-automated-layout>": {
+    "template": "./automated.marko"
   }
 }
