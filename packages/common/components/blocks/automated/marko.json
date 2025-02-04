@@ -1,0 +1,17 @@
+{
+  "<common-automated-head-block>": {
+    "template": "./head.marko"
+  },
+  "<common-automated-footer-block>": {
+    "template": "./footer.marko"
+  },
+  "<common-automated-header-block>": {
+    "template": "./header.marko"
+  },
+  "<common-automated-most-popular-block>": {
+    "template": "./most-popular.marko"
+  },
+  "<common-automated-content-block>": {
+    "template": "./content.marko"
+  }
+}

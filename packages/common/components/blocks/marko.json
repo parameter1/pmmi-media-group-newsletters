@@ -5,7 +5,8 @@
     "./standard/marko.json",
     "./expo/marko.json",
     "./cpgnext/marko.json",
-    "./2024/marko.json"
+    "./2024/marko.json",
+    "./automated/marko.json"
   ],
   "<common-body-wrapper-block>": {
     "template": "./body-wrapper.marko"
