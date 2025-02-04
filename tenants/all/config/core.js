@@ -80,7 +80,7 @@ const config = {
       src: '/files/base/pmmi/all/image/newsletters/pfwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/MichaelCosta.png',
+      src: '/files/base/pmmi/all/image/newsletters/teal.png',
       width: '50',
       name: 'Derrick Teal',
       title: 'Editor-in-Chief',
@@ -209,7 +209,7 @@ const config = {
       src: '/files/base/pmmi/all/image/newsletters/pfwnlheader.png',
     },
     editor: {
-      src: '/files/base/pmmi/all/image/newsletters/MichaelCosta.png',
+      src: '/files/base/pmmi/all/image/newsletters/teal.png',
       width: '50',
       name: 'Derrick Teal',
       title: 'Editor-in-Chief',
