@@ -242,6 +242,9 @@ const config = {
     logoSrc: '/files/base/pmmi/all/image/newsletters/susquickhits_header.jpg',
     primaryColor: '#04a77e',
   },
+  'pw-most-popular': {
+    title: 'Top Articles of the Week',
+  },
 };
 
 module.exports = config;
