@@ -1,5 +1,8 @@
 {
   "taglib-imports": [
     "./components/marko.json"
-  ]
+  ],
+  "<global-marko-web-query>": {
+    "template": "./global-marko-web-query.marko"
+  }
 }

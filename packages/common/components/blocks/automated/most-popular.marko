@@ -1,0 +1,90 @@
+import { get, getAsArray } from "@mindful-web/object-path";
+import defaultValue from "@mindful-web/marko-core/utils/default-value";
+import { extractFragmentData } from "@mindful-web/web-common/utils";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import gql from "graphql-tag";
+import fetch from "node-fetch";
+
+$ const { site, config, apollo, req } = out.global;
+
+$ const { date, newsletter, omitContentWithPrimarySectionIds } = input;
+
+$ const displayLimit = defaultValue(input.displayLimit, 5);
+$ const includeContentTypes = defaultValue(input.includeContentTypes, ['Article', 'News']);
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const tenant = input.tenant || "pmmi";
+$ const realm = input.realm || newsletter.site.id;
+$ const { MOST_POPULAR_API_URI } = process.env;
+$ const now = date ? new Date(date) : new Date();
+$ const days = 7;
+$ const publishedAfter = new Date(now - (days * 24 * 60 * 60 * 1000));
+
+$ const queryParams = {
+  includeContentTypes,
+  limit: 100,
+  // sortField: 'published',
+  // sortOrder: 'desc',
+  siteId: realm,
+  ...input.queryParams,
+  queryFragment,
+};
+
+$ const blockName = "most-popular";
+
+$ const getMostPopular = async (ids) => {
+  const uri = MOST_POPULAR_API_URI || 'https://most-popular-content.mindful-web.parameter1.com';
+
+  const url = `${uri}/retrieve?tenant=${tenant}&realm=${realm}&includeIds=${ids.join(',')}`;
+  const res = await fetch(url);
+  const json = await res.json();
+  if (!res.ok) {
+    const e = json.message || res.statusText;
+    throw new Error(e || "An unknown fatal error occurred.");
+  }
+  return json.data;
+};
+
+<!-- first attempt to get any content scheduled to newsletter -->
+<!-- @rodo look into adding support for include/exclude Labels to newsletter scheduled content query -->
+<global-marko-web-query|{ nodes: scheduledNodes }| name="newsletter-scheduled-content" collapsible=false params={
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName: 'Main',
+  limit: 5,
+  queryFragment,
+}>
+  $ const excludeContentIds = scheduledNodes.map(({ id }) => id);
+  $ const offsetDisplayLimit = displayLimit - excludeContentIds.length;
+  $ const params = { ...queryParams, excludeContentIds };
+  <global-marko-web-query|{ nodes }| name="all-published-content" params=params>
+    $ const nodeMap = {};
+    $ const ids = [];
+    $ // Only allow nodes NOT assigned to the omitted sections
+    $ const allowedNodes = omitContentWithPrimarySectionIds ? nodes.filter(
+      ({ primarySection }) => !omitContentWithPrimarySectionIds.includes(primarySection.id)
+    ) : nodes;
+    $ // Of the allowed nodes filter to only the ones published within the last week
+    $ const publishedAfterNodes = allowedNodes.filter((node) =>  new Date(node.published) >= publishedAfter);
+    $ // If there were enough published within the last week use those, otherwise use the 5 most recent allowed
+    $ const nodesToUse = (publishedAfterNodes.length >= offsetDisplayLimit) ? publishedAfterNodes : allowedNodes;
+
+    $ nodesToUse.forEach((node) => {
+      const { id } = node;
+      ids.push(id);
+      nodeMap[id] = node;
+    });
+    <marko-web-resolve|{ resolved }| promise=getMostPopular(ids)>
+      $ const ordered = resolved.map((item) => {
+          const { id } = item;
+          return nodeMap[id];
+      }).slice(0, offsetDisplayLimit);
+      $ const maginNodes = [...scheduledNodes, ...ordered];
+      <for|content| of=maginNodes>
+        <common-automated-content-block
+          newsletter-config=newsletterConfig
+          content=content
+        />
+      </for>
+    </marko-web-resolve>
+  </global-marko-web-query>
+</global-marko-web-query>
