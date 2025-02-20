@@ -16,37 +16,6 @@ const config = {
     title: 'Live from PACK EXPO',
     ...brands.pw,
   },
-  'pw-weekly': {
-    brand: 'Packaging World',
-    brandShort: 'pw',
-    title: 'PW Weekly Wrap Up',
-    description: 'Weekly Wrap Up',
-    primaryColor: '#005BAB',
-    header: {
-      src: '/files/base/pmmi/all/image/newsletters/pwnlheader.png',
-    },
-    editor: {
-      src: '/files/base/pmmi/all/image/newsletters/pw-inline-editor.png',
-      width: '50',
-      name: 'Matt Reynolds',
-      title: 'Chief Editor',
-      contact: {
-        imagePath: '/files/base/pmmi/all/image/static/newsletters',
-        links: [
-          { provider: 'email', href: 'mailto:mreynolds@pmmimediagroup.com', target: '_blank' },
-          { provider: 'linkedin', href: 'https://www.linkedin.com/in/mreynoldspw', target: '_blank' },
-        ],
-      },
-    },
-    socialMedia: {
-      imagePath: '/files/base/pmmi/all/image/static/newsletters',
-      links: [
-        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
-        { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
-      ],
-    },
-  },
   'pw-daily': {
     brand: 'Packaging World',
     brandShort: 'pw',
@@ -198,44 +167,6 @@ const config = {
         { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
       ],
     },
-  },
-  'pfw-new-issue-alert': {
-    brand: 'ProFood World',
-    brandShort: 'pfw',
-    title: 'PFW New Issue Alert',
-    description: 'New Issue Alert',
-    digitalEdition: true,
-    header: {
-      src: '/files/base/pmmi/all/image/newsletters/pfwnlheader.png',
-    },
-    editor: {
-      src: '/files/base/pmmi/all/image/newsletters/teal.png',
-      width: '50',
-      name: 'Derrick Teal',
-      title: 'Editor-in-Chief',
-      contact: {
-        imagePath: '/files/base/pmmi/all/image/static/newsletters',
-        links: [
-          { provider: 'email', href: 'mailto:mcosta@pmmimediagroup.com', target: '_blank' },
-          { provider: 'linkedin', href: 'https://www.linkedin.com/in/michael-costa-0283225/', target: '_blank' },
-        ],
-      },
-    },
-    primaryColor: '#8eae3e',
-    socialMedia: {
-      imagePath: '/files/base/pmmi/all/image/static/newsletters',
-      links: [
-        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/profoodworld', target: '_blank' },
-        { provider: 'twitter', href: 'https://twitter.com/ProFoodWorld', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/ProFoodWorld', target: '_blank' },
-      ],
-    },
-  },
-  'hcp-quick-hits-2024': {
-    ...brands.hcp,
-    title: 'HCP Quick Hits',
-    description: 'Your Healthcare Industry Week in Review',
-    logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-quick-hits-header.png',
   },
   'pmg-sustainable-packaging': {
     title: 'Sustainable Packaging',

@@ -12,26 +12,10 @@ config
       height: 127,
     },
   ])
-  .setAdUnits('pfw-new-issue-alert', [
-    {
-      name: 'bottom-audience-banner',
-      id: '622f3e3d394283ab9ef780e4',
-      width: 560,
-      height: 127,
-    },
-  ])
   .setAdUnits('cpgnext', [
     {
       name: 'bottom-audience-banner',
       id: '652044d0fb8ee312171d1854',
-      width: 560,
-      height: 127,
-    },
-  ])
-  .setAdUnits('pw-weekly', [
-    {
-      name: 'bottom-audience-banner',
-      id: '65522348fb8ee383e51d19c1',
       width: 560,
       height: 127,
     },
@@ -80,14 +64,6 @@ config
     {
       name: 'bottom-audience-banner',
       id: '60929b92b1fcca34a91baadf',
-      width: 560,
-      height: 127,
-    },
-  ])
-  .setAdUnits('hcp-quick-hits-2024', [
-    {
-      name: 'bottom-audience-banner',
-      id: '664cf9243b1e349533f8b900',
       width: 560,
       height: 127,
     },

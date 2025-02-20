@@ -10,12 +10,6 @@ const config = {
       enabled: true,
     },
   },
-  'mundo-perspectivas': {
-    name: 'Perspectivas',
-    description: 'Inteligencia de mercados, tecnologías y tendencias',
-    lang: 'es',
-    ...brands.mundo,
-  },
   'mundo-expo-pack': {
     brand: 'Mundo EXPO PACK',
     brandShort: 'mundo',
