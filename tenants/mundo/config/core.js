@@ -1,4 +1,3 @@
-const brands = require('./brands');
 const emailX = require('./email-x');
 const nativeX = require('./native-x');
 
@@ -9,12 +8,6 @@ const config = {
     emailx: {
       enabled: true,
     },
-  },
-  'mundo-perspectivas': {
-    name: 'Perspectivas',
-    description: 'Inteligencia de mercados, tecnologías y tendencias',
-    lang: 'es',
-    ...brands.mundo,
   },
   'mundo-expo-pack': {
     brand: 'Mundo EXPO PACK',
