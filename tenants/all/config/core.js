@@ -238,9 +238,18 @@ const config = {
     logoSrc: '/files/base/pmmi/all/image/newsletters/hcp-quick-hits-header.png',
   },
   'pmg-sustainable-packaging': {
-    title: 'Sustainable Packaging',
+    title: 'Sustainable Packaging Weekly',
     logoSrc: '/files/base/pmmi/all/image/newsletters/susquickhits_header.jpg',
+    brandShort: 'pw',
     primaryColor: '#04a77e',
+    socialMedia: {
+      imagePath: '/files/base/pmmi/all/image/static/newsletters',
+      links: [
+        { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
+        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
+      ],
+    },
   },
   'pw-most-popular': {
     title: 'Top Articles of the Week',
