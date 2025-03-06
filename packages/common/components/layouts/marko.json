@@ -28,5 +28,8 @@
   },
   "<common-automated-layout>": {
     "template": "./automated.marko"
+  },
+  "<common-sustainable-layout>": {
+    "template": "./sustainable.marko"
   }
 }
