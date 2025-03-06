@@ -1,0 +1,120 @@
+import { get } from "@mindful-web/object-path";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/website-content";
+import defaultValue from "@mindful-web/marko-core/utils/default-value";
+
+$ const { config } = out.global;
+$ const { newsletter, date } = input;
+
+$ const mailDate = new Date(date);
+$ const dateFormat = defaultValue(input.dateFormat, "MMMM DD, YYYY");
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const brandShort = get(newsletterConfig, "brandShort");
+$ const primaryColor = get(newsletterConfig, "primaryColor");
+
+$ const upcomingQueryParams = {
+  includeContentTypes: ["Webinar"],
+  queryFragment,
+  beginningAfter: mailDate,
+  limit: 2,
+  sort: {
+    field: "startDate",
+    order: "asc",
+  },
+};
+$ const archiveQueryParams = {
+  includeContentTypes: ["Webinar"],
+  queryFragment,
+  beginningBefore: mailDate,
+  sort: {
+    field: "startDate",
+    order: "desc",
+  },
+  limit: 1,
+};
+
+$ const sectionNameStyle = {
+  "margin": "0",
+  "line-height": "21px",
+  "mso-line-height-rule": "exactly",
+  "font-family": "arial, 'helvetica neue', helvetica, sans-serif",
+  "letter-spacing": "0",
+  "font-size": "14px",
+  "font-style": "normal",
+  "color": "#04a77e",
+  "font-weight": "bold",
+};
+
+<tr>
+  <td align="left" class="es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-right:40px;padding-left:40px;padding-top:10px">
+    <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+      <tr>
+        <td valign="top" align="center" style="padding:0;Margin:0;width:560px">
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
+                <h3 style=sectionNameStyle>
+                  <strong>WEBINAR CALENDAR</strong>
+                </h3>
+              </td>
+            </tr>
+            <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=upcomingQueryParams>
+              <if(nodes.length)>
+                <for|content| of=nodes>
+                  $ const contentLinkUrl = new URL(content.linkUrl);
+                  $ const { searchParams } = contentLinkUrl
+                  $ searchParams.set('ref', `${brandShort}-news`);
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px">
+                      $ const start = new Date(content.startDate);
+                      <p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
+                        ${start.toLocaleString('en-US', { month: 'long' })} ${start.toLocaleString('en-US', { day: 'numeric' })}, ${start.getFullYear()} | ${content.starts}
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;padding-bottom:20px">
+                      <p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                        <strong>
+                          <a href=`${contentLinkUrl}` target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                            ${content.name}
+                          </a>
+                        </strong>
+                      </p>
+                    </td>
+                  </tr>
+                </for>
+              </if>
+            </marko-web-query>
+            <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=archiveQueryParams>
+              <if(nodes.length)>
+                <for|content| of=nodes>
+                  $ const contentLinkUrl = new URL(content.linkUrl);
+                  $ const { searchParams } = contentLinkUrl
+                  $ searchParams.set('ref', `${brandShort}-news`);            
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px">
+                      <p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
+                        Now Available On-Demand
+                      </p>
+                    </td>
+                  </tr>  
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
+                      <p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                        <strong>
+                          <a target="_blank" href=`${contentLinkUrl}` style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                            ${content.name}
+                          </a>
+                        </strong>
+                      </p>
+                    </td>
+                  </tr>
+                </for>
+              </if>
+            </marko-web-query>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>  

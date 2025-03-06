@@ -1,0 +1,32 @@
+{
+  "<common-sustainable-head-block>": {
+    "template": "./head.marko"
+  },
+  "<common-sustainable-header-block>": {
+    "template": "./header.marko"
+  },
+  "<common-sustainable-divider-block>": {
+    "template": "./divider.marko"
+  },
+  "<common-sustainable-content-block>": {
+    "template": "./content.marko"
+  },
+  "<common-sustainable-native-ad-block>": {
+    "template": "./native-ad.marko"
+  },
+  "<common-sustainable-promo-block>": {
+    "template": "./promo.marko"
+  },
+  "<common-sustainable-webinar-block>": {
+    "template": "./webinar.marko"
+  },
+  "<common-sustainable-banner-ad-block>": {
+    "template": "./banner-ad.marko"
+  },
+  "<common-sustainable-social-block>": {
+    "template": "./social.marko"
+  },
+  "<common-sustainable-footer-block>": {
+    "template": "./footer.marko"
+  }
+}

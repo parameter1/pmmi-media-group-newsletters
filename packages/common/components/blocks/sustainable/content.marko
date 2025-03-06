@@ -1,0 +1,77 @@
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import { get } from "@mindful-web/object-path";
+
+$ const { config } = out.global;
+$ const { newsletter, date, sectionName } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+
+$ const sectionNameStyle = {
+  "margin": "0",
+  "font-family": "arial, 'helvetica neue', helvetica, sans-serif",
+  "mso-line-height-rule": "exactly",
+  "letter-spacing": "0",
+  "font-size": "14px",
+  "font-style": "normal",
+  "font-weight": "bold",
+  "line-height": "21px",
+  "color": "#04a77e",
+};
+
+$ const queryParams = {
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName,
+  limit: input.limit || 1,
+  skip: input.skip || 0,
+  queryFragment,
+};
+
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+  <if(nodes.length)>
+    <for|content| of=nodes>
+      $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
+      <tr>
+        <td align="left" class="es-m-p20r es-m-p20l" style="Margin:0;padding-right:40px;padding-bottom:10px;padding-left:40px;padding-top:10px">
+          <table width="100%" cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
+                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
+                      <h3 style=sectionNameStyle>
+                        <if(primarySiteIsProSource)>
+                          ${get(content, "prosourcePrimarySection.name")}
+                        </if>
+                        <else>
+                          ${get(content, "primarySection.name")}
+                        </else>
+                      </h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
+                      <h2 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:18px;font-style:normal;font-weight:bold;line-height:27px;color:#333333">
+                        $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+                        <a href=contentLink target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px;line-height:27px">
+                          ${content.name}
+                        </a>
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" style="padding:0;Margin:0">
+                      <p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                        $!{content.teaser}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>  
+          </table>
+        </td>
+      </tr>
+    </for>
+  </if>
+</marko-web-query>
