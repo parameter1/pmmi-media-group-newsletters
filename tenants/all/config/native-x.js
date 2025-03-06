@@ -60,7 +60,9 @@ module.exports = {
       'top-audience-banner': '664cf82bfe692700016a8479',
     },
     'pmg-sustainable-packaging': {
-      'top-audience-banner': '664e264c1a5b610001a4f662',
+      subscription: '664e264c1a5b610001a4f662',
+      'house-ad-1': '67ca0e7e2e3889dae0547b9a',
+      'house-ad-2': '67ca0e812e3889dae0547b9c',
     },
   },
 };
