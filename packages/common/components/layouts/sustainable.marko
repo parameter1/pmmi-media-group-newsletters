@@ -1,0 +1,248 @@
+import { get } from "@mindful-web/object-path";
+
+$ const { config } = out.global;
+$ const { newsletter, date } = input.data;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const title = get(newsletterConfig, "title");
+$ const emailX = config.get('emailX');
+
+<marko-newsletter-root date=date>
+  <@head>
+    <common-sustainable-head-block title=title newsletter=newsletter />
+  </@head>
+  <@body class="body" style="width:100%;height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+    <div dir="ltr" class="es-wrapper-color" lang="en" style="background-color:#F6F6F6">
+      <!--[if gte mso 9]>
+			  <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+				<v:fill type="tile" color="#f6f6f6"></v:fill>
+			  </v:background>
+		  <![endif]-->
+      <table width="100%" cellspacing="0" cellpadding="0" class="es-wrapper" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#F6F6F6">
+        <tr>
+          <td valign="top" style="padding:0;Margin:0">
+            <table cellspacing="0" cellpadding="0" align="center" class="es-header" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%;table-layout:fixed !important;background-color:transparent;background-repeat:repeat;background-position:center top">
+              <!-- Header START --> 
+              <common-sustainable-header-block />
+              <!-- Header END -->
+            </table>
+            <table cellspacing="0" cellpadding="0" align="center" class="es-content" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%;table-layout:fixed !important">
+              <tr>
+                <td align="center" style="padding:0;Margin:0">
+                  <table cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" class="es-content-body" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:640px">
+                    <!-- Advertisement 1 START --> 
+
+                    
+                    
+                    <!-- Advertisement 1 END -->
+             
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+             
+                    <!-- Article 1 START -->  
+                    <common-sustainable-content-block 
+                      newsletter=newsletter
+                      date=date
+                      section-name="Article"
+                      limit=1
+                    />
+                    <!-- Article 1 END -->
+             
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+
+                    <!-- Subscription Enticement START --> 
+                    <common-sustainable-native-ad-block
+                      newsletter=newsletter
+                      date=date
+                      placement="subscription"
+                      with-image=true
+                    />
+                    <!-- Subscription Enticement END -->
+                    
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+
+                    <!-- Article 2 START -->  
+                    <common-sustainable-content-block 
+                      newsletter=newsletter
+                      date=date
+                      section-name="Article"
+                      limit=1
+                      skip=1
+                    />
+                    <!-- Article 2 END --> 
+
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+                    
+                    <!-- Advertisement 2 START --> 
+
+                    <!-- Advertisement 2 END -->
+                    
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+                    
+                    <!-- Article 3 START -->  
+                    <common-sustainable-content-block 
+                      newsletter=newsletter
+                      date=date
+                      section-name="Article"
+                      limit=1
+                      skip=2
+                    />
+                    <!-- Article 3 END --> 
+
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+                    
+                    <!-- Advertisement 3 START --> 
+
+                    <!-- Advertisement 3 END -->
+
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+            
+                    <!-- Quiz START --> 
+                    <tr>
+                      <td align="left" bgcolor="#ffffff" style="padding:0;Margin:0;background-color:#ffffff">
+                        <table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                          <tr>
+                            <td valign="top" align="center" style="padding:0;Margin:0;width:640px">
+                              <table width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#ffffff" role="presentation">
+                                <tr>
+                                  <td align="left" style="padding:0;Margin:0;padding-bottom:10px;padding-right:30px;padding-left:30px">
+                                    <h1 style="margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:20px;font-style:normal;font-weight:bold;line-height:30px;color:#04a77e">
+                                      <b>Community Quiz</b>
+                                    </h1>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="padding:0;Margin:0;padding-bottom:10px;padding-right:30px;padding-left:30px">
+                                    <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;font-size:12pt;width:100%" role="presentation">
+                                      <tr>
+                                        <td colspan="1" style="padding:0;Margin:0">
+                                          <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:150%;letter-spacing:0;color:#333333;font-size:12pt;text-align:left;margin-bottom:15px"><span>Placeholder Question?</span></p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding:0;Margin:0">
+                                          <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;max-width:767px;width:100%" role="presentation">
+                                            <tr>
+                                              <td style="padding:5px 0;Margin:0;vertical-align:top">
+                                                <a href="https://cpgnext.com/?cred_quest_id=409047&cred_answ_id=898081&mail_ref=true" style="mso-line-height-rule:exactly;text-decoration:none;color:inherit;font-size:14px;align-items:center;mso-color-alt:#000">
+                                                  <div style="border:1px solid #04a77e;border-radius:4px;padding:15px 20px;background-color:#fff"><span style="color:#292F35;line-height:1">Placeholder Answer 1</span></div>
+                                                </a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td style="padding:5px 0;Margin:0;vertical-align:top">
+                                                <a href="https://cpgnext.com/?cred_quest_id=409047&cred_answ_id=898082&mail_ref=true" style="mso-line-height-rule:exactly;text-decoration:none;color:inherit;font-size:14px;mso-color-alt:#000;align-items:center">
+                                                  <div style="background-color:#fff;border:1px solid #04a77e;border-radius:4px;padding:15px 20px"><span style="color:#292F35;line-height:1">Placeholder Answer 2</span></div>
+                                                </a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td style="padding:5px 0;Margin:0;vertical-align:top">
+                                                <a href="https://cpgnext.com/?cred_quest_id=409047&cred_answ_id=898083&mail_ref=true" style="mso-line-height-rule:exactly;text-decoration:none;color:inherit;font-size:14px;mso-color-alt:#000;align-items:center">
+                                                  <div style="border-radius:4px;padding:15px 20px;background-color:#fff;border:1px solid #04a77e"><span style="line-height:1;color:#292F35">Placeholder Answer 3</span></div>
+                                                </a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td style="padding:5px 0;Margin:0;vertical-align:top">
+                                                <a href="https://cpgnext.com/?cred_quest_id=409047&cred_answ_id=898272&mail_ref=true" style="mso-line-height-rule:exactly;text-decoration:none;color:inherit;font-size:14px;mso-color-alt:#000;align-items:center">
+                                                  <div style="padding:15px 20px;background-color:#fff;border:1px solid #04a77e;border-radius:4px"><span style="color:#292F35;line-height:1">Placeholder Answer 4</span></div>
+                                                </a>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- Quiz END -->
+             
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+                    
+                    <!-- House Ad 1 START -->
+                    <common-sustainable-native-ad-block
+                      newsletter=newsletter
+                      date=date
+                      placement="house-ad-1"
+                      with-image=false
+                    />
+                    <!-- House Ad 1 END --> 
+
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+             
+             
+             
+                    <!-- House Ad 2 START -->  
+                    <common-sustainable-native-ad-block
+                      newsletter=newsletter
+                      date=date
+                      placement="house-ad-2"
+                      with-image=false
+                    />
+                    <!-- House Ad 2 END --> 
+
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+
+                    <!-- Webinar Calendar START -->  
+                    <common-sustainable-webinar-block
+                      newsletter=newsletter
+                      date=date
+                    />
+                    <!-- Webinar Calendar END --> 
+
+                    <!-- Line Divider START --> 
+                    <common-sustainable-divider-block />
+                    <!-- Line Divider END -->
+
+                    <!-- Trade Show Banner START -->
+                    <common-sustainable-banner-ad-block
+                      newsletter=newsletter
+                      date=date
+                      ad-unit=emailX.getAdUnit({ name: "bottom-audience-banner", alias: newsletter.alias })
+                    />
+                    <!-- Trade Show Banner END -->
+
+                    <!-- Social Media START -->
+                    <common-sustainable-social-block newsletter=newsletter />
+                    <!-- Social Media END -->
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <table cellspacing="0" align="center" cellpadding="0" class="es-footer" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%;table-layout:fixed !important;background-color:transparent;background-repeat:repeat;background-position:center top">
+              <!-- 0 --> 
+              <common-sustainable-footer-block newsletter=newsletter />
+              <!-- 1 -->
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </@body>
+</marko-newsletter-root>

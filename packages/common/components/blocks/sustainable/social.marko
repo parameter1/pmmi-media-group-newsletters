@@ -1,0 +1,58 @@
+import { get, getAsArray } from "@mindful-web/object-path";
+
+$ const { config } = out.global;
+$ const { newsletter } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const brand = get(newsletterConfig, "brand");
+
+<tr>
+  <td align="left" class="es-m-p10b" style="padding:0;Margin:0;padding-top:10px;padding-right:20px;padding-left:20px">
+    <table cellspacing="0" width="100%" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+      <tr>
+        <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+          <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+            <tr>
+              <td align="center" class="es-m-p40r es-m-p40l" style="padding:0;Margin:0;padding-bottom:10px">
+                <h1 class="es-m-txt-c" style="margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:20px;font-style:normal;font-weight:bold;line-height:30px;color:#757575">
+                  <strong>Thanks for reading <em>${brand}</em></strong>
+                </h1>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" class="es-m-p40r es-m-p40l" style="padding:0;Margin:0">
+                <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#757575;font-size:14px">
+                  <strong>Please share with anyone who might find it valuable.</strong>
+                </p>
+              </td>
+            </tr>
+            $ const socialMedia = get(newsletterConfig, "socialMedia");
+            $ const socialMediaLinks = getAsArray(socialMedia, "links");
+            <if(socialMediaLinks.length)>
+              <tr>
+                <td align="center" style="padding:20px;Margin:0;font-size:0">
+                  <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                    <tr>
+                      <for|link| of=socialMediaLinks>
+                        <td align="center" valign="top" style="padding:0;margin:0;padding-right:20px">
+                          <marko-newsletter-imgix
+                            src=`${socialMedia.imagePath}/${link.provider}.png`
+                            alt=link.provider
+                            options={ w: 32, h: 32, fit: "crop" }
+                            attrs={ border: 0, width: 32, align: "center" }
+                          >
+                            <@link href=link.href target="_blank" />
+                          </marko-newsletter-imgix>
+                        </td>
+                      </for>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </if>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
