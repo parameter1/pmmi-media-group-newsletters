@@ -42,6 +42,7 @@ $ const sectionNameStyle = {
   "font-style": "normal",
   "color": "#04a77e",
   "font-weight": "bold",
+  "text-transform": "uppercase",
 };
 
 <tr>
@@ -64,22 +65,18 @@ $ const sectionNameStyle = {
                   $ const { searchParams } = contentLinkUrl
                   $ searchParams.set('ref', `${brandShort}-news`);
                   <tr>
-                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px">
+                    <td align="left" style="padding:0;margin:0;padding-bottom:5px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
                       $ const start = new Date(content.startDate);
-                      <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
-                        ${start.toLocaleString('en-US', { month: 'long' })} ${start.toLocaleString('en-US', { day: 'numeric' })}, ${start.getFullYear()} | ${content.starts}
-                      </p>
+                      ${start.toLocaleString('en-US', { month: 'long' })} ${start.toLocaleString('en-US', { day: 'numeric' })}, ${start.getFullYear()} | ${content.starts}
                     </td>
                   </tr>
                   <tr>
-                    <td align="left" style="padding:0;Margin:0;padding-bottom:20px">
-                      <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                        <strong>
-                          <a href=`${contentLinkUrl}` target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
-                            ${content.name}
-                          </a>
-                        </strong>
-                      </p>
+                    <td align="left" style="padding:0;margin:0;padding-bottom:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                      <strong>
+                        <a href=`${contentLinkUrl}` target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                          ${content.name}
+                        </a>
+                      </strong>
                     </td>
                   </tr>
                 </for>
@@ -92,21 +89,17 @@ $ const sectionNameStyle = {
                   $ const { searchParams } = contentLinkUrl
                   $ searchParams.set('ref', `${brandShort}-news`);            
                   <tr>
-                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px">
-                      <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
-                        Now Available On-Demand
-                      </p>
+                    <td align="left" style="padding:0;margin:0;padding-bottom:5px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
+                      Now Available On-Demand
                     </td>
                   </tr>  
                   <tr>
-                    <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
-                      <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                        <strong>
-                          <a target="_blank" href=`${contentLinkUrl}` style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
-                            ${content.name}
-                          </a>
-                        </strong>
-                      </p>
+                    <td align="left" style="padding:0;margin:0;padding-bottom:10px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                      <strong>
+                        <a target="_blank" href=`${contentLinkUrl}` style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                          ${content.name}
+                        </a>
+                      </strong>
                     </td>
                   </tr>
                 </for>
@@ -118,3 +111,4 @@ $ const sectionNameStyle = {
     </table>
   </td>
 </tr>  
+$ console.log(website);
