@@ -23,11 +23,17 @@ $ const title = get(newsletterConfig, "title");
             
             <common-automated-header-block newsletter=newsletter date=date />
             
-            <common-automated-most-popular-block newsletter=newsletter date=date realm="5d88cedef175132c008b456b" displayLimit=1 />
+            <html-comment> Articles </html-comment>
+            <common-automated-most-popular-block 
+              newsletter=newsletter 
+              date=date 
+              realm="5d88cedef175132c008b456b" 
+              displayLimit=3
+            />
             
-            <!--Footer Start-->
+            <html-comment> Footer Start </html-comment>
             <common-automated-footer-block />
-            <!--Footer End-->
+            <html-comment> Footer End </html-comment>
           </td>
         </tr>
       </table>
