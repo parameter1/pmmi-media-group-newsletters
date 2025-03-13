@@ -69,7 +69,7 @@ $ const sectionNameStyle = {
               <for|content| of=schedules>
                 $ const contentLinkUrl = new URL(content.linkUrl);
                 $ const { searchParams } = contentLinkUrl
-                $ searchParams.set('ref', `${brandShort}-news`);
+                $ searchParams.set('ref', `${content.primarySite.shortName}-news`);
                 <tr>
                   <td align="left" style="padding:0;margin:0;padding-bottom:5px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
                     $ const start = new Date(content.startDate);
@@ -96,7 +96,7 @@ $ const sectionNameStyle = {
               <for|content| of=schedules>
                 $ const contentLinkUrl = new URL(content.linkUrl);
                 $ const { searchParams } = contentLinkUrl
-                $ searchParams.set('ref', `${brandShort}-news`);
+                $ searchParams.set('ref', `${content.primarySite.shortName}-news`);
                 <tr>
                   <td align="left" style="padding:0;margin:0;padding-bottom:5px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
                     Now Available On-Demand
