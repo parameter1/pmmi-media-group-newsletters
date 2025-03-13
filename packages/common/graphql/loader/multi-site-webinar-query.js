@@ -1,5 +1,5 @@
 const { websiteScheduledContent } = require('@mindful-web/web-common/block-loaders');
-const defaultFragment = require('@pmmi-media-group/package-common/graphql/fragments/website-content');
+const defaultFragment = require('../fragments/website-content');
 
 const loadContent = async (apolloClient, params = {}) => {
   const defaults = {
@@ -12,29 +12,25 @@ const loadContent = async (apolloClient, params = {}) => {
   });
 };
 
-const sortArrayByFieldAsc = async (array, key) => {
-  return array.sort((a, b) => {
-    if (a[key] < b[key]) {
-      return -1;
-    }
-    if (a[key] > b[key]) {
-      return 1;
-    }
-    return 0;
-  });
-};
+const sortArrayByFieldAsc = async (array, key) => array.sort((a, b) => {
+  if (a[key] < b[key]) {
+    return -1;
+  }
+  if (a[key] > b[key]) {
+    return 1;
+  }
+  return 0;
+});
 
-const sortArrayByFieldDesc = async (array, key) => {
-  return array.sort((a, b) => {
-    if (a[key] < b[key]) {
-      return 1;
-    }
-    if (a[key] > b[key]) {
-      return -1;
-    }
-    return 0;
-  });
-};
+const sortArrayByFieldDesc = async (array, key) => array.sort((a, b) => {
+  if (a[key] < b[key]) {
+    return 1;
+  }
+  if (a[key] > b[key]) {
+    return -1;
+  }
+  return 0;
+});
 
 module.exports = async (apolloClient, {
   siteIds = [],
