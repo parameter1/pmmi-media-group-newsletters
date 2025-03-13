@@ -54,7 +54,7 @@ module.exports = async (apolloClient, {
   if (params && params.sort && params.limit) {
     const { sort, limit } = params;
     const { field, order } = sort;
-    const sortedSchedules = order === 'desc' ? await sortArrayByFieldDesc(schedules, field) : await sortArrayByFieldAsc(schedules, field)
+    const sortedSchedules = order === 'desc' ? await sortArrayByFieldDesc(schedules, field) : await sortArrayByFieldAsc(schedules, field);
 
     return {
       schedules: sortedSchedules.slice(0, limit),
