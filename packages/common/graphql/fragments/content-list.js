@@ -32,6 +32,10 @@ fragment NewsletterContentListFragment on Content {
   primarySection {
     name
   }
+  siteContext {
+    path
+    url
+  }
   prosourcePrimarySection: primarySection(input: { siteId: "624490387ae702f0058b45b8" }) {
     name
   }
