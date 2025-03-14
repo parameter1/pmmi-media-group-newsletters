@@ -19,6 +19,9 @@ fragment WebsiteContentListFragment on Content {
       path
     }
   }
+  primarySite {
+    shortName
+  }
   primarySection {
     id
     name

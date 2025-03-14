@@ -1,8 +1,9 @@
 import { get } from "@mindful-web/object-path";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/website-content";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
+import webinarLoader from "@pmmi-media-group/package-common/loaders/multi-site-webinar-query";
 
-$ const { config } = out.global;
+$ const { config, apollo } = out.global;
 $ const { newsletter, date } = input;
 
 $ const mailDate = new Date(date);
@@ -11,6 +12,7 @@ $ const newsletterConfig = config.get(newsletter.alias);
 $ const brandShort = get(newsletterConfig, "brandShort");
 $ const primaryColor = get(newsletterConfig, "primaryColor");
 
+$ const siteIds = ['5d88cef7f175132c008b456f', '5d88cedef175132c008b456b', '5d88cf1af175132c008b4577'];
 $ const upcomingQueryParams = {
   includeContentTypes: ["Webinar"],
   queryFragment,
@@ -42,6 +44,7 @@ $ const sectionNameStyle = {
   "font-style": "normal",
   "color": "#04a77e",
   "font-weight": "bold",
+  "text-transform": "uppercase",
 };
 
 <tr>
@@ -57,61 +60,59 @@ $ const sectionNameStyle = {
                 </h3>
               </td>
             </tr>
-            <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=upcomingQueryParams>
-              <if(nodes.length)>
-                <for|content| of=nodes>
-                  $ const contentLinkUrl = new URL(content.linkUrl);
-                  $ const { searchParams } = contentLinkUrl
-                  $ searchParams.set('ref', `${brandShort}-news`);
-                  <tr>
-                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px">
-                      $ const start = new Date(content.startDate);
-                      <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
-                        ${start.toLocaleString('en-US', { month: 'long' })} ${start.toLocaleString('en-US', { day: 'numeric' })}, ${start.getFullYear()} | ${content.starts}
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="left" style="padding:0;Margin:0;padding-bottom:20px">
-                      <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                        <strong>
-                          <a href=`${contentLinkUrl}` target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
-                            ${content.name}
-                          </a>
-                        </strong>
-                      </p>
-                    </td>
-                  </tr>
-                </for>
-              </if>
-            </marko-web-query>
-            <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=archiveQueryParams>
-              <if(nodes.length)>
-                <for|content| of=nodes>
-                  $ const contentLinkUrl = new URL(content.linkUrl);
-                  $ const { searchParams } = contentLinkUrl
-                  $ searchParams.set('ref', `${brandShort}-news`);            
-                  <tr>
-                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px">
-                      <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
-                        Now Available On-Demand
-                      </p>
-                    </td>
-                  </tr>  
-                  <tr>
-                    <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
-                      <p style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                        <strong>
-                          <a target="_blank" href=`${contentLinkUrl}` style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
-                            ${content.name}
-                          </a>
-                        </strong>
-                      </p>
-                    </td>
-                  </tr>
-                </for>
-              </if>
-            </marko-web-query>
+            $ const upcomingPromise = webinarLoader(apollo, { 
+              siteIds, 
+              params: upcomingQueryParams,
+            });
+            <marko-web-resolve|{ resolved }| promise=upcomingPromise>
+              $ const { schedules } = resolved
+              <for|content| of=schedules>
+                $ const contentLinkUrl = new URL(content.linkUrl);
+                $ const { searchParams } = contentLinkUrl
+                $ searchParams.set('ref', `${content.primarySite.shortName}-news`);
+                <tr>
+                  <td align="left" style="padding:0;margin:0;padding-bottom:5px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
+                    $ const start = new Date(content.startDate);
+                    ${start.toLocaleString('en-US', { month: 'long' })} ${start.toLocaleString('en-US', { day: 'numeric' })}, ${start.getFullYear()} | ${content.starts}
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" style="padding:0;margin:0;padding-bottom:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                    <strong>
+                      <a href=`${contentLinkUrl}` target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                        ${content.name}
+                      </a>
+                    </strong>
+                  </td>
+                </tr>
+              </for>
+            </marko-web-resolve>
+            $ const archivePromise = webinarLoader(apollo, { 
+              siteIds,
+              params: archiveQueryParams,
+            });
+            <marko-web-resolve|{ resolved }| promise=archivePromise>
+              $ const { schedules } = resolved
+              <for|content| of=schedules>
+                $ const contentLinkUrl = new URL(content.linkUrl);
+                $ const { searchParams } = contentLinkUrl
+                $ searchParams.set('ref', `${content.primarySite.shortName}-news`);
+                <tr>
+                  <td align="left" style="padding:0;margin:0;padding-bottom:5px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
+                    Now Available On-Demand
+                  </td>
+                </tr>  
+                <tr>
+                  <td align="left" style="padding:0;margin:0;padding-bottom:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                    <strong>
+                      <a href=`${contentLinkUrl}` target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                        ${content.name}
+                      </a>
+                    </strong>
+                  </td>
+                </tr>
+              </for>
+            </marko-web-resolve>
           </table>
         </td>
       </tr>
