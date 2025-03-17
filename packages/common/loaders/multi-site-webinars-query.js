@@ -1,5 +1,5 @@
 const { websiteScheduledContent } = require('@mindful-web/web-common/block-loaders');
-const defaultFragment = require('../fragments/website-content');
+const defaultFragment = require('../graphql/fragments/website-content');
 
 const loadContent = async (apolloClient, params = {}) => {
   const defaults = {
