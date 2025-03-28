@@ -4,7 +4,7 @@ $ const { config } = out.global;
 $ const { newsletter } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
-$ const brand = get(newsletterConfig, "brand");
+$ const title = get(newsletterConfig, "title");
 
 <tr>
   <td align="left" class="es-m-p10b" style="padding:0;Margin:0;padding-top:10px;padding-right:20px;padding-left:20px">
@@ -15,7 +15,7 @@ $ const brand = get(newsletterConfig, "brand");
             <tr>
               <td align="center" class="es-m-p40r es-m-p40l" style="padding:0;Margin:0;padding-bottom:10px">
                 <h1 class="es-m-txt-c" style="margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:20px;font-style:normal;font-weight:bold;line-height:30px;color:#757575">
-                  <strong>Thanks for reading <em>${brand}</em></strong>
+                  <strong>Thanks for reading <em>${title}</em></strong>
                 </h1>
               </td>
             </tr>

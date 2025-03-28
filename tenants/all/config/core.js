@@ -169,7 +169,7 @@ const config = {
     },
   },
   'pmg-sustainable-packaging': {
-    title: 'Sustainable Packaging',
+    title: 'Sustainable Packaging Weekly',
     logoSrc: '/files/base/pmmi/all/image/newsletters/susquickhits_header.jpg',
     brandShort: 'pw',
     primaryColor: '#04a77e',
