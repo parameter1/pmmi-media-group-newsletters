@@ -9,6 +9,7 @@ $ const { site, config, apollo, req } = out.global;
 
 $ const { date, newsletter, omitContentWithPrimarySectionIds } = input;
 
+$ const titleOnly = defaultValue(input.titleOnly, false);
 $ const displayLimit = defaultValue(input.displayLimit, 5);
 $ const includeContentTypes = defaultValue(input.includeContentTypes, ['Article', 'News']);
 $ const newsletterConfig = config.get(newsletter.alias);
@@ -79,12 +80,18 @@ $ const getMostPopular = async (ids) => {
           return nodeMap[id];
       }).slice(0, offsetDisplayLimit);
       $ const maginNodes = [...scheduledNodes, ...ordered];
-      <for|content| of=maginNodes>
-        <common-automated-content-block
-          newsletter-config=newsletterConfig
-          content=content
-        />
-      </for>
+      <if(titleOnly && maginNodes && maginNodes.length)>
+        $ const content = maginNodes[0];
+        <title>${content.name}</title>
+      </if>
+      <else>
+        <for|content| of=maginNodes>
+          <common-automated-content-block
+            newsletter-config=newsletterConfig
+            content=content
+          />
+        </for>
+      </else>
     </marko-web-resolve>
   </global-marko-web-query>
 </global-marko-web-query>
