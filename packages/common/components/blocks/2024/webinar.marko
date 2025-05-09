@@ -11,13 +11,13 @@ $ const newsletterConfig = config.get(newsletter.alias);
 $ const brandShort = get(newsletterConfig, "brandShort");
 $ const primaryColor = get(newsletterConfig, "primaryColor");
 $ const displayLimit = 3;
-$ const featureDisplayLimit = 2;
+$ const upcomingLimit = displayLimit;
 
 $ const upcomingQueryParams = {
   includeContentTypes: ["Webinar"],
   queryFragment,
   beginningAfter: mailDate,
-  limit: featureDisplayLimit,
+  limit: upcomingLimit,
   sort: {
     field: "startDate",
     order: "asc",
