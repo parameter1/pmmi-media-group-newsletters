@@ -88,14 +88,17 @@ $ const sectionNameStyle = {
                 </tr>
               </for>
               $ const archiveLimit = displayLimit - upcoming.length
+              
               <if(archiveLimit !== 0)>
                 $ const archivePromise = webinarLoader(apollo, { 
                   siteIds,
-                  params: archiveQueryParams,
-                  limit: archiveLimit,
+                  params: {
+                    ...archiveQueryParams,
+                    limit: archiveLimit,
+                  }
                 });
                 <marko-web-resolve|{ resolved }| promise=archivePromise>
-                  $ const { archives } = resolved
+                  $ const { schedules: archives } = resolved
                   <for|content| of=archives>
                     $ const contentLinkUrl = new URL(content.linkUrl);
                     $ const { searchParams } = contentLinkUrl
