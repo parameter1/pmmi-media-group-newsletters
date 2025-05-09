@@ -11,13 +11,15 @@ $ const dateFormat = defaultValue(input.dateFormat, "MMMM DD, YYYY");
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const brandShort = get(newsletterConfig, "brandShort");
 $ const primaryColor = get(newsletterConfig, "primaryColor");
+$ const displayLimit = 3;
+$ const upcomingLimit = 3;
 
 $ const siteIds = ['5d88cef7f175132c008b456f', '5d88cedef175132c008b456b', '5d88cf1af175132c008b4577'];
 $ const upcomingQueryParams = {
   includeContentTypes: ["Webinar"],
   queryFragment,
   beginningAfter: mailDate,
-  limit: 2,
+  limit: upcomingLimit,
   sort: {
     field: "startDate",
     order: "asc",
@@ -31,7 +33,6 @@ $ const archiveQueryParams = {
     field: "startDate",
     order: "desc",
   },
-  limit: 1,
 };
 
 $ const sectionNameStyle = {
@@ -65,8 +66,8 @@ $ const sectionNameStyle = {
               params: upcomingQueryParams,
             });
             <marko-web-resolve|{ resolved }| promise=upcomingPromise>
-              $ const { schedules } = resolved
-              <for|content| of=schedules>
+              $ const { schedules: upcoming } = resolved
+              <for|content| of=upcoming>
                 $ const contentLinkUrl = new URL(content.linkUrl);
                 $ const { searchParams } = contentLinkUrl
                 $ searchParams.set('ref', `${content.primarySite.shortName}-news`);
@@ -86,32 +87,39 @@ $ const sectionNameStyle = {
                   </td>
                 </tr>
               </for>
-            </marko-web-resolve>
-            $ const archivePromise = webinarLoader(apollo, { 
-              siteIds,
-              params: archiveQueryParams,
-            });
-            <marko-web-resolve|{ resolved }| promise=archivePromise>
-              $ const { schedules } = resolved
-              <for|content| of=schedules>
-                $ const contentLinkUrl = new URL(content.linkUrl);
-                $ const { searchParams } = contentLinkUrl
-                $ searchParams.set('ref', `${content.primarySite.shortName}-news`);
-                <tr>
-                  <td align="left" style="padding:0;margin:0;padding-bottom:5px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
-                    Now Available On-Demand
-                  </td>
-                </tr>  
-                <tr>
-                  <td align="left" style="padding:0;margin:0;padding-bottom:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                    <strong>
-                      <a href=`${contentLinkUrl}` target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
-                        ${content.name}
-                      </a>
-                    </strong>
-                  </td>
-                </tr>
-              </for>
+              $ const archiveLimit = displayLimit - upcoming.length
+              
+              <if(archiveLimit !== 0)>
+                $ const archivePromise = webinarLoader(apollo, { 
+                  siteIds,
+                  params: {
+                    ...archiveQueryParams,
+                    limit: archiveLimit,
+                  }
+                });
+                <marko-web-resolve|{ resolved }| promise=archivePromise>
+                  $ const { schedules: archives } = resolved
+                  <for|content| of=archives>
+                    $ const contentLinkUrl = new URL(content.linkUrl);
+                    $ const { searchParams } = contentLinkUrl
+                    $ searchParams.set('ref', `${content.primarySite.shortName}-news`);
+                    <tr>
+                      <td align="left" style="padding:0;margin:0;padding-bottom:5px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#999999;font-size:14px">
+                        Now Available On-Demand
+                      </td>
+                    </tr>  
+                    <tr>
+                      <td align="left" style="padding:0;margin:0;padding-bottom:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                        <strong>
+                          <a href=`${contentLinkUrl}` target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                            ${content.name}
+                          </a>
+                        </strong>
+                      </td>
+                    </tr>
+                  </for>
+                </marko-web-resolve>
+              </if>
             </marko-web-resolve>
           </table>
         </td>
