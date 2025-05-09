@@ -10,12 +10,14 @@ $ const dateFormat = defaultValue(input.dateFormat, "MMMM DD, YYYY");
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const brandShort = get(newsletterConfig, "brandShort");
 $ const primaryColor = get(newsletterConfig, "primaryColor");
+$ const displayLimit = 3;
+$ const featureDisplayLimit = 2;
 
 $ const upcomingQueryParams = {
   includeContentTypes: ["Webinar"],
   queryFragment,
   beginningAfter: mailDate,
-  limit: 2,
+  limit: featureDisplayLimit,
   sort: {
     field: "startDate",
     order: "asc",
@@ -29,7 +31,6 @@ $ const archiveQueryParams = {
     field: "startDate",
     order: "desc",
   },
-  limit: 1,
 };
 
 $ const sectionNameStyle = {
@@ -56,9 +57,9 @@ $ const sectionNameStyle = {
                 </h3>
               </td>
             </tr>
-            <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=upcomingQueryParams>
-              <if(nodes.length)>
-                <for|content| of=nodes>
+            <marko-web-query|{ nodes: upcomingNodes }| name="website-scheduled-content" collapsible=false params=upcomingQueryParams>
+              <if(upcomingNodes.length)>
+                <for|content| of=upcomingNodes>
                   $ const contentLinkUrl = new URL(content.linkUrl);
                   $ const { searchParams } = contentLinkUrl
                   $ searchParams.set('ref', `${brandShort}-news`);
@@ -83,33 +84,34 @@ $ const sectionNameStyle = {
                   </tr>
                 </for>
               </if>
-            </marko-web-query>
-            <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=archiveQueryParams>
-              <if(nodes.length)>
-                <for|content| of=nodes>
-                  $ const contentLinkUrl = new URL(content.linkUrl);
-                  $ const { searchParams } = contentLinkUrl
-                  $ searchParams.set('ref', `${brandShort}-news`);
-                  <tr>
-                    <td align="left" style="padding:0;margin:0;padding-bottom:5px">
-                      <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:14px">
-                        Now Available On-Demand
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="left" style="padding:0;margin:0;padding-bottom:10px">
-                      <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                        <strong>
-                          <a href=`${contentLinkUrl}` target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
-                            ${content.name}
-                          </a>
-                        </strong>
-                      </p>
-                    </td>
-                  </tr>
-                </for>
-              </if>
+              $ archiveQueryParams.limit = displayLimit - upcomingNodes.length;
+              <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=archiveQueryParams>
+                <if(nodes.length)>
+                  <for|content| of=nodes>
+                    $ const contentLinkUrl = new URL(content.linkUrl);
+                    $ const { searchParams } = contentLinkUrl
+                    $ searchParams.set('ref', `${brandShort}-news`);
+                    <tr>
+                      <td align="left" style="padding:0;margin:0;padding-bottom:5px">
+                        <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:14px">
+                          Now Available On-Demand
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" style="padding:0;margin:0;padding-bottom:10px">
+                        <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                          <strong>
+                            <a href=`${contentLinkUrl}` target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:14px">
+                              ${content.name}
+                            </a>
+                          </strong>
+                        </p>
+                      </td>
+                    </tr>
+                  </for>
+                </if>
+              </marko-web-query>
             </marko-web-query>
           </table>
         </td>
