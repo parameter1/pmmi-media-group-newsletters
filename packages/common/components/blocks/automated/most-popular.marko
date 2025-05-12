@@ -22,6 +22,7 @@ $ const publishedAfter = new Date(now - (days * 24 * 60 * 60 * 1000));
 
 $ const queryParams = {
   includeContentTypes,
+  excludeLabels: ["Supplier Submitted"],
   limit: 100,
   // sortField: 'published',
   // sortOrder: 'desc',
