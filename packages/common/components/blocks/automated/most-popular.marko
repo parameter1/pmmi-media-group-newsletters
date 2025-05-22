@@ -83,7 +83,7 @@ $ const getMostPopular = async (ids) => {
       $ const maginNodes = [...scheduledNodes, ...ordered];
       <if(titleOnly && maginNodes && maginNodes.length)>
         $ const content = maginNodes[0];
-        <title>${content.name}</title>
+        <title>$!{content.name}</title>
       </if>
       <else>
         <for|content| of=maginNodes>
