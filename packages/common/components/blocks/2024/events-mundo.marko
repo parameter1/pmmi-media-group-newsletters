@@ -56,7 +56,12 @@ $ const sectionNameStyle = {
                       <p style="margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:14px">
                         $ const start = new Date(content.startDate);
                         $ const end = new Date(content.endDate);
-                        ${start.toLocaleString('es-MX', { day: 'numeric' })}&ndash;${end.toLocaleString('es-MX', { day: 'numeric' })} ${start.toLocaleString('es-MX', { month: 'long' })} ${start.getFullYear()} | ${content.city}, ${content.state}
+                        <if(start.getMonth() !== end.getMonth())>
+                          ${start.toLocaleString('es-MX', { day: 'numeric' })} ${start.toLocaleString('es-MX', { month: 'long' })}&ndash;${end.toLocaleString('es-MX', { day: 'numeric' })} ${end.toLocaleString('es-MX', { month: 'long' })} ${start.getFullYear()} | ${content.city}, ${content.state}
+                        </if>
+                        <else>
+                          ${start.toLocaleString('es-MX', { day: 'numeric' })}&ndash;${end.toLocaleString('es-MX', { day: 'numeric' })} ${start.toLocaleString('es-MX', { month: 'long' })} ${start.getFullYear()} | ${content.city}, ${content.state}
+                        </else>
                       </p>
                     </td>
                   </tr>
