@@ -185,6 +185,9 @@ const config = {
   'pw-most-popular': {
     title: 'Top Articles of the Week',
   },
+  'pw-most-popular-soon-to-unengage': {
+    title: 'Top Articles of the Week',
+  },
 };
 
 module.exports = config;
