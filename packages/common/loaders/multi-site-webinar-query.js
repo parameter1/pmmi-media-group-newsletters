@@ -48,7 +48,11 @@ module.exports = async (apolloClient, {
       ...params,
       siteId,
     });
-    schedules.push(...siteContent.nodes);
+    siteContent.nodes.forEach((node) => {
+      if (!schedules.map(({ id }) => id).includes(node.id)) {
+        schedules.push(node);
+      }
+    });
   }));
 
   if (params && params.sort && params.limit) {
