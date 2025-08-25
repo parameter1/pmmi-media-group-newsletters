@@ -27,7 +27,7 @@ $ const imgDimensions = {
 }
 
 $ const imgOptions =  {
-  w: 70,
+  w: 140,
   h: 70,
   ...(campaignTypeMatch && imgDimensions[campaignTypeMatch[1]]),
   fit: "fill",
@@ -55,6 +55,7 @@ $ const linkAttrs = {
                       src=image.src
                       alt=image.alt
                       options=imgOptions
+                      attrs={ width: 70 }
                     >
                     </marko-newsletter-imgix>
                   </marko-core-obj-value>
