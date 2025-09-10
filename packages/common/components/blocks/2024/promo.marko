@@ -23,12 +23,12 @@ $ const campaignTypeMatch = url.match(/(youtube\.com|pmmi\.dragonforms\.com)|app
 
 $ const imgDimensions = {
   "youtube.com": { w: 100, h: 100 },
-  "pmmi.dragonforms.com": { w: 70, h: 70 },
+  "pmmi.dragonforms.com": { w: 140, h: 140 },
 }
 
 $ const imgOptions =  {
   w: 140,
-  h: 70,
+  h: 140,
   ...(campaignTypeMatch && imgDimensions[campaignTypeMatch[1]]),
   fit: "fill",
   auto: "format,compress", q: 100,
