@@ -9,14 +9,11 @@ $ const contentPrimarySectionName = primarySiteIsProSource ? get(content, "proso
 $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
 
 $ const imgStyles = {
-  "display": "block",
   "font-family": "Helvetica, Arial, sans-serif",
   "color": "#333333",
   "font-size": "14px",
-  "max-width": "190px",
+  "max-width": "220px",
   "width": "100%",
-  "max-height": "186px",
-  "margin": "0 auto",
   "background-color": "#b8b8b8",
   "border-radius": "4px 0 0 4px",
 };
@@ -30,15 +27,15 @@ $ const imgStyles = {
           <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
               <html-comment> content left </html-comment>
-              <td class="content-table-flex" width="32%" align="left">
+              <td class="content-table-flex" width="40%" align="left">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
-                    <td align="left" valign="top">
+                    <td align="center" valign="top">
                       <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                         <marko-newsletter-imgix
                           src=image.src
                           alt=image.alt
-                          options={ w: 190, h: 186, fit: "crop" }
+                          options={ w: 440, auto: "format,compress", q: 100 }
                           class="img-max"
                           attrs={ style: imgStyles }
                         >
@@ -51,7 +48,7 @@ $ const imgStyles = {
               </td>
               <html-comment> /content left </html-comment>
               <html-comment> content right </html-comment>
-              <td class="content-table-flex" width="66%" align="right">
+              <td class="content-table-flex" width="58%" align="right">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
                     <td valign="top" style="padding:16px">
@@ -69,7 +66,7 @@ $ const imgStyles = {
                           </td>
                         </tr>
                         <tr>
-                          <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 22px;padding-bottom:8px;" align="left" class="body-text" class="teaser">
+                          <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 22px;padding-bottom:8px;" align="left" class="body-text">
                             $!{content.teaser}
                           </td>
                         </tr>

@@ -1,10 +1,28 @@
+$ const imgStyles = {
+  "font-size": "24px",
+  "font-family": "arial, sans-serif",
+  "font-weight": "bold",
+  "letter-spacing": ".15px",
+  "line-height": "32px",
+  "color": "#3a3636",
+  "max-width": "326px",
+  "max-height": "34px",
+}
+
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td bgcolor="#f5f5f5" style="background-color: #f5f5f5;padding:30px 0;" align="center" class="mobile-padding">
       <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
         <tr>
           <td width="100%" style="display: inline-block;font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;text-align:center;padding-bottom:16px;" align="center" valign="top">
-            <img src="https://pmg-designer.s3.amazonaws.com/EmailCollateral/12-packexpo/textCurated.png" alt="Curated for you" width="199" height="34" style="font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;" class="img-text-header">
+            <marko-newsletter-imgix
+              src="/files/base/pmmi/all/image/newsletters/TextCurated.png" 
+              alt="Curated for you"
+              options={ w: 652, h: 68, auto: "format,compress", q: 100 }
+              class="img-text-header"
+              attrs={ w: 326, h: 34, style: imgStyles }
+            >
+            </marko-newsletter-imgix>
           </td>
         </tr>
         <tr>
@@ -13,16 +31,22 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:center;">
               <tr>
                 <html-comment> content left </html-comment>
-                <td class="content-table-flex-main" style="width:48%;display:inline-block;" valign="top">
+                <td class="content-table-flex-main" style="display:inline-block;" valign="top">
                   <table cellpadding="0" cellspacing="0" border="0" align="left">
                     <tr>
                       <td style="padding-bottom:24px;">
                         <table bgcolor="#ffffff" style="background-color:#ffffff;" cellpadding="0" cellspacing="0" border="0" class="header">
                           <tr>
                             <td>
-                              <a href="https://www.packexpointernational.com/education/sustainability-central" target="_blank">
-                                <img src="https://pmg-designer.s3.amazonaws.com/EmailCollateral/12-packexpo/SustainabilityCentral.png" alt="Sustainability Hero" style="max-width:272px;max-height:182px;width:100%;" class="img-max">
-                              </a>
+                              <marko-newsletter-imgix
+                                src="/files/base/pmmi/all/image/newsletters/sust-cent-828x548.jpg" 
+                                alt=""
+                                options={ w: 544, auto: "format,compress", q: 100 }
+                                class="img-max"
+                                attrs={ style:"max-width:272px; height: auto; width:100%;" }
+                              >
+                                <@link href="https://www.packexpolasvegas.com/education/sustainability-central" target="_blank" />
+                              </marko-newsletter-imgix>
                             </td>
                           </tr>
                           <tr>
@@ -30,19 +54,19 @@
                               <table cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                   <td style="padding: 0 0 12px 0; color: #3a3636; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px;">
-                                    <a href="https://www.packexpointernational.com/education/sustainability-central" target="_blank" style="color: #3a3636; text-decoration: none;">
+                                    <a href="https://www.packexpolasvegas.com/education/sustainability-central" target="_blank" style="color: #3a3636; text-decoration: none;">
                                       Sustainability Central
                                     </a>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 22px;padding-bottom:8px;" align="left" class="body-text">
-                                    At PACK EXPO International’s Sustainability Central, immerse yourself in free, high-energy sessions that explore every dimension of sustainability.
+                                    At PACK EXPO Las Vegas' Sustainability Central, immerse yourself in free, high-energy sessions that explore every dimension of sustainability.
                                   </td>
                                 </tr>
                                 <tr>
                                   <td style="padding: 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 24px;" align="left">
-                                    <a href="https://www.packexpointernational.com/education/sustainability-central" target="_blank" style="color: #00b8ab; text-decoration: underline;">Access Now&nbsp;&rarr;</a>
+                                    <a href="https://www.packexpolasvegas.com/education/sustainability-central" target="_blank" style="color: #00b8ab; text-decoration: underline;">Access Now&nbsp;&rarr;</a>
                                   </td>
                                 </tr>
                               </table>
@@ -54,17 +78,24 @@
                   </table>
                 </td>
                 <html-comment> /content left </html-comment>
+                <td class="content-table-flex-main" style="width: 10px;"></td>
                 <html-comment> content right </html-comment>
-                <td class="content-table-flex-main" style="width:48%;display:inline-block;" valign="top" align="right;">
+                <td class="content-table-flex-main" style="display:inline-block;" valign="top" align="right;">
                   <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td style="padding-bottom:24px;">
                         <table bgcolor="#ffffff" style="background-color:#ffffff;" cellpadding="0" cellspacing="0" border="0" class="header">
                           <tr>
                             <td>
-                              <a href="https://www.packexpointernational.com/education/emerging-brands-central" target="_blank">
-                                <img src="https://pmg-designer.s3.amazonaws.com/EmailCollateral/12-packexpo/EmergingBrands.png" alt="Sustainability Hero" style="max-width:272px;max-height:182px;width:100%;" class="img-max">
-                              </a>
+                              <marko-newsletter-imgix
+                                src="/files/base/pmmi/all/image/newsletters/innovation-report-828x548.jpg" 
+                                alt=""
+                                options={ w: 544, auto: "format,compress", q: 100 }
+                                class="img-max"
+                                attrs={ style:"max-width:272px; height: auto; width:100%;" }
+                              >
+                                <@link href="https://app.credspark.com/assessments/5ebc5436534e6-a2985215-1b69-4b92-85e7-cd875e0490f7/assessment_responses/new" target="_blank" />
+                              </marko-newsletter-imgix>
                             </td>
                           </tr>
                           <tr>
@@ -72,19 +103,19 @@
                               <table cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                   <td style="padding: 0 0 12px 0; color: #3a3636; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px;">
-                                    <a href="https://www.packexpointernational.com/education/emerging-brands-central" target="_blank" style="color: #3a3636; text-decoration: none;">
-                                      Emerging Brands Central 
+                                    <a href="https://app.credspark.com/assessments/5ebc5436534e6-a2985215-1b69-4b92-85e7-cd875e0490f7/assessment_responses/new" target="_blank" style="color: #3a3636; text-decoration: none;">
+                                      Cut Through Show Noise
                                     </a>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 22px;padding-bottom:8px;" align="left" class="body-text">
-                                    Emerging Brands Central features free educational sessions and industry expert advisors for brands who are scaling their manufacturing operations.
+                                    Our experts will navigate the PACK EXPO show floor to find the breakthrough technologies you need to know. Get notified when reports drop.
                                   </td>
                                 </tr>
                                 <tr>
                                   <td style="padding: 0; color: #444444; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 24px;" align="left">
-                                    <a href="https://www.packexpointernational.com/education/emerging-brands-central" target="_blank" style="color: #00b8ab; text-decoration: underline;">Access Now&nbsp;&rarr;</a>
+                                    <a href="https://app.credspark.com/assessments/5ebc5436534e6-a2985215-1b69-4b92-85e7-cd875e0490f7/assessment_responses/new" target="_blank" style="color: #00b8ab; text-decoration: underline;">Reserve Access&nbsp;&rarr;</a>
                                   </td>
                                 </tr>
                               </table>

@@ -1,3 +1,21 @@
+$ const imgStyles = {
+  "font-family": "Helvetica, Arial, sans-serif",
+  "color": "#333333",
+  "font-size": "14px",
+  "max-width": "150px",
+  "display": "block",
+};
+
+$ const textImgStyles = {
+  "font-size": "24px",
+  "font-family": "arial, sans-serif",
+  "font-weight": "bold",
+  "letter-spacing": ".15px",
+  "line-height": "32px",
+  "color": "#3a3636",
+  "max-width": "280px",
+};
+
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td bgcolor="#ffffff" style="background-color: #ffffff;padding:20px 0 20px 0;" align="center" class="mobile-padding">
@@ -8,34 +26,48 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:left;">
               <tr>
                 <html-comment> content left </html-comment>
-                <td class="content-table-flex-main" style="width:25%;display:inline-block;" valign="top">
+                <td class="content-table-flex-main" style="width:35%;display:inline-block;" valign="top">
                   <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
                     <tr>
-                      <td style="padding-right:16px;" class="mobilepadding-rt" valign="top">
-                        <img style="display: block; font-family: Helvetica, Arial, sans-serif; color: #333333; font-size: 14px; width:120px;" class="img-med" width="120" height="135" src="https://pmg-designer.s3.amazonaws.com/EmailCollateral/12-packexpo/ShowDailyCover.png" alt="Editorial Image" border="0">
+                      <td style="padding-right:16px;" class="mobilepadding-rt" valign="top" align="center">
+                        <marko-newsletter-imgix
+                          src="/files/base/pmmi/all/image/newsletters/ShowDailyCover.png" 
+                          alt=""
+                          options={ w: 300, auto: "format,compress", q: 100 }
+                          class="img-med"
+                          attrs={ style: imgStyles }
+                        >
+                        </marko-newsletter-imgix>
                       </td>
                     </tr>
                   </table>
                 </td>
                 <html-comment> /content left </html-comment>
                 <html-comment> content right </html-comment>
-                <td class="content-table-flex-main" style="width:70%;display:inline-block;" valign="top">
+                <td class="content-table-flex-main" style="width:60%;display:inline-block;" valign="top">
                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
                       <td valign="top">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr>
-                            <td style="padding: 0 0 4px 0; color: #384198; font-family: Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: .5px;font-weight: bold; line-height: 16px;padding-bottom:12px;" align="left" class="mobile-align-center">
-                              <img src="https://pmg-designer.s3.amazonaws.com/EmailCollateral/12-packexpo/textShowDaily.png" width="280" height="34" alt="PACK EXPO International Show Daily" style="font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;" class="img-text-header">
+                            <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 22px;padding-bottom:12px;" align="left" class="body-text mobile-align-center">
+                              <marko-newsletter-imgix
+                                src="/files/base/pmmi/all/image/newsletters/Text-ShowDaily.png" 
+                                alt="PACK EXPO International Show Daily"
+                                options={ w: 560, h: 68, auto: "format,compress", q: 100 }
+                                class="img-text-header"
+                                attrs={ w: 280, h: 34, style: textImgStyles }
+                              >
+                              </marko-newsletter-imgix>
                             </td>
-                          </tr>
+                          </tr>  
                           <tr>
                             <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 22px;padding-bottom:8px;" align="left" class="body-text mobile-align-center">
                               Get a complete run-down of product demos, educational sessions and other events happening each day of the show.
                             </td>
                           </tr>
                           <tr>
-                            <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 22px; " align="left" class="body-text mobile-align-center">
+                            <td style="color: #00b8ab; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 22px;" align="left" class="body-text mobile-align-center">
                               <a href="SHOW DAILY LINK" style="color:#00b8ab;text-decoration:underline;">Read now&nbsp;&rarr;</a>
                             </td>
                           </tr>
