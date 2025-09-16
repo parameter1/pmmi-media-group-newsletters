@@ -36,7 +36,7 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
                       <tr>
                         <td style="padding-bottom: 16px;text-align:center;">
                           <marko-newsletter-imgix
-                            src="/files/base/pmmi/all/image/newsletters/textNews.png"
+                            src="/files/base/pmmi/all/image/newsletters/TextNews.png"
                             options={ w: 326, h: 34 }
                             alt="News from the Show Floor"
                             attrs={ width: 326, height: 34 }
@@ -83,7 +83,14 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
               <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
                 <tr>
                   <td width="100%" style="display: inline-block;font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;text-align:center;padding-bottom:16px;" align="center">
-                    <img src="https://pmg-designer.s3.amazonaws.com/EmailCollateral/12-packexpo/textUpNext.png" alt="UP NEXT:" width="105" height="34" style="font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;" class="img-text-header">
+                    <marko-newsletter-imgix
+                      src="/files/base/pmmi/all/image/newsletters/TextUpNext.png" 
+                      alt="Up Next"
+                      options={ w: 652, h: 68, auto: "format,compress", q: 100 }
+                      class="img-text-header"
+                      attrs={ width: 326, height: 34 }
+                    >
+                    </marko-newsletter-imgix>
                   </td>
                 </tr>
                 <tr>
