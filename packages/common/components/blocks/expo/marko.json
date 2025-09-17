@@ -40,5 +40,20 @@
   },
   "<common-expo-action-link-block>": {
     "template": "./action-link.marko"
+  },
+  "<common-expo-body-wrapper-mundo-block>": {
+    "template": "./body-wrapper-mundo.marko"
+  },
+  "<common-expo-header-mundo-block>": {
+    "template": "./header-mundo.marko"
+  },
+  "<common-expo-footer-mundo-block>": {
+    "template": "./footer-mundo.marko"
+  },
+  "<common-expo-curated-mundo-block>": {
+    "template": "./curated-mundo.marko"
+  },
+  "<common-expo-exhibitor-search-mundo-block>": {
+    "template": "./exhibitor-search-mundo.marko"
   }
 }
