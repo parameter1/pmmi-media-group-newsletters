@@ -1,0 +1,168 @@
+import { get, getAsArray } from "@mindful-web/object-path";
+import { stripHtml } from "@mindful-web/html";
+import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import moment from "moment";
+
+$ const { website, config, i18n } = out.global;
+$ const { newsletter, date } = input.data;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const newsletterName = get(newsletterConfig, "name");
+$ const newsletterDescription = stripHtml(get(newsletterConfig, "description"));
+$ const title = get(newsletterConfig, "title");
+$ const lang = get(newsletterConfig, "lang");
+
+$ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
+
+<marko-newsletter-root
+  title=title
+  description=newsletterDescription
+  date=date
+>
+  <@head>
+    <common-head-block title=title style-component=input.styleComponent style-component-input=input.styleComponentInput />
+  </@head>
+  <@body style="margin: 0 !important; padding: 0 !important;background-color: #edeeee;" class="email-bg">
+    <common-expo-body-wrapper-mundo-block newsletter=newsletter date=date>
+      <@body>
+      <html-comment> ************************* Email body ************************* </html-comment>
+        <html-comment> Show News Section </html-comment>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#f5f5f5" style="background-color: #f5f5f5;padding:20px 0;" align="center" class="mobile-padding">
+              <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
+                <tr>
+                  <td width="100%" align="center" valign="top">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="padding-bottom: 16px;text-align:center;">
+                          <marko-newsletter-imgix
+                            src="/files/base/pmmi/all/image/newsletters/textNews_ESP.png"
+                            options={ w: 652, h: 68, auto: "format,compress", q: 100 }
+                            alt="Noticias de la feria"
+                            attrs={ width: 326, height: 34, style:"max-width: 326px, max-height: 24px;" }
+                            class="img-text-header"
+                          />
+                        </td>
+                      </tr>
+                      <html-comment> Articles begin </html-comment>
+                      <common-expo-content-list-block
+                        newsletter=newsletter
+                        date=date
+                        section-name="News"
+                        limit=6
+                      />
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <html-comment> /Show News Section </html-comment>
+                      
+        <html-comment> PACK EXPO Mundo Link </html-comment>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#ffffff" style="background-color: #ffffff;padding:20px 0 20px 0;" align="center" class="mobile-padding">
+              <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
+                <tr>
+                  <td width="100%" style="padding: 16px;" align="center" valign="top">
+                    <html-comment> Two column </html-comment>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:left;">
+                      <tr>
+                        <html-comment> content left </html-comment>
+                        <td class="content-table-flex-main" style="width:35%;display:inline-block;" valign="top">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
+                            <tr>
+                              <td style="padding-right:16px;" class="mobilepadding-rt" valign="top" align="center">
+                                <marko-newsletter-imgix
+                                  src="/files/base/pmmi/all/image/newsletters/mundoEP-color-whiteBG.png"
+                                  options={ w: 300, auto: "format,compress", q: 100 }
+                                  alt=""
+                                  attrs={ width: 150, style:"max-width: 150px, max-height: 24px;" }
+                                  class="img-medr"
+                                />
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <html-comment> /content left </html-comment>
+                        <html-comment> content right </html-comment>
+                        <td class="content-table-flex-main" style="width:60%;display:inline-block;" valign="top">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 22px;padding-bottom:8px;" align="left" class="body-text mobile-align-center">
+                                      Vea más innovaciones de PACK EXPO <a href="https://www.mundoexpopack.com/packexpo" style="color:#007557;text-decoration:underline;" target="_blank">aquí</a>.
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <html-comment> /content right </html-comment>
+                      </tr>
+                    </table>
+                    <html-comment> /Two column </html-comment>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <html-comment> /PACK EXPO Mundo Link  </html-comment>
+
+        <html-comment> Curated </html-comment>
+        <common-expo-curated-mundo-block />
+        <html-comment> /Curated </html-comment>
+
+        <html-comment> Tomorrow's Schedule </html-comment>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#ffffff" style="background-color: #ffffff;padding:48px 0;" align="center" class="mobile-padding">
+              <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
+                <tr>
+                  <td width="100%" style="display: inline-block;font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;text-align:center;padding-bottom:16px;" align="center">
+                    <marko-newsletter-imgix
+                      src="/files/base/pmmi/all/image/newsletters/Paranoperderse.png" 
+                      alt="Up Next"
+                      options={ w: 652, h: 68, auto: "format,compress", q: 100 }
+                      class="img-text-header"
+                      attrs={ width: 326, height: 34 }
+                    >
+                    </marko-newsletter-imgix>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" style="display: inline-block;font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;text-align:center;padding-bottom:16px;" align="center" valign="top" class="body-text">
+                    ${i18n(displayDate)}
+                  </td>
+                </tr>
+
+                <html-comment> Scheduled Items begin </html-comment>
+                <common-expo-schedule-list-block 
+                  newsletter=newsletter
+                  date=date
+                  section-name="Schedule"
+                  limit=4
+                />
+                <html-comment> Scheduled Items end </html-comment>
+                  
+              </table>
+            </td>
+          </tr>
+        </table>
+        <html-comment> /Tomorrow's Schedule </html-comment>
+        
+        <html-comment> Exhibitor Search </html-comment>
+        <common-expo-exhibitor-search-mundo-block />
+        <html-comment> /Exhibitor Search </html-comment>
+      <html-comment> ************************* /Email body ************************* </html-comment>
+      </@body>
+    </common-expo-body-wrapper-mundo-block>
+  </@body>
+</marko-newsletter-root>
