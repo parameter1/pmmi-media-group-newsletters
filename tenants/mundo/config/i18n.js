@@ -1,5 +1,5 @@
 module.exports = {
-  'read more': 'Lea más',
+  'read more': 'Leer más',
   podcast: 'Escucha',
   video: 'Ver video',
   watch: 'Ver video',

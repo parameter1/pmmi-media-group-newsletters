@@ -3,15 +3,16 @@ import { stripHtml } from "@mindful-web/html";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 import moment from "moment";
 
-$ const { website, config } = out.global;
+$ const { website, config, i18n } = out.global;
 $ const { newsletter, date } = input.data;
 
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const newsletterName = get(newsletterConfig, "name");
 $ const newsletterDescription = stripHtml(get(newsletterConfig, "description"));
 $ const title = get(newsletterConfig, "title");
+$ const lang = get(newsletterConfig, "lang");
 
-$ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
+$ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
 
 <marko-newsletter-root
   title=title
@@ -22,7 +23,7 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
     <common-head-block title=title style-component=input.styleComponent style-component-input=input.styleComponentInput />
   </@head>
   <@body style="margin: 0 !important; padding: 0 !important;background-color: #edeeee;" class="email-bg">
-    <common-expo-body-wrapper-block newsletter=newsletter date=date>
+    <common-expo-body-wrapper-mundo-block newsletter=newsletter date=date>
       <@body>
       <html-comment> ************************* Email body ************************* </html-comment>
         <html-comment> Show News Section </html-comment>
@@ -36,9 +37,9 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
                       <tr>
                         <td style="padding-bottom: 16px;text-align:center;">
                           <marko-newsletter-imgix
-                            src="/files/base/pmmi/all/image/newsletters/TextNews.png"
+                            src="/files/base/pmmi/all/image/newsletters/textNews_ESP.png"
                             options={ w: 652, h: 68, auto: "format,compress", q: 100 }
-                            alt="News from the Show Floor"
+                            alt="Noticias de la feria"
                             attrs={ width: 326, height: 34, style:"max-width: 326px, max-height: 24px;" }
                             class="img-text-header"
                           />
@@ -51,14 +52,6 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
                         section-name="News"
                         limit=6
                       />
-                      
-                      <html-comment> Editorial View ALl </html-comment>
-                      <tr>
-                        <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: regular; line-height: 16px;text-align:center;" class="body-text">
-                          View all the latest news & innovations from the show on <a href="https://www.packworld.com/PACKEXPO" target="_blank" style="color:#00b8ab;text-decoration:underline;"><em>Packaging World</em></a>.
-                        </td>
-                      </tr>
-                      <html-comment> /Editorial View ALl </html-comment>
                     </table>
                   </td>
                 </tr>
@@ -67,13 +60,64 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
           </tr>
         </table>
         <html-comment> /Show News Section </html-comment>
-        
-        <html-comment> Show Daily Download </html-comment>
-        <common-expo-show-daily-block />
-        <html-comment> /Show Daily Download </html-comment>
+                      
+        <html-comment> PACK EXPO Mundo Link </html-comment>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#ffffff" style="background-color: #ffffff;padding:20px 0 20px 0;" align="center" class="mobile-padding">
+              <table class="content-table" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">
+                <tr>
+                  <td width="100%" style="padding: 16px;" align="center" valign="top">
+                    <html-comment> Two column </html-comment>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="text-align:left;">
+                      <tr>
+                        <html-comment> content left </html-comment>
+                        <td class="content-table-flex-main" style="width:35%;display:inline-block;" valign="top">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" align="left">
+                            <tr>
+                              <td style="padding-right:16px;" class="mobilepadding-rt" valign="top" align="center">
+                                <marko-newsletter-imgix
+                                  src="/files/base/pmmi/all/image/newsletters/mundoEP-color-whiteBG.png"
+                                  options={ w: 300, auto: "format,compress", q: 100 }
+                                  alt=""
+                                  attrs={ width: 150, style:"max-width: 150px, max-height: 24px;" }
+                                  class="img-medr"
+                                />
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <html-comment> /content left </html-comment>
+                        <html-comment> content right </html-comment>
+                        <td class="content-table-flex-main" style="width:60%;display:inline-block;" valign="top">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 22px;padding-bottom:8px;" align="left" class="body-text mobile-align-center">
+                                      Vea más innovaciones de PACK EXPO <a href="https://www.mundoexpopack.com/packexpo" style="color:#007557;text-decoration:underline;" target="_blank">aquí</a>.
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <html-comment> /content right </html-comment>
+                      </tr>
+                    </table>
+                    <html-comment> /Two column </html-comment>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <html-comment> /PACK EXPO Mundo Link  </html-comment>
 
         <html-comment> Curated </html-comment>
-        <common-expo-curated-block />
+        <common-expo-curated-mundo-block />
         <html-comment> /Curated </html-comment>
 
         <html-comment> Tomorrow's Schedule </html-comment>
@@ -84,7 +128,7 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
                 <tr>
                   <td width="100%" style="display: inline-block;font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;text-align:center;padding-bottom:16px;" align="center">
                     <marko-newsletter-imgix
-                      src="/files/base/pmmi/all/image/newsletters/TextUpNext.png" 
+                      src="/files/base/pmmi/all/image/newsletters/Paranoperderse.png" 
                       alt="Up Next"
                       options={ w: 652, h: 68, auto: "format,compress", q: 100 }
                       class="img-text-header"
@@ -95,7 +139,7 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
                 </tr>
                 <tr>
                   <td width="100%" style="display: inline-block;font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;text-align:center;padding-bottom:16px;" align="center" valign="top" class="body-text">
-                    ${displayDate}
+                    ${i18n(displayDate)}
                   </td>
                 </tr>
 
@@ -115,10 +159,10 @@ $ const displayDate = moment(date).add(1, "days").format("dddd, MMMM D");
         <html-comment> /Tomorrow's Schedule </html-comment>
         
         <html-comment> Exhibitor Search </html-comment>
-        <common-expo-exhibitor-search-block />
+        <common-expo-exhibitor-search-mundo-block />
         <html-comment> /Exhibitor Search </html-comment>
       <html-comment> ************************* /Email body ************************* </html-comment>
       </@body>
-    </common-expo-body-wrapper-block>
+    </common-expo-body-wrapper-mundo-block>
   </@body>
 </marko-newsletter-root>

@@ -31,5 +31,8 @@
   },
   "<common-sustainable-layout>": {
     "template": "./sustainable.marko"
+  },
+  "<common-expo-mundo-layout>": {
+    "template": "./expo-mundo.marko"
   }
 }

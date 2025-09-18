@@ -36,6 +36,11 @@ const config = {
       ],
     },
   },
+  'expo-live': {
+    name: 'En vivo desde la feria PACK EXPO',
+    title: 'En vivo desde PACK EXPO',
+    lang: 'es-MX',
+  },
 };
 
 module.exports = config;
