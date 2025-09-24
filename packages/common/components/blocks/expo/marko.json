@@ -55,5 +55,11 @@
   },
   "<common-expo-exhibitor-search-mundo-block>": {
     "template": "./exhibitor-search-mundo.marko"
+  },
+  "<common-expo-schedule-list-mundo-block>": {
+    "template": "./schedule-list-mundo.marko"
+  },
+  "<common-expo-schedule-list-item-mundo-block>": {
+    "template": "./schedule-list-item-mundo.marko"
   }
 }
