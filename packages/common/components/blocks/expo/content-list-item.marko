@@ -37,7 +37,7 @@ $ const imgStyles = {
                           alt=image.alt
                           options={ w: 440, auto: "format,compress", q: 100 }
                           class="img-max"
-                          attrs={ style: imgStyles }
+                          attrs={ width: 220, style: imgStyles }
                         >
                           <@link href=contentLink target="_blank" />
                         </marko-newsletter-imgix>
@@ -66,7 +66,7 @@ $ const imgStyles = {
                           </td>
                         </tr>
                         <tr>
-                          <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 22px;padding-bottom:8px;" align="left" class="body-text">
+                          <td style="color: #636466; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 22px;" align="left" class="body-text">
                             $!{content.teaser}
                           </td>
                         </tr>
