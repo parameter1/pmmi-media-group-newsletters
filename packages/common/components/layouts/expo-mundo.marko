@@ -12,7 +12,7 @@ $ const newsletterDescription = stripHtml(get(newsletterConfig, "description"));
 $ const title = get(newsletterConfig, "title");
 $ const lang = get(newsletterConfig, "lang");
 
-$ const displayDate = (lang) ? moment(date).locale(lang).format("LL") : moment(date).format("LL");
+$ const displayDate = (lang) ? moment(date).add(1, "days").locale(lang).format("LL") : moment(date).format("LL");
 
 <marko-newsletter-root
   title=title
