@@ -36,7 +36,8 @@ const config = {
       links: [
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
+        { provider: 'applepodcast', href: 'https://podcasts.apple.com/us/podcast/through-the-line-packaging-and-processing/id1804661196', target: '_blank' },
+        { provider: 'spotify', href: 'https://open.spotify.com/show/65uZebTErQesDl3ubE8INm?si=f81fe5c94de74da5&nd=1&dlsi=b9', target: '_blank' },
       ],
     },
   },
@@ -60,7 +61,8 @@ const config = {
       links: [
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/profoodworld', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/ProFoodWorld', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/ProFoodWorld', target: '_blank' },
+        { provider: 'applepodcast', href: 'https://podcasts.apple.com/us/podcast/through-the-line-packaging-and-processing/id1804661196', target: '_blank' },
+        { provider: 'spotify', href: 'https://open.spotify.com/show/65uZebTErQesDl3ubE8INm?si=f81fe5c94de74da5&nd=1&dlsi=b9', target: '_blank' },
       ],
     },
   },
@@ -84,7 +86,8 @@ const config = {
       links: [
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/oem-magazine', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/oemmagazine', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/OEMMagazine', target: '_blank' },
+        { provider: 'applepodcast', href: 'https://podcasts.apple.com/us/podcast/unpacked-with-pmmi/id1476565635', target: '_blank' },
+        { provider: 'spotify', href: 'https://open.spotify.com/show/6Zc2Axl5vcn68HXEBaTXEP', target: '_blank' },
       ],
     },
   },
@@ -99,7 +102,7 @@ const config = {
     editor: {
       src: '/files/base/pmmi/all/image/newsletters/CuneoHCP.png',
       width: '50',
-      name: 'Elisabeth Cuneo',
+      name: 'Liz Cuneo',
       title: 'Editor-in-Chief',
     },
     primaryColor: '#00B0DE',
@@ -108,7 +111,8 @@ const config = {
       links: [
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/healthcare-packaging-/', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/healthcarepkg', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/HealthcarePackaging', target: '_blank' },
+        { provider: 'applepodcast', href: 'https://podcasts.apple.com/us/podcast/through-the-line-packaging-and-processing/id1804661196', target: '_blank' },
+        { provider: 'spotify', href: 'https://open.spotify.com/show/65uZebTErQesDl3ubE8INm?si=f81fe5c94de74da5&nd=1&dlsi=b9', target: '_blank' },
       ],
     },
   },
@@ -132,7 +136,8 @@ const config = {
       links: [
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld/', target: '_blank' },
+        { provider: 'applepodcast', href: 'https://podcasts.apple.com/us/podcast/through-the-line-packaging-and-processing/id1804661196', target: '_blank' },
+        { provider: 'spotify', href: 'https://open.spotify.com/show/65uZebTErQesDl3ubE8INm?si=f81fe5c94de74da5&nd=1&dlsi=b9', target: '_blank' },
       ],
     },
   },
@@ -164,7 +169,8 @@ const config = {
       links: [
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
+        { provider: 'applepodcast', href: 'https://podcasts.apple.com/us/podcast/through-the-line-packaging-and-processing/id1804661196', target: '_blank' },
+        { provider: 'spotify', href: 'https://open.spotify.com/show/65uZebTErQesDl3ubE8INm?si=f81fe5c94de74da5&nd=1&dlsi=b9', target: '_blank' },
       ],
     },
   },
@@ -178,7 +184,8 @@ const config = {
       links: [
         { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world/', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/packagingworld', target: '_blank' },
-        { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld', target: '_blank' },
+        { provider: 'applepodcast', href: 'https://podcasts.apple.com/us/podcast/through-the-line-packaging-and-processing/id1804661196', target: '_blank' },
+        { provider: 'spotify', href: 'https://open.spotify.com/show/65uZebTErQesDl3ubE8INm?si=f81fe5c94de74da5&nd=1&dlsi=b9', target: '_blank' },
       ],
     },
   },
