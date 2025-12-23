@@ -184,9 +184,67 @@ const config = {
   },
   'pw-most-popular': {
     title: 'Top Articles of the Week',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/top-articles.png',
+      attrs: { height: 320, width: 640 },
+    },
+    realm: '5d88cedef175132c008b456b',
   },
   'pw-most-popular-soon-to-unengage': {
     title: 'Top Articles of the Week',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/top-articles.png',
+      attrs: { height: 320, width: 640 },
+    },
+    realm: '5d88cedef175132c008b456b',
+  },
+  'hcp-most-popular': {
+    title: 'Top Articles of the Week',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/hcpTopArticles.png',
+      attrs: { width: 640 },
+    },
+    realm: '5d88cef7f175132c008b456f',
+  },
+  'hcp-most-popular-soon-to-unengage': {
+    title: 'Top Articles of the Week',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/hcpTopArticles.png',
+      attrs: { width: 640 },
+    },
+    realm: '5d88cef7f175132c008b456f',
+  },
+  'oem-most-popular': {
+    title: 'Top Articles of the Week',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/oemTopArticles.png',
+      attrs: { width: 640 },
+    },
+    realm: '5d88cf05f175132c008b4573',
+  },
+  'oem-most-popular-soon-to-unengage': {
+    title: 'Top Articles of the Week',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/oemTopArticles.png',
+      attrs: { width: 640 },
+    },
+    realm: '5d88cf05f175132c008b4573',
+  },
+  'pfw-most-popular': {
+    title: 'Top Articles of the Week',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/pfwTopArticles.png',
+      attrs: { width: 640 },
+    },
+    realm: '5d88cf1af175132c008b4577',
+  },
+  'pfw-most-popular-soon-to-unengage': {
+    title: 'Top Articles of the Week',
+    header: {
+      src: '/files/base/pmmi/all/image/newsletters/pfwTopArticles.png',
+      attrs: { width: 640 },
+    },
+    realm: '5d88cf1af175132c008b4577',
   },
 };
 
