@@ -185,16 +185,16 @@ const config = {
   'pw-most-popular': {
     title: 'Top Articles of the Week',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/top-articles.png',
-      attrs: { height: 320, width: 640 },
+      src: '/files/base/pmmi/all/image/newsletters/pwtoparticlesheader.png',
+      attrs: { width: 640 },
     },
     realm: '5d88cedef175132c008b456b',
   },
   'pw-most-popular-soon-to-unengage': {
     title: 'Top Articles of the Week',
     header: {
-      src: '/files/base/pmmi/all/image/newsletters/top-articles.png',
-      attrs: { height: 320, width: 640 },
+      src: '/files/base/pmmi/all/image/newsletters/pwtoparticlesheader.png',
+      attrs: { width: 640 },
     },
     realm: '5d88cedef175132c008b456b',
   },
