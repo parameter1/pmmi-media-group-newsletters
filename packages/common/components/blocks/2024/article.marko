@@ -2,7 +2,7 @@ import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/co
 import { get } from "@mindful-web/object-path";
 
 $ const { config } = out.global;
-$ const { newsletter, date, sectionName } = input;
+$ const { newsletter, date, sectionName, continueReading } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const primaryColor = get(newsletterConfig, "primaryColor");
@@ -68,6 +68,15 @@ $ const queryParams = {
                       </div>
                     </td>
                   </tr>
+                  <if(continueReading)>
+                    <tr>
+                      <td align="left" style="padding:0;Margin:0;padding-top:10px">
+                        <h3 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:14px;font-style:normal;font-weight:bold;line-height:21px;color:#005BAB">
+                          <common-content-action-link-element content=content link=input.link/>
+                        </h3>
+                      </td>
+                    </tr>
+                  </if>
                 </table>
               </td>
             </tr>
