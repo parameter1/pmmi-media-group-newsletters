@@ -4,9 +4,9 @@ $ const { i18n } = out.global;
 $ const { content } = input;
 
 $ const contentTypeActions = {
-  'default': 'Read More',
-  'podcast': 'Listen',
-  'video': 'Watch',
+  'default': 'Keep Reading',
+  'podcast': 'Listen Here',
+  'video': 'Watch Here',
   'document': 'Download',
   'whitepaper': 'Download',
   'promotion': content.linkText || 'Learn More',
@@ -18,6 +18,6 @@ $ const linkAttrs = {
   ...(getAsObject(input, "link.attrs")),
 };
 
-<a href=content.siteContext.url style="text-decoration: underline;" class="text-link" target="_blank" ...linkAttrs>
-  ${i18n(contentAction)} &rarr;
+<a href=content.siteContext.url style="mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px" class="text-link" target="_blank" ...linkAttrs>
+  ${i18n(contentAction)}
 </a>
