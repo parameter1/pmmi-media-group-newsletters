@@ -33,54 +33,50 @@ $ const queryParams = {
   </td>
 </tr>
 <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
-  <if(nodes.length === 0)>
-    <tr>
-      <td align="left" class="es-m-p20r es-m-p20l" style="margin:0;padding-right:40px;padding-left:40px;padding-top:10px;padding-bottom:10px">
-        <table cellspacing="0" width="100%" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
-          <tr>
-            <td align="center" valign="top" style="padding:0;margin:0;width:560px">
-              <table cellspacing="0" width="100%" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
-                <tr>
-                  <td align="left" style="padding:0;margin:0;padding-top:10px">
-                    <div style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                      Have a job to post? Send it to <a href="mailto:sriley@pmmimediagroup.com" style="mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px"><u>sriley@pmmimediagroup.com</u></a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
+  <if(nodes.length)>
+    <for|content| of=nodes>
+      $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS"; 
+      <tr>
+        <td align="left" class="es-m-p20r es-m-p20l" style="margin:0;padding-right:40px;padding-left:40px;padding-top:10px;padding-bottom:10px">
+          <table cellspacing="0" width="100%" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+            <tr>
+              <td align="center" valign="top" style="padding:0;margin:0;width:560px">
+                <table cellspacing="0" width="100%" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+                  <tr>
+                    <td align="left" class="e" style="padding:0;margin:0">
+                      <div class="f g" style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:14px;letter-spacing:0;color:#333333;font-size:14px">
+                        $ const linkUrl = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+                        <a href=content.linkUrl target="_blank" style="mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px;line-height:14px">
+                          $!{content.linkText}
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </for>
   </if>
-  <else>
-    <if(nodes.length)>
-      <for|content| of=nodes>
-        $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS"; 
+  <tr>
+    <td align="left" class="es-m-p20r es-m-p20l" style="margin:0;padding-right:40px;padding-left:40px;padding-top:10px;padding-bottom:10px">
+      <table cellspacing="0" width="100%" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
         <tr>
-          <td align="left" class="es-m-p20r es-m-p20l" style="margin:0;padding-right:40px;padding-left:40px;padding-top:10px;padding-bottom:10px">
-            <table cellspacing="0" width="100%" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+          <td align="center" valign="top" style="padding:0;margin:0;width:560px">
+            <table cellspacing="0" width="100%" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
               <tr>
-                <td align="center" valign="top" style="padding:0;margin:0;width:560px">
-                  <table cellspacing="0" width="100%" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
-                    <tr>
-                      <td align="left" class="e" style="padding:0;margin:0">
-                        <div class="f g" style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:14px;letter-spacing:0;color:#333333;font-size:14px">
-                          $ const linkUrl = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
-                          <a href=content.linkUrl target="_blank" style="mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px;line-height:14px">
-                            $!{content.linkText}
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
+                <td align="left" style="padding:0;margin:0;padding-top:10px">
+                  <div style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
+                    Have a job to post? Send it to <a href="mailto:sriley@pmmimediagroup.com" style="mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px"><u>sriley@pmmimediagroup.com</u></a>
+                  </div>
                 </td>
               </tr>
             </table>
           </td>
         </tr>
-      </for>
-    </if>
-  </else>
+      </table>
+    </td>
+  </tr>
 </marko-web-query>
