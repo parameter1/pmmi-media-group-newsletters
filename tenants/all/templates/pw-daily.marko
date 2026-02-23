@@ -1,1 +1,187 @@
-<common-2024-daily-layout data=data />
+import { get } from "@mindful-web/object-path";
+
+$ const { config } = out.global;
+$ const { newsletter, date } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const title = get(newsletterConfig, "title");
+$ const emailX = config.get('emailX');
+
+<marko-newsletter-root date=date>
+  <@head>
+    <common-2024-head-block title=title newsletter=newsletter />
+  </@head>
+  <@body style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;margin:0">
+    <common-2024-body-wrapper-block newsletter=newsletter date=date>
+      <@body>
+        <table class="es-content" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+          <tr>
+            <td align="center" style="padding:0;margin:0">
+              <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:640px">
+
+                <html-comment> Signature and Email Date START </html-comment>
+                <common-2024-date-banner-block newsletter=newsletter date=date />
+                <html-comment> Signature and Email Date END </html-comment>
+
+                <html-comment> Advertisement 1 START </html-comment>
+
+
+                <html-comment> Advertisement 1 END </html-comment>
+
+                <common-2024-divider-block />
+                <html-comment> Article 1 START </html-comment>
+                <common-2024-article-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Article"
+                  continue-reading=true
+                  limit=1
+                />
+                <html-comment> Article 1 END </html-comment>
+                <common-2024-divider-block />
+
+                <html-comment> Subscription Enticement START </html-comment>
+                <common-2024-ad-nativex-block
+                  newsletter=newsletter
+                  date=date
+                  placement="subscription"
+                  with-image=true
+                />
+                <html-comment> Subscription Enticement END </html-comment>
+
+                <common-2024-divider-block />
+                <html-comment> Article 2 START </html-comment>
+                <common-2024-article-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Article"
+                  continue-reading=true
+                  limit=1
+                  skip=1
+                />
+                <html-comment> Article 2 END </html-comment>
+                <common-2024-divider-block />
+
+                <html-comment> Advertisement 2 START </html-comment>
+
+
+                <html-comment> Advertisement 2 END </html-comment>
+
+                <common-2024-divider-block />
+
+                <html-comment> Video Section START </html-comment>
+                <common-2024-video-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Video"
+                  continue-reading-true
+                  limit=1
+                />
+                <html-comment> Video Section END </html-comment>
+                
+                <common-2024-divider-block />
+
+                <html-comment> Article 4 START </html-comment>
+                <common-2024-article-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Article"
+                  continue-reading=true
+                  limit=1
+                  skip=3
+                />
+                <html-comment> Article 4 END </html-comment>
+                <common-2024-divider-block />
+
+                <html-comment> Advertisement 3 START </html-comment>
+
+
+                <html-comment> Advertisement 3 END </html-comment>
+
+                <common-2024-divider-block />
+
+                <html-comment> Podcast Section START </html-comment>
+                <common-2024-podcast-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Podcast"
+                  continue-reading-true
+                  limit=1
+                />
+                <html-comment> Podcast Section END </html-comment>
+
+                <common-2024-divider-block />
+
+                <html-comment> Upcoming Events START </html-comment>
+                <common-2024-events-block
+                  newsletter=newsletter
+                  date=date
+                  limit=3
+                />
+                <html-comment> Upcoming Events END </html-comment>
+
+                <html-comment> House Ad 1 START </html-comment>
+                <common-2024-ad-nativex-block
+                  newsletter=newsletter
+                  date=date
+                  placement="promotion-1"
+                  with-image=false
+                />
+                <html-comment> House Ad 1 END </html-comment>
+
+                <html-comment> House Ad 2 START </html-comment>
+                <common-2024-ad-nativex-block
+                  newsletter=newsletter
+                  date=date
+                  placement="promotion-2"
+                  with-image=false
+                />
+                <html-comment> House Ad 2 END </html-comment>
+
+                <common-2024-divider-block />
+
+                <html-comment> Webinar Calendar START </html-comment>
+                <common-2024-webinar-block
+                  newsletter=newsletter
+                  date=date
+                />
+                <html-comment> Webinar Calendar END </html-comment>
+
+                <common-2024-divider-block />
+
+                <html-comment> Job Section START </html-comment>
+                <common-2024-job-listing-block
+                  newsletter=newsletter
+                  date=date
+                  section-name="Job Listing"
+                  limit=3
+                />
+                <html-comment> Job Section END </html-comment>
+
+                <common-2024-divider-block />
+
+                <html-comment> Advisor Network START </html-comment>
+                <common-2024-advisor-network-block />
+                <html-comment> Advisor Network END</html-comment>
+
+                <common-2024-divider-block />
+
+                <html-comment> Trade Show Banner START </html-comment>
+                <common-2024-ad-emailx-block
+                  newsletter=newsletter
+                  date=date
+                  ad-unit=emailX.getAdUnit({ name: "bottom-audience-banner", alias: newsletter.alias })
+                />
+                <html-comment> Trade Show Banner END </html-comment>
+
+                <html-comment> Social Media START </html-comment>
+                <common-2024-social-block newsletter=newsletter />
+                <html-comment> Social Media END </html-comment>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </@body>
+    </common-2024-body-wrapper-block>
+  </@body>
+</marko-newsletter-root>
