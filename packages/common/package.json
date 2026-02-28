@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@mindful-web/html": "^1.0.0",
-    "@mindful-web/marko-core": "^1.28.0",
+    "@mindful-web/marko-core": "^1.49.2",
     "@mindful-web/marko-newsletters": "^1.28.0",
-    "@mindful-web/marko-newsletters-email-x": "^1.45.4",
+    "@mindful-web/marko-newsletters-email-x": "^1.49.1",
     "@mindful-web/marko-newsletters-native-x": "^1.45.1",
     "@mindful-web/marko-newsletters-omail": "^1.0.1",
     "@mindful-web/marko-web-native-x": "^1.44.2",
