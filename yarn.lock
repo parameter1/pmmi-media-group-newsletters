@@ -480,10 +480,10 @@
     apollo-link-http "^1.5.17"
     node-fetch "^2.6.9"
 
-"@mindful-web/dayjs@^1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/dayjs/-/dayjs-1.16.0.tgz#279000a4f31d7a8d0cec466e58a921838621bbd6"
-  integrity sha512-O3tbMMp0HuBKYPi0E+XBB9pmcWU0Qnp8IIz7hcPkoxSlRVVU/r1T/aKElPP8hEgyoF7xqZYOi61gm7dnUE92Cw==
+"@mindful-web/dayjs@^1.49.2":
+  version "1.49.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/dayjs/-/dayjs-1.49.2.tgz#b09165d8074528b913bfe4e61decb20de9f54443"
+  integrity sha512-aKGyYvuiC3ISpMal8iWTSPQasvkJNE1RLDfhhUa9T/k4YeG8ud1fToEczKb0cI7t67gU/2aSnVChm3QSZRYPgg==
   dependencies:
     dayjs "^1.11.7"
 
@@ -552,12 +552,12 @@
     marko "~4.20.0"
     minimist "^1.2.8"
 
-"@mindful-web/marko-core@^1.28.0":
-  version "1.28.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-core/-/marko-core-1.28.0.tgz#654ccbf292f04b5e99dd879a2b8bbaa3ffb25d02"
-  integrity sha512-vBbqjEH+ul+eADoNmRGeICQ0l+EFcFrXeOvqi3Tk+xl+CBPPOl+rsv7Wpimvu4wLY3b2vO7WYPTxWdbDaduqWg==
+"@mindful-web/marko-core@^1.49.2":
+  version "1.49.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-core/-/marko-core-1.49.2.tgz#ae82367c21888b20d458b67f8fe8537d24946c5f"
+  integrity sha512-XM20qQ/dTLhHq0RPxEJvVNn6LQeviWf5/lBPVHPygys7BZAo8Hjhjak7zbRkgo1aoHOkltMVrXayQZ+bLlMpXQ==
   dependencies:
-    "@mindful-web/dayjs" "^1.16.0"
+    "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/marko-express" "^1.0.0"
     "@mindful-web/object-path" "^1.11.9"
     "@mindful-web/utils" "^1.11.9"
@@ -571,10 +571,10 @@
     marko "~4.20.0"
     pretty "^2.0.0"
 
-"@mindful-web/marko-newsletters-email-x@^1.45.4":
-  version "1.45.4"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-newsletters-email-x/-/marko-newsletters-email-x-1.45.4.tgz#df6802bfcd391bbf8995090b2ee0b600085a5b30"
-  integrity sha512-w7ISQKMhpdwCz+mwUtuGgvHry8vsG4kKsjd1lBw5/Oljhatg2mDuz7nhsE3yU82GbNdEVu2o13riBGnh0I6vZA==
+"@mindful-web/marko-newsletters-email-x@^1.49.1":
+  version "1.49.1"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-newsletters-email-x/-/marko-newsletters-email-x-1.49.1.tgz#effa56936ff8e09c4facd4da993a77bcbf0d909f"
+  integrity sha512-ahibztdiXjGiJtrhUoZxWBAzJymWfZk70oQx48X8mg5GxmoVoWr6ZqXfzOgrZmRp2wbvtyt5wL5OoIGpTyrigw==
   dependencies:
     "@mindful-web/object-path" "^1.11.9"
     "@mindful-web/utils" "^1.11.9"
