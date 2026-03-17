@@ -14,6 +14,7 @@ $ const upcomingLimit = displayLimit;
 
 $ const upcomingQueryParams = {
   includeContentTypes: ["Webinar"],
+  excludeLabels: ["Non-PMG"],
   queryFragment,
   beginningAfter: mailDate,
   limit: upcomingLimit,
@@ -24,6 +25,7 @@ $ const upcomingQueryParams = {
 };
 $ const archiveQueryParams = {
   includeContentTypes: ["Webinar"],
+  excludeLabels: ["Non-PMG"],
   queryFragment,
   beginningBefore: mailDate,
   sort: {
