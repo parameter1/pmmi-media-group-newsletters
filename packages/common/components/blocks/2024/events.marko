@@ -13,6 +13,7 @@ $ const queryParams = {
   skip: input.skip || 0,
   queryFragment,
   includeContentTypes: ["Event"],
+  excludeLabels: ["Non-PMG"],
   endingAfter: mailDate,
   sort: {
     field: "startDate",
