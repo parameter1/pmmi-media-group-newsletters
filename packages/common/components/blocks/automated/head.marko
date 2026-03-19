@@ -1,4 +1,4 @@
-$ const { newsletter, date, realm } = input;
+$ const { title } = input;
 
 <meta charset="UTF-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -7,14 +7,7 @@ $ const { newsletter, date, realm } = input;
 <meta content="telephone=no" name="format-detection">
 
 <!-- Title tag here...trust me -->
-<common-automated-most-popular-block
-  newsletter=newsletter
-  date=date
-  realm=realm
-  title-only=true
-  displayLimit=3
-/>
-
+<title>$!{title}</title>
 <!--[if (mso 16)]>
   <style type="text/css">
     a {text-decoration: none;}

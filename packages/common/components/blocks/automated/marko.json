@@ -8,9 +8,6 @@
   "<common-automated-header-block>": {
     "template": "./header.marko"
   },
-  "<common-automated-most-popular-block>": {
-    "template": "./most-popular.marko"
-  },
   "<common-automated-content-block>": {
     "template": "./content.marko"
   }
