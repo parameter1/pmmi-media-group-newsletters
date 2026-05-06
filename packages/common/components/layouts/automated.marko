@@ -33,7 +33,7 @@ $ const queryParams = {
 $ const blockName = "most-popular";
 
 $ const getMostPopular = async (ids) => {
-  const uri = MOST_POPULAR_API_URI || 'https://most-popular-content.mindful-web.parameter1.com';
+  const uri = MOST_POPULAR_API_URI || 'https://apis.mindfulcms.com/most-popular';
 
   const url = `${uri}/retrieve?tenant=${tenant}&realm=${realm}&includeIds=${ids.join(',')}`;
   const res = await fetch(url);
