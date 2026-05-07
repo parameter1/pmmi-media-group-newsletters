@@ -75,11 +75,14 @@ $ const getMostPopular = async (ids) => {
       nodeMap[id] = node;
     });
     <marko-web-resolve|{ resolved }| promise=getMostPopular(ids)>
-      
-      $ const ordered = resolved.map((item) => {
-          const { id } = item;
-          return nodeMap[id];
-      }).slice(0, offsetDisplayLimit);
+      $ const ordered = resolved.reduce((prevArr, item) => {
+        const { id } = item;
+        const fullItem = nodeMap[id];
+        if (fullItem) {
+          prevArr.push(fullItem);
+        }
+        return prevArr
+      }, []).slice(0, offsetDisplayLimit);
 
       $ const maginNodes = [...scheduledNodes, ...ordered];
 
@@ -87,7 +90,7 @@ $ const getMostPopular = async (ids) => {
         <@head>
           <!-- Set newsletter title off first article -->
           $ const { name: title } = maginNodes[0];
-          <common-automated-head-block title=title />     
+          <common-automated-head-block title=title />
         </@head>
         <@body style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
           <div dir="ltr" class="es-wrapper-color" lang="en" style="background-color:#F6F6F6">
@@ -101,7 +104,7 @@ $ const getMostPopular = async (ids) => {
                 <td valign="top" style="padding:0;Margin:0">
 
                   <common-automated-header-block newsletter=newsletter date=date />
-                  
+
                   <html-comment> Articles </html-comment>
                   <for|content| of=maginNodes>
                     <common-automated-content-block
