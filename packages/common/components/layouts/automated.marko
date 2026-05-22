@@ -3,38 +3,52 @@ import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 import fetch from "node-fetch";
 
-$ const { config } = out.global;
-$ const { newsletter, date, omitContentWithPrimarySectionIds} = input.data;
+<!--
+  Automated newsletter layout.
 
+  Article selection happens in three stages:
+    1. Pull any content explicitly scheduled to this newsletter (always shown first).
+    2. Query a pool of recently-published content from the site.
+    3. Ask the most-popular API which of those have been getting traffic, and
+       render those in popularity order. If the API has no data, or returns
+       fewer items than needed, fill remaining slots with the recent content.
+-->
+
+$ const { config } = out.global;
+$ const { newsletter, date, omitContentWithPrimarySectionIds } = input.data;
+
+<!-- Per-newsletter config (title, header image, realm/site ID) lives in tenants/all/config/core.js -->
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const realm = get(newsletterConfig, "realm");
 
-$ const {  } = input;
-
+<!-- Tunables (overridable via the page input) -->
 $ const displayLimit = defaultValue(input.displayLimit, 3);
 $ const includeContentTypes = defaultValue(input.includeContentTypes, ['Article', 'News']);
 $ const tenant = input.tenant || "pmmi";
 $ const { MOST_POPULAR_API_URI } = process.env;
+
+<!-- "Recent" = published within the last `days` days from the newsletter date -->
 $ const now = date ? new Date(date) : new Date();
 $ const days = 7;
 $ const publishedAfter = new Date(now - (days * 24 * 60 * 60 * 1000));
 
+<!-- Params passed to the GraphQL `all-published-content` query for the recent-content pool -->
 $ const queryParams = {
   includeContentTypes,
   excludeLabels: ["Supplier Submitted"],
   limit: 100,
-  // sortField: 'published',
-  // sortOrder: 'desc',
   siteId: realm,
   ...input.queryParams,
   queryFragment,
 };
 
-$ const blockName = "most-popular";
-
+<!--
+  Fetch popularity rankings from the most-popular service.
+  Response shape: { data: [{ id, uniqueUsers, views, content: { _id, type } }] }
+  Note: this returns only IDs + stats — full article data has to come from GraphQL.
+-->
 $ const getMostPopular = async () => {
   const uri = MOST_POPULAR_API_URI || 'https://apis.mindfulcms.com/most-popular';
-
   const url = `${uri}/retrieve?tenant=${tenant}&realm=${realm}&custom=newsletters`;
   const res = await fetch(url);
   const json = await res.json();
@@ -45,7 +59,7 @@ $ const getMostPopular = async () => {
   return json.data;
 };
 
-<!-- first attempt to get any content scheduled to newsletter -->
+<!-- Stage 1: pull content explicitly scheduled to this newsletter (rendered first, always shown) -->
 <!-- @rodo look into adding support for include/exclude Labels to newsletter scheduled content query -->
 <global-marko-web-query|{ nodes: scheduledNodes }| name="newsletter-scheduled-content" collapsible=false params={
   date: date.valueOf(),
@@ -54,40 +68,57 @@ $ const getMostPopular = async () => {
   limit: 5,
   queryFragment,
 }>
+  <!-- Track scheduled IDs so we don't pull them again as "popular" or "recent" -->
   $ const excludeContentIds = scheduledNodes.map(({ id }) => id);
   $ const offsetDisplayLimit = displayLimit - excludeContentIds.length;
   $ const params = { ...queryParams, excludeContentIds };
+
+  <!-- Stage 2: pull a recent-content pool (used both for popular-ID lookup and as fallback) -->
   <global-marko-web-query|{ nodes }| name="all-published-content" params=params>
-    $ const nodeMap = {};
-    $ // Only allow nodes NOT assigned to the omitted sections
+    <!-- Drop any nodes whose primary section is in the omit list (e.g., sponsored sections) -->
     $ const allowedNodes = omitContentWithPrimarySectionIds ? nodes.filter(
       ({ primarySection }) => !omitContentWithPrimarySectionIds.includes(primarySection.id)
     ) : nodes;
-    $ // Of the allowed nodes filter to only the ones published within the last week
-    $ const publishedAfterNodes = allowedNodes.filter((node) =>  new Date(node.published) >= publishedAfter);
-    $ // If there were enough published within the last week use those, otherwise use the 5 most recent allowed
+
+    <!--
+      Prefer last-week-published content. If there aren't enough recent items to fill
+      the slots (offsetDisplayLimit), widen to the full allowed pool so the newsletter
+      still has enough articles to render.
+    -->
+    $ const publishedAfterNodes = allowedNodes.filter((node) => new Date(node.published) >= publishedAfter);
     $ const nodesToUse = (publishedAfterNodes.length >= offsetDisplayLimit) ? publishedAfterNodes : allowedNodes;
 
-    $ nodesToUse.forEach((node) => {
-      const { id } = node;
-      nodeMap[id] = node;
-    });
-    <marko-web-resolve|{ resolved }| promise=getMostPopular()>
-      $ const ordered = resolved.reduce((prevArr, item) => {
-        const { id } = item;
-        const fullItem = nodeMap[id];
-        if (fullItem) {
-          prevArr.push(fullItem);
-        }
-        return prevArr
-      }, []).slice(0, offsetDisplayLimit);
+    <!-- Lookup map: content ID -> full content node. Used to enrich popular API IDs. -->
+    $ const nodeMap = {};
+    $ nodesToUse.forEach((node) => { nodeMap[node.id] = node; });
 
+    <!-- Stage 3: fetch popularity rankings and order content accordingly -->
+    <marko-web-resolve|{ resolved }| promise=getMostPopular()>
+      <!--
+        Resolve each popular ID to its full node from nodeMap. Drop IDs that
+        aren't in our recent pool (e.g., popular content older than `days` days).
+      -->
+      $ const popular = resolved.reduce((prevArr, item) => {
+        const fullItem = nodeMap[item.id];
+        if (fullItem) prevArr.push(fullItem);
+        return prevArr;
+      }, []);
+
+      <!--
+        Fallback: if popular came up short (API empty, IDs didn't match, etc.),
+        fill remaining slots with the recent pool (excluding anything already in popular).
+      -->
+      $ const popularIds = new Set(popular.map((n) => n.id));
+      $ const fallback = nodesToUse.filter((n) => !popularIds.has(n.id));
+      $ const ordered = [...popular, ...fallback].slice(0, offsetDisplayLimit);
+
+      <!-- Final render list: scheduled items first, then popular + fallback -->
       $ const maginNodes = [...scheduledNodes, ...ordered];
 
       <marko-newsletter-root date=date>
         <@head>
-          <!-- Set newsletter title off first article -->
-          $ const { name: title } = maginNodes[0];
+          <!-- Subject line / title is taken from the first article in the newsletter -->
+          $ const title = get(maginNodes, "0.name");
           <common-automated-head-block title=title />
         </@head>
         <@body style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
