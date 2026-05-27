@@ -29,7 +29,7 @@ $ const { MOST_POPULAR_API_URI } = process.env;
 
 <!-- "Recent" = published within the last `days` days from the newsletter date -->
 $ const now = date ? new Date(date) : new Date();
-$ const days = 7;
+$ const days = 28; // Effectively 4 weeks
 $ const publishedAfter = new Date(now - (days * 24 * 60 * 60 * 1000));
 
 <!-- Params passed to the GraphQL `all-published-content` query for the recent-content pool -->
