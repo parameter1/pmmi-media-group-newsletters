@@ -1,7 +1,10 @@
-import { getAsObject } from "@mindful-web/object-path";
+import { get, getAsObject } from "@mindful-web/object-path";
 
-$ const { i18n } = out.global;
-$ const { content } = input;
+$ const { i18n, config } = out.global;
+$ const {  newsletter, content } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const primaryColor = get(newsletterConfig, "primaryColor");
 
 $ const contentTypeActions = {
   'default': 'Keep Reading',
@@ -12,12 +15,19 @@ $ const contentTypeActions = {
   'promotion': content.linkText || 'Learn More',
 }
 
+$ const actionStyle = {
+  "mso-line-height-rule": "exactly",
+  "text-decoration": "underline",
+  "color": primaryColor,
+  "font-size": "14px",
+}
+
 $ const contentAction = contentTypeActions[content.type] || contentTypeActions.default;
 
 $ const linkAttrs = {
   ...(getAsObject(input, "link.attrs")),
 };
 
-<a href=content.siteContext.url style="mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px" class="text-link" target="_blank" ...linkAttrs>
+<a href=content.siteContext.url style=actionStyle class="text-link" target="_blank" ...linkAttrs>
   ${i18n(contentAction)}
 </a>
