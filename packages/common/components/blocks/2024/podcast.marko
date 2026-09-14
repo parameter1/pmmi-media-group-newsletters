@@ -4,6 +4,9 @@ import { get } from "@mindful-web/object-path";
 $ const { config } = out.global;
 $ const { newsletter, date, sectionName, continueReading } = input;
 
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const podcastSrc = get(newsletterConfig, "podcastSrc");
+
 $ const queryParams = {
   date: date.valueOf(),
   newsletterId: newsletter.id,
@@ -26,7 +29,7 @@ $ const queryParams = {
                   <tr>
                     <td align="center" style="padding:0;margin:0;padding-bottom:10px;font-size:0">
                        <marko-newsletter-imgix
-                        src="/files/base/pmmi/all/image/newsletters/PW-podcast.png"
+                        src=podcastSrc
                         alt=""
                         class="adapt-img"
                         options={ w: 1120, auto: "format,compress", q: 100 }
@@ -50,7 +53,7 @@ $ const queryParams = {
                         $!{content.teaser}
                       </div>
                       <h3 style="margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:14px;font-style:normal;font-weight:bold;line-height:21px;color:#005bab">
-                        <common-content-action-link-element content=content link=input.link/>
+                        <common-content-action-link-element newsletter=newsletter content=content link=input.link/>
                       </h3>
                     </td>
                   </tr>
