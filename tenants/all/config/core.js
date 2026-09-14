@@ -30,6 +30,8 @@ const config = {
       name: 'Matt Reynolds',
       title: 'Chief Editor',
     },
+    videoSrc: '/files/base/pmmi/all/image/newsletters/PW-video.png',
+    podcastSrc: '/files/base/pmmi/all/image/newsletters/PW-podcast.png',
     primaryColor: '#005BAB',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
@@ -54,6 +56,8 @@ const config = {
       name: 'Derrick Teal',
       title: 'Editor-in-Chief',
     },
+    videoSrc: '/files/base/pmmi/all/image/newsletters/2026_pfw_video_banner.png',
+    podcastSrc: '/files/base/pmmi/all/image/newsletters/2026_pfw_podcast_banner.png',
     primaryColor: '#8eae3e',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters',
@@ -102,6 +106,8 @@ const config = {
       name: 'Liz Cuneo',
       title: 'Editor-in-Chief',
     },
+    videoSrc: '/files/base/pmmi/all/image/newsletters/2026_hcp_video_banner.png',
+    podcastSrc: '/files/base/pmmi/all/image/newsletters/2026_hcp_podcast_banner.png',
     primaryColor: '#00B0DE',
     socialMedia: {
       imagePath: '/files/base/pmmi/all/image/static/newsletters/',
