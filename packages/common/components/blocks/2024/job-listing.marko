@@ -4,6 +4,33 @@ import { get } from "@mindful-web/object-path";
 $ const { config } = out.global;
 $ const { newsletter, date, sectionName } = input;
 
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const primaryColor = get(newsletterConfig, "primaryColor");
+
+$ const mailingStyle = {
+  "mso-line-height-rule": "exactly",
+  "text-decoration": "underline",
+  "color": primaryColor,
+  "font-size": "14px",
+};
+
+$ const sectionNameStyle = {
+  "margin": "0",
+  "font-family": "arial, 'helvetica neue', helvetica, sans-serif",
+  "mso-line-height-rule": "exactly",
+  "letter-spacing": "0",
+  "font-size": "14px",
+  "font-style": "normal",
+  "font-weight": "bold",
+  "line-height": "21px",
+  "color": primaryColor,
+};
+
+$ const listingStyle = {
+  ...sectionNameStyle,
+  "font-weight": "normal",
+};
+
 $ const queryParams = {
   date: date.valueOf(),
   newsletterId: newsletter.id,
@@ -21,7 +48,7 @@ $ const queryParams = {
           <table cellspacing="0" width="100%" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
             <tr>
               <td align="left" style="padding:0;margin:0;padding-bottom:10px">
-                <h3 style="margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:14px;font-style:normal;font-weight:bold;line-height:21px;color:#005bab">
+                <h3 style=sectionNameStyle>
                   <strong style="font-weight:700 !important">ON THE MOVE: INDUSTRY JOB LISTINGS</strong>
                 </h3>
               </td>
@@ -34,7 +61,7 @@ $ const queryParams = {
                     <td align="left" class="e" style="padding-bottom:10px;margin:0">
                       <div class="f g" style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:14px;letter-spacing:0;color:#333333;font-size:14px">
                         $ const linkUrl = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
-                        <a href=content.linkUrl target="_blank" style="mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px;line-height:14px">
+                        <a href=content.linkUrl target="_blank" style=listingStyle>
                           $!{content.linkText}
                         </a>
                       </div>
@@ -46,7 +73,7 @@ $ const queryParams = {
             <tr>
               <td align="left" style="padding:0;margin:0;">
                 <div style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                  Have a job to post? Send it to <a href="mailto:sriley@pmmimediagroup.com" style="mso-line-height-rule:exactly;text-decoration:underline;color:#005BAB;font-size:14px"><u>sriley@pmmimediagroup.com</u></a>
+                  Have a job to post? Send it to <a href="mailto:sriley@pmmimediagroup.com" style=mailingStyle><u>sriley@pmmimediagroup.com</u></a>
                 </div>
               </td>
             </tr>
