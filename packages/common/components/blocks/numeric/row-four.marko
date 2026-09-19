@@ -1,5 +1,5 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
-import { get } from "@mindful-web/object-path";
+import { getContentUrl } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { newsletter, date, imagePath } = input;
 
@@ -25,11 +25,10 @@ $ const queryParams = {
         <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
           <if(nodes.length)>
             $ const content = nodes[0];
-            $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-            $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+            $ const contentUrl = getContentUrl(content);
             <tr>
               <td style="padding: 16px 0; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 24px;" align="left">
-                <a href=contentLink target="_blank" style="text-decoration: none; color: #000000;">
+                <a href=contentUrl target="_blank" style="text-decoration: none; color: #000000;">
                   ${content.name}
                 </a>
               </td>

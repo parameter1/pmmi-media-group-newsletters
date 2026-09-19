@@ -1,12 +1,12 @@
-import { get, getAsArray } from "@mindful-web/object-path";
+import { getAsArray } from "@mindful-web/object-path";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
+import { getContentUrl, getContentSectionName } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { newsletter, date, content, sectionName } = input;
 
 $ const withImage = defaultValue(input.withImage, false);
-$ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-$ const contentPrimarySectionName = primarySiteIsProSource ? get(content, "prosourcePrimarySection.name") : get(content, "primarySection.name")
-$ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+$ const contentPrimarySectionName = getContentSectionName(content);
+$ const contentUrl = getContentUrl(content);
 
 $ const imgStyles = {
   "font-family": "Helvetica, Arial, sans-serif",
@@ -39,7 +39,7 @@ $ const imgStyles = {
                           class="img-max"
                           attrs={ width: 220, style: imgStyles }
                         >
-                          <@link href=contentLink target="_blank" />
+                          <@link href=contentUrl target="_blank" />
                         </marko-newsletter-imgix>
                       </marko-core-obj-value>
                     </td>

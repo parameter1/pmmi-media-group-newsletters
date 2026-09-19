@@ -1,6 +1,7 @@
 import { get, getAsArray } from "@mindful-web/object-path";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import { getContentUrl } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { newsletter, date, sectionName, content } = input;
 $ const creativeId = get(input, "mindfulCreativeId");
@@ -46,8 +47,7 @@ $ const linkAttrs = {
                       <!-- content right -->
                       <td align="right" class="companylogo-imgflex" style="vertical-align:middle;height:65px;" valign="middle" width="48%">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-                          $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+                          $ const contentUrl = getContentUrl(content);
                           <tr>
                             <td align="left" style="height:65px;">
                               <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
@@ -58,7 +58,7 @@ $ const linkAttrs = {
                                   class="img-max"
                                   attrs={ style: imgStyles, border: 0 }
                                 >
-                                  <@link href=contentLinktarget="_blank" attrs=linkAttrs />
+                                  <@link href=contentUrl target="_blank" attrs=linkAttrs />
                                 </marko-newsletter-imgix>
                               </marko-core-obj-value>
                             </td>

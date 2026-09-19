@@ -1,5 +1,6 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 import { get } from "@mindful-web/object-path";
+import { getContentUrl } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { config } = out.global;
 $ const { newsletter, date, imagePath } = input;
@@ -26,8 +27,7 @@ $ const imgStyles = {
 <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
   <if(nodes.length)>
     $ const content = nodes[0];
-    $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-    $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+    $ const contentUrl = getContentUrl(content);
     <tr>
       <td align="left" bgcolor="#ffffff" style="padding:30px;margin:0;background-color:#ffffff">
         <!--[if mso]>
@@ -48,7 +48,7 @@ $ const imgStyles = {
                         attrs={ style: imgStyles }
                         class="adapt-img"
                       >
-                        <@link href=contentLink target="_blank" />
+                        <@link href=contentUrl target="_blank" />
                       </marko-newsletter-imgix>
                     </marko-core-obj-value>
                   </td>
@@ -66,7 +66,7 @@ $ const imgStyles = {
                   <td align="left" style="padding:0;margin:0;padding-bottom:10px">
                     <h1 style="margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333">
                       <strong>
-                        <a href=contentLink target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px">
+                        <a href=contentUrl target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px">
                           ${content.name}
                         </a>
                       </strong>
@@ -85,7 +85,7 @@ $ const imgStyles = {
                     <h2 style="margin:0;line-height:22px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:normal;color:#333333">
                       <strong>
                         <u>
-                          <a href=contentLink target="_blank" style=`-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:${primaryColor};font-size:18px`>
+                          <a href=contentUrl target="_blank" style=`-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:${primaryColor};font-size:18px`>
                             Read More &gt;&gt;
                           </a>
                         </u>
