@@ -1,6 +1,6 @@
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
-import { get } from "@mindful-web/object-path";
+import { getContentUrl } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { newsletter, date } = input;
 
@@ -66,8 +66,7 @@ $ const queryParams = {
                       <!-- content -->
                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
                         <for|content| of=nodes>
-                          $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-                          $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+                          $ const contentUrl = getContentUrl(content);
                           <!-- begin -->
                           <tr>
                             <td style="padding: 20px 0 0 0;" align="center" valign="top" class="mobile-padding-topbtm">
@@ -99,7 +98,7 @@ $ const queryParams = {
                                               class="img-max"
                                               attrs={ style: imgStyles, border: 0, width: 176, height: 132 }
                                             >
-                                              <@link href=contentLink target="_blank" />
+                                              <@link href=contentUrl target="_blank" />
                                             </marko-newsletter-imgix>
                                           </marko-core-obj-value>
                                         </td>
@@ -115,7 +114,7 @@ $ const queryParams = {
                                           <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                             <tr>
                                               <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight:bold; line-height: 26px;">
-                                                <a href=contentLink target="_blank" style="color: #3c3c3c; text-decoration: none;">
+                                                <a href=contentUrl target="_blank" style="color: #3c3c3c; text-decoration: none;">
                                                   ${content.name}
                                                 </a>
                                               </td>

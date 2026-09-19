@@ -56,11 +56,9 @@ $ const queryParams = {
             <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
               <if(nodes.length)>
                 <for|content| of=nodes>
-                  $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
                   <tr>
                     <td align="left" class="e" style="padding-bottom:10px;margin:0">
                       <div class="f g" style="margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:14px;letter-spacing:0;color:#333333;font-size:14px">
-                        $ const linkUrl = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
                         <a href=content.linkUrl target="_blank" style=listingStyle>
                           $!{content.linkText}
                         </a>

@@ -1,4 +1,5 @@
 import { get, getAsObject } from "@mindful-web/object-path";
+import { getContentUrl } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { i18n, config } = out.global;
 $ const {  newsletter, content } = input;
@@ -28,6 +29,8 @@ $ const linkAttrs = {
   ...(getAsObject(input, "link.attrs")),
 };
 
-<a href=content.siteContext.url style=actionStyle class="text-link" target="_blank" ...linkAttrs>
+$ const contentUrl = getContentUrl(content);
+
+<a href=contentUrl style=actionStyle class="text-link" target="_blank" ...linkAttrs>
   ${i18n(contentAction)}
 </a>

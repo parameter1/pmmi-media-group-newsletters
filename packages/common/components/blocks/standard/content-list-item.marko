@@ -1,5 +1,6 @@
 import { get, getAsArray } from "@mindful-web/object-path";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
+import { getContentUrl, getContentSectionName } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { content } = input;
 
@@ -9,10 +10,9 @@ $ const withImage = defaultValue(input.withImage, true);
 $ const button = defaultValue(input.button, false);
 
 $ const companyPromo = (content.type === 'promotion' && content.company);
-$ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-$ const contentPrimarySectionName = primarySiteIsProSource ? get(content, "prosourcePrimarySection.name") : get(content, "primarySection.name")
+$ const contentPrimarySectionName = getContentSectionName(content);
 $ const slug = companyPromo ? `Presented by ${content.company.name}` : contentPrimarySectionName;
-$ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+$ const contentUrl = getContentUrl(content);
 
 $ const imgStyles = {
   "display": "block",
@@ -56,7 +56,7 @@ $ const imgLinkAttrs = {
                           class="img-max"
                           attrs={ style: imgStyles }
                         >
-                          <@link href=contentLink target="_blank" ...imgLinkAttrs />
+                          <@link href=contentUrl target="_blank" ...imgLinkAttrs />
                         </marko-newsletter-imgix>
                       </marko-core-obj-value>
                     </td>
@@ -80,7 +80,7 @@ $ const imgLinkAttrs = {
                   </tr>
                   <tr>
                     <td style="padding: 0 0 12px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 26px;">
-                      <a href=contentLink style="color: #3c3c3c; text-decoration: none;" target="_blank" ...linkAttrs>
+                      <a href=contentUrl style="color: #3c3c3c; text-decoration: none;" target="_blank" ...linkAttrs>
                         ${content.name}
                       </a>
                     </td>

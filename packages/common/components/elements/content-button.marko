@@ -1,10 +1,13 @@
 import { getAsObject } from "@mindful-web/object-path";
+import { getContentUrl } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { content } = input;
 
 $ const linkAttrs = {
   ...(getAsObject(input, "link.attrs")),
 };
+
+$ const contentUrl = getContentUrl(content);
 
 <table border="0" cellpadding="0" cellspacing="0" class="buttonWrap" style="border-collapse:separate !important;width:100%;">
   <tr>
@@ -34,7 +37,7 @@ $ const linkAttrs = {
         " box-sizing": " border-box",
         "letter-spacing": "-.25px",
       };
-      <a class="button" href=content.siteContext.url target="_blank" style=buttonLinkStyle ...linkAttrs>
+      <a class="button" href=contentUrl target="_blank" style=buttonLinkStyle ...linkAttrs>
         ${content.linkText}
       </a>
       <!--[if gte mso 9]>

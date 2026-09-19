@@ -1,5 +1,6 @@
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
 import { get } from "@mindful-web/object-path";
+import { getContentUrl } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { config } = out.global;
 $ const { newsletter, date, sectionName, continueReading } = input;
@@ -19,7 +20,6 @@ $ const queryParams = {
 <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
   <if(nodes.length)>
     <for|content| of=nodes>
-      $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
       <tr>
         <td align="left" class="es-m-p20r es-m-p20l" style="margin:0;padding-top:5px;padding-right:40px;padding-left:40px;padding-bottom:10px">
           <table cellspacing="0" width="100%" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
@@ -40,8 +40,8 @@ $ const queryParams = {
                   <tr>
                     <td align="left" style="padding:0;margin:0;">
                       <h2 style="margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:18px;font-style:normal;font-weight:bold;line-height:27px;color:#333333">
-                        $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
-                        <a href=contentLink target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px;line-height:27px">
+                        $ const contentUrl = getContentUrl(content);
+                        <a href=contentUrl target="_blank" style="mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:18px;line-height:27px">
                           $!{content.name}
                         </a>
                       </h2>

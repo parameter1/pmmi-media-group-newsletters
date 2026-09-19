@@ -1,6 +1,7 @@
 import { get, getAsArray } from "@mindful-web/object-path";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import queryFragment from "@pmmi-media-group/package-common/graphql/fragments/content-list";
+import { getContentUrl } from "@pmmi-media-group/package-common/utils/content-url";
 
 $ const { i18n } = out.global;
 $ const { newsletter, date } = input;
@@ -40,8 +41,7 @@ $ const queryParams = {
               </td>
             </tr>
             <for|content| of=nodes>
-              $ const primarySiteIsProSource = get(content, "primarySite.shortName") === "PS";
-              $ const contentLink = primarySiteIsProSource ? `https://www.prosource.org/article/${content.id}/${content.slug}`: content.siteContext.url;
+              $ const contentUrl = getContentUrl(content);
               <tr>
                 <td align="center" valign="top" width="100%" style="padding-bottom:24px;">
                   <!-- Two column -->
@@ -67,7 +67,7 @@ $ const queryParams = {
                                   options={ w: 112 }
                                   attrs={ style: imgStyles }
                                 >
-                                  <@link href=contentLink target="_blank" />
+                                  <@link href=contentUrl target="_blank" />
                                 </marko-newsletter-imgix>
                               </marko-core-obj-value>
                             </td>
@@ -99,7 +99,7 @@ $ const queryParams = {
                                 <!-- ........ -->
                                 <tr>
                                   <td style="padding: 0 0 8px 0; color: #3c3c3c; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 28px;" align="left">
-                                    <a href=contentLink target="_blank" style="color: #3c3c3c; text-decoration: none;">
+                                    <a href=contentUrl target="_blank" style="color: #3c3c3c; text-decoration: none;">
                                       ${content.name}
                                     </a>
                                   </td>
