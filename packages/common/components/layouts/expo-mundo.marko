@@ -37,7 +37,7 @@ $ const displayDate = (lang) ? moment(date).add(1, "days").locale(lang).format("
                       <tr>
                         <td style="padding-bottom: 16px;text-align:center;">
                           <marko-newsletter-imgix
-                            src="/files/base/pmmi/all/image/newsletters/textNews_ESP.png"
+                            src="/files/base/pmmi/all/image/newsletters/News.png"
                             options={ w: 652, h: 68, auto: "format,compress", q: 100 }
                             alt="Reporte desde las Líneas"
                             attrs={ width: 326, height: 34, style:"max-width: 326px; max-height: 34px;" }
@@ -61,7 +61,7 @@ $ const displayDate = (lang) ? moment(date).add(1, "days").locale(lang).format("
           </tr>
         </table>
         <html-comment> /Show News Section </html-comment>
-                      
+
         <html-comment> PACK EXPO Mundo Link </html-comment>
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
           <tr>
@@ -129,7 +129,7 @@ $ const displayDate = (lang) ? moment(date).add(1, "days").locale(lang).format("
                 <tr>
                   <td width="100%" style="display: inline-block;font-size: 24px; font-family: arial, sans-serif; font-weight: bold; letter-spacing: .15px; line-height:32px;color: #3a3636;text-align:center;padding-bottom:16px;" align="center">
                     <marko-newsletter-imgix
-                      src="/files/base/pmmi/all/image/newsletters/Paranoperderse.png" 
+                      src="/files/base/pmmi/all/image/newsletters/NotMiss.png"
                       alt="Antes de que cierren el pabellón"
                       options={ w: 652, h: 68, auto: "format,compress", q: 100 }
                       class="img-text-header"
@@ -145,20 +145,20 @@ $ const displayDate = (lang) ? moment(date).add(1, "days").locale(lang).format("
                 </tr>
 
                 <html-comment> Scheduled Items begin </html-comment>
-                <common-expo-schedule-list-mundo-block 
+                <common-expo-schedule-list-mundo-block
                   newsletter=newsletter
                   date=date
                   section-name="Schedule"
                   limit=4
                 />
                 <html-comment> Scheduled Items end </html-comment>
-                  
+
               </table>
             </td>
           </tr>
         </table>
         <html-comment> /Tomorrow's Schedule </html-comment>
-        
+
         <html-comment> Exhibitor Search </html-comment>
         <common-expo-exhibitor-search-mundo-block />
         <html-comment> /Exhibitor Search </html-comment>
