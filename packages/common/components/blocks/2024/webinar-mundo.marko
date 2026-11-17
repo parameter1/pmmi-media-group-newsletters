@@ -18,20 +18,16 @@ $ const upcomingQueryParams = {
   queryFragment,
   beginningAfter: mailDate,
   limit: upcomingLimit,
-  sort: {
-    field: "startDate",
-    order: "asc",
-  },
+  sortField: "startDate",
+  sortOrder: "asc",
 };
 $ const archiveQueryParams = {
   includeContentTypes: ["Webinar"],
   excludeLabels: ["Non-PMG"],
   queryFragment,
   beginningBefore: mailDate,
-  sort: {
-    field: "startDate",
-    order: "desc",
-  },
+  sortField: "startDate",
+  sortOrder: "desc",
 };
 
 $ const sectionNameStyle = {
@@ -66,7 +62,7 @@ $ const sectionNameStyle = {
                 </p>
               </td>
             </tr>
-            <marko-web-query|{ nodes: upcomingNodes }| name="website-scheduled-content" collapsible=false params=upcomingQueryParams>
+            <marko-web-query|{ nodes: upcomingNodes }| name="all-published-content" collapsible=false params=upcomingQueryParams>
               <if(upcomingNodes.length)>
                 <for|content| of=upcomingNodes>
                   $ const contentLinkUrl = new URL(content.linkUrl);
@@ -95,7 +91,7 @@ $ const sectionNameStyle = {
               </if>
               $ archiveQueryParams.limit = displayLimit - upcomingNodes.length;
               <if(archiveQueryParams.limit)>
-                <marko-web-query|{ nodes }| name="website-scheduled-content" collapsible=false params=archiveQueryParams>
+                <marko-web-query|{ nodes }| name="all-published-content" collapsible=false params=archiveQueryParams>
                   <if(nodes.length)>
                     <for|content| of=nodes>
                       $ const contentLinkUrl = new URL(content.linkUrl);
