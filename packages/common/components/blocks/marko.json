@@ -4,7 +4,6 @@
     "./numeric/marko.json",
     "./standard/marko.json",
     "./expo/marko.json",
-    "./cpgnext/marko.json",
     "./2024/marko.json",
     "./automated/marko.json",
     "./sustainable/marko.json"
@@ -20,9 +19,6 @@
   },
   "<common-footer-mundo-block>": {
     "template": "./footer-mundo.marko"
-  },
-  "<common-cpgnext-head-block>": {
-    "template": "./cpgnext-head.marko"
   },
   "<common-2024-head-block>": {
     "template": "./2024-head.marko"

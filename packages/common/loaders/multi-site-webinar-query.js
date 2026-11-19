@@ -1,14 +1,17 @@
-const { websiteScheduledContent } = require('@mindful-web/web-common/block-loaders');
+const { allPublishedContent } = require('@mindful-web/web-common/block-loaders');
 const defaultFragment = require('../graphql/fragments/website-content');
 
-const loadContent = async (apolloClient, params = {}) => {
+// Site-wide on purpose: on the Mindful read API a website-scheduled-content
+// query without a section only matches the home section.
+const loadContent = async (apolloClient, { sort, ...params } = {}) => {
   const defaults = {
     queryFragment: defaultFragment,
   };
   // console.log('hit: ', defaults, params)
-  return websiteScheduledContent(apolloClient, {
+  return allPublishedContent(apolloClient, {
     ...defaults,
     ...params,
+    ...(sort && { sortField: sort.field, sortOrder: sort.order }),
   });
 };
 
